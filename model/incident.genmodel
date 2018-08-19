@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/incidentpatternB/src" modelPluginID="incidentpatternB"
+    modelName="Incident" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>cyberPhysical_Incident.ecore</foreignModel>
+  <genPackages prefix="CyberPhysical_Incident" resource="XML" disposableProviderFactory="true"
+      fileExtensions="cpi" ecorePackage="cyberPhysical_Incident.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="cyberPhysical_Incident.ecore#//Level">
+      <genEnumLiterals ecoreEnumLiteral="cyberPhysical_Incident.ecore#//Level/HIGH"/>
+      <genEnumLiterals ecoreEnumLiteral="cyberPhysical_Incident.ecore#//Level/MEDIUM"/>
+      <genEnumLiterals ecoreEnumLiteral="cyberPhysical_Incident.ecore#//Level/LOW"/>
+      <genEnumLiterals ecoreEnumLiteral="cyberPhysical_Incident.ecore#//Level/UNKNOWN"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="cyberPhysical_Incident.ecore#//ActivityType">
+      <genEnumLiterals ecoreEnumLiteral="cyberPhysical_Incident.ecore#//ActivityType/PHYSICAL"/>
+      <genEnumLiterals ecoreEnumLiteral="cyberPhysical_Incident.ecore#//ActivityType/CYBER"/>
+      <genEnumLiterals ecoreEnumLiteral="cyberPhysical_Incident.ecore#//ActivityType/PHYSICAL_CYBER"/>
+      <genEnumLiterals ecoreEnumLiteral="cyberPhysical_Incident.ecore#//ActivityType/CYBER_PHYSICAL"/>
+      <genEnumLiterals ecoreEnumLiteral="cyberPhysical_Incident.ecore#//ActivityType/UNKNOWN"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="cyberPhysical_Incident.ecore#//Behaviour">
+      <genEnumLiterals ecoreEnumLiteral="cyberPhysical_Incident.ecore#//Behaviour/NORMAL"/>
+      <genEnumLiterals ecoreEnumLiteral="cyberPhysical_Incident.ecore#//Behaviour/SUSPICIOUS"/>
+      <genEnumLiterals ecoreEnumLiteral="cyberPhysical_Incident.ecore#//Behaviour/MALICIOUS"/>
+      <genEnumLiterals ecoreEnumLiteral="cyberPhysical_Incident.ecore#//Behaviour/UNKNOWN"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="cyberPhysical_Incident.ecore#//Knowledge">
+      <genEnumLiterals ecoreEnumLiteral="cyberPhysical_Incident.ecore#//Knowledge/PARTIAL"/>
+      <genEnumLiterals ecoreEnumLiteral="cyberPhysical_Incident.ecore#//Knowledge/EXACT"/>
+      <genEnumLiterals ecoreEnumLiteral="cyberPhysical_Incident.ecore#//Knowledge/UNKNOWN"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="cyberPhysical_Incident.ecore#//ScriptCategory">
+      <genEnumLiterals ecoreEnumLiteral="cyberPhysical_Incident.ecore#//ScriptCategory/TRACK"/>
+      <genEnumLiterals ecoreEnumLiteral="cyberPhysical_Incident.ecore#//ScriptCategory/SCRIPT"/>
+      <genEnumLiterals ecoreEnumLiteral="cyberPhysical_Incident.ecore#//ScriptCategory/PROTOSCRIPT"/>
+      <genEnumLiterals ecoreEnumLiteral="cyberPhysical_Incident.ecore#//ScriptCategory/METASCRIPT"/>
+      <genEnumLiterals ecoreEnumLiteral="cyberPhysical_Incident.ecore#//ScriptCategory/INSTANCE"/>
+    </genEnums>
+    <genClasses ecoreClass="cyberPhysical_Incident.ecore#//Activity">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cyberPhysical_Incident.ecore#//Activity/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cyberPhysical_Incident.ecore#//Activity/facilitatingConditions"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cyberPhysical_Incident.ecore#//Activity/certainty"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cyberPhysical_Incident.ecore#//Activity/duration"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cyberPhysical_Incident.ecore#//Activity/startTime"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cyberPhysical_Incident.ecore#//Activity/nextActivities"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cyberPhysical_Incident.ecore#//Activity/previousActivities"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cyberPhysical_Incident.ecore#//Activity/paths"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cyberPhysical_Incident.ecore#//Activity/goals"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cyberPhysical_Incident.ecore#//Activity/initiator"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cyberPhysical_Incident.ecore#//Activity/accomplices"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cyberPhysical_Incident.ecore#//Activity/victims"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cyberPhysical_Incident.ecore#//Activity/targetedAssets"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cyberPhysical_Incident.ecore#//Activity/endTime"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cyberPhysical_Incident.ecore#//Activity/resources"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cyberPhysical_Incident.ecore#//Activity/exploitedAssets"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cyberPhysical_Incident.ecore#//Activity/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cyberPhysical_Incident.ecore#//Activity/behaviourType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cyberPhysical_Incident.ecore#//Activity/precondition"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cyberPhysical_Incident.ecore#//Activity/location"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cyberPhysical_Incident.ecore#//Activity/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cyberPhysical_Incident.ecore#//Activity/systemAction"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cyberPhysical_Incident.ecore#//Activity/postcondition"/>
+    </genClasses>
+    <genClasses ecoreClass="cyberPhysical_Incident.ecore#//CrimeScript">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cyberPhysical_Incident.ecore#//CrimeScript/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cyberPhysical_Incident.ecore#//CrimeScript/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cyberPhysical_Incident.ecore#//CrimeScript/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cyberPhysical_Incident.ecore#//CrimeScript/category"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cyberPhysical_Incident.ecore#//CrimeScript/scenes"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cyberPhysical_Incident.ecore#//CrimeScript/goals"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cyberPhysical_Incident.ecore#//CrimeScript/targetedAssets"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cyberPhysical_Incident.ecore#//CrimeScript/resources"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cyberPhysical_Incident.ecore#//CrimeScript/mainLocation"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cyberPhysical_Incident.ecore#//CrimeScript/victims"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cyberPhysical_Incident.ecore#//CrimeScript/offenders"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cyberPhysical_Incident.ecore#//CrimeScript/higherLevelScriptName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cyberPhysical_Incident.ecore#//CrimeScript/intent"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cyberPhysical_Incident.ecore#//CrimeScript/motive"/>
+    </genClasses>
+    <genClasses ecoreClass="cyberPhysical_Incident.ecore#//Scene">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cyberPhysical_Incident.ecore#//Scene/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cyberPhysical_Incident.ecore#//Scene/nextScenes"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cyberPhysical_Incident.ecore#//Scene/previousScenes"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cyberPhysical_Incident.ecore#//Scene/description"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cyberPhysical_Incident.ecore#//Scene/activity"/>
+    </genClasses>
+    <genClasses ecoreClass="cyberPhysical_Incident.ecore#//Motive">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cyberPhysical_Incident.ecore#//Motive/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cyberPhysical_Incident.ecore#//Motive/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cyberPhysical_Incident.ecore#//Motive/isPrimary"/>
+    </genClasses>
+    <genClasses ecoreClass="cyberPhysical_Incident.ecore#//Goal">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cyberPhysical_Incident.ecore#//Goal/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cyberPhysical_Incident.ecore#//Goal/description"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cyberPhysical_Incident.ecore#//Goal/activities"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cyberPhysical_Incident.ecore#//Goal/state"/>
+    </genClasses>
+    <genClasses ecoreClass="cyberPhysical_Incident.ecore#//Intent">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cyberPhysical_Incident.ecore#//Intent/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cyberPhysical_Incident.ecore#//Intent/name"/>
+    </genClasses>
+    <genClasses ecoreClass="cyberPhysical_Incident.ecore#//Asset">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cyberPhysical_Incident.ecore#//Asset/description"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cyberPhysical_Incident.ecore#//Asset/vulnerability"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cyberPhysical_Incident.ecore#//Asset/status"/>
+    </genClasses>
+    <genClasses ecoreClass="cyberPhysical_Incident.ecore#//Connection">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cyberPhysical_Incident.ecore#//Connection/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cyberPhysical_Incident.ecore#//Connection/constraints"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cyberPhysical_Incident.ecore#//Connection/entity1"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cyberPhysical_Incident.ecore#//Connection/entity2"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cyberPhysical_Incident.ecore#//Connection/connectionProbability"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cyberPhysical_Incident.ecore#//Connection/type"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="cyberPhysical_Incident.ecore#//Location">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cyberPhysical_Incident.ecore#//Location/connections"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cyberPhysical_Incident.ecore#//Location/parentEntity"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cyberPhysical_Incident.ecore#//Location/containedEntities"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cyberPhysical_Incident.ecore#//Location/connectionsKnowledge"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cyberPhysical_Incident.ecore#//Location/containedAssetsKnowledge"/>
+    </genClasses>
+    <genClasses ecoreClass="cyberPhysical_Incident.ecore#//Resource">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cyberPhysical_Incident.ecore#//Resource/description"/>
+    </genClasses>
+    <genClasses ecoreClass="cyberPhysical_Incident.ecore#//Path">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cyberPhysical_Incident.ecore#//Path/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cyberPhysical_Incident.ecore#//Path/activities"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="cyberPhysical_Incident.ecore#//ActivityInitiator"/>
+    <genClasses ecoreClass="cyberPhysical_Incident.ecore#//Actor">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cyberPhysical_Incident.ecore#//Actor/role"/>
+    </genClasses>
+    <genClasses ecoreClass="cyberPhysical_Incident.ecore#//IncidentDiagram">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cyberPhysical_Incident.ecore#//IncidentDiagram/crimeScript"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cyberPhysical_Incident.ecore#//IncidentDiagram/scene"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cyberPhysical_Incident.ecore#//IncidentDiagram/intent"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cyberPhysical_Incident.ecore#//IncidentDiagram/goal"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cyberPhysical_Incident.ecore#//IncidentDiagram/motive"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cyberPhysical_Incident.ecore#//IncidentDiagram/asset"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cyberPhysical_Incident.ecore#//IncidentDiagram/resource"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cyberPhysical_Incident.ecore#//IncidentDiagram/actor"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cyberPhysical_Incident.ecore#//IncidentDiagram/connection"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cyberPhysical_Incident.ecore#//IncidentDiagram/paths"/>
+    </genClasses>
+    <genClasses ecoreClass="cyberPhysical_Incident.ecore#//Property">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cyberPhysical_Incident.ecore#//Property/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cyberPhysical_Incident.ecore#//Property/value"/>
+    </genClasses>
+    <genClasses ecoreClass="cyberPhysical_Incident.ecore#//Vulnerability">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cyberPhysical_Incident.ecore#//Vulnerability/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cyberPhysical_Incident.ecore#//Vulnerability/URL"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cyberPhysical_Incident.ecore#//Vulnerability/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cyberPhysical_Incident.ecore#//Vulnerability/severity"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="cyberPhysical_Incident.ecore#//AssetType"/>
+    <genClasses ecoreClass="cyberPhysical_Incident.ecore#//Type">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cyberPhysical_Incident.ecore#//Type/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cyberPhysical_Incident.ecore#//Type/hasSuperType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cyberPhysical_Incident.ecore#//Type/superType"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="cyberPhysical_Incident.ecore#//Expression"/>
+    <genClasses image="false" ecoreClass="cyberPhysical_Incident.ecore#//UnaryExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cyberPhysical_Incident.ecore#//UnaryExpression/operand"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="cyberPhysical_Incident.ecore#//BinaryExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cyberPhysical_Incident.ecore#//BinaryExpression/left"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cyberPhysical_Incident.ecore#//BinaryExpression/right"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="cyberPhysical_Incident.ecore#//Contains"/>
+    <genClasses image="false" ecoreClass="cyberPhysical_Incident.ecore#//ConnectedTo"/>
+    <genClasses image="false" ecoreClass="cyberPhysical_Incident.ecore#//Not"/>
+    <genClasses ecoreClass="cyberPhysical_Incident.ecore#//Entity">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cyberPhysical_Incident.ecore#//Entity/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cyberPhysical_Incident.ecore#//Entity/entity"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cyberPhysical_Incident.ecore#//Entity/connectivity"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cyberPhysical_Incident.ecore#//Entity/site"/>
+    </genClasses>
+    <genClasses ecoreClass="cyberPhysical_Incident.ecore#//Precondition"/>
+    <genClasses image="false" ecoreClass="cyberPhysical_Incident.ecore#//TopologicalRelation"/>
+    <genClasses image="false" ecoreClass="cyberPhysical_Incident.ecore#//Equal"/>
+    <genClasses image="false" ecoreClass="cyberPhysical_Incident.ecore#//Greater"/>
+    <genClasses image="false" ecoreClass="cyberPhysical_Incident.ecore#//And"/>
+    <genClasses ecoreClass="cyberPhysical_Incident.ecore#//BigraphExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cyberPhysical_Incident.ecore#//BigraphExpression/entity"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cyberPhysical_Incident.ecore#//BigraphExpression/innername"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="cyberPhysical_Incident.ecore#//Or"/>
+    <genClasses image="false" ecoreClass="cyberPhysical_Incident.ecore#//ReachableFrom"/>
+    <genClasses image="false" ecoreClass="cyberPhysical_Incident.ecore#//Near"/>
+    <genClasses image="false" ecoreClass="cyberPhysical_Incident.ecore#//Condition">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cyberPhysical_Incident.ecore#//Condition/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cyberPhysical_Incident.ecore#//Condition/expression"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cyberPhysical_Incident.ecore#//Condition/assoicatedConditions"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cyberPhysical_Incident.ecore#//Condition/description"/>
+    </genClasses>
+    <genClasses ecoreClass="cyberPhysical_Incident.ecore#//Postcondition"/>
+    <genClasses ecoreClass="cyberPhysical_Incident.ecore#//FacilitatingCondition"/>
+    <genClasses ecoreClass="cyberPhysical_Incident.ecore#//IncidentEntity">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cyberPhysical_Incident.ecore#//IncidentEntity/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cyberPhysical_Incident.ecore#//IncidentEntity/properties"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cyberPhysical_Incident.ecore#//IncidentEntity/type"/>
+    </genClasses>
+    <genClasses ecoreClass="cyberPhysical_Incident.ecore#//Connectivity">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cyberPhysical_Incident.ecore#//Connectivity/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cyberPhysical_Incident.ecore#//Connectivity/isClosed"/>
+    </genClasses>
+    <genClasses ecoreClass="cyberPhysical_Incident.ecore#//InnerName">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cyberPhysical_Incident.ecore#//InnerName/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cyberPhysical_Incident.ecore#//InnerName/isClosed"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cyberPhysical_Incident.ecore#//InnerName/outername"/>
+    </genClasses>
+    <genClasses ecoreClass="cyberPhysical_Incident.ecore#//Site">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cyberPhysical_Incident.ecore#//Site/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cyberPhysical_Incident.ecore#//Site/isClosed"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
