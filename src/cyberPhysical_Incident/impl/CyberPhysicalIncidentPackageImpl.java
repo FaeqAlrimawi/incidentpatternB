@@ -850,7 +850,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getScene_Activities() {
+	public EReference getScene_Activity() {
 		return (EReference)sceneEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -1284,15 +1284,6 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 */
 	public EReference getIncidentDiagram_Paths() {
 		return (EReference)incidentDiagramEClass.getEStructuralFeatures().get(9);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getIncidentDiagram_Activity() {
-		return (EReference)incidentDiagramEClass.getEStructuralFeatures().get(10);
 	}
 
 	/**
@@ -1945,7 +1936,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 		createEReference(sceneEClass, SCENE__NEXT_SCENES);
 		createEReference(sceneEClass, SCENE__PREVIOUS_SCENES);
 		createEAttribute(sceneEClass, SCENE__DESCRIPTION);
-		createEReference(sceneEClass, SCENE__ACTIVITIES);
+		createEReference(sceneEClass, SCENE__ACTIVITY);
 
 		motiveEClass = createEClass(MOTIVE);
 		createEAttribute(motiveEClass, MOTIVE__NAME);
@@ -2005,7 +1996,6 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 		createEReference(incidentDiagramEClass, INCIDENT_DIAGRAM__ACTOR);
 		createEReference(incidentDiagramEClass, INCIDENT_DIAGRAM__CONNECTION);
 		createEReference(incidentDiagramEClass, INCIDENT_DIAGRAM__PATHS);
-		createEReference(incidentDiagramEClass, INCIDENT_DIAGRAM__ACTIVITY);
 
 		propertyEClass = createEClass(PROPERTY);
 		createEAttribute(propertyEClass, PROPERTY__NAME);
@@ -2198,7 +2188,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 		initEReference(getScene_NextScenes(), this.getScene(), null, "nextScenes", null, 0, -1, Scene.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getScene_PreviousScenes(), this.getScene(), null, "previousScenes", null, 0, -1, Scene.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getScene_Description(), ecorePackage.getEString(), "description", null, 0, 1, Scene.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getScene_Activities(), this.getActivity(), null, "activities", null, 0, -1, Scene.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getScene_Activity(), this.getActivity(), null, "activity", null, 0, -1, Scene.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(motiveEClass, Motive.class, "Motive", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getMotive_Name(), ecorePackage.getEString(), "name", null, 0, 1, Motive.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2258,7 +2248,6 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 		initEReference(getIncidentDiagram_Actor(), this.getActor(), null, "actor", null, 0, -1, IncidentDiagram.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getIncidentDiagram_Connection(), this.getConnection(), null, "connection", null, 0, -1, IncidentDiagram.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getIncidentDiagram_Paths(), this.getPath(), null, "paths", null, 0, -1, IncidentDiagram.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getIncidentDiagram_Activity(), this.getActivity(), null, "activity", null, 0, -1, IncidentDiagram.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(propertyEClass, Property.class, "Property", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getProperty_Name(), ecorePackage.getEString(), "name", null, 0, 1, Property.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

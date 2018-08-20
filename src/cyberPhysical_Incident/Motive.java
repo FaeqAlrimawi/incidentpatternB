@@ -22,7 +22,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link cyberPhysical_Incident.Motive#isIsPrimary <em>Is Primary</em>}</li>
  * </ul>
  *
- * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getMotive()
+ * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getMotive()
  * @model
  * @generated
  */
@@ -37,7 +37,7 @@ public interface Motive extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
-	 * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getMotive_Name()
+	 * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getMotive_Name()
 	 * @model id="true"
 	 * @generated
 	 */
@@ -63,7 +63,7 @@ public interface Motive extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
-	 * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getMotive_Description()
+	 * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getMotive_Description()
 	 * @model
 	 * @generated
 	 */
@@ -90,7 +90,7 @@ public interface Motive extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Is Primary</em>' attribute.
 	 * @see #setIsPrimary(boolean)
-	 * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getMotive_IsPrimary()
+	 * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getMotive_IsPrimary()
 	 * @model default="True"
 	 * @generated
 	 */

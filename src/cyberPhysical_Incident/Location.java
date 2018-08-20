@@ -22,7 +22,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link cyberPhysical_Incident.Location#getContainedAssetsKnowledge <em>Contained Assets Knowledge</em>}</li>
  * </ul>
  *
- * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getLocation()
+ * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getLocation()
  * @model interface="true" abstract="true"
  * @generated
  */
@@ -37,7 +37,7 @@ public interface Location extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Connections</em>' reference list.
-	 * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getLocation_Connections()
+	 * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getLocation_Connections()
 	 * @model
 	 * @generated
 	 */
@@ -53,7 +53,7 @@ public interface Location extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Parent Entity</em>' reference.
 	 * @see #setParentEntity(Location)
-	 * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getLocation_ParentEntity()
+	 * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getLocation_ParentEntity()
 	 * @model
 	 * @generated
 	 */
@@ -79,7 +79,7 @@ public interface Location extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Contained Entities</em>' reference list.
-	 * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getLocation_ContainedEntities()
+	 * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getLocation_ContainedEntities()
 	 * @model
 	 * @generated
 	 */
@@ -97,7 +97,7 @@ public interface Location extends EObject {
 	 * @return the value of the '<em>Connections Knowledge</em>' attribute.
 	 * @see cyberPhysical_Incident.Knowledge
 	 * @see #setConnectionsKnowledge(Knowledge)
-	 * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getLocation_ConnectionsKnowledge()
+	 * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getLocation_ConnectionsKnowledge()
 	 * @model
 	 * @generated
 	 */
@@ -126,7 +126,7 @@ public interface Location extends EObject {
 	 * @return the value of the '<em>Contained Assets Knowledge</em>' attribute.
 	 * @see cyberPhysical_Incident.Knowledge
 	 * @see #setContainedAssetsKnowledge(Knowledge)
-	 * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getLocation_ContainedAssetsKnowledge()
+	 * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getLocation_ContainedAssetsKnowledge()
 	 * @model
 	 * @generated
 	 */

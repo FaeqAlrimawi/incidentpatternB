@@ -17,7 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link cyberPhysical_Incident.Site#isIsClosed <em>Is Closed</em>}</li>
  * </ul>
  *
- * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getSite()
+ * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getSite()
  * @model
  * @generated
  */
@@ -32,7 +32,7 @@ public interface Site extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
-	 * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getSite_Name()
+	 * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getSite_Name()
 	 * @model
 	 * @generated
 	 */
@@ -58,7 +58,7 @@ public interface Site extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Is Closed</em>' attribute.
 	 * @see #setIsClosed(boolean)
-	 * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getSite_IsClosed()
+	 * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getSite_IsClosed()
 	 * @model
 	 * @generated
 	 */

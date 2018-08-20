@@ -18,7 +18,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link cyberPhysical_Incident.IncidentEntity#getType <em>Type</em>}</li>
  * </ul>
  *
- * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getIncidentEntity()
+ * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getIncidentEntity()
  * @model
  * @generated
  */
@@ -36,7 +36,7 @@ public interface IncidentEntity extends ActivityInitiator, Location {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
-	 * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getIncidentEntity_Name()
+	 * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getIncidentEntity_Name()
 	 * @model id="true"
 	 * @generated
 	 */
@@ -62,7 +62,7 @@ public interface IncidentEntity extends ActivityInitiator, Location {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Properties</em>' reference list.
-	 * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getIncidentEntity_Properties()
+	 * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getIncidentEntity_Properties()
 	 * @model
 	 * @generated
 	 */
@@ -78,7 +78,7 @@ public interface IncidentEntity extends ActivityInitiator, Location {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Type</em>' containment reference.
 	 * @see #setType(Type)
-	 * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getIncidentEntity_Type()
+	 * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getIncidentEntity_Type()
 	 * @model containment="true"
 	 * @generated
 	 */

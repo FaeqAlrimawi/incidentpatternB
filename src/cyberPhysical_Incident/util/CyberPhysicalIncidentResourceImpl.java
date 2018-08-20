@@ -3,8 +3,7 @@
 package cyberPhysical_Incident.util;
 
 import org.eclipse.emf.common.util.URI;
-
-import org.eclipse.emf.ecore.xmi.impl.XMIResourceImpl;
+import org.eclipse.emf.ecore.xmi.impl.XMLResourceImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -13,7 +12,7 @@ import org.eclipse.emf.ecore.xmi.impl.XMIResourceImpl;
  * @see cyberPhysical_Incident.util.CyberPhysicalIncidentResourceFactoryImpl
  * @generated
  */
-public class CyberPhysicalIncidentResourceImpl extends XMIResourceImpl {
+public class CyberPhysicalIncidentResourceImpl extends XMLResourceImpl {
 	/**
 	 * Creates an instance of the resource.
 	 * <!-- begin-user-doc -->

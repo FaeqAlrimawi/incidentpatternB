@@ -3,8 +3,6 @@
   <viewpoint:DAnalysis xmi:id="_jh9DAKO9EeiMT4uHEbbEeA" selectedViews="_joH8cKO9EeiMT4uHEbbEeA" version="11.1.0.201608251200">
     <semanticResources>cyberPhysical_Incident.ecore</semanticResources>
     <semanticResources>http://www.eclipse.org/emf/2002/Ecore</semanticResources>
-    <semanticResources>incidentpatternB.genmodel</semanticResources>
-    <semanticResources>incidentpatternB.ecore</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" xmi:id="_joH8cKO9EeiMT4uHEbbEeA">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
       <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" xmi:id="_jxFEIKO9EeiMT4uHEbbEeA" name="incidentpatternB" representation="_jxFEIaO9EeiMT4uHEbbEeA">

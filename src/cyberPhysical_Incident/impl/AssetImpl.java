@@ -3,7 +3,7 @@
 package cyberPhysical_Incident.impl;
 
 import cyberPhysical_Incident.Asset;
-import cyberPhysical_Incident.CyberPhysical_IncidentPackage;
+import cyberPhysical_Incident.CyberPhysicalIncidentPackage;
 import cyberPhysical_Incident.Vulnerability;
 import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
@@ -100,7 +100,7 @@ public class AssetImpl extends IncidentEntityImpl implements Asset {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CyberPhysical_IncidentPackage.Literals.ASSET;
+		return CyberPhysicalIncidentPackage.Literals.ASSET;
 	}
 
 	/**
@@ -121,7 +121,7 @@ public class AssetImpl extends IncidentEntityImpl implements Asset {
 		String oldDescription = description;
 		description = newDescription;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysical_IncidentPackage.ASSET__DESCRIPTION, oldDescription, description));
+			eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysicalIncidentPackage.ASSET__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -131,7 +131,7 @@ public class AssetImpl extends IncidentEntityImpl implements Asset {
 	 */
 	public EList<Vulnerability> getVulnerability() {
 		if (vulnerability == null) {
-			vulnerability = new EObjectContainmentEList<Vulnerability>(Vulnerability.class, this, CyberPhysical_IncidentPackage.ASSET__VULNERABILITY);
+			vulnerability = new EObjectContainmentEList<Vulnerability>(Vulnerability.class, this, CyberPhysicalIncidentPackage.ASSET__VULNERABILITY);
 		}
 		return vulnerability;
 	}
@@ -154,7 +154,7 @@ public class AssetImpl extends IncidentEntityImpl implements Asset {
 		String oldStatus = status;
 		status = newStatus;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysical_IncidentPackage.ASSET__STATUS, oldStatus, status));
+			eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysicalIncidentPackage.ASSET__STATUS, oldStatus, status));
 	}
 
 	/**
@@ -165,7 +165,7 @@ public class AssetImpl extends IncidentEntityImpl implements Asset {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case CyberPhysical_IncidentPackage.ASSET__VULNERABILITY:
+			case CyberPhysicalIncidentPackage.ASSET__VULNERABILITY:
 				return ((InternalEList<?>)getVulnerability()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -179,11 +179,11 @@ public class AssetImpl extends IncidentEntityImpl implements Asset {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case CyberPhysical_IncidentPackage.ASSET__DESCRIPTION:
+			case CyberPhysicalIncidentPackage.ASSET__DESCRIPTION:
 				return getDescription();
-			case CyberPhysical_IncidentPackage.ASSET__VULNERABILITY:
+			case CyberPhysicalIncidentPackage.ASSET__VULNERABILITY:
 				return getVulnerability();
-			case CyberPhysical_IncidentPackage.ASSET__STATUS:
+			case CyberPhysicalIncidentPackage.ASSET__STATUS:
 				return getStatus();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -198,14 +198,14 @@ public class AssetImpl extends IncidentEntityImpl implements Asset {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case CyberPhysical_IncidentPackage.ASSET__DESCRIPTION:
+			case CyberPhysicalIncidentPackage.ASSET__DESCRIPTION:
 				setDescription((String)newValue);
 				return;
-			case CyberPhysical_IncidentPackage.ASSET__VULNERABILITY:
+			case CyberPhysicalIncidentPackage.ASSET__VULNERABILITY:
 				getVulnerability().clear();
 				getVulnerability().addAll((Collection<? extends Vulnerability>)newValue);
 				return;
-			case CyberPhysical_IncidentPackage.ASSET__STATUS:
+			case CyberPhysicalIncidentPackage.ASSET__STATUS:
 				setStatus((String)newValue);
 				return;
 		}
@@ -220,13 +220,13 @@ public class AssetImpl extends IncidentEntityImpl implements Asset {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case CyberPhysical_IncidentPackage.ASSET__DESCRIPTION:
+			case CyberPhysicalIncidentPackage.ASSET__DESCRIPTION:
 				setDescription(DESCRIPTION_EDEFAULT);
 				return;
-			case CyberPhysical_IncidentPackage.ASSET__VULNERABILITY:
+			case CyberPhysicalIncidentPackage.ASSET__VULNERABILITY:
 				getVulnerability().clear();
 				return;
-			case CyberPhysical_IncidentPackage.ASSET__STATUS:
+			case CyberPhysicalIncidentPackage.ASSET__STATUS:
 				setStatus(STATUS_EDEFAULT);
 				return;
 		}
@@ -241,11 +241,11 @@ public class AssetImpl extends IncidentEntityImpl implements Asset {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case CyberPhysical_IncidentPackage.ASSET__DESCRIPTION:
+			case CyberPhysicalIncidentPackage.ASSET__DESCRIPTION:
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
-			case CyberPhysical_IncidentPackage.ASSET__VULNERABILITY:
+			case CyberPhysicalIncidentPackage.ASSET__VULNERABILITY:
 				return vulnerability != null && !vulnerability.isEmpty();
-			case CyberPhysical_IncidentPackage.ASSET__STATUS:
+			case CyberPhysicalIncidentPackage.ASSET__STATUS:
 				return STATUS_EDEFAULT == null ? status != null : !STATUS_EDEFAULT.equals(status);
 		}
 		return super.eIsSet(featureID);

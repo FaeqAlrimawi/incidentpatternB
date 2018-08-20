@@ -14,7 +14,7 @@ package cyberPhysical_Incident;
  *   <li>{@link cyberPhysical_Incident.Actor#getRole <em>Role</em>}</li>
  * </ul>
  *
- * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getActor()
+ * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getActor()
  * @model
  * @generated
  */
@@ -29,7 +29,7 @@ public interface Actor extends IncidentEntity {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Role</em>' attribute.
 	 * @see #setRole(String)
-	 * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getActor_Role()
+	 * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getActor_Role()
 	 * @model
 	 * @generated
 	 */

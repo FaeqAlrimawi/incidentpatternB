@@ -4,8 +4,8 @@ package cyberPhysical_Incident.impl;
 
 import cyberPhysical_Incident.Actor;
 import cyberPhysical_Incident.Asset;
-import cyberPhysical_Incident.CyberPhysical_IncidentPackage;
 import cyberPhysical_Incident.CrimeScript;
+import cyberPhysical_Incident.CyberPhysicalIncidentPackage;
 import cyberPhysical_Incident.Goal;
 import cyberPhysical_Incident.Intent;
 import cyberPhysical_Incident.Location;
@@ -264,7 +264,7 @@ public class CrimeScriptImpl extends MinimalEObjectImpl.Container implements Cri
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CyberPhysical_IncidentPackage.Literals.CRIME_SCRIPT;
+		return CyberPhysicalIncidentPackage.Literals.CRIME_SCRIPT;
 	}
 
 	/**
@@ -285,7 +285,7 @@ public class CrimeScriptImpl extends MinimalEObjectImpl.Container implements Cri
 		int oldId = id;
 		id = newId;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysical_IncidentPackage.CRIME_SCRIPT__ID, oldId, id));
+			eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysicalIncidentPackage.CRIME_SCRIPT__ID, oldId, id));
 	}
 
 	/**
@@ -306,7 +306,7 @@ public class CrimeScriptImpl extends MinimalEObjectImpl.Container implements Cri
 		String oldName = name;
 		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysical_IncidentPackage.CRIME_SCRIPT__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysicalIncidentPackage.CRIME_SCRIPT__NAME, oldName, name));
 	}
 
 	/**
@@ -327,7 +327,7 @@ public class CrimeScriptImpl extends MinimalEObjectImpl.Container implements Cri
 		String oldDescription = description;
 		description = newDescription;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysical_IncidentPackage.CRIME_SCRIPT__DESCRIPTION, oldDescription, description));
+			eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysicalIncidentPackage.CRIME_SCRIPT__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -348,7 +348,7 @@ public class CrimeScriptImpl extends MinimalEObjectImpl.Container implements Cri
 		ScriptCategory oldCategory = category;
 		category = newCategory == null ? CATEGORY_EDEFAULT : newCategory;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysical_IncidentPackage.CRIME_SCRIPT__CATEGORY, oldCategory, category));
+			eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysicalIncidentPackage.CRIME_SCRIPT__CATEGORY, oldCategory, category));
 	}
 
 	/**
@@ -358,7 +358,7 @@ public class CrimeScriptImpl extends MinimalEObjectImpl.Container implements Cri
 	 */
 	public EList<Scene> getScenes() {
 		if (scenes == null) {
-			scenes = new EObjectResolvingEList<Scene>(Scene.class, this, CyberPhysical_IncidentPackage.CRIME_SCRIPT__SCENES);
+			scenes = new EObjectResolvingEList<Scene>(Scene.class, this, CyberPhysicalIncidentPackage.CRIME_SCRIPT__SCENES);
 		}
 		return scenes;
 	}
@@ -381,7 +381,7 @@ public class CrimeScriptImpl extends MinimalEObjectImpl.Container implements Cri
 		Intent oldIntent = intent;
 		intent = newIntent;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CyberPhysical_IncidentPackage.CRIME_SCRIPT__INTENT, oldIntent, newIntent);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CyberPhysicalIncidentPackage.CRIME_SCRIPT__INTENT, oldIntent, newIntent);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -396,14 +396,14 @@ public class CrimeScriptImpl extends MinimalEObjectImpl.Container implements Cri
 		if (newIntent != intent) {
 			NotificationChain msgs = null;
 			if (intent != null)
-				msgs = ((InternalEObject)intent).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CyberPhysical_IncidentPackage.CRIME_SCRIPT__INTENT, null, msgs);
+				msgs = ((InternalEObject)intent).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CyberPhysicalIncidentPackage.CRIME_SCRIPT__INTENT, null, msgs);
 			if (newIntent != null)
-				msgs = ((InternalEObject)newIntent).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CyberPhysical_IncidentPackage.CRIME_SCRIPT__INTENT, null, msgs);
+				msgs = ((InternalEObject)newIntent).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CyberPhysicalIncidentPackage.CRIME_SCRIPT__INTENT, null, msgs);
 			msgs = basicSetIntent(newIntent, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysical_IncidentPackage.CRIME_SCRIPT__INTENT, newIntent, newIntent));
+			eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysicalIncidentPackage.CRIME_SCRIPT__INTENT, newIntent, newIntent));
 	}
 
 	/**
@@ -413,7 +413,7 @@ public class CrimeScriptImpl extends MinimalEObjectImpl.Container implements Cri
 	 */
 	public EList<Motive> getMotive() {
 		if (motive == null) {
-			motive = new EObjectContainmentEList<Motive>(Motive.class, this, CyberPhysical_IncidentPackage.CRIME_SCRIPT__MOTIVE);
+			motive = new EObjectContainmentEList<Motive>(Motive.class, this, CyberPhysicalIncidentPackage.CRIME_SCRIPT__MOTIVE);
 		}
 		return motive;
 	}
@@ -426,9 +426,9 @@ public class CrimeScriptImpl extends MinimalEObjectImpl.Container implements Cri
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case CyberPhysical_IncidentPackage.CRIME_SCRIPT__INTENT:
+			case CyberPhysicalIncidentPackage.CRIME_SCRIPT__INTENT:
 				return basicSetIntent(null, msgs);
-			case CyberPhysical_IncidentPackage.CRIME_SCRIPT__MOTIVE:
+			case CyberPhysicalIncidentPackage.CRIME_SCRIPT__MOTIVE:
 				return ((InternalEList<?>)getMotive()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -441,7 +441,7 @@ public class CrimeScriptImpl extends MinimalEObjectImpl.Container implements Cri
 	 */
 	public EList<Goal> getGoals() {
 		if (goals == null) {
-			goals = new EObjectResolvingEList<Goal>(Goal.class, this, CyberPhysical_IncidentPackage.CRIME_SCRIPT__GOALS);
+			goals = new EObjectResolvingEList<Goal>(Goal.class, this, CyberPhysicalIncidentPackage.CRIME_SCRIPT__GOALS);
 		}
 		return goals;
 	}
@@ -453,7 +453,7 @@ public class CrimeScriptImpl extends MinimalEObjectImpl.Container implements Cri
 	 */
 	public EList<Asset> getTargetedAssets() {
 		if (targetedAssets == null) {
-			targetedAssets = new EObjectResolvingEList<Asset>(Asset.class, this, CyberPhysical_IncidentPackage.CRIME_SCRIPT__TARGETED_ASSETS);
+			targetedAssets = new EObjectResolvingEList<Asset>(Asset.class, this, CyberPhysicalIncidentPackage.CRIME_SCRIPT__TARGETED_ASSETS);
 		}
 		return targetedAssets;
 	}
@@ -465,7 +465,7 @@ public class CrimeScriptImpl extends MinimalEObjectImpl.Container implements Cri
 	 */
 	public EList<Resource> getResources() {
 		if (resources == null) {
-			resources = new EObjectResolvingEList<Resource>(Resource.class, this, CyberPhysical_IncidentPackage.CRIME_SCRIPT__RESOURCES);
+			resources = new EObjectResolvingEList<Resource>(Resource.class, this, CyberPhysicalIncidentPackage.CRIME_SCRIPT__RESOURCES);
 		}
 		return resources;
 	}
@@ -481,7 +481,7 @@ public class CrimeScriptImpl extends MinimalEObjectImpl.Container implements Cri
 			mainLocation = (Location)eResolveProxy(oldMainLocation);
 			if (mainLocation != oldMainLocation) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CyberPhysical_IncidentPackage.CRIME_SCRIPT__MAIN_LOCATION, oldMainLocation, mainLocation));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CyberPhysicalIncidentPackage.CRIME_SCRIPT__MAIN_LOCATION, oldMainLocation, mainLocation));
 			}
 		}
 		return mainLocation;
@@ -505,7 +505,7 @@ public class CrimeScriptImpl extends MinimalEObjectImpl.Container implements Cri
 		Location oldMainLocation = mainLocation;
 		mainLocation = newMainLocation;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysical_IncidentPackage.CRIME_SCRIPT__MAIN_LOCATION, oldMainLocation, mainLocation));
+			eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysicalIncidentPackage.CRIME_SCRIPT__MAIN_LOCATION, oldMainLocation, mainLocation));
 	}
 
 	/**
@@ -515,7 +515,7 @@ public class CrimeScriptImpl extends MinimalEObjectImpl.Container implements Cri
 	 */
 	public EList<Actor> getVictims() {
 		if (victims == null) {
-			victims = new EObjectResolvingEList<Actor>(Actor.class, this, CyberPhysical_IncidentPackage.CRIME_SCRIPT__VICTIMS);
+			victims = new EObjectResolvingEList<Actor>(Actor.class, this, CyberPhysicalIncidentPackage.CRIME_SCRIPT__VICTIMS);
 		}
 		return victims;
 	}
@@ -527,7 +527,7 @@ public class CrimeScriptImpl extends MinimalEObjectImpl.Container implements Cri
 	 */
 	public EList<Actor> getOffenders() {
 		if (offenders == null) {
-			offenders = new EObjectResolvingEList<Actor>(Actor.class, this, CyberPhysical_IncidentPackage.CRIME_SCRIPT__OFFENDERS);
+			offenders = new EObjectResolvingEList<Actor>(Actor.class, this, CyberPhysicalIncidentPackage.CRIME_SCRIPT__OFFENDERS);
 		}
 		return offenders;
 	}
@@ -550,7 +550,7 @@ public class CrimeScriptImpl extends MinimalEObjectImpl.Container implements Cri
 		String oldHigherLevelScriptName = higherLevelScriptName;
 		higherLevelScriptName = newHigherLevelScriptName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysical_IncidentPackage.CRIME_SCRIPT__HIGHER_LEVEL_SCRIPT_NAME, oldHigherLevelScriptName, higherLevelScriptName));
+			eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysicalIncidentPackage.CRIME_SCRIPT__HIGHER_LEVEL_SCRIPT_NAME, oldHigherLevelScriptName, higherLevelScriptName));
 	}
 
 	/**
@@ -561,34 +561,34 @@ public class CrimeScriptImpl extends MinimalEObjectImpl.Container implements Cri
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case CyberPhysical_IncidentPackage.CRIME_SCRIPT__ID:
+			case CyberPhysicalIncidentPackage.CRIME_SCRIPT__ID:
 				return getId();
-			case CyberPhysical_IncidentPackage.CRIME_SCRIPT__NAME:
+			case CyberPhysicalIncidentPackage.CRIME_SCRIPT__NAME:
 				return getName();
-			case CyberPhysical_IncidentPackage.CRIME_SCRIPT__DESCRIPTION:
+			case CyberPhysicalIncidentPackage.CRIME_SCRIPT__DESCRIPTION:
 				return getDescription();
-			case CyberPhysical_IncidentPackage.CRIME_SCRIPT__CATEGORY:
+			case CyberPhysicalIncidentPackage.CRIME_SCRIPT__CATEGORY:
 				return getCategory();
-			case CyberPhysical_IncidentPackage.CRIME_SCRIPT__SCENES:
+			case CyberPhysicalIncidentPackage.CRIME_SCRIPT__SCENES:
 				return getScenes();
-			case CyberPhysical_IncidentPackage.CRIME_SCRIPT__GOALS:
+			case CyberPhysicalIncidentPackage.CRIME_SCRIPT__GOALS:
 				return getGoals();
-			case CyberPhysical_IncidentPackage.CRIME_SCRIPT__TARGETED_ASSETS:
+			case CyberPhysicalIncidentPackage.CRIME_SCRIPT__TARGETED_ASSETS:
 				return getTargetedAssets();
-			case CyberPhysical_IncidentPackage.CRIME_SCRIPT__RESOURCES:
+			case CyberPhysicalIncidentPackage.CRIME_SCRIPT__RESOURCES:
 				return getResources();
-			case CyberPhysical_IncidentPackage.CRIME_SCRIPT__MAIN_LOCATION:
+			case CyberPhysicalIncidentPackage.CRIME_SCRIPT__MAIN_LOCATION:
 				if (resolve) return getMainLocation();
 				return basicGetMainLocation();
-			case CyberPhysical_IncidentPackage.CRIME_SCRIPT__VICTIMS:
+			case CyberPhysicalIncidentPackage.CRIME_SCRIPT__VICTIMS:
 				return getVictims();
-			case CyberPhysical_IncidentPackage.CRIME_SCRIPT__OFFENDERS:
+			case CyberPhysicalIncidentPackage.CRIME_SCRIPT__OFFENDERS:
 				return getOffenders();
-			case CyberPhysical_IncidentPackage.CRIME_SCRIPT__HIGHER_LEVEL_SCRIPT_NAME:
+			case CyberPhysicalIncidentPackage.CRIME_SCRIPT__HIGHER_LEVEL_SCRIPT_NAME:
 				return getHigherLevelScriptName();
-			case CyberPhysical_IncidentPackage.CRIME_SCRIPT__INTENT:
+			case CyberPhysicalIncidentPackage.CRIME_SCRIPT__INTENT:
 				return getIntent();
-			case CyberPhysical_IncidentPackage.CRIME_SCRIPT__MOTIVE:
+			case CyberPhysicalIncidentPackage.CRIME_SCRIPT__MOTIVE:
 				return getMotive();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -603,52 +603,52 @@ public class CrimeScriptImpl extends MinimalEObjectImpl.Container implements Cri
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case CyberPhysical_IncidentPackage.CRIME_SCRIPT__ID:
+			case CyberPhysicalIncidentPackage.CRIME_SCRIPT__ID:
 				setId((Integer)newValue);
 				return;
-			case CyberPhysical_IncidentPackage.CRIME_SCRIPT__NAME:
+			case CyberPhysicalIncidentPackage.CRIME_SCRIPT__NAME:
 				setName((String)newValue);
 				return;
-			case CyberPhysical_IncidentPackage.CRIME_SCRIPT__DESCRIPTION:
+			case CyberPhysicalIncidentPackage.CRIME_SCRIPT__DESCRIPTION:
 				setDescription((String)newValue);
 				return;
-			case CyberPhysical_IncidentPackage.CRIME_SCRIPT__CATEGORY:
+			case CyberPhysicalIncidentPackage.CRIME_SCRIPT__CATEGORY:
 				setCategory((ScriptCategory)newValue);
 				return;
-			case CyberPhysical_IncidentPackage.CRIME_SCRIPT__SCENES:
+			case CyberPhysicalIncidentPackage.CRIME_SCRIPT__SCENES:
 				getScenes().clear();
 				getScenes().addAll((Collection<? extends Scene>)newValue);
 				return;
-			case CyberPhysical_IncidentPackage.CRIME_SCRIPT__GOALS:
+			case CyberPhysicalIncidentPackage.CRIME_SCRIPT__GOALS:
 				getGoals().clear();
 				getGoals().addAll((Collection<? extends Goal>)newValue);
 				return;
-			case CyberPhysical_IncidentPackage.CRIME_SCRIPT__TARGETED_ASSETS:
+			case CyberPhysicalIncidentPackage.CRIME_SCRIPT__TARGETED_ASSETS:
 				getTargetedAssets().clear();
 				getTargetedAssets().addAll((Collection<? extends Asset>)newValue);
 				return;
-			case CyberPhysical_IncidentPackage.CRIME_SCRIPT__RESOURCES:
+			case CyberPhysicalIncidentPackage.CRIME_SCRIPT__RESOURCES:
 				getResources().clear();
 				getResources().addAll((Collection<? extends Resource>)newValue);
 				return;
-			case CyberPhysical_IncidentPackage.CRIME_SCRIPT__MAIN_LOCATION:
+			case CyberPhysicalIncidentPackage.CRIME_SCRIPT__MAIN_LOCATION:
 				setMainLocation((Location)newValue);
 				return;
-			case CyberPhysical_IncidentPackage.CRIME_SCRIPT__VICTIMS:
+			case CyberPhysicalIncidentPackage.CRIME_SCRIPT__VICTIMS:
 				getVictims().clear();
 				getVictims().addAll((Collection<? extends Actor>)newValue);
 				return;
-			case CyberPhysical_IncidentPackage.CRIME_SCRIPT__OFFENDERS:
+			case CyberPhysicalIncidentPackage.CRIME_SCRIPT__OFFENDERS:
 				getOffenders().clear();
 				getOffenders().addAll((Collection<? extends Actor>)newValue);
 				return;
-			case CyberPhysical_IncidentPackage.CRIME_SCRIPT__HIGHER_LEVEL_SCRIPT_NAME:
+			case CyberPhysicalIncidentPackage.CRIME_SCRIPT__HIGHER_LEVEL_SCRIPT_NAME:
 				setHigherLevelScriptName((String)newValue);
 				return;
-			case CyberPhysical_IncidentPackage.CRIME_SCRIPT__INTENT:
+			case CyberPhysicalIncidentPackage.CRIME_SCRIPT__INTENT:
 				setIntent((Intent)newValue);
 				return;
-			case CyberPhysical_IncidentPackage.CRIME_SCRIPT__MOTIVE:
+			case CyberPhysicalIncidentPackage.CRIME_SCRIPT__MOTIVE:
 				getMotive().clear();
 				getMotive().addAll((Collection<? extends Motive>)newValue);
 				return;
@@ -664,46 +664,46 @@ public class CrimeScriptImpl extends MinimalEObjectImpl.Container implements Cri
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case CyberPhysical_IncidentPackage.CRIME_SCRIPT__ID:
+			case CyberPhysicalIncidentPackage.CRIME_SCRIPT__ID:
 				setId(ID_EDEFAULT);
 				return;
-			case CyberPhysical_IncidentPackage.CRIME_SCRIPT__NAME:
+			case CyberPhysicalIncidentPackage.CRIME_SCRIPT__NAME:
 				setName(NAME_EDEFAULT);
 				return;
-			case CyberPhysical_IncidentPackage.CRIME_SCRIPT__DESCRIPTION:
+			case CyberPhysicalIncidentPackage.CRIME_SCRIPT__DESCRIPTION:
 				setDescription(DESCRIPTION_EDEFAULT);
 				return;
-			case CyberPhysical_IncidentPackage.CRIME_SCRIPT__CATEGORY:
+			case CyberPhysicalIncidentPackage.CRIME_SCRIPT__CATEGORY:
 				setCategory(CATEGORY_EDEFAULT);
 				return;
-			case CyberPhysical_IncidentPackage.CRIME_SCRIPT__SCENES:
+			case CyberPhysicalIncidentPackage.CRIME_SCRIPT__SCENES:
 				getScenes().clear();
 				return;
-			case CyberPhysical_IncidentPackage.CRIME_SCRIPT__GOALS:
+			case CyberPhysicalIncidentPackage.CRIME_SCRIPT__GOALS:
 				getGoals().clear();
 				return;
-			case CyberPhysical_IncidentPackage.CRIME_SCRIPT__TARGETED_ASSETS:
+			case CyberPhysicalIncidentPackage.CRIME_SCRIPT__TARGETED_ASSETS:
 				getTargetedAssets().clear();
 				return;
-			case CyberPhysical_IncidentPackage.CRIME_SCRIPT__RESOURCES:
+			case CyberPhysicalIncidentPackage.CRIME_SCRIPT__RESOURCES:
 				getResources().clear();
 				return;
-			case CyberPhysical_IncidentPackage.CRIME_SCRIPT__MAIN_LOCATION:
+			case CyberPhysicalIncidentPackage.CRIME_SCRIPT__MAIN_LOCATION:
 				setMainLocation((Location)null);
 				return;
-			case CyberPhysical_IncidentPackage.CRIME_SCRIPT__VICTIMS:
+			case CyberPhysicalIncidentPackage.CRIME_SCRIPT__VICTIMS:
 				getVictims().clear();
 				return;
-			case CyberPhysical_IncidentPackage.CRIME_SCRIPT__OFFENDERS:
+			case CyberPhysicalIncidentPackage.CRIME_SCRIPT__OFFENDERS:
 				getOffenders().clear();
 				return;
-			case CyberPhysical_IncidentPackage.CRIME_SCRIPT__HIGHER_LEVEL_SCRIPT_NAME:
+			case CyberPhysicalIncidentPackage.CRIME_SCRIPT__HIGHER_LEVEL_SCRIPT_NAME:
 				setHigherLevelScriptName(HIGHER_LEVEL_SCRIPT_NAME_EDEFAULT);
 				return;
-			case CyberPhysical_IncidentPackage.CRIME_SCRIPT__INTENT:
+			case CyberPhysicalIncidentPackage.CRIME_SCRIPT__INTENT:
 				setIntent((Intent)null);
 				return;
-			case CyberPhysical_IncidentPackage.CRIME_SCRIPT__MOTIVE:
+			case CyberPhysicalIncidentPackage.CRIME_SCRIPT__MOTIVE:
 				getMotive().clear();
 				return;
 		}
@@ -718,33 +718,33 @@ public class CrimeScriptImpl extends MinimalEObjectImpl.Container implements Cri
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case CyberPhysical_IncidentPackage.CRIME_SCRIPT__ID:
+			case CyberPhysicalIncidentPackage.CRIME_SCRIPT__ID:
 				return id != ID_EDEFAULT;
-			case CyberPhysical_IncidentPackage.CRIME_SCRIPT__NAME:
+			case CyberPhysicalIncidentPackage.CRIME_SCRIPT__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case CyberPhysical_IncidentPackage.CRIME_SCRIPT__DESCRIPTION:
+			case CyberPhysicalIncidentPackage.CRIME_SCRIPT__DESCRIPTION:
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
-			case CyberPhysical_IncidentPackage.CRIME_SCRIPT__CATEGORY:
+			case CyberPhysicalIncidentPackage.CRIME_SCRIPT__CATEGORY:
 				return category != CATEGORY_EDEFAULT;
-			case CyberPhysical_IncidentPackage.CRIME_SCRIPT__SCENES:
+			case CyberPhysicalIncidentPackage.CRIME_SCRIPT__SCENES:
 				return scenes != null && !scenes.isEmpty();
-			case CyberPhysical_IncidentPackage.CRIME_SCRIPT__GOALS:
+			case CyberPhysicalIncidentPackage.CRIME_SCRIPT__GOALS:
 				return goals != null && !goals.isEmpty();
-			case CyberPhysical_IncidentPackage.CRIME_SCRIPT__TARGETED_ASSETS:
+			case CyberPhysicalIncidentPackage.CRIME_SCRIPT__TARGETED_ASSETS:
 				return targetedAssets != null && !targetedAssets.isEmpty();
-			case CyberPhysical_IncidentPackage.CRIME_SCRIPT__RESOURCES:
+			case CyberPhysicalIncidentPackage.CRIME_SCRIPT__RESOURCES:
 				return resources != null && !resources.isEmpty();
-			case CyberPhysical_IncidentPackage.CRIME_SCRIPT__MAIN_LOCATION:
+			case CyberPhysicalIncidentPackage.CRIME_SCRIPT__MAIN_LOCATION:
 				return mainLocation != null;
-			case CyberPhysical_IncidentPackage.CRIME_SCRIPT__VICTIMS:
+			case CyberPhysicalIncidentPackage.CRIME_SCRIPT__VICTIMS:
 				return victims != null && !victims.isEmpty();
-			case CyberPhysical_IncidentPackage.CRIME_SCRIPT__OFFENDERS:
+			case CyberPhysicalIncidentPackage.CRIME_SCRIPT__OFFENDERS:
 				return offenders != null && !offenders.isEmpty();
-			case CyberPhysical_IncidentPackage.CRIME_SCRIPT__HIGHER_LEVEL_SCRIPT_NAME:
+			case CyberPhysicalIncidentPackage.CRIME_SCRIPT__HIGHER_LEVEL_SCRIPT_NAME:
 				return HIGHER_LEVEL_SCRIPT_NAME_EDEFAULT == null ? higherLevelScriptName != null : !HIGHER_LEVEL_SCRIPT_NAME_EDEFAULT.equals(higherLevelScriptName);
-			case CyberPhysical_IncidentPackage.CRIME_SCRIPT__INTENT:
+			case CyberPhysicalIncidentPackage.CRIME_SCRIPT__INTENT:
 				return intent != null;
-			case CyberPhysical_IncidentPackage.CRIME_SCRIPT__MOTIVE:
+			case CyberPhysicalIncidentPackage.CRIME_SCRIPT__MOTIVE:
 				return motive != null && !motive.isEmpty();
 		}
 		return super.eIsSet(featureID);

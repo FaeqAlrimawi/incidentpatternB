@@ -21,7 +21,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link cyberPhysical_Incident.Intent#getName <em>Name</em>}</li>
  * </ul>
  *
- * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getIntent()
+ * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getIntent()
  * @model
  * @generated
  */
@@ -36,7 +36,7 @@ public interface Intent extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
-	 * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getIntent_Description()
+	 * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getIntent_Description()
 	 * @model
 	 * @generated
 	 */
@@ -62,7 +62,7 @@ public interface Intent extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
-	 * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getIntent_Name()
+	 * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getIntent_Name()
 	 * @model id="true"
 	 * @generated
 	 */

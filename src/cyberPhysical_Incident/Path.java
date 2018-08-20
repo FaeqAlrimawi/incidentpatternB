@@ -19,7 +19,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link cyberPhysical_Incident.Path#getActivities <em>Activities</em>}</li>
  * </ul>
  *
- * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getPath()
+ * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getPath()
  * @model
  * @generated
  */
@@ -34,7 +34,7 @@ public interface Path extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
-	 * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getPath_Name()
+	 * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getPath_Name()
 	 * @model id="true"
 	 * @generated
 	 */
@@ -60,7 +60,7 @@ public interface Path extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Activities</em>' reference list.
-	 * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getPath_Activities()
+	 * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getPath_Activities()
 	 * @model
 	 * @generated
 	 */

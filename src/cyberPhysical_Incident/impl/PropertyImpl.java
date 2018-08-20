@@ -2,7 +2,7 @@
  */
 package cyberPhysical_Incident.impl;
 
-import cyberPhysical_Incident.CyberPhysical_IncidentPackage;
+import cyberPhysical_Incident.CyberPhysicalIncidentPackage;
 import cyberPhysical_Incident.Property;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -83,7 +83,7 @@ public class PropertyImpl extends MinimalEObjectImpl.Container implements Proper
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CyberPhysical_IncidentPackage.Literals.PROPERTY;
+		return CyberPhysicalIncidentPackage.Literals.PROPERTY;
 	}
 
 	/**
@@ -104,7 +104,7 @@ public class PropertyImpl extends MinimalEObjectImpl.Container implements Proper
 		String oldName = name;
 		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysical_IncidentPackage.PROPERTY__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysicalIncidentPackage.PROPERTY__NAME, oldName, name));
 	}
 
 	/**
@@ -125,7 +125,7 @@ public class PropertyImpl extends MinimalEObjectImpl.Container implements Proper
 		String oldValue = value;
 		value = newValue;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysical_IncidentPackage.PROPERTY__VALUE, oldValue, value));
+			eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysicalIncidentPackage.PROPERTY__VALUE, oldValue, value));
 	}
 
 	/**
@@ -136,9 +136,9 @@ public class PropertyImpl extends MinimalEObjectImpl.Container implements Proper
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case CyberPhysical_IncidentPackage.PROPERTY__NAME:
+			case CyberPhysicalIncidentPackage.PROPERTY__NAME:
 				return getName();
-			case CyberPhysical_IncidentPackage.PROPERTY__VALUE:
+			case CyberPhysicalIncidentPackage.PROPERTY__VALUE:
 				return getValue();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -152,10 +152,10 @@ public class PropertyImpl extends MinimalEObjectImpl.Container implements Proper
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case CyberPhysical_IncidentPackage.PROPERTY__NAME:
+			case CyberPhysicalIncidentPackage.PROPERTY__NAME:
 				setName((String)newValue);
 				return;
-			case CyberPhysical_IncidentPackage.PROPERTY__VALUE:
+			case CyberPhysicalIncidentPackage.PROPERTY__VALUE:
 				setValue((String)newValue);
 				return;
 		}
@@ -170,10 +170,10 @@ public class PropertyImpl extends MinimalEObjectImpl.Container implements Proper
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case CyberPhysical_IncidentPackage.PROPERTY__NAME:
+			case CyberPhysicalIncidentPackage.PROPERTY__NAME:
 				setName(NAME_EDEFAULT);
 				return;
-			case CyberPhysical_IncidentPackage.PROPERTY__VALUE:
+			case CyberPhysicalIncidentPackage.PROPERTY__VALUE:
 				setValue(VALUE_EDEFAULT);
 				return;
 		}
@@ -188,9 +188,9 @@ public class PropertyImpl extends MinimalEObjectImpl.Container implements Proper
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case CyberPhysical_IncidentPackage.PROPERTY__NAME:
+			case CyberPhysicalIncidentPackage.PROPERTY__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case CyberPhysical_IncidentPackage.PROPERTY__VALUE:
+			case CyberPhysicalIncidentPackage.PROPERTY__VALUE:
 				return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
 		}
 		return super.eIsSet(featureID);

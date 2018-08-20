@@ -3,7 +3,7 @@
 package cyberPhysical_Incident.impl;
 
 import cyberPhysical_Incident.Activity;
-import cyberPhysical_Incident.CyberPhysical_IncidentPackage;
+import cyberPhysical_Incident.CyberPhysicalIncidentPackage;
 import cyberPhysical_Incident.Scene;
 
 import java.util.Collection;
@@ -124,7 +124,7 @@ public class SceneImpl extends MinimalEObjectImpl.Container implements Scene {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CyberPhysical_IncidentPackage.Literals.SCENE;
+		return CyberPhysicalIncidentPackage.Literals.SCENE;
 	}
 
 	/**
@@ -145,7 +145,7 @@ public class SceneImpl extends MinimalEObjectImpl.Container implements Scene {
 		String oldName = name;
 		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysical_IncidentPackage.SCENE__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysicalIncidentPackage.SCENE__NAME, oldName, name));
 	}
 
 	/**
@@ -155,7 +155,7 @@ public class SceneImpl extends MinimalEObjectImpl.Container implements Scene {
 	 */
 	public EList<Scene> getNextScenes() {
 		if (nextScenes == null) {
-			nextScenes = new EObjectResolvingEList<Scene>(Scene.class, this, CyberPhysical_IncidentPackage.SCENE__NEXT_SCENES);
+			nextScenes = new EObjectResolvingEList<Scene>(Scene.class, this, CyberPhysicalIncidentPackage.SCENE__NEXT_SCENES);
 		}
 		return nextScenes;
 	}
@@ -167,7 +167,7 @@ public class SceneImpl extends MinimalEObjectImpl.Container implements Scene {
 	 */
 	public EList<Scene> getPreviousScenes() {
 		if (previousScenes == null) {
-			previousScenes = new EObjectResolvingEList<Scene>(Scene.class, this, CyberPhysical_IncidentPackage.SCENE__PREVIOUS_SCENES);
+			previousScenes = new EObjectResolvingEList<Scene>(Scene.class, this, CyberPhysicalIncidentPackage.SCENE__PREVIOUS_SCENES);
 		}
 		return previousScenes;
 	}
@@ -190,7 +190,7 @@ public class SceneImpl extends MinimalEObjectImpl.Container implements Scene {
 		String oldDescription = description;
 		description = newDescription;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysical_IncidentPackage.SCENE__DESCRIPTION, oldDescription, description));
+			eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysicalIncidentPackage.SCENE__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -200,7 +200,7 @@ public class SceneImpl extends MinimalEObjectImpl.Container implements Scene {
 	 */
 	public EList<Activity> getActivity() {
 		if (activity == null) {
-			activity = new EObjectContainmentEList<Activity>(Activity.class, this, CyberPhysical_IncidentPackage.SCENE__ACTIVITY);
+			activity = new EObjectContainmentEList<Activity>(Activity.class, this, CyberPhysicalIncidentPackage.SCENE__ACTIVITY);
 		}
 		return activity;
 	}
@@ -213,7 +213,7 @@ public class SceneImpl extends MinimalEObjectImpl.Container implements Scene {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case CyberPhysical_IncidentPackage.SCENE__ACTIVITY:
+			case CyberPhysicalIncidentPackage.SCENE__ACTIVITY:
 				return ((InternalEList<?>)getActivity()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -227,15 +227,15 @@ public class SceneImpl extends MinimalEObjectImpl.Container implements Scene {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case CyberPhysical_IncidentPackage.SCENE__NAME:
+			case CyberPhysicalIncidentPackage.SCENE__NAME:
 				return getName();
-			case CyberPhysical_IncidentPackage.SCENE__NEXT_SCENES:
+			case CyberPhysicalIncidentPackage.SCENE__NEXT_SCENES:
 				return getNextScenes();
-			case CyberPhysical_IncidentPackage.SCENE__PREVIOUS_SCENES:
+			case CyberPhysicalIncidentPackage.SCENE__PREVIOUS_SCENES:
 				return getPreviousScenes();
-			case CyberPhysical_IncidentPackage.SCENE__DESCRIPTION:
+			case CyberPhysicalIncidentPackage.SCENE__DESCRIPTION:
 				return getDescription();
-			case CyberPhysical_IncidentPackage.SCENE__ACTIVITY:
+			case CyberPhysicalIncidentPackage.SCENE__ACTIVITY:
 				return getActivity();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -250,21 +250,21 @@ public class SceneImpl extends MinimalEObjectImpl.Container implements Scene {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case CyberPhysical_IncidentPackage.SCENE__NAME:
+			case CyberPhysicalIncidentPackage.SCENE__NAME:
 				setName((String)newValue);
 				return;
-			case CyberPhysical_IncidentPackage.SCENE__NEXT_SCENES:
+			case CyberPhysicalIncidentPackage.SCENE__NEXT_SCENES:
 				getNextScenes().clear();
 				getNextScenes().addAll((Collection<? extends Scene>)newValue);
 				return;
-			case CyberPhysical_IncidentPackage.SCENE__PREVIOUS_SCENES:
+			case CyberPhysicalIncidentPackage.SCENE__PREVIOUS_SCENES:
 				getPreviousScenes().clear();
 				getPreviousScenes().addAll((Collection<? extends Scene>)newValue);
 				return;
-			case CyberPhysical_IncidentPackage.SCENE__DESCRIPTION:
+			case CyberPhysicalIncidentPackage.SCENE__DESCRIPTION:
 				setDescription((String)newValue);
 				return;
-			case CyberPhysical_IncidentPackage.SCENE__ACTIVITY:
+			case CyberPhysicalIncidentPackage.SCENE__ACTIVITY:
 				getActivity().clear();
 				getActivity().addAll((Collection<? extends Activity>)newValue);
 				return;
@@ -280,19 +280,19 @@ public class SceneImpl extends MinimalEObjectImpl.Container implements Scene {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case CyberPhysical_IncidentPackage.SCENE__NAME:
+			case CyberPhysicalIncidentPackage.SCENE__NAME:
 				setName(NAME_EDEFAULT);
 				return;
-			case CyberPhysical_IncidentPackage.SCENE__NEXT_SCENES:
+			case CyberPhysicalIncidentPackage.SCENE__NEXT_SCENES:
 				getNextScenes().clear();
 				return;
-			case CyberPhysical_IncidentPackage.SCENE__PREVIOUS_SCENES:
+			case CyberPhysicalIncidentPackage.SCENE__PREVIOUS_SCENES:
 				getPreviousScenes().clear();
 				return;
-			case CyberPhysical_IncidentPackage.SCENE__DESCRIPTION:
+			case CyberPhysicalIncidentPackage.SCENE__DESCRIPTION:
 				setDescription(DESCRIPTION_EDEFAULT);
 				return;
-			case CyberPhysical_IncidentPackage.SCENE__ACTIVITY:
+			case CyberPhysicalIncidentPackage.SCENE__ACTIVITY:
 				getActivity().clear();
 				return;
 		}
@@ -307,15 +307,15 @@ public class SceneImpl extends MinimalEObjectImpl.Container implements Scene {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case CyberPhysical_IncidentPackage.SCENE__NAME:
+			case CyberPhysicalIncidentPackage.SCENE__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case CyberPhysical_IncidentPackage.SCENE__NEXT_SCENES:
+			case CyberPhysicalIncidentPackage.SCENE__NEXT_SCENES:
 				return nextScenes != null && !nextScenes.isEmpty();
-			case CyberPhysical_IncidentPackage.SCENE__PREVIOUS_SCENES:
+			case CyberPhysicalIncidentPackage.SCENE__PREVIOUS_SCENES:
 				return previousScenes != null && !previousScenes.isEmpty();
-			case CyberPhysical_IncidentPackage.SCENE__DESCRIPTION:
+			case CyberPhysicalIncidentPackage.SCENE__DESCRIPTION:
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
-			case CyberPhysical_IncidentPackage.SCENE__ACTIVITY:
+			case CyberPhysicalIncidentPackage.SCENE__ACTIVITY:
 				return activity != null && !activity.isEmpty();
 		}
 		return super.eIsSet(featureID);

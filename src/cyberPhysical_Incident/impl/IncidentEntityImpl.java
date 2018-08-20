@@ -13,7 +13,6 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import cyberPhysical_Incident.Connection;
 import cyberPhysical_Incident.CyberPhysicalIncidentPackage;
-import cyberPhysical_Incident.CyberPhysical_IncidentPackage;
 import cyberPhysical_Incident.IncidentEntity;
 import cyberPhysical_Incident.Knowledge;
 import cyberPhysical_Incident.Location;
@@ -227,7 +226,7 @@ public class IncidentEntityImpl extends MinimalEObjectImpl.Container implements 
 	 */
 	public EList<Connection> getConnections() {
 		if (connections == null) {
-			connections = new EObjectResolvingEList<Connection>(Connection.class, this, CyberPhysical_IncidentPackage.INCIDENT_ENTITY__CONNECTIONS);
+			connections = new EObjectResolvingEList<Connection>(Connection.class, this, CyberPhysicalIncidentPackage.INCIDENT_ENTITY__CONNECTIONS);
 		}
 		return connections;
 	}
@@ -243,7 +242,7 @@ public class IncidentEntityImpl extends MinimalEObjectImpl.Container implements 
 			parentEntity = (Location)eResolveProxy(oldParentEntity);
 			if (parentEntity != oldParentEntity) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CyberPhysical_IncidentPackage.INCIDENT_ENTITY__PARENT_ENTITY, oldParentEntity, parentEntity));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CyberPhysicalIncidentPackage.INCIDENT_ENTITY__PARENT_ENTITY, oldParentEntity, parentEntity));
 			}
 		}
 		return parentEntity;
@@ -322,7 +321,7 @@ public class IncidentEntityImpl extends MinimalEObjectImpl.Container implements 
 		Knowledge oldConnectionsKnowledge = connectionsKnowledge;
 		connectionsKnowledge = newConnectionsKnowledge == null ? CONNECTIONS_KNOWLEDGE_EDEFAULT : newConnectionsKnowledge;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysical_IncidentPackage.INCIDENT_ENTITY__CONNECTIONS_KNOWLEDGE, oldConnectionsKnowledge, connectionsKnowledge));
+			eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysicalIncidentPackage.INCIDENT_ENTITY__CONNECTIONS_KNOWLEDGE, oldConnectionsKnowledge, connectionsKnowledge));
 	}
 
 	/**
@@ -343,7 +342,7 @@ public class IncidentEntityImpl extends MinimalEObjectImpl.Container implements 
 		Knowledge oldContainedAssetsKnowledge = containedAssetsKnowledge;
 		containedAssetsKnowledge = newContainedAssetsKnowledge == null ? CONTAINED_ASSETS_KNOWLEDGE_EDEFAULT : newContainedAssetsKnowledge;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysical_IncidentPackage.INCIDENT_ENTITY__CONTAINED_ASSETS_KNOWLEDGE, oldContainedAssetsKnowledge, containedAssetsKnowledge));
+			eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysicalIncidentPackage.INCIDENT_ENTITY__CONTAINED_ASSETS_KNOWLEDGE, oldContainedAssetsKnowledge, containedAssetsKnowledge));
 	}
 
 	/**
@@ -364,7 +363,7 @@ public class IncidentEntityImpl extends MinimalEObjectImpl.Container implements 
 		String oldName = name;
 		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysical_IncidentPackage.INCIDENT_ENTITY__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysicalIncidentPackage.INCIDENT_ENTITY__NAME, oldName, name));
 	}
 
 	/**
@@ -374,7 +373,7 @@ public class IncidentEntityImpl extends MinimalEObjectImpl.Container implements 
 	 */
 	public EList<Property> getProperties() {
 		if (properties == null) {
-			properties = new EObjectResolvingEList<Property>(Property.class, this, CyberPhysical_IncidentPackage.INCIDENT_ENTITY__PROPERTIES);
+			properties = new EObjectResolvingEList<Property>(Property.class, this, CyberPhysicalIncidentPackage.INCIDENT_ENTITY__PROPERTIES);
 		}
 		return properties;
 	}
@@ -397,7 +396,7 @@ public class IncidentEntityImpl extends MinimalEObjectImpl.Container implements 
 		Type oldType = type;
 		type = newType;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CyberPhysical_IncidentPackage.INCIDENT_ENTITY__TYPE, oldType, newType);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CyberPhysicalIncidentPackage.INCIDENT_ENTITY__TYPE, oldType, newType);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -412,14 +411,14 @@ public class IncidentEntityImpl extends MinimalEObjectImpl.Container implements 
 		if (newType != type) {
 			NotificationChain msgs = null;
 			if (type != null)
-				msgs = ((InternalEObject)type).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CyberPhysical_IncidentPackage.INCIDENT_ENTITY__TYPE, null, msgs);
+				msgs = ((InternalEObject)type).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CyberPhysicalIncidentPackage.INCIDENT_ENTITY__TYPE, null, msgs);
 			if (newType != null)
-				msgs = ((InternalEObject)newType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CyberPhysical_IncidentPackage.INCIDENT_ENTITY__TYPE, null, msgs);
+				msgs = ((InternalEObject)newType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CyberPhysicalIncidentPackage.INCIDENT_ENTITY__TYPE, null, msgs);
 			msgs = basicSetType(newType, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysical_IncidentPackage.INCIDENT_ENTITY__TYPE, newType, newType));
+			eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysicalIncidentPackage.INCIDENT_ENTITY__TYPE, newType, newType));
 	}
 
 	/**
@@ -430,7 +429,7 @@ public class IncidentEntityImpl extends MinimalEObjectImpl.Container implements 
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case CyberPhysical_IncidentPackage.INCIDENT_ENTITY__TYPE:
+			case CyberPhysicalIncidentPackage.INCIDENT_ENTITY__TYPE:
 				return basicSetType(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -452,22 +451,22 @@ public class IncidentEntityImpl extends MinimalEObjectImpl.Container implements 
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case CyberPhysical_IncidentPackage.INCIDENT_ENTITY__CONNECTIONS:
+			case CyberPhysicalIncidentPackage.INCIDENT_ENTITY__CONNECTIONS:
 				return getConnections();
-			case CyberPhysical_IncidentPackage.INCIDENT_ENTITY__PARENT_ENTITY:
+			case CyberPhysicalIncidentPackage.INCIDENT_ENTITY__PARENT_ENTITY:
 				if (resolve) return getParentEntity();
 				return basicGetParentEntity();
-			case CyberPhysical_IncidentPackage.INCIDENT_ENTITY__CONTAINED_ENTITIES:
+			case CyberPhysicalIncidentPackage.INCIDENT_ENTITY__CONTAINED_ENTITIES:
 				return getContainedEntities();
-			case CyberPhysical_IncidentPackage.INCIDENT_ENTITY__CONNECTIONS_KNOWLEDGE:
+			case CyberPhysicalIncidentPackage.INCIDENT_ENTITY__CONNECTIONS_KNOWLEDGE:
 				return getConnectionsKnowledge();
-			case CyberPhysical_IncidentPackage.INCIDENT_ENTITY__CONTAINED_ASSETS_KNOWLEDGE:
+			case CyberPhysicalIncidentPackage.INCIDENT_ENTITY__CONTAINED_ASSETS_KNOWLEDGE:
 				return getContainedAssetsKnowledge();
-			case CyberPhysical_IncidentPackage.INCIDENT_ENTITY__NAME:
+			case CyberPhysicalIncidentPackage.INCIDENT_ENTITY__NAME:
 				return getName();
-			case CyberPhysical_IncidentPackage.INCIDENT_ENTITY__PROPERTIES:
+			case CyberPhysicalIncidentPackage.INCIDENT_ENTITY__PROPERTIES:
 				return getProperties();
-			case CyberPhysical_IncidentPackage.INCIDENT_ENTITY__TYPE:
+			case CyberPhysicalIncidentPackage.INCIDENT_ENTITY__TYPE:
 				return getType();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -482,31 +481,31 @@ public class IncidentEntityImpl extends MinimalEObjectImpl.Container implements 
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case CyberPhysical_IncidentPackage.INCIDENT_ENTITY__CONNECTIONS:
+			case CyberPhysicalIncidentPackage.INCIDENT_ENTITY__CONNECTIONS:
 				getConnections().clear();
 				getConnections().addAll((Collection<? extends Connection>)newValue);
 				return;
-			case CyberPhysical_IncidentPackage.INCIDENT_ENTITY__PARENT_ENTITY:
+			case CyberPhysicalIncidentPackage.INCIDENT_ENTITY__PARENT_ENTITY:
 				setParentEntity((Location)newValue);
 				return;
-			case CyberPhysical_IncidentPackage.INCIDENT_ENTITY__CONTAINED_ENTITIES:
+			case CyberPhysicalIncidentPackage.INCIDENT_ENTITY__CONTAINED_ENTITIES:
 				getContainedEntities().clear();
 				getContainedEntities().addAll((Collection<? extends Location>)newValue);
 				return;
-			case CyberPhysical_IncidentPackage.INCIDENT_ENTITY__CONNECTIONS_KNOWLEDGE:
+			case CyberPhysicalIncidentPackage.INCIDENT_ENTITY__CONNECTIONS_KNOWLEDGE:
 				setConnectionsKnowledge((Knowledge)newValue);
 				return;
-			case CyberPhysical_IncidentPackage.INCIDENT_ENTITY__CONTAINED_ASSETS_KNOWLEDGE:
+			case CyberPhysicalIncidentPackage.INCIDENT_ENTITY__CONTAINED_ASSETS_KNOWLEDGE:
 				setContainedAssetsKnowledge((Knowledge)newValue);
 				return;
-			case CyberPhysical_IncidentPackage.INCIDENT_ENTITY__NAME:
+			case CyberPhysicalIncidentPackage.INCIDENT_ENTITY__NAME:
 				setName((String)newValue);
 				return;
-			case CyberPhysical_IncidentPackage.INCIDENT_ENTITY__PROPERTIES:
+			case CyberPhysicalIncidentPackage.INCIDENT_ENTITY__PROPERTIES:
 				getProperties().clear();
 				getProperties().addAll((Collection<? extends Property>)newValue);
 				return;
-			case CyberPhysical_IncidentPackage.INCIDENT_ENTITY__TYPE:
+			case CyberPhysicalIncidentPackage.INCIDENT_ENTITY__TYPE:
 				setType((Type)newValue);
 				return;
 		}
@@ -521,28 +520,28 @@ public class IncidentEntityImpl extends MinimalEObjectImpl.Container implements 
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case CyberPhysical_IncidentPackage.INCIDENT_ENTITY__CONNECTIONS:
+			case CyberPhysicalIncidentPackage.INCIDENT_ENTITY__CONNECTIONS:
 				getConnections().clear();
 				return;
-			case CyberPhysical_IncidentPackage.INCIDENT_ENTITY__PARENT_ENTITY:
+			case CyberPhysicalIncidentPackage.INCIDENT_ENTITY__PARENT_ENTITY:
 				setParentEntity((Location)null);
 				return;
-			case CyberPhysical_IncidentPackage.INCIDENT_ENTITY__CONTAINED_ENTITIES:
+			case CyberPhysicalIncidentPackage.INCIDENT_ENTITY__CONTAINED_ENTITIES:
 				getContainedEntities().clear();
 				return;
-			case CyberPhysical_IncidentPackage.INCIDENT_ENTITY__CONNECTIONS_KNOWLEDGE:
+			case CyberPhysicalIncidentPackage.INCIDENT_ENTITY__CONNECTIONS_KNOWLEDGE:
 				setConnectionsKnowledge(CONNECTIONS_KNOWLEDGE_EDEFAULT);
 				return;
-			case CyberPhysical_IncidentPackage.INCIDENT_ENTITY__CONTAINED_ASSETS_KNOWLEDGE:
+			case CyberPhysicalIncidentPackage.INCIDENT_ENTITY__CONTAINED_ASSETS_KNOWLEDGE:
 				setContainedAssetsKnowledge(CONTAINED_ASSETS_KNOWLEDGE_EDEFAULT);
 				return;
-			case CyberPhysical_IncidentPackage.INCIDENT_ENTITY__NAME:
+			case CyberPhysicalIncidentPackage.INCIDENT_ENTITY__NAME:
 				setName(NAME_EDEFAULT);
 				return;
-			case CyberPhysical_IncidentPackage.INCIDENT_ENTITY__PROPERTIES:
+			case CyberPhysicalIncidentPackage.INCIDENT_ENTITY__PROPERTIES:
 				getProperties().clear();
 				return;
-			case CyberPhysical_IncidentPackage.INCIDENT_ENTITY__TYPE:
+			case CyberPhysicalIncidentPackage.INCIDENT_ENTITY__TYPE:
 				setType((Type)null);
 				return;
 		}
@@ -557,21 +556,21 @@ public class IncidentEntityImpl extends MinimalEObjectImpl.Container implements 
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case CyberPhysical_IncidentPackage.INCIDENT_ENTITY__CONNECTIONS:
+			case CyberPhysicalIncidentPackage.INCIDENT_ENTITY__CONNECTIONS:
 				return connections != null && !connections.isEmpty();
-			case CyberPhysical_IncidentPackage.INCIDENT_ENTITY__PARENT_ENTITY:
+			case CyberPhysicalIncidentPackage.INCIDENT_ENTITY__PARENT_ENTITY:
 				return parentEntity != null;
-			case CyberPhysical_IncidentPackage.INCIDENT_ENTITY__CONTAINED_ENTITIES:
+			case CyberPhysicalIncidentPackage.INCIDENT_ENTITY__CONTAINED_ENTITIES:
 				return containedEntities != null && !containedEntities.isEmpty();
-			case CyberPhysical_IncidentPackage.INCIDENT_ENTITY__CONNECTIONS_KNOWLEDGE:
+			case CyberPhysicalIncidentPackage.INCIDENT_ENTITY__CONNECTIONS_KNOWLEDGE:
 				return connectionsKnowledge != CONNECTIONS_KNOWLEDGE_EDEFAULT;
-			case CyberPhysical_IncidentPackage.INCIDENT_ENTITY__CONTAINED_ASSETS_KNOWLEDGE:
+			case CyberPhysicalIncidentPackage.INCIDENT_ENTITY__CONTAINED_ASSETS_KNOWLEDGE:
 				return containedAssetsKnowledge != CONTAINED_ASSETS_KNOWLEDGE_EDEFAULT;
-			case CyberPhysical_IncidentPackage.INCIDENT_ENTITY__NAME:
+			case CyberPhysicalIncidentPackage.INCIDENT_ENTITY__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case CyberPhysical_IncidentPackage.INCIDENT_ENTITY__PROPERTIES:
+			case CyberPhysicalIncidentPackage.INCIDENT_ENTITY__PROPERTIES:
 				return properties != null && !properties.isEmpty();
-			case CyberPhysical_IncidentPackage.INCIDENT_ENTITY__TYPE:
+			case CyberPhysicalIncidentPackage.INCIDENT_ENTITY__TYPE:
 				return type != null;
 		}
 		return super.eIsSet(featureID);
@@ -586,11 +585,11 @@ public class IncidentEntityImpl extends MinimalEObjectImpl.Container implements 
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
 		if (baseClass == Location.class) {
 			switch (derivedFeatureID) {
-				case CyberPhysical_IncidentPackage.INCIDENT_ENTITY__CONNECTIONS: return CyberPhysical_IncidentPackage.LOCATION__CONNECTIONS;
-				case CyberPhysical_IncidentPackage.INCIDENT_ENTITY__PARENT_ENTITY: return CyberPhysical_IncidentPackage.LOCATION__PARENT_ENTITY;
-				case CyberPhysical_IncidentPackage.INCIDENT_ENTITY__CONTAINED_ENTITIES: return CyberPhysical_IncidentPackage.LOCATION__CONTAINED_ENTITIES;
-				case CyberPhysical_IncidentPackage.INCIDENT_ENTITY__CONNECTIONS_KNOWLEDGE: return CyberPhysical_IncidentPackage.LOCATION__CONNECTIONS_KNOWLEDGE;
-				case CyberPhysical_IncidentPackage.INCIDENT_ENTITY__CONTAINED_ASSETS_KNOWLEDGE: return CyberPhysical_IncidentPackage.LOCATION__CONTAINED_ASSETS_KNOWLEDGE;
+				case CyberPhysicalIncidentPackage.INCIDENT_ENTITY__CONNECTIONS: return CyberPhysicalIncidentPackage.LOCATION__CONNECTIONS;
+				case CyberPhysicalIncidentPackage.INCIDENT_ENTITY__PARENT_ENTITY: return CyberPhysicalIncidentPackage.LOCATION__PARENT_ENTITY;
+				case CyberPhysicalIncidentPackage.INCIDENT_ENTITY__CONTAINED_ENTITIES: return CyberPhysicalIncidentPackage.LOCATION__CONTAINED_ENTITIES;
+				case CyberPhysicalIncidentPackage.INCIDENT_ENTITY__CONNECTIONS_KNOWLEDGE: return CyberPhysicalIncidentPackage.LOCATION__CONNECTIONS_KNOWLEDGE;
+				case CyberPhysicalIncidentPackage.INCIDENT_ENTITY__CONTAINED_ASSETS_KNOWLEDGE: return CyberPhysicalIncidentPackage.LOCATION__CONTAINED_ASSETS_KNOWLEDGE;
 				default: return -1;
 			}
 		}
@@ -606,11 +605,11 @@ public class IncidentEntityImpl extends MinimalEObjectImpl.Container implements 
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
 		if (baseClass == Location.class) {
 			switch (baseFeatureID) {
-				case CyberPhysical_IncidentPackage.LOCATION__CONNECTIONS: return CyberPhysical_IncidentPackage.INCIDENT_ENTITY__CONNECTIONS;
-				case CyberPhysical_IncidentPackage.LOCATION__PARENT_ENTITY: return CyberPhysical_IncidentPackage.INCIDENT_ENTITY__PARENT_ENTITY;
-				case CyberPhysical_IncidentPackage.LOCATION__CONTAINED_ENTITIES: return CyberPhysical_IncidentPackage.INCIDENT_ENTITY__CONTAINED_ENTITIES;
-				case CyberPhysical_IncidentPackage.LOCATION__CONNECTIONS_KNOWLEDGE: return CyberPhysical_IncidentPackage.INCIDENT_ENTITY__CONNECTIONS_KNOWLEDGE;
-				case CyberPhysical_IncidentPackage.LOCATION__CONTAINED_ASSETS_KNOWLEDGE: return CyberPhysical_IncidentPackage.INCIDENT_ENTITY__CONTAINED_ASSETS_KNOWLEDGE;
+				case CyberPhysicalIncidentPackage.LOCATION__CONNECTIONS: return CyberPhysicalIncidentPackage.INCIDENT_ENTITY__CONNECTIONS;
+				case CyberPhysicalIncidentPackage.LOCATION__PARENT_ENTITY: return CyberPhysicalIncidentPackage.INCIDENT_ENTITY__PARENT_ENTITY;
+				case CyberPhysicalIncidentPackage.LOCATION__CONTAINED_ENTITIES: return CyberPhysicalIncidentPackage.INCIDENT_ENTITY__CONTAINED_ENTITIES;
+				case CyberPhysicalIncidentPackage.LOCATION__CONNECTIONS_KNOWLEDGE: return CyberPhysicalIncidentPackage.INCIDENT_ENTITY__CONNECTIONS_KNOWLEDGE;
+				case CyberPhysicalIncidentPackage.LOCATION__CONTAINED_ASSETS_KNOWLEDGE: return CyberPhysicalIncidentPackage.INCIDENT_ENTITY__CONTAINED_ASSETS_KNOWLEDGE;
 				default: return -1;
 			}
 		}

@@ -2,7 +2,7 @@
  */
 package cyberPhysical_Incident.impl;
 
-import cyberPhysical_Incident.CyberPhysical_IncidentPackage;
+import cyberPhysical_Incident.CyberPhysicalIncidentPackage;
 import cyberPhysical_Incident.Resource;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
@@ -60,7 +60,7 @@ public class ResourceImpl extends IncidentEntityImpl implements Resource {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CyberPhysical_IncidentPackage.Literals.RESOURCE;
+		return CyberPhysicalIncidentPackage.Literals.RESOURCE;
 	}
 
 	/**
@@ -81,7 +81,7 @@ public class ResourceImpl extends IncidentEntityImpl implements Resource {
 		String oldDescription = description;
 		description = newDescription;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysical_IncidentPackage.RESOURCE__DESCRIPTION, oldDescription, description));
+			eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysicalIncidentPackage.RESOURCE__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -92,7 +92,7 @@ public class ResourceImpl extends IncidentEntityImpl implements Resource {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case CyberPhysical_IncidentPackage.RESOURCE__DESCRIPTION:
+			case CyberPhysicalIncidentPackage.RESOURCE__DESCRIPTION:
 				return getDescription();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -107,7 +107,7 @@ public class ResourceImpl extends IncidentEntityImpl implements Resource {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case CyberPhysical_IncidentPackage.RESOURCE__DESCRIPTION:
+			case CyberPhysicalIncidentPackage.RESOURCE__DESCRIPTION:
 				setDescription((String)newValue);
 				return;
 		}
@@ -122,7 +122,7 @@ public class ResourceImpl extends IncidentEntityImpl implements Resource {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case CyberPhysical_IncidentPackage.RESOURCE__DESCRIPTION:
+			case CyberPhysicalIncidentPackage.RESOURCE__DESCRIPTION:
 				setDescription(DESCRIPTION_EDEFAULT);
 				return;
 		}
@@ -137,7 +137,7 @@ public class ResourceImpl extends IncidentEntityImpl implements Resource {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case CyberPhysical_IncidentPackage.RESOURCE__DESCRIPTION:
+			case CyberPhysicalIncidentPackage.RESOURCE__DESCRIPTION:
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
 		}
 		return super.eIsSet(featureID);

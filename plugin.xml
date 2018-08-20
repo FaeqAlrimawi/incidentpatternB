@@ -10,7 +10,7 @@
       <!-- @generated incident -->
       <package
             uri="http://www.example.org/cyberPhysical_Incident"
-            class="cyberPhysical_Incident.CyberPhysical_IncidentPackage"
+            class="cyberPhysical_Incident.CyberPhysicalIncidentPackage"
             genModel="model/incident.genmodel"/>
    </extension>
 
@@ -18,7 +18,6 @@
       <!-- @generated incident -->
       <parser
             type="cpi"
-            class="cyberPhysical_Incident.util.CyberPhysical_IncidentResourceFactoryImpl"/>
+            class="cyberPhysical_Incident.util.CyberPhysicalIncidentResourceFactoryImpl"/>
    </extension>
-
 </plugin>

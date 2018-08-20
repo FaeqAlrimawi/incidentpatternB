@@ -3,7 +3,7 @@
 package cyberPhysical_Incident.impl;
 
 import cyberPhysical_Incident.Activity;
-import cyberPhysical_Incident.CyberPhysical_IncidentPackage;
+import cyberPhysical_Incident.CyberPhysicalIncidentPackage;
 import cyberPhysical_Incident.Expression;
 import cyberPhysical_Incident.Goal;
 
@@ -117,7 +117,7 @@ public class GoalImpl extends MinimalEObjectImpl.Container implements Goal {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CyberPhysical_IncidentPackage.Literals.GOAL;
+		return CyberPhysicalIncidentPackage.Literals.GOAL;
 	}
 
 	/**
@@ -138,7 +138,7 @@ public class GoalImpl extends MinimalEObjectImpl.Container implements Goal {
 		String oldName = name;
 		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysical_IncidentPackage.GOAL__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysicalIncidentPackage.GOAL__NAME, oldName, name));
 	}
 
 	/**
@@ -159,7 +159,7 @@ public class GoalImpl extends MinimalEObjectImpl.Container implements Goal {
 		String oldDescription = description;
 		description = newDescription;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysical_IncidentPackage.GOAL__DESCRIPTION, oldDescription, description));
+			eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysicalIncidentPackage.GOAL__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -169,7 +169,7 @@ public class GoalImpl extends MinimalEObjectImpl.Container implements Goal {
 	 */
 	public EList<Activity> getActivities() {
 		if (activities == null) {
-			activities = new EObjectResolvingEList<Activity>(Activity.class, this, CyberPhysical_IncidentPackage.GOAL__ACTIVITIES);
+			activities = new EObjectResolvingEList<Activity>(Activity.class, this, CyberPhysicalIncidentPackage.GOAL__ACTIVITIES);
 		}
 		return activities;
 	}
@@ -181,7 +181,7 @@ public class GoalImpl extends MinimalEObjectImpl.Container implements Goal {
 	 */
 	public EList<Expression> getState() {
 		if (state == null) {
-			state = new EObjectContainmentEList<Expression>(Expression.class, this, CyberPhysical_IncidentPackage.GOAL__STATE);
+			state = new EObjectContainmentEList<Expression>(Expression.class, this, CyberPhysicalIncidentPackage.GOAL__STATE);
 		}
 		return state;
 	}
@@ -194,7 +194,7 @@ public class GoalImpl extends MinimalEObjectImpl.Container implements Goal {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case CyberPhysical_IncidentPackage.GOAL__STATE:
+			case CyberPhysicalIncidentPackage.GOAL__STATE:
 				return ((InternalEList<?>)getState()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -208,13 +208,13 @@ public class GoalImpl extends MinimalEObjectImpl.Container implements Goal {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case CyberPhysical_IncidentPackage.GOAL__NAME:
+			case CyberPhysicalIncidentPackage.GOAL__NAME:
 				return getName();
-			case CyberPhysical_IncidentPackage.GOAL__DESCRIPTION:
+			case CyberPhysicalIncidentPackage.GOAL__DESCRIPTION:
 				return getDescription();
-			case CyberPhysical_IncidentPackage.GOAL__ACTIVITIES:
+			case CyberPhysicalIncidentPackage.GOAL__ACTIVITIES:
 				return getActivities();
-			case CyberPhysical_IncidentPackage.GOAL__STATE:
+			case CyberPhysicalIncidentPackage.GOAL__STATE:
 				return getState();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -229,17 +229,17 @@ public class GoalImpl extends MinimalEObjectImpl.Container implements Goal {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case CyberPhysical_IncidentPackage.GOAL__NAME:
+			case CyberPhysicalIncidentPackage.GOAL__NAME:
 				setName((String)newValue);
 				return;
-			case CyberPhysical_IncidentPackage.GOAL__DESCRIPTION:
+			case CyberPhysicalIncidentPackage.GOAL__DESCRIPTION:
 				setDescription((String)newValue);
 				return;
-			case CyberPhysical_IncidentPackage.GOAL__ACTIVITIES:
+			case CyberPhysicalIncidentPackage.GOAL__ACTIVITIES:
 				getActivities().clear();
 				getActivities().addAll((Collection<? extends Activity>)newValue);
 				return;
-			case CyberPhysical_IncidentPackage.GOAL__STATE:
+			case CyberPhysicalIncidentPackage.GOAL__STATE:
 				getState().clear();
 				getState().addAll((Collection<? extends Expression>)newValue);
 				return;
@@ -255,16 +255,16 @@ public class GoalImpl extends MinimalEObjectImpl.Container implements Goal {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case CyberPhysical_IncidentPackage.GOAL__NAME:
+			case CyberPhysicalIncidentPackage.GOAL__NAME:
 				setName(NAME_EDEFAULT);
 				return;
-			case CyberPhysical_IncidentPackage.GOAL__DESCRIPTION:
+			case CyberPhysicalIncidentPackage.GOAL__DESCRIPTION:
 				setDescription(DESCRIPTION_EDEFAULT);
 				return;
-			case CyberPhysical_IncidentPackage.GOAL__ACTIVITIES:
+			case CyberPhysicalIncidentPackage.GOAL__ACTIVITIES:
 				getActivities().clear();
 				return;
-			case CyberPhysical_IncidentPackage.GOAL__STATE:
+			case CyberPhysicalIncidentPackage.GOAL__STATE:
 				getState().clear();
 				return;
 		}
@@ -279,13 +279,13 @@ public class GoalImpl extends MinimalEObjectImpl.Container implements Goal {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case CyberPhysical_IncidentPackage.GOAL__NAME:
+			case CyberPhysicalIncidentPackage.GOAL__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case CyberPhysical_IncidentPackage.GOAL__DESCRIPTION:
+			case CyberPhysicalIncidentPackage.GOAL__DESCRIPTION:
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
-			case CyberPhysical_IncidentPackage.GOAL__ACTIVITIES:
+			case CyberPhysicalIncidentPackage.GOAL__ACTIVITIES:
 				return activities != null && !activities.isEmpty();
-			case CyberPhysical_IncidentPackage.GOAL__STATE:
+			case CyberPhysicalIncidentPackage.GOAL__STATE:
 				return state != null && !state.isEmpty();
 		}
 		return super.eIsSet(featureID);

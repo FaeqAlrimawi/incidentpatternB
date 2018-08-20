@@ -9,7 +9,7 @@ package cyberPhysical_Incident;
  * <!-- end-user-doc -->
  *
  *
- * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getFacilitatingCondition()
+ * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getFacilitatingCondition()
  * @model
  * @generated
  */

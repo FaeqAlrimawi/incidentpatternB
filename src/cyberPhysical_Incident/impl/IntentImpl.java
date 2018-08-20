@@ -2,7 +2,7 @@
  */
 package cyberPhysical_Incident.impl;
 
-import cyberPhysical_Incident.CyberPhysical_IncidentPackage;
+import cyberPhysical_Incident.CyberPhysicalIncidentPackage;
 import cyberPhysical_Incident.Intent;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -83,7 +83,7 @@ public class IntentImpl extends MinimalEObjectImpl.Container implements Intent {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CyberPhysical_IncidentPackage.Literals.INTENT;
+		return CyberPhysicalIncidentPackage.Literals.INTENT;
 	}
 
 	/**
@@ -104,7 +104,7 @@ public class IntentImpl extends MinimalEObjectImpl.Container implements Intent {
 		String oldDescription = description;
 		description = newDescription;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysical_IncidentPackage.INTENT__DESCRIPTION, oldDescription, description));
+			eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysicalIncidentPackage.INTENT__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -125,7 +125,7 @@ public class IntentImpl extends MinimalEObjectImpl.Container implements Intent {
 		String oldName = name;
 		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysical_IncidentPackage.INTENT__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysicalIncidentPackage.INTENT__NAME, oldName, name));
 	}
 
 	/**
@@ -136,9 +136,9 @@ public class IntentImpl extends MinimalEObjectImpl.Container implements Intent {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case CyberPhysical_IncidentPackage.INTENT__DESCRIPTION:
+			case CyberPhysicalIncidentPackage.INTENT__DESCRIPTION:
 				return getDescription();
-			case CyberPhysical_IncidentPackage.INTENT__NAME:
+			case CyberPhysicalIncidentPackage.INTENT__NAME:
 				return getName();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -152,10 +152,10 @@ public class IntentImpl extends MinimalEObjectImpl.Container implements Intent {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case CyberPhysical_IncidentPackage.INTENT__DESCRIPTION:
+			case CyberPhysicalIncidentPackage.INTENT__DESCRIPTION:
 				setDescription((String)newValue);
 				return;
-			case CyberPhysical_IncidentPackage.INTENT__NAME:
+			case CyberPhysicalIncidentPackage.INTENT__NAME:
 				setName((String)newValue);
 				return;
 		}
@@ -170,10 +170,10 @@ public class IntentImpl extends MinimalEObjectImpl.Container implements Intent {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case CyberPhysical_IncidentPackage.INTENT__DESCRIPTION:
+			case CyberPhysicalIncidentPackage.INTENT__DESCRIPTION:
 				setDescription(DESCRIPTION_EDEFAULT);
 				return;
-			case CyberPhysical_IncidentPackage.INTENT__NAME:
+			case CyberPhysicalIncidentPackage.INTENT__NAME:
 				setName(NAME_EDEFAULT);
 				return;
 		}
@@ -188,9 +188,9 @@ public class IntentImpl extends MinimalEObjectImpl.Container implements Intent {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case CyberPhysical_IncidentPackage.INTENT__DESCRIPTION:
+			case CyberPhysicalIncidentPackage.INTENT__DESCRIPTION:
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
-			case CyberPhysical_IncidentPackage.INTENT__NAME:
+			case CyberPhysicalIncidentPackage.INTENT__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		}
 		return super.eIsSet(featureID);

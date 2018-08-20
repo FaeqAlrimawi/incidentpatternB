@@ -21,7 +21,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link cyberPhysical_Incident.Condition#getDescription <em>Description</em>}</li>
  * </ul>
  *
- * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getCondition()
+ * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getCondition()
  * @model abstract="true"
  * @generated
  */
@@ -36,7 +36,7 @@ public interface Condition extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
-	 * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getCondition_Name()
+	 * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getCondition_Name()
 	 * @model unique="false" id="true"
 	 * @generated
 	 */
@@ -62,7 +62,7 @@ public interface Condition extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Expression</em>' containment reference.
 	 * @see #setExpression(Expression)
-	 * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getCondition_Expression()
+	 * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getCondition_Expression()
 	 * @model containment="true" required="true"
 	 * @generated
 	 */
@@ -88,7 +88,7 @@ public interface Condition extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Assoicated Conditions</em>' reference list.
-	 * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getCondition_AssoicatedConditions()
+	 * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getCondition_AssoicatedConditions()
 	 * @model
 	 * @generated
 	 */
@@ -104,7 +104,7 @@ public interface Condition extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
-	 * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getCondition_Description()
+	 * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getCondition_Description()
 	 * @model
 	 * @generated
 	 */

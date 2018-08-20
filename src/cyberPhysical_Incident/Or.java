@@ -9,7 +9,7 @@ package cyberPhysical_Incident;
  * <!-- end-user-doc -->
  *
  *
- * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getOr()
+ * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getOr()
  * @model abstract="true"
  * @generated
  */

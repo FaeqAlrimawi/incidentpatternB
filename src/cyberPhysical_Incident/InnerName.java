@@ -18,7 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link cyberPhysical_Incident.InnerName#getOutername <em>Outername</em>}</li>
  * </ul>
  *
- * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getInnerName()
+ * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getInnerName()
  * @model
  * @generated
  */
@@ -33,7 +33,7 @@ public interface InnerName extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
-	 * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getInnerName_Name()
+	 * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getInnerName_Name()
 	 * @model required="true"
 	 * @generated
 	 */
@@ -59,7 +59,7 @@ public interface InnerName extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Is Closed</em>' attribute.
 	 * @see #setIsClosed(boolean)
-	 * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getInnerName_IsClosed()
+	 * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getInnerName_IsClosed()
 	 * @model
 	 * @generated
 	 */
@@ -85,7 +85,7 @@ public interface InnerName extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Outername</em>' reference.
 	 * @see #setOutername(Connectivity)
-	 * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getInnerName_Outername()
+	 * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getInnerName_Outername()
 	 * @model
 	 * @generated
 	 */

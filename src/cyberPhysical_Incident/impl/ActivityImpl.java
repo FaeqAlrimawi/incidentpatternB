@@ -28,7 +28,7 @@ import cyberPhysical_Incident.Condition;
 import cyberPhysical_Incident.Connection;
 import cyberPhysical_Incident.Connectivity;
 import cyberPhysical_Incident.CyberPhysicalIncidentFactory;
-import cyberPhysical_Incident.CyberPhysical_IncidentPackage;
+import cyberPhysical_Incident.CyberPhysicalIncidentPackage;
 import cyberPhysical_Incident.Entity;
 import cyberPhysical_Incident.Expression;
 import cyberPhysical_Incident.Goal;
@@ -726,7 +726,7 @@ public class ActivityImpl extends MinimalEObjectImpl.Container implements Activi
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CyberPhysical_IncidentPackage.Literals.ACTIVITY;
+		return CyberPhysicalIncidentPackage.Literals.ACTIVITY;
 	}
 
 	/**
@@ -747,7 +747,7 @@ public class ActivityImpl extends MinimalEObjectImpl.Container implements Activi
 		String oldName = name;
 		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysical_IncidentPackage.ACTIVITY__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysicalIncidentPackage.ACTIVITY__NAME, oldName, name));
 	}
 
 	/**
@@ -757,7 +757,7 @@ public class ActivityImpl extends MinimalEObjectImpl.Container implements Activi
 	 */
 	public EList<String> getFacilitatingConditions() {
 		if (facilitatingConditions == null) {
-			facilitatingConditions = new EDataTypeUniqueEList<String>(String.class, this, CyberPhysical_IncidentPackage.ACTIVITY__FACILITATING_CONDITIONS);
+			facilitatingConditions = new EDataTypeUniqueEList<String>(String.class, this, CyberPhysicalIncidentPackage.ACTIVITY__FACILITATING_CONDITIONS);
 		}
 		return facilitatingConditions;
 	}
@@ -780,7 +780,7 @@ public class ActivityImpl extends MinimalEObjectImpl.Container implements Activi
 		double oldCertainty = certainty;
 		certainty = newCertainty;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysical_IncidentPackage.ACTIVITY__CERTAINTY, oldCertainty, certainty));
+			eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysicalIncidentPackage.ACTIVITY__CERTAINTY, oldCertainty, certainty));
 	}
 
 	/**
@@ -801,7 +801,7 @@ public class ActivityImpl extends MinimalEObjectImpl.Container implements Activi
 		int oldDuration = duration;
 		duration = newDuration;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysical_IncidentPackage.ACTIVITY__DURATION, oldDuration, duration));
+			eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysicalIncidentPackage.ACTIVITY__DURATION, oldDuration, duration));
 	}
 
 	/**
@@ -822,7 +822,7 @@ public class ActivityImpl extends MinimalEObjectImpl.Container implements Activi
 		Date oldStartTime = startTime;
 		startTime = newStartTime;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysical_IncidentPackage.ACTIVITY__START_TIME, oldStartTime, startTime));
+			eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysicalIncidentPackage.ACTIVITY__START_TIME, oldStartTime, startTime));
 	}
 
 	/**
@@ -832,7 +832,7 @@ public class ActivityImpl extends MinimalEObjectImpl.Container implements Activi
 	 */
 	public EList<Activity> getNextActivities() {
 		if (nextActivities == null) {
-			nextActivities = new EObjectResolvingEList<Activity>(Activity.class, this, CyberPhysical_IncidentPackage.ACTIVITY__NEXT_ACTIVITIES);
+			nextActivities = new EObjectResolvingEList<Activity>(Activity.class, this, CyberPhysicalIncidentPackage.ACTIVITY__NEXT_ACTIVITIES);
 		}
 		return nextActivities;
 	}
@@ -844,7 +844,7 @@ public class ActivityImpl extends MinimalEObjectImpl.Container implements Activi
 	 */
 	public EList<Activity> getPreviousActivities() {
 		if (previousActivities == null) {
-			previousActivities = new EObjectResolvingEList<Activity>(Activity.class, this, CyberPhysical_IncidentPackage.ACTIVITY__PREVIOUS_ACTIVITIES);
+			previousActivities = new EObjectResolvingEList<Activity>(Activity.class, this, CyberPhysicalIncidentPackage.ACTIVITY__PREVIOUS_ACTIVITIES);
 		}
 		return previousActivities;
 	}
@@ -856,7 +856,7 @@ public class ActivityImpl extends MinimalEObjectImpl.Container implements Activi
 	 */
 	public EList<Path> getPaths() {
 		if (paths == null) {
-			paths = new EObjectResolvingEList<Path>(Path.class, this, CyberPhysical_IncidentPackage.ACTIVITY__PATHS);
+			paths = new EObjectResolvingEList<Path>(Path.class, this, CyberPhysicalIncidentPackage.ACTIVITY__PATHS);
 		}
 		return paths;
 	}
@@ -868,7 +868,7 @@ public class ActivityImpl extends MinimalEObjectImpl.Container implements Activi
 	 */
 	public EList<Goal> getGoals() {
 		if (goals == null) {
-			goals = new EObjectResolvingEList<Goal>(Goal.class, this, CyberPhysical_IncidentPackage.ACTIVITY__GOALS);
+			goals = new EObjectResolvingEList<Goal>(Goal.class, this, CyberPhysicalIncidentPackage.ACTIVITY__GOALS);
 		}
 		return goals;
 	}
@@ -884,7 +884,7 @@ public class ActivityImpl extends MinimalEObjectImpl.Container implements Activi
 			initiator = (ActivityInitiator)eResolveProxy(oldInitiator);
 			if (initiator != oldInitiator) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CyberPhysical_IncidentPackage.ACTIVITY__INITIATOR, oldInitiator, initiator));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CyberPhysicalIncidentPackage.ACTIVITY__INITIATOR, oldInitiator, initiator));
 			}
 		}
 		return initiator;
@@ -908,7 +908,7 @@ public class ActivityImpl extends MinimalEObjectImpl.Container implements Activi
 		ActivityInitiator oldInitiator = initiator;
 		initiator = newInitiator;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysical_IncidentPackage.ACTIVITY__INITIATOR, oldInitiator, initiator));
+			eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysicalIncidentPackage.ACTIVITY__INITIATOR, oldInitiator, initiator));
 	}
 
 	/**
@@ -918,7 +918,7 @@ public class ActivityImpl extends MinimalEObjectImpl.Container implements Activi
 	 */
 	public EList<Actor> getAccomplices() {
 		if (accomplices == null) {
-			accomplices = new EObjectResolvingEList<Actor>(Actor.class, this, CyberPhysical_IncidentPackage.ACTIVITY__ACCOMPLICES);
+			accomplices = new EObjectResolvingEList<Actor>(Actor.class, this, CyberPhysicalIncidentPackage.ACTIVITY__ACCOMPLICES);
 		}
 		return accomplices;
 	}
@@ -930,7 +930,7 @@ public class ActivityImpl extends MinimalEObjectImpl.Container implements Activi
 	 */
 	public EList<Actor> getVictims() {
 		if (victims == null) {
-			victims = new EObjectResolvingEList<Actor>(Actor.class, this, CyberPhysical_IncidentPackage.ACTIVITY__VICTIMS);
+			victims = new EObjectResolvingEList<Actor>(Actor.class, this, CyberPhysicalIncidentPackage.ACTIVITY__VICTIMS);
 		}
 		return victims;
 	}
@@ -942,7 +942,7 @@ public class ActivityImpl extends MinimalEObjectImpl.Container implements Activi
 	 */
 	public EList<Asset> getTargetedAssets() {
 		if (targetedAssets == null) {
-			targetedAssets = new EObjectResolvingEList<Asset>(Asset.class, this, CyberPhysical_IncidentPackage.ACTIVITY__TARGETED_ASSETS);
+			targetedAssets = new EObjectResolvingEList<Asset>(Asset.class, this, CyberPhysicalIncidentPackage.ACTIVITY__TARGETED_ASSETS);
 		}
 		return targetedAssets;
 	}
@@ -965,7 +965,7 @@ public class ActivityImpl extends MinimalEObjectImpl.Container implements Activi
 		Date oldEndTime = endTime;
 		endTime = newEndTime;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysical_IncidentPackage.ACTIVITY__END_TIME, oldEndTime, endTime));
+			eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysicalIncidentPackage.ACTIVITY__END_TIME, oldEndTime, endTime));
 	}
 
 	/**
@@ -975,7 +975,7 @@ public class ActivityImpl extends MinimalEObjectImpl.Container implements Activi
 	 */
 	public EList<Resource> getResources() {
 		if (resources == null) {
-			resources = new EObjectResolvingEList<Resource>(Resource.class, this, CyberPhysical_IncidentPackage.ACTIVITY__RESOURCES);
+			resources = new EObjectResolvingEList<Resource>(Resource.class, this, CyberPhysicalIncidentPackage.ACTIVITY__RESOURCES);
 		}
 		return resources;
 	}
@@ -987,7 +987,7 @@ public class ActivityImpl extends MinimalEObjectImpl.Container implements Activi
 	 */
 	public EList<Asset> getExploitedAssets() {
 		if (exploitedAssets == null) {
-			exploitedAssets = new EObjectResolvingEList<Asset>(Asset.class, this, CyberPhysical_IncidentPackage.ACTIVITY__EXPLOITED_ASSETS);
+			exploitedAssets = new EObjectResolvingEList<Asset>(Asset.class, this, CyberPhysicalIncidentPackage.ACTIVITY__EXPLOITED_ASSETS);
 		}
 		return exploitedAssets;
 	}
@@ -1010,7 +1010,7 @@ public class ActivityImpl extends MinimalEObjectImpl.Container implements Activi
 		ActivityType oldType = type;
 		type = newType == null ? TYPE_EDEFAULT : newType;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysical_IncidentPackage.ACTIVITY__TYPE, oldType, type));
+			eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysicalIncidentPackage.ACTIVITY__TYPE, oldType, type));
 	}
 
 	/**
@@ -1031,7 +1031,7 @@ public class ActivityImpl extends MinimalEObjectImpl.Container implements Activi
 		Behaviour oldBehaviourType = behaviourType;
 		behaviourType = newBehaviourType == null ? BEHAVIOUR_TYPE_EDEFAULT : newBehaviourType;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysical_IncidentPackage.ACTIVITY__BEHAVIOUR_TYPE, oldBehaviourType, behaviourType));
+			eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysicalIncidentPackage.ACTIVITY__BEHAVIOUR_TYPE, oldBehaviourType, behaviourType));
 	}
 
 	/**
@@ -1052,7 +1052,7 @@ public class ActivityImpl extends MinimalEObjectImpl.Container implements Activi
 		Precondition oldPrecondition = precondition;
 		precondition = newPrecondition;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CyberPhysical_IncidentPackage.ACTIVITY__PRECONDITION, oldPrecondition, newPrecondition);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CyberPhysicalIncidentPackage.ACTIVITY__PRECONDITION, oldPrecondition, newPrecondition);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -1067,14 +1067,14 @@ public class ActivityImpl extends MinimalEObjectImpl.Container implements Activi
 		if (newPrecondition != precondition) {
 			NotificationChain msgs = null;
 			if (precondition != null)
-				msgs = ((InternalEObject)precondition).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CyberPhysical_IncidentPackage.ACTIVITY__PRECONDITION, null, msgs);
+				msgs = ((InternalEObject)precondition).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CyberPhysicalIncidentPackage.ACTIVITY__PRECONDITION, null, msgs);
 			if (newPrecondition != null)
-				msgs = ((InternalEObject)newPrecondition).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CyberPhysical_IncidentPackage.ACTIVITY__PRECONDITION, null, msgs);
+				msgs = ((InternalEObject)newPrecondition).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CyberPhysicalIncidentPackage.ACTIVITY__PRECONDITION, null, msgs);
 			msgs = basicSetPrecondition(newPrecondition, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysical_IncidentPackage.ACTIVITY__PRECONDITION, newPrecondition, newPrecondition));
+			eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysicalIncidentPackage.ACTIVITY__PRECONDITION, newPrecondition, newPrecondition));
 	}
 
 	/**
@@ -1088,7 +1088,7 @@ public class ActivityImpl extends MinimalEObjectImpl.Container implements Activi
 			location = (Location)eResolveProxy(oldLocation);
 			if (location != oldLocation) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CyberPhysical_IncidentPackage.ACTIVITY__LOCATION, oldLocation, location));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CyberPhysicalIncidentPackage.ACTIVITY__LOCATION, oldLocation, location));
 			}
 		}
 		return location;
@@ -1112,7 +1112,7 @@ public class ActivityImpl extends MinimalEObjectImpl.Container implements Activi
 		Location oldLocation = location;
 		location = newLocation;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysical_IncidentPackage.ACTIVITY__LOCATION, oldLocation, location));
+			eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysicalIncidentPackage.ACTIVITY__LOCATION, oldLocation, location));
 	}
 
 	/**
@@ -1133,7 +1133,7 @@ public class ActivityImpl extends MinimalEObjectImpl.Container implements Activi
 		String oldDescription = description;
 		description = newDescription;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysical_IncidentPackage.ACTIVITY__DESCRIPTION, oldDescription, description));
+			eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysicalIncidentPackage.ACTIVITY__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -1154,7 +1154,7 @@ public class ActivityImpl extends MinimalEObjectImpl.Container implements Activi
 		String oldSystemAction = systemAction;
 		systemAction = newSystemAction;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysical_IncidentPackage.ACTIVITY__SYSTEM_ACTION, oldSystemAction, systemAction));
+			eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysicalIncidentPackage.ACTIVITY__SYSTEM_ACTION, oldSystemAction, systemAction));
 	}
 
 	/**
@@ -1175,7 +1175,7 @@ public class ActivityImpl extends MinimalEObjectImpl.Container implements Activi
 		Postcondition oldPostcondition = postcondition;
 		postcondition = newPostcondition;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CyberPhysical_IncidentPackage.ACTIVITY__POSTCONDITION, oldPostcondition, newPostcondition);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CyberPhysicalIncidentPackage.ACTIVITY__POSTCONDITION, oldPostcondition, newPostcondition);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -1190,14 +1190,14 @@ public class ActivityImpl extends MinimalEObjectImpl.Container implements Activi
 		if (newPostcondition != postcondition) {
 			NotificationChain msgs = null;
 			if (postcondition != null)
-				msgs = ((InternalEObject)postcondition).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CyberPhysical_IncidentPackage.ACTIVITY__POSTCONDITION, null, msgs);
+				msgs = ((InternalEObject)postcondition).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CyberPhysicalIncidentPackage.ACTIVITY__POSTCONDITION, null, msgs);
 			if (newPostcondition != null)
-				msgs = ((InternalEObject)newPostcondition).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CyberPhysical_IncidentPackage.ACTIVITY__POSTCONDITION, null, msgs);
+				msgs = ((InternalEObject)newPostcondition).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CyberPhysicalIncidentPackage.ACTIVITY__POSTCONDITION, null, msgs);
 			msgs = basicSetPostcondition(newPostcondition, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysical_IncidentPackage.ACTIVITY__POSTCONDITION, newPostcondition, newPostcondition));
+			eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysicalIncidentPackage.ACTIVITY__POSTCONDITION, newPostcondition, newPostcondition));
 	}
 
 	/**
@@ -1208,9 +1208,9 @@ public class ActivityImpl extends MinimalEObjectImpl.Container implements Activi
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case CyberPhysical_IncidentPackage.ACTIVITY__PRECONDITION:
+			case CyberPhysicalIncidentPackage.ACTIVITY__PRECONDITION:
 				return basicSetPrecondition(null, msgs);
-			case CyberPhysical_IncidentPackage.ACTIVITY__POSTCONDITION:
+			case CyberPhysicalIncidentPackage.ACTIVITY__POSTCONDITION:
 				return basicSetPostcondition(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -1224,53 +1224,53 @@ public class ActivityImpl extends MinimalEObjectImpl.Container implements Activi
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case CyberPhysical_IncidentPackage.ACTIVITY__NAME:
+			case CyberPhysicalIncidentPackage.ACTIVITY__NAME:
 				return getName();
-			case CyberPhysical_IncidentPackage.ACTIVITY__FACILITATING_CONDITIONS:
+			case CyberPhysicalIncidentPackage.ACTIVITY__FACILITATING_CONDITIONS:
 				return getFacilitatingConditions();
-			case CyberPhysical_IncidentPackage.ACTIVITY__CERTAINTY:
+			case CyberPhysicalIncidentPackage.ACTIVITY__CERTAINTY:
 				return getCertainty();
-			case CyberPhysical_IncidentPackage.ACTIVITY__DURATION:
+			case CyberPhysicalIncidentPackage.ACTIVITY__DURATION:
 				return getDuration();
-			case CyberPhysical_IncidentPackage.ACTIVITY__START_TIME:
+			case CyberPhysicalIncidentPackage.ACTIVITY__START_TIME:
 				return getStartTime();
-			case CyberPhysical_IncidentPackage.ACTIVITY__NEXT_ACTIVITIES:
+			case CyberPhysicalIncidentPackage.ACTIVITY__NEXT_ACTIVITIES:
 				return getNextActivities();
-			case CyberPhysical_IncidentPackage.ACTIVITY__PREVIOUS_ACTIVITIES:
+			case CyberPhysicalIncidentPackage.ACTIVITY__PREVIOUS_ACTIVITIES:
 				return getPreviousActivities();
-			case CyberPhysical_IncidentPackage.ACTIVITY__PATHS:
+			case CyberPhysicalIncidentPackage.ACTIVITY__PATHS:
 				return getPaths();
-			case CyberPhysical_IncidentPackage.ACTIVITY__GOALS:
+			case CyberPhysicalIncidentPackage.ACTIVITY__GOALS:
 				return getGoals();
-			case CyberPhysical_IncidentPackage.ACTIVITY__INITIATOR:
+			case CyberPhysicalIncidentPackage.ACTIVITY__INITIATOR:
 				if (resolve) return getInitiator();
 				return basicGetInitiator();
-			case CyberPhysical_IncidentPackage.ACTIVITY__ACCOMPLICES:
+			case CyberPhysicalIncidentPackage.ACTIVITY__ACCOMPLICES:
 				return getAccomplices();
-			case CyberPhysical_IncidentPackage.ACTIVITY__VICTIMS:
+			case CyberPhysicalIncidentPackage.ACTIVITY__VICTIMS:
 				return getVictims();
-			case CyberPhysical_IncidentPackage.ACTIVITY__TARGETED_ASSETS:
+			case CyberPhysicalIncidentPackage.ACTIVITY__TARGETED_ASSETS:
 				return getTargetedAssets();
-			case CyberPhysical_IncidentPackage.ACTIVITY__END_TIME:
+			case CyberPhysicalIncidentPackage.ACTIVITY__END_TIME:
 				return getEndTime();
-			case CyberPhysical_IncidentPackage.ACTIVITY__RESOURCES:
+			case CyberPhysicalIncidentPackage.ACTIVITY__RESOURCES:
 				return getResources();
-			case CyberPhysical_IncidentPackage.ACTIVITY__EXPLOITED_ASSETS:
+			case CyberPhysicalIncidentPackage.ACTIVITY__EXPLOITED_ASSETS:
 				return getExploitedAssets();
-			case CyberPhysical_IncidentPackage.ACTIVITY__TYPE:
+			case CyberPhysicalIncidentPackage.ACTIVITY__TYPE:
 				return getType();
-			case CyberPhysical_IncidentPackage.ACTIVITY__BEHAVIOUR_TYPE:
+			case CyberPhysicalIncidentPackage.ACTIVITY__BEHAVIOUR_TYPE:
 				return getBehaviourType();
-			case CyberPhysical_IncidentPackage.ACTIVITY__PRECONDITION:
+			case CyberPhysicalIncidentPackage.ACTIVITY__PRECONDITION:
 				return getPrecondition();
-			case CyberPhysical_IncidentPackage.ACTIVITY__LOCATION:
+			case CyberPhysicalIncidentPackage.ACTIVITY__LOCATION:
 				if (resolve) return getLocation();
 				return basicGetLocation();
-			case CyberPhysical_IncidentPackage.ACTIVITY__DESCRIPTION:
+			case CyberPhysicalIncidentPackage.ACTIVITY__DESCRIPTION:
 				return getDescription();
-			case CyberPhysical_IncidentPackage.ACTIVITY__SYSTEM_ACTION:
+			case CyberPhysicalIncidentPackage.ACTIVITY__SYSTEM_ACTION:
 				return getSystemAction();
-			case CyberPhysical_IncidentPackage.ACTIVITY__POSTCONDITION:
+			case CyberPhysicalIncidentPackage.ACTIVITY__POSTCONDITION:
 				return getPostcondition();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -1285,83 +1285,83 @@ public class ActivityImpl extends MinimalEObjectImpl.Container implements Activi
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case CyberPhysical_IncidentPackage.ACTIVITY__NAME:
+			case CyberPhysicalIncidentPackage.ACTIVITY__NAME:
 				setName((String)newValue);
 				return;
-			case CyberPhysical_IncidentPackage.ACTIVITY__FACILITATING_CONDITIONS:
+			case CyberPhysicalIncidentPackage.ACTIVITY__FACILITATING_CONDITIONS:
 				getFacilitatingConditions().clear();
 				getFacilitatingConditions().addAll((Collection<? extends String>)newValue);
 				return;
-			case CyberPhysical_IncidentPackage.ACTIVITY__CERTAINTY:
+			case CyberPhysicalIncidentPackage.ACTIVITY__CERTAINTY:
 				setCertainty((Double)newValue);
 				return;
-			case CyberPhysical_IncidentPackage.ACTIVITY__DURATION:
+			case CyberPhysicalIncidentPackage.ACTIVITY__DURATION:
 				setDuration((Integer)newValue);
 				return;
-			case CyberPhysical_IncidentPackage.ACTIVITY__START_TIME:
+			case CyberPhysicalIncidentPackage.ACTIVITY__START_TIME:
 				setStartTime((Date)newValue);
 				return;
-			case CyberPhysical_IncidentPackage.ACTIVITY__NEXT_ACTIVITIES:
+			case CyberPhysicalIncidentPackage.ACTIVITY__NEXT_ACTIVITIES:
 				getNextActivities().clear();
 				getNextActivities().addAll((Collection<? extends Activity>)newValue);
 				return;
-			case CyberPhysical_IncidentPackage.ACTIVITY__PREVIOUS_ACTIVITIES:
+			case CyberPhysicalIncidentPackage.ACTIVITY__PREVIOUS_ACTIVITIES:
 				getPreviousActivities().clear();
 				getPreviousActivities().addAll((Collection<? extends Activity>)newValue);
 				return;
-			case CyberPhysical_IncidentPackage.ACTIVITY__PATHS:
+			case CyberPhysicalIncidentPackage.ACTIVITY__PATHS:
 				getPaths().clear();
 				getPaths().addAll((Collection<? extends Path>)newValue);
 				return;
-			case CyberPhysical_IncidentPackage.ACTIVITY__GOALS:
+			case CyberPhysicalIncidentPackage.ACTIVITY__GOALS:
 				getGoals().clear();
 				getGoals().addAll((Collection<? extends Goal>)newValue);
 				return;
-			case CyberPhysical_IncidentPackage.ACTIVITY__INITIATOR:
+			case CyberPhysicalIncidentPackage.ACTIVITY__INITIATOR:
 				setInitiator((ActivityInitiator)newValue);
 				return;
-			case CyberPhysical_IncidentPackage.ACTIVITY__ACCOMPLICES:
+			case CyberPhysicalIncidentPackage.ACTIVITY__ACCOMPLICES:
 				getAccomplices().clear();
 				getAccomplices().addAll((Collection<? extends Actor>)newValue);
 				return;
-			case CyberPhysical_IncidentPackage.ACTIVITY__VICTIMS:
+			case CyberPhysicalIncidentPackage.ACTIVITY__VICTIMS:
 				getVictims().clear();
 				getVictims().addAll((Collection<? extends Actor>)newValue);
 				return;
-			case CyberPhysical_IncidentPackage.ACTIVITY__TARGETED_ASSETS:
+			case CyberPhysicalIncidentPackage.ACTIVITY__TARGETED_ASSETS:
 				getTargetedAssets().clear();
 				getTargetedAssets().addAll((Collection<? extends Asset>)newValue);
 				return;
-			case CyberPhysical_IncidentPackage.ACTIVITY__END_TIME:
+			case CyberPhysicalIncidentPackage.ACTIVITY__END_TIME:
 				setEndTime((Date)newValue);
 				return;
-			case CyberPhysical_IncidentPackage.ACTIVITY__RESOURCES:
+			case CyberPhysicalIncidentPackage.ACTIVITY__RESOURCES:
 				getResources().clear();
 				getResources().addAll((Collection<? extends Resource>)newValue);
 				return;
-			case CyberPhysical_IncidentPackage.ACTIVITY__EXPLOITED_ASSETS:
+			case CyberPhysicalIncidentPackage.ACTIVITY__EXPLOITED_ASSETS:
 				getExploitedAssets().clear();
 				getExploitedAssets().addAll((Collection<? extends Asset>)newValue);
 				return;
-			case CyberPhysical_IncidentPackage.ACTIVITY__TYPE:
+			case CyberPhysicalIncidentPackage.ACTIVITY__TYPE:
 				setType((ActivityType)newValue);
 				return;
-			case CyberPhysical_IncidentPackage.ACTIVITY__BEHAVIOUR_TYPE:
+			case CyberPhysicalIncidentPackage.ACTIVITY__BEHAVIOUR_TYPE:
 				setBehaviourType((Behaviour)newValue);
 				return;
-			case CyberPhysical_IncidentPackage.ACTIVITY__PRECONDITION:
+			case CyberPhysicalIncidentPackage.ACTIVITY__PRECONDITION:
 				setPrecondition((Precondition)newValue);
 				return;
-			case CyberPhysical_IncidentPackage.ACTIVITY__LOCATION:
+			case CyberPhysicalIncidentPackage.ACTIVITY__LOCATION:
 				setLocation((Location)newValue);
 				return;
-			case CyberPhysical_IncidentPackage.ACTIVITY__DESCRIPTION:
+			case CyberPhysicalIncidentPackage.ACTIVITY__DESCRIPTION:
 				setDescription((String)newValue);
 				return;
-			case CyberPhysical_IncidentPackage.ACTIVITY__SYSTEM_ACTION:
+			case CyberPhysicalIncidentPackage.ACTIVITY__SYSTEM_ACTION:
 				setSystemAction((String)newValue);
 				return;
-			case CyberPhysical_IncidentPackage.ACTIVITY__POSTCONDITION:
+			case CyberPhysicalIncidentPackage.ACTIVITY__POSTCONDITION:
 				setPostcondition((Postcondition)newValue);
 				return;
 		}
@@ -1390,73 +1390,73 @@ public class ActivityImpl extends MinimalEObjectImpl.Container implements Activi
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case CyberPhysical_IncidentPackage.ACTIVITY__NAME:
+			case CyberPhysicalIncidentPackage.ACTIVITY__NAME:
 				setName(NAME_EDEFAULT);
 				return;
-			case CyberPhysical_IncidentPackage.ACTIVITY__FACILITATING_CONDITIONS:
+			case CyberPhysicalIncidentPackage.ACTIVITY__FACILITATING_CONDITIONS:
 				getFacilitatingConditions().clear();
 				return;
-			case CyberPhysical_IncidentPackage.ACTIVITY__CERTAINTY:
+			case CyberPhysicalIncidentPackage.ACTIVITY__CERTAINTY:
 				setCertainty(CERTAINTY_EDEFAULT);
 				return;
-			case CyberPhysical_IncidentPackage.ACTIVITY__DURATION:
+			case CyberPhysicalIncidentPackage.ACTIVITY__DURATION:
 				setDuration(DURATION_EDEFAULT);
 				return;
-			case CyberPhysical_IncidentPackage.ACTIVITY__START_TIME:
+			case CyberPhysicalIncidentPackage.ACTIVITY__START_TIME:
 				setStartTime(START_TIME_EDEFAULT);
 				return;
-			case CyberPhysical_IncidentPackage.ACTIVITY__NEXT_ACTIVITIES:
+			case CyberPhysicalIncidentPackage.ACTIVITY__NEXT_ACTIVITIES:
 				getNextActivities().clear();
 				return;
-			case CyberPhysical_IncidentPackage.ACTIVITY__PREVIOUS_ACTIVITIES:
+			case CyberPhysicalIncidentPackage.ACTIVITY__PREVIOUS_ACTIVITIES:
 				getPreviousActivities().clear();
 				return;
-			case CyberPhysical_IncidentPackage.ACTIVITY__PATHS:
+			case CyberPhysicalIncidentPackage.ACTIVITY__PATHS:
 				getPaths().clear();
 				return;
-			case CyberPhysical_IncidentPackage.ACTIVITY__GOALS:
+			case CyberPhysicalIncidentPackage.ACTIVITY__GOALS:
 				getGoals().clear();
 				return;
-			case CyberPhysical_IncidentPackage.ACTIVITY__INITIATOR:
+			case CyberPhysicalIncidentPackage.ACTIVITY__INITIATOR:
 				setInitiator((ActivityInitiator)null);
 				return;
-			case CyberPhysical_IncidentPackage.ACTIVITY__ACCOMPLICES:
+			case CyberPhysicalIncidentPackage.ACTIVITY__ACCOMPLICES:
 				getAccomplices().clear();
 				return;
-			case CyberPhysical_IncidentPackage.ACTIVITY__VICTIMS:
+			case CyberPhysicalIncidentPackage.ACTIVITY__VICTIMS:
 				getVictims().clear();
 				return;
-			case CyberPhysical_IncidentPackage.ACTIVITY__TARGETED_ASSETS:
+			case CyberPhysicalIncidentPackage.ACTIVITY__TARGETED_ASSETS:
 				getTargetedAssets().clear();
 				return;
-			case CyberPhysical_IncidentPackage.ACTIVITY__END_TIME:
+			case CyberPhysicalIncidentPackage.ACTIVITY__END_TIME:
 				setEndTime(END_TIME_EDEFAULT);
 				return;
-			case CyberPhysical_IncidentPackage.ACTIVITY__RESOURCES:
+			case CyberPhysicalIncidentPackage.ACTIVITY__RESOURCES:
 				getResources().clear();
 				return;
-			case CyberPhysical_IncidentPackage.ACTIVITY__EXPLOITED_ASSETS:
+			case CyberPhysicalIncidentPackage.ACTIVITY__EXPLOITED_ASSETS:
 				getExploitedAssets().clear();
 				return;
-			case CyberPhysical_IncidentPackage.ACTIVITY__TYPE:
+			case CyberPhysicalIncidentPackage.ACTIVITY__TYPE:
 				setType(TYPE_EDEFAULT);
 				return;
-			case CyberPhysical_IncidentPackage.ACTIVITY__BEHAVIOUR_TYPE:
+			case CyberPhysicalIncidentPackage.ACTIVITY__BEHAVIOUR_TYPE:
 				setBehaviourType(BEHAVIOUR_TYPE_EDEFAULT);
 				return;
-			case CyberPhysical_IncidentPackage.ACTIVITY__PRECONDITION:
+			case CyberPhysicalIncidentPackage.ACTIVITY__PRECONDITION:
 				setPrecondition((Precondition)null);
 				return;
-			case CyberPhysical_IncidentPackage.ACTIVITY__LOCATION:
+			case CyberPhysicalIncidentPackage.ACTIVITY__LOCATION:
 				setLocation((Location)null);
 				return;
-			case CyberPhysical_IncidentPackage.ACTIVITY__DESCRIPTION:
+			case CyberPhysicalIncidentPackage.ACTIVITY__DESCRIPTION:
 				setDescription(DESCRIPTION_EDEFAULT);
 				return;
-			case CyberPhysical_IncidentPackage.ACTIVITY__SYSTEM_ACTION:
+			case CyberPhysicalIncidentPackage.ACTIVITY__SYSTEM_ACTION:
 				setSystemAction(SYSTEM_ACTION_EDEFAULT);
 				return;
-			case CyberPhysical_IncidentPackage.ACTIVITY__POSTCONDITION:
+			case CyberPhysicalIncidentPackage.ACTIVITY__POSTCONDITION:
 				setPostcondition((Postcondition)null);
 				return;
 		}
@@ -1471,51 +1471,51 @@ public class ActivityImpl extends MinimalEObjectImpl.Container implements Activi
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case CyberPhysical_IncidentPackage.ACTIVITY__NAME:
+			case CyberPhysicalIncidentPackage.ACTIVITY__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case CyberPhysical_IncidentPackage.ACTIVITY__FACILITATING_CONDITIONS:
+			case CyberPhysicalIncidentPackage.ACTIVITY__FACILITATING_CONDITIONS:
 				return facilitatingConditions != null && !facilitatingConditions.isEmpty();
-			case CyberPhysical_IncidentPackage.ACTIVITY__CERTAINTY:
+			case CyberPhysicalIncidentPackage.ACTIVITY__CERTAINTY:
 				return certainty != CERTAINTY_EDEFAULT;
-			case CyberPhysical_IncidentPackage.ACTIVITY__DURATION:
+			case CyberPhysicalIncidentPackage.ACTIVITY__DURATION:
 				return duration != DURATION_EDEFAULT;
-			case CyberPhysical_IncidentPackage.ACTIVITY__START_TIME:
+			case CyberPhysicalIncidentPackage.ACTIVITY__START_TIME:
 				return START_TIME_EDEFAULT == null ? startTime != null : !START_TIME_EDEFAULT.equals(startTime);
-			case CyberPhysical_IncidentPackage.ACTIVITY__NEXT_ACTIVITIES:
+			case CyberPhysicalIncidentPackage.ACTIVITY__NEXT_ACTIVITIES:
 				return nextActivities != null && !nextActivities.isEmpty();
-			case CyberPhysical_IncidentPackage.ACTIVITY__PREVIOUS_ACTIVITIES:
+			case CyberPhysicalIncidentPackage.ACTIVITY__PREVIOUS_ACTIVITIES:
 				return previousActivities != null && !previousActivities.isEmpty();
-			case CyberPhysical_IncidentPackage.ACTIVITY__PATHS:
+			case CyberPhysicalIncidentPackage.ACTIVITY__PATHS:
 				return paths != null && !paths.isEmpty();
-			case CyberPhysical_IncidentPackage.ACTIVITY__GOALS:
+			case CyberPhysicalIncidentPackage.ACTIVITY__GOALS:
 				return goals != null && !goals.isEmpty();
-			case CyberPhysical_IncidentPackage.ACTIVITY__INITIATOR:
+			case CyberPhysicalIncidentPackage.ACTIVITY__INITIATOR:
 				return initiator != null;
-			case CyberPhysical_IncidentPackage.ACTIVITY__ACCOMPLICES:
+			case CyberPhysicalIncidentPackage.ACTIVITY__ACCOMPLICES:
 				return accomplices != null && !accomplices.isEmpty();
-			case CyberPhysical_IncidentPackage.ACTIVITY__VICTIMS:
+			case CyberPhysicalIncidentPackage.ACTIVITY__VICTIMS:
 				return victims != null && !victims.isEmpty();
-			case CyberPhysical_IncidentPackage.ACTIVITY__TARGETED_ASSETS:
+			case CyberPhysicalIncidentPackage.ACTIVITY__TARGETED_ASSETS:
 				return targetedAssets != null && !targetedAssets.isEmpty();
-			case CyberPhysical_IncidentPackage.ACTIVITY__END_TIME:
+			case CyberPhysicalIncidentPackage.ACTIVITY__END_TIME:
 				return END_TIME_EDEFAULT == null ? endTime != null : !END_TIME_EDEFAULT.equals(endTime);
-			case CyberPhysical_IncidentPackage.ACTIVITY__RESOURCES:
+			case CyberPhysicalIncidentPackage.ACTIVITY__RESOURCES:
 				return resources != null && !resources.isEmpty();
-			case CyberPhysical_IncidentPackage.ACTIVITY__EXPLOITED_ASSETS:
+			case CyberPhysicalIncidentPackage.ACTIVITY__EXPLOITED_ASSETS:
 				return exploitedAssets != null && !exploitedAssets.isEmpty();
-			case CyberPhysical_IncidentPackage.ACTIVITY__TYPE:
+			case CyberPhysicalIncidentPackage.ACTIVITY__TYPE:
 				return type != TYPE_EDEFAULT;
-			case CyberPhysical_IncidentPackage.ACTIVITY__BEHAVIOUR_TYPE:
+			case CyberPhysicalIncidentPackage.ACTIVITY__BEHAVIOUR_TYPE:
 				return behaviourType != BEHAVIOUR_TYPE_EDEFAULT;
-			case CyberPhysical_IncidentPackage.ACTIVITY__PRECONDITION:
+			case CyberPhysicalIncidentPackage.ACTIVITY__PRECONDITION:
 				return precondition != null;
-			case CyberPhysical_IncidentPackage.ACTIVITY__LOCATION:
+			case CyberPhysicalIncidentPackage.ACTIVITY__LOCATION:
 				return location != null;
-			case CyberPhysical_IncidentPackage.ACTIVITY__DESCRIPTION:
+			case CyberPhysicalIncidentPackage.ACTIVITY__DESCRIPTION:
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
-			case CyberPhysical_IncidentPackage.ACTIVITY__SYSTEM_ACTION:
+			case CyberPhysicalIncidentPackage.ACTIVITY__SYSTEM_ACTION:
 				return SYSTEM_ACTION_EDEFAULT == null ? systemAction != null : !SYSTEM_ACTION_EDEFAULT.equals(systemAction);
-			case CyberPhysical_IncidentPackage.ACTIVITY__POSTCONDITION:
+			case CyberPhysicalIncidentPackage.ACTIVITY__POSTCONDITION:
 				return postcondition != null;
 		}
 		return super.eIsSet(featureID);

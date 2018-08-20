@@ -16,7 +16,7 @@ package cyberPhysical_Incident;
  *   <li>{@link cyberPhysical_Incident.BinaryExpression#getRight <em>Right</em>}</li>
  * </ul>
  *
- * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getBinaryExpression()
+ * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getBinaryExpression()
  * @model abstract="true"
  * @generated
  */
@@ -31,7 +31,7 @@ public interface BinaryExpression extends Expression {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Left</em>' containment reference.
 	 * @see #setLeft(Expression)
-	 * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getBinaryExpression_Left()
+	 * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getBinaryExpression_Left()
 	 * @model containment="true" required="true"
 	 * @generated
 	 */
@@ -57,7 +57,7 @@ public interface BinaryExpression extends Expression {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Right</em>' containment reference.
 	 * @see #setRight(Expression)
-	 * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getBinaryExpression_Right()
+	 * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getBinaryExpression_Right()
 	 * @model containment="true" required="true"
 	 * @generated
 	 */

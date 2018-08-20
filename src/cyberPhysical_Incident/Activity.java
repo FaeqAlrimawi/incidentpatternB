@@ -43,7 +43,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link cyberPhysical_Incident.Activity#getPostcondition <em>Postcondition</em>}</li>
  * </ul>
  *
- * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getActivity()
+ * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getActivity()
  * @model
  * @generated
  */
@@ -85,7 +85,7 @@ public interface Activity extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
-	 * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getActivity_Name()
+	 * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getActivity_Name()
 	 * @model id="true"
 	 * @generated
 	 */
@@ -112,7 +112,7 @@ public interface Activity extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Facilitating Conditions</em>' attribute list.
-	 * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getActivity_FacilitatingConditions()
+	 * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getActivity_FacilitatingConditions()
 	 * @model
 	 * @generated
 	 */
@@ -128,7 +128,7 @@ public interface Activity extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Certainty</em>' attribute.
 	 * @see #setCertainty(double)
-	 * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getActivity_Certainty()
+	 * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getActivity_Certainty()
 	 * @model
 	 * @generated
 	 */
@@ -154,7 +154,7 @@ public interface Activity extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Duration</em>' attribute.
 	 * @see #setDuration(int)
-	 * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getActivity_Duration()
+	 * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getActivity_Duration()
 	 * @model
 	 * @generated
 	 */
@@ -180,7 +180,7 @@ public interface Activity extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Start Time</em>' attribute.
 	 * @see #setStartTime(Date)
-	 * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getActivity_StartTime()
+	 * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getActivity_StartTime()
 	 * @model
 	 * @generated
 	 */
@@ -206,7 +206,7 @@ public interface Activity extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Next Activities</em>' reference list.
-	 * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getActivity_NextActivities()
+	 * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getActivity_NextActivities()
 	 * @model
 	 * @generated
 	 */
@@ -222,7 +222,7 @@ public interface Activity extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Previous Activities</em>' reference list.
-	 * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getActivity_PreviousActivities()
+	 * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getActivity_PreviousActivities()
 	 * @model
 	 * @generated
 	 */
@@ -238,7 +238,7 @@ public interface Activity extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Paths</em>' reference list.
-	 * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getActivity_Paths()
+	 * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getActivity_Paths()
 	 * @model
 	 * @generated
 	 */
@@ -254,7 +254,7 @@ public interface Activity extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Goals</em>' reference list.
-	 * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getActivity_Goals()
+	 * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getActivity_Goals()
 	 * @model
 	 * @generated
 	 */
@@ -270,7 +270,7 @@ public interface Activity extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Initiator</em>' reference.
 	 * @see #setInitiator(ActivityInitiator)
-	 * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getActivity_Initiator()
+	 * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getActivity_Initiator()
 	 * @model
 	 * @generated
 	 */
@@ -296,7 +296,7 @@ public interface Activity extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Accomplices</em>' reference list.
-	 * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getActivity_Accomplices()
+	 * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getActivity_Accomplices()
 	 * @model
 	 * @generated
 	 */
@@ -312,7 +312,7 @@ public interface Activity extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Victims</em>' reference list.
-	 * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getActivity_Victims()
+	 * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getActivity_Victims()
 	 * @model
 	 * @generated
 	 */
@@ -328,7 +328,7 @@ public interface Activity extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Targeted Assets</em>' reference list.
-	 * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getActivity_TargetedAssets()
+	 * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getActivity_TargetedAssets()
 	 * @model
 	 * @generated
 	 */
@@ -344,7 +344,7 @@ public interface Activity extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>End Time</em>' attribute.
 	 * @see #setEndTime(Date)
-	 * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getActivity_EndTime()
+	 * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getActivity_EndTime()
 	 * @model
 	 * @generated
 	 */
@@ -370,7 +370,7 @@ public interface Activity extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Resources</em>' reference list.
-	 * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getActivity_Resources()
+	 * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getActivity_Resources()
 	 * @model
 	 * @generated
 	 */
@@ -386,7 +386,7 @@ public interface Activity extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Exploited Assets</em>' reference list.
-	 * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getActivity_ExploitedAssets()
+	 * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getActivity_ExploitedAssets()
 	 * @model
 	 * @generated
 	 */
@@ -404,7 +404,7 @@ public interface Activity extends EObject {
 	 * @return the value of the '<em>Type</em>' attribute.
 	 * @see cyberPhysical_Incident.ActivityType
 	 * @see #setType(ActivityType)
-	 * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getActivity_Type()
+	 * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getActivity_Type()
 	 * @model
 	 * @generated
 	 */
@@ -433,7 +433,7 @@ public interface Activity extends EObject {
 	 * @return the value of the '<em>Behaviour Type</em>' attribute.
 	 * @see cyberPhysical_Incident.Behaviour
 	 * @see #setBehaviourType(Behaviour)
-	 * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getActivity_BehaviourType()
+	 * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getActivity_BehaviourType()
 	 * @model
 	 * @generated
 	 */
@@ -460,7 +460,7 @@ public interface Activity extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Precondition</em>' containment reference.
 	 * @see #setPrecondition(Precondition)
-	 * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getActivity_Precondition()
+	 * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getActivity_Precondition()
 	 * @model containment="true"
 	 * @generated
 	 */
@@ -484,7 +484,7 @@ public interface Activity extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Location</em>' reference.
 	 * @see #setLocation(Location)
-	 * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getActivity_Location()
+	 * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getActivity_Location()
 	 * @model
 	 * @generated
 	 */
@@ -510,7 +510,7 @@ public interface Activity extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
-	 * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getActivity_Description()
+	 * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getActivity_Description()
 	 * @model
 	 * @generated
 	 */
@@ -536,7 +536,7 @@ public interface Activity extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>System Action</em>' attribute.
 	 * @see #setSystemAction(String)
-	 * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getActivity_SystemAction()
+	 * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getActivity_SystemAction()
 	 * @model
 	 * @generated
 	 */
@@ -561,7 +561,7 @@ public interface Activity extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Postcondition</em>' containment reference.
 	 * @see #setPostcondition(Postcondition)
-	 * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getActivity_Postcondition()
+	 * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getActivity_Postcondition()
 	 * @model containment="true" required="true"
 	 * @generated
 	 */

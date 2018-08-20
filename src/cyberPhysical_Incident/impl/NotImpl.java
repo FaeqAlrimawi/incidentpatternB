@@ -2,7 +2,7 @@
  */
 package cyberPhysical_Incident.impl;
 
-import cyberPhysical_Incident.CyberPhysical_IncidentPackage;
+import cyberPhysical_Incident.CyberPhysicalIncidentPackage;
 import cyberPhysical_Incident.Not;
 
 import org.eclipse.emf.ecore.EClass;
@@ -31,7 +31,7 @@ public abstract class NotImpl extends UnaryExpressionImpl implements Not {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CyberPhysical_IncidentPackage.Literals.NOT;
+		return CyberPhysicalIncidentPackage.Literals.NOT;
 	}
 
 } //NotImpl

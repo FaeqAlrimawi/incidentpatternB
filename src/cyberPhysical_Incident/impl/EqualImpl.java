@@ -2,7 +2,7 @@
  */
 package cyberPhysical_Incident.impl;
 
-import cyberPhysical_Incident.CyberPhysical_IncidentPackage;
+import cyberPhysical_Incident.CyberPhysicalIncidentPackage;
 import cyberPhysical_Incident.Equal;
 
 import org.eclipse.emf.ecore.EClass;
@@ -31,7 +31,7 @@ public abstract class EqualImpl extends BinaryExpressionImpl implements Equal {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CyberPhysical_IncidentPackage.Literals.EQUAL;
+		return CyberPhysicalIncidentPackage.Literals.EQUAL;
 	}
 
 } //EqualImpl

@@ -35,7 +35,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link cyberPhysical_Incident.CrimeScript#getMotive <em>Motive</em>}</li>
  * </ul>
  *
- * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getCrimeScript()
+ * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getCrimeScript()
  * @model
  * @generated
  */
@@ -50,7 +50,7 @@ public interface CrimeScript extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Id</em>' attribute.
 	 * @see #setId(int)
-	 * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getCrimeScript_Id()
+	 * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getCrimeScript_Id()
 	 * @model id="true"
 	 * @generated
 	 */
@@ -76,7 +76,7 @@ public interface CrimeScript extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
-	 * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getCrimeScript_Name()
+	 * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getCrimeScript_Name()
 	 * @model
 	 * @generated
 	 */
@@ -102,7 +102,7 @@ public interface CrimeScript extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
-	 * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getCrimeScript_Description()
+	 * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getCrimeScript_Description()
 	 * @model
 	 * @generated
 	 */
@@ -130,7 +130,7 @@ public interface CrimeScript extends EObject {
 	 * @return the value of the '<em>Category</em>' attribute.
 	 * @see cyberPhysical_Incident.ScriptCategory
 	 * @see #setCategory(ScriptCategory)
-	 * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getCrimeScript_Category()
+	 * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getCrimeScript_Category()
 	 * @model
 	 * @generated
 	 */
@@ -157,7 +157,7 @@ public interface CrimeScript extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Scenes</em>' reference list.
-	 * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getCrimeScript_Scenes()
+	 * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getCrimeScript_Scenes()
 	 * @model
 	 * @generated
 	 */
@@ -173,7 +173,7 @@ public interface CrimeScript extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Intent</em>' containment reference.
 	 * @see #setIntent(Intent)
-	 * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getCrimeScript_Intent()
+	 * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getCrimeScript_Intent()
 	 * @model containment="true"
 	 * @generated
 	 */
@@ -199,7 +199,7 @@ public interface CrimeScript extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Motive</em>' containment reference list.
-	 * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getCrimeScript_Motive()
+	 * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getCrimeScript_Motive()
 	 * @model containment="true"
 	 * @generated
 	 */
@@ -215,7 +215,7 @@ public interface CrimeScript extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Goals</em>' reference list.
-	 * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getCrimeScript_Goals()
+	 * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getCrimeScript_Goals()
 	 * @model
 	 * @generated
 	 */
@@ -231,7 +231,7 @@ public interface CrimeScript extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Targeted Assets</em>' reference list.
-	 * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getCrimeScript_TargetedAssets()
+	 * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getCrimeScript_TargetedAssets()
 	 * @model
 	 * @generated
 	 */
@@ -247,7 +247,7 @@ public interface CrimeScript extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Resources</em>' reference list.
-	 * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getCrimeScript_Resources()
+	 * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getCrimeScript_Resources()
 	 * @model
 	 * @generated
 	 */
@@ -263,7 +263,7 @@ public interface CrimeScript extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Main Location</em>' reference.
 	 * @see #setMainLocation(Location)
-	 * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getCrimeScript_MainLocation()
+	 * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getCrimeScript_MainLocation()
 	 * @model
 	 * @generated
 	 */
@@ -289,7 +289,7 @@ public interface CrimeScript extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Victims</em>' reference list.
-	 * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getCrimeScript_Victims()
+	 * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getCrimeScript_Victims()
 	 * @model
 	 * @generated
 	 */
@@ -305,7 +305,7 @@ public interface CrimeScript extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Offenders</em>' reference list.
-	 * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getCrimeScript_Offenders()
+	 * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getCrimeScript_Offenders()
 	 * @model
 	 * @generated
 	 */
@@ -321,7 +321,7 @@ public interface CrimeScript extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Higher Level Script Name</em>' attribute.
 	 * @see #setHigherLevelScriptName(String)
-	 * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getCrimeScript_HigherLevelScriptName()
+	 * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getCrimeScript_HigherLevelScriptName()
 	 * @model
 	 * @generated
 	 */

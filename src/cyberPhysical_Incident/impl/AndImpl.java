@@ -3,7 +3,7 @@
 package cyberPhysical_Incident.impl;
 
 import cyberPhysical_Incident.And;
-import cyberPhysical_Incident.CyberPhysical_IncidentPackage;
+import cyberPhysical_Incident.CyberPhysicalIncidentPackage;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -30,7 +30,7 @@ public abstract class AndImpl extends BinaryExpressionImpl implements And {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CyberPhysical_IncidentPackage.Literals.AND;
+		return CyberPhysicalIncidentPackage.Literals.AND;
 	}
 
 } //AndImpl

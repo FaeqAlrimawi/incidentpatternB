@@ -31,7 +31,7 @@ import environment.EnvironmentDiagram;
  *   <li>{@link cyberPhysical_Incident.IncidentDiagram#getPaths <em>Paths</em>}</li>
  * </ul>
  *
- * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getIncidentDiagram()
+ * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getIncidentDiagram()
  * @model
  * @generated
  */
@@ -41,7 +41,7 @@ public interface IncidentDiagram extends EObject {
 	 IncidentDiagram createAbstractIncident(EnvironmentDiagram systemModel);
 	 IncidentDiagram createAbstractIncident();
 	 void setSystemModel(EnvironmentDiagram systemModel);
-	 
+	 EList<Activity> getActivity();
 	/**
 	 *Finds possible pairs of activities that can be merged based on containment and connectivity heuristics 
 	 */
@@ -123,7 +123,7 @@ public interface IncidentDiagram extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Crime Script</em>' containment reference.
 	 * @see #setCrimeScript(CrimeScript)
-	 * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getIncidentDiagram_CrimeScript()
+	 * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getIncidentDiagram_CrimeScript()
 	 * @model containment="true" required="true"
 	 * @generated
 	 */
@@ -148,7 +148,7 @@ public interface IncidentDiagram extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Scene</em>' containment reference list.
-	 * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getIncidentDiagram_Scene()
+	 * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getIncidentDiagram_Scene()
 	 * @model containment="true"
 	 * @generated
 	 */
@@ -164,7 +164,7 @@ public interface IncidentDiagram extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Intent</em>' containment reference.
 	 * @see #setIntent(Intent)
-	 * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getIncidentDiagram_Intent()
+	 * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getIncidentDiagram_Intent()
 	 * @model containment="true"
 	 * @generated
 	 */
@@ -190,7 +190,7 @@ public interface IncidentDiagram extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Goal</em>' containment reference list.
-	 * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getIncidentDiagram_Goal()
+	 * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getIncidentDiagram_Goal()
 	 * @model containment="true"
 	 * @generated
 	 */
@@ -206,7 +206,7 @@ public interface IncidentDiagram extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Motive</em>' containment reference list.
-	 * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getIncidentDiagram_Motive()
+	 * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getIncidentDiagram_Motive()
 	 * @model containment="true"
 	 * @generated
 	 */
@@ -222,7 +222,7 @@ public interface IncidentDiagram extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Asset</em>' containment reference list.
-	 * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getIncidentDiagram_Asset()
+	 * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getIncidentDiagram_Asset()
 	 * @model containment="true"
 	 * @generated
 	 */
@@ -238,7 +238,7 @@ public interface IncidentDiagram extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Resource</em>' containment reference list.
-	 * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getIncidentDiagram_Resource()
+	 * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getIncidentDiagram_Resource()
 	 * @model containment="true"
 	 * @generated
 	 */
@@ -254,7 +254,7 @@ public interface IncidentDiagram extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Actor</em>' containment reference list.
-	 * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getIncidentDiagram_Actor()
+	 * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getIncidentDiagram_Actor()
 	 * @model containment="true"
 	 * @generated
 	 */
@@ -270,7 +270,7 @@ public interface IncidentDiagram extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Connection</em>' containment reference list.
-	 * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getIncidentDiagram_Connection()
+	 * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getIncidentDiagram_Connection()
 	 * @model containment="true"
 	 * @generated
 	 */
@@ -286,7 +286,7 @@ public interface IncidentDiagram extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Paths</em>' containment reference list.
-	 * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getIncidentDiagram_Paths()
+	 * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getIncidentDiagram_Paths()
 	 * @model containment="true"
 	 * @generated
 	 */

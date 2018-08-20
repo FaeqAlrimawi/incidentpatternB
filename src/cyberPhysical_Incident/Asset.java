@@ -22,7 +22,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link cyberPhysical_Incident.Asset#getStatus <em>Status</em>}</li>
  * </ul>
  *
- * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getAsset()
+ * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getAsset()
  * @model
  * @generated
  */
@@ -37,7 +37,7 @@ public interface Asset extends IncidentEntity {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
-	 * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getAsset_Description()
+	 * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getAsset_Description()
 	 * @model
 	 * @generated
 	 */
@@ -63,7 +63,7 @@ public interface Asset extends IncidentEntity {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Vulnerability</em>' containment reference list.
-	 * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getAsset_Vulnerability()
+	 * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getAsset_Vulnerability()
 	 * @model containment="true"
 	 * @generated
 	 */
@@ -79,7 +79,7 @@ public interface Asset extends IncidentEntity {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Status</em>' attribute.
 	 * @see #setStatus(String)
-	 * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getAsset_Status()
+	 * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getAsset_Status()
 	 * @model
 	 * @generated
 	 */

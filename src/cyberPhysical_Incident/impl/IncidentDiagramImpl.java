@@ -25,7 +25,7 @@ import cyberPhysical_Incident.BigraphExpression;
 import cyberPhysical_Incident.Connection;
 import cyberPhysical_Incident.CrimeScript;
 import cyberPhysical_Incident.CyberPhysicalIncidentFactory;
-import cyberPhysical_Incident.CyberPhysical_IncidentPackage;
+import cyberPhysical_Incident.CyberPhysicalIncidentPackage;
 import cyberPhysical_Incident.Goal;
 import cyberPhysical_Incident.IncidentDiagram;
 import cyberPhysical_Incident.IncidentEntity;
@@ -918,7 +918,7 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CyberPhysical_IncidentPackage.Literals.INCIDENT_DIAGRAM;
+		return CyberPhysicalIncidentPackage.Literals.INCIDENT_DIAGRAM;
 	}
 
 	/**
@@ -939,7 +939,7 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 		CrimeScript oldCrimeScript = crimeScript;
 		crimeScript = newCrimeScript;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CyberPhysical_IncidentPackage.INCIDENT_DIAGRAM__CRIME_SCRIPT, oldCrimeScript, newCrimeScript);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CyberPhysicalIncidentPackage.INCIDENT_DIAGRAM__CRIME_SCRIPT, oldCrimeScript, newCrimeScript);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -954,14 +954,14 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 		if (newCrimeScript != crimeScript) {
 			NotificationChain msgs = null;
 			if (crimeScript != null)
-				msgs = ((InternalEObject)crimeScript).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CyberPhysical_IncidentPackage.INCIDENT_DIAGRAM__CRIME_SCRIPT, null, msgs);
+				msgs = ((InternalEObject)crimeScript).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CyberPhysicalIncidentPackage.INCIDENT_DIAGRAM__CRIME_SCRIPT, null, msgs);
 			if (newCrimeScript != null)
-				msgs = ((InternalEObject)newCrimeScript).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CyberPhysical_IncidentPackage.INCIDENT_DIAGRAM__CRIME_SCRIPT, null, msgs);
+				msgs = ((InternalEObject)newCrimeScript).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CyberPhysicalIncidentPackage.INCIDENT_DIAGRAM__CRIME_SCRIPT, null, msgs);
 			msgs = basicSetCrimeScript(newCrimeScript, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysical_IncidentPackage.INCIDENT_DIAGRAM__CRIME_SCRIPT, newCrimeScript, newCrimeScript));
+			eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysicalIncidentPackage.INCIDENT_DIAGRAM__CRIME_SCRIPT, newCrimeScript, newCrimeScript));
 	}
 
 	/**
@@ -971,7 +971,7 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 	 */
 	public EList<Scene> getScene() {
 		if (scene == null) {
-			scene = new EObjectContainmentEList<Scene>(Scene.class, this, CyberPhysical_IncidentPackage.INCIDENT_DIAGRAM__SCENE);
+			scene = new EObjectContainmentEList<Scene>(Scene.class, this, CyberPhysicalIncidentPackage.INCIDENT_DIAGRAM__SCENE);
 		}
 		return scene;
 	}
@@ -994,7 +994,7 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 		Intent oldIntent = intent;
 		intent = newIntent;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CyberPhysical_IncidentPackage.INCIDENT_DIAGRAM__INTENT, oldIntent, newIntent);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CyberPhysicalIncidentPackage.INCIDENT_DIAGRAM__INTENT, oldIntent, newIntent);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -1009,14 +1009,14 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 		if (newIntent != intent) {
 			NotificationChain msgs = null;
 			if (intent != null)
-				msgs = ((InternalEObject)intent).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CyberPhysical_IncidentPackage.INCIDENT_DIAGRAM__INTENT, null, msgs);
+				msgs = ((InternalEObject)intent).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CyberPhysicalIncidentPackage.INCIDENT_DIAGRAM__INTENT, null, msgs);
 			if (newIntent != null)
-				msgs = ((InternalEObject)newIntent).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CyberPhysical_IncidentPackage.INCIDENT_DIAGRAM__INTENT, null, msgs);
+				msgs = ((InternalEObject)newIntent).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CyberPhysicalIncidentPackage.INCIDENT_DIAGRAM__INTENT, null, msgs);
 			msgs = basicSetIntent(newIntent, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysical_IncidentPackage.INCIDENT_DIAGRAM__INTENT, newIntent, newIntent));
+			eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysicalIncidentPackage.INCIDENT_DIAGRAM__INTENT, newIntent, newIntent));
 	}
 
 	/**
@@ -1026,7 +1026,7 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 	 */
 	public EList<Goal> getGoal() {
 		if (goal == null) {
-			goal = new EObjectContainmentEList<Goal>(Goal.class, this, CyberPhysical_IncidentPackage.INCIDENT_DIAGRAM__GOAL);
+			goal = new EObjectContainmentEList<Goal>(Goal.class, this, CyberPhysicalIncidentPackage.INCIDENT_DIAGRAM__GOAL);
 		}
 		return goal;
 	}
@@ -1038,7 +1038,7 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 	 */
 	public EList<Motive> getMotive() {
 		if (motive == null) {
-			motive = new EObjectContainmentEList<Motive>(Motive.class, this, CyberPhysical_IncidentPackage.INCIDENT_DIAGRAM__MOTIVE);
+			motive = new EObjectContainmentEList<Motive>(Motive.class, this, CyberPhysicalIncidentPackage.INCIDENT_DIAGRAM__MOTIVE);
 		}
 		return motive;
 	}
@@ -1050,7 +1050,7 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 	 */
 	public EList<Asset> getAsset() {
 		if (asset == null) {
-			asset = new EObjectContainmentEList<Asset>(Asset.class, this, CyberPhysical_IncidentPackage.INCIDENT_DIAGRAM__ASSET);
+			asset = new EObjectContainmentEList<Asset>(Asset.class, this, CyberPhysicalIncidentPackage.INCIDENT_DIAGRAM__ASSET);
 		}
 		return asset;
 	}
@@ -1062,7 +1062,7 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 	 */
 	public EList<Resource> getResource() {
 		if (resource == null) {
-			resource = new EObjectContainmentEList<Resource>(Resource.class, this, CyberPhysical_IncidentPackage.INCIDENT_DIAGRAM__RESOURCE);
+			resource = new EObjectContainmentEList<Resource>(Resource.class, this, CyberPhysicalIncidentPackage.INCIDENT_DIAGRAM__RESOURCE);
 		}
 		return resource;
 	}
@@ -1074,7 +1074,7 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 	 */
 	public EList<Actor> getActor() {
 		if (actor == null) {
-			actor = new EObjectContainmentEList<Actor>(Actor.class, this, CyberPhysical_IncidentPackage.INCIDENT_DIAGRAM__ACTOR);
+			actor = new EObjectContainmentEList<Actor>(Actor.class, this, CyberPhysicalIncidentPackage.INCIDENT_DIAGRAM__ACTOR);
 		}
 		return actor;
 	}
@@ -1086,7 +1086,7 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 	 */
 	public EList<Connection> getConnection() {
 		if (connection == null) {
-			connection = new EObjectContainmentEList<Connection>(Connection.class, this, CyberPhysical_IncidentPackage.INCIDENT_DIAGRAM__CONNECTION);
+			connection = new EObjectContainmentEList<Connection>(Connection.class, this, CyberPhysicalIncidentPackage.INCIDENT_DIAGRAM__CONNECTION);
 		}
 		return connection;
 	}
@@ -1098,7 +1098,7 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 	 */
 	public EList<Path> getPaths() {
 		if (paths == null) {
-			paths = new EObjectContainmentEList<Path>(Path.class, this, CyberPhysical_IncidentPackage.INCIDENT_DIAGRAM__PATHS);
+			paths = new EObjectContainmentEList<Path>(Path.class, this, CyberPhysicalIncidentPackage.INCIDENT_DIAGRAM__PATHS);
 		}
 		return paths;
 	}
@@ -1111,25 +1111,25 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case CyberPhysical_IncidentPackage.INCIDENT_DIAGRAM__CRIME_SCRIPT:
+			case CyberPhysicalIncidentPackage.INCIDENT_DIAGRAM__CRIME_SCRIPT:
 				return basicSetCrimeScript(null, msgs);
-			case CyberPhysical_IncidentPackage.INCIDENT_DIAGRAM__SCENE:
+			case CyberPhysicalIncidentPackage.INCIDENT_DIAGRAM__SCENE:
 				return ((InternalEList<?>)getScene()).basicRemove(otherEnd, msgs);
-			case CyberPhysical_IncidentPackage.INCIDENT_DIAGRAM__INTENT:
+			case CyberPhysicalIncidentPackage.INCIDENT_DIAGRAM__INTENT:
 				return basicSetIntent(null, msgs);
-			case CyberPhysical_IncidentPackage.INCIDENT_DIAGRAM__GOAL:
+			case CyberPhysicalIncidentPackage.INCIDENT_DIAGRAM__GOAL:
 				return ((InternalEList<?>)getGoal()).basicRemove(otherEnd, msgs);
-			case CyberPhysical_IncidentPackage.INCIDENT_DIAGRAM__MOTIVE:
+			case CyberPhysicalIncidentPackage.INCIDENT_DIAGRAM__MOTIVE:
 				return ((InternalEList<?>)getMotive()).basicRemove(otherEnd, msgs);
-			case CyberPhysical_IncidentPackage.INCIDENT_DIAGRAM__ASSET:
+			case CyberPhysicalIncidentPackage.INCIDENT_DIAGRAM__ASSET:
 				return ((InternalEList<?>)getAsset()).basicRemove(otherEnd, msgs);
-			case CyberPhysical_IncidentPackage.INCIDENT_DIAGRAM__RESOURCE:
+			case CyberPhysicalIncidentPackage.INCIDENT_DIAGRAM__RESOURCE:
 				return ((InternalEList<?>)getResource()).basicRemove(otherEnd, msgs);
-			case CyberPhysical_IncidentPackage.INCIDENT_DIAGRAM__ACTOR:
+			case CyberPhysicalIncidentPackage.INCIDENT_DIAGRAM__ACTOR:
 				return ((InternalEList<?>)getActor()).basicRemove(otherEnd, msgs);
-			case CyberPhysical_IncidentPackage.INCIDENT_DIAGRAM__CONNECTION:
+			case CyberPhysicalIncidentPackage.INCIDENT_DIAGRAM__CONNECTION:
 				return ((InternalEList<?>)getConnection()).basicRemove(otherEnd, msgs);
-			case CyberPhysical_IncidentPackage.INCIDENT_DIAGRAM__PATHS:
+			case CyberPhysicalIncidentPackage.INCIDENT_DIAGRAM__PATHS:
 				return ((InternalEList<?>)getPaths()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -1143,25 +1143,25 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case CyberPhysical_IncidentPackage.INCIDENT_DIAGRAM__CRIME_SCRIPT:
+			case CyberPhysicalIncidentPackage.INCIDENT_DIAGRAM__CRIME_SCRIPT:
 				return getCrimeScript();
-			case CyberPhysical_IncidentPackage.INCIDENT_DIAGRAM__SCENE:
+			case CyberPhysicalIncidentPackage.INCIDENT_DIAGRAM__SCENE:
 				return getScene();
-			case CyberPhysical_IncidentPackage.INCIDENT_DIAGRAM__INTENT:
+			case CyberPhysicalIncidentPackage.INCIDENT_DIAGRAM__INTENT:
 				return getIntent();
-			case CyberPhysical_IncidentPackage.INCIDENT_DIAGRAM__GOAL:
+			case CyberPhysicalIncidentPackage.INCIDENT_DIAGRAM__GOAL:
 				return getGoal();
-			case CyberPhysical_IncidentPackage.INCIDENT_DIAGRAM__MOTIVE:
+			case CyberPhysicalIncidentPackage.INCIDENT_DIAGRAM__MOTIVE:
 				return getMotive();
-			case CyberPhysical_IncidentPackage.INCIDENT_DIAGRAM__ASSET:
+			case CyberPhysicalIncidentPackage.INCIDENT_DIAGRAM__ASSET:
 				return getAsset();
-			case CyberPhysical_IncidentPackage.INCIDENT_DIAGRAM__RESOURCE:
+			case CyberPhysicalIncidentPackage.INCIDENT_DIAGRAM__RESOURCE:
 				return getResource();
-			case CyberPhysical_IncidentPackage.INCIDENT_DIAGRAM__ACTOR:
+			case CyberPhysicalIncidentPackage.INCIDENT_DIAGRAM__ACTOR:
 				return getActor();
-			case CyberPhysical_IncidentPackage.INCIDENT_DIAGRAM__CONNECTION:
+			case CyberPhysicalIncidentPackage.INCIDENT_DIAGRAM__CONNECTION:
 				return getConnection();
-			case CyberPhysical_IncidentPackage.INCIDENT_DIAGRAM__PATHS:
+			case CyberPhysicalIncidentPackage.INCIDENT_DIAGRAM__PATHS:
 				return getPaths();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -1176,41 +1176,41 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case CyberPhysical_IncidentPackage.INCIDENT_DIAGRAM__CRIME_SCRIPT:
+			case CyberPhysicalIncidentPackage.INCIDENT_DIAGRAM__CRIME_SCRIPT:
 				setCrimeScript((CrimeScript)newValue);
 				return;
-			case CyberPhysical_IncidentPackage.INCIDENT_DIAGRAM__SCENE:
+			case CyberPhysicalIncidentPackage.INCIDENT_DIAGRAM__SCENE:
 				getScene().clear();
 				getScene().addAll((Collection<? extends Scene>)newValue);
 				return;
-			case CyberPhysical_IncidentPackage.INCIDENT_DIAGRAM__INTENT:
+			case CyberPhysicalIncidentPackage.INCIDENT_DIAGRAM__INTENT:
 				setIntent((Intent)newValue);
 				return;
-			case CyberPhysical_IncidentPackage.INCIDENT_DIAGRAM__GOAL:
+			case CyberPhysicalIncidentPackage.INCIDENT_DIAGRAM__GOAL:
 				getGoal().clear();
 				getGoal().addAll((Collection<? extends Goal>)newValue);
 				return;
-			case CyberPhysical_IncidentPackage.INCIDENT_DIAGRAM__MOTIVE:
+			case CyberPhysicalIncidentPackage.INCIDENT_DIAGRAM__MOTIVE:
 				getMotive().clear();
 				getMotive().addAll((Collection<? extends Motive>)newValue);
 				return;
-			case CyberPhysical_IncidentPackage.INCIDENT_DIAGRAM__ASSET:
+			case CyberPhysicalIncidentPackage.INCIDENT_DIAGRAM__ASSET:
 				getAsset().clear();
 				getAsset().addAll((Collection<? extends Asset>)newValue);
 				return;
-			case CyberPhysical_IncidentPackage.INCIDENT_DIAGRAM__RESOURCE:
+			case CyberPhysicalIncidentPackage.INCIDENT_DIAGRAM__RESOURCE:
 				getResource().clear();
 				getResource().addAll((Collection<? extends Resource>)newValue);
 				return;
-			case CyberPhysical_IncidentPackage.INCIDENT_DIAGRAM__ACTOR:
+			case CyberPhysicalIncidentPackage.INCIDENT_DIAGRAM__ACTOR:
 				getActor().clear();
 				getActor().addAll((Collection<? extends Actor>)newValue);
 				return;
-			case CyberPhysical_IncidentPackage.INCIDENT_DIAGRAM__CONNECTION:
+			case CyberPhysicalIncidentPackage.INCIDENT_DIAGRAM__CONNECTION:
 				getConnection().clear();
 				getConnection().addAll((Collection<? extends Connection>)newValue);
 				return;
-			case CyberPhysical_IncidentPackage.INCIDENT_DIAGRAM__PATHS:
+			case CyberPhysicalIncidentPackage.INCIDENT_DIAGRAM__PATHS:
 				getPaths().clear();
 				getPaths().addAll((Collection<? extends Path>)newValue);
 				return;
@@ -1226,34 +1226,34 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case CyberPhysical_IncidentPackage.INCIDENT_DIAGRAM__CRIME_SCRIPT:
+			case CyberPhysicalIncidentPackage.INCIDENT_DIAGRAM__CRIME_SCRIPT:
 				setCrimeScript((CrimeScript)null);
 				return;
-			case CyberPhysical_IncidentPackage.INCIDENT_DIAGRAM__SCENE:
+			case CyberPhysicalIncidentPackage.INCIDENT_DIAGRAM__SCENE:
 				getScene().clear();
 				return;
-			case CyberPhysical_IncidentPackage.INCIDENT_DIAGRAM__INTENT:
+			case CyberPhysicalIncidentPackage.INCIDENT_DIAGRAM__INTENT:
 				setIntent((Intent)null);
 				return;
-			case CyberPhysical_IncidentPackage.INCIDENT_DIAGRAM__GOAL:
+			case CyberPhysicalIncidentPackage.INCIDENT_DIAGRAM__GOAL:
 				getGoal().clear();
 				return;
-			case CyberPhysical_IncidentPackage.INCIDENT_DIAGRAM__MOTIVE:
+			case CyberPhysicalIncidentPackage.INCIDENT_DIAGRAM__MOTIVE:
 				getMotive().clear();
 				return;
-			case CyberPhysical_IncidentPackage.INCIDENT_DIAGRAM__ASSET:
+			case CyberPhysicalIncidentPackage.INCIDENT_DIAGRAM__ASSET:
 				getAsset().clear();
 				return;
-			case CyberPhysical_IncidentPackage.INCIDENT_DIAGRAM__RESOURCE:
+			case CyberPhysicalIncidentPackage.INCIDENT_DIAGRAM__RESOURCE:
 				getResource().clear();
 				return;
-			case CyberPhysical_IncidentPackage.INCIDENT_DIAGRAM__ACTOR:
+			case CyberPhysicalIncidentPackage.INCIDENT_DIAGRAM__ACTOR:
 				getActor().clear();
 				return;
-			case CyberPhysical_IncidentPackage.INCIDENT_DIAGRAM__CONNECTION:
+			case CyberPhysicalIncidentPackage.INCIDENT_DIAGRAM__CONNECTION:
 				getConnection().clear();
 				return;
-			case CyberPhysical_IncidentPackage.INCIDENT_DIAGRAM__PATHS:
+			case CyberPhysicalIncidentPackage.INCIDENT_DIAGRAM__PATHS:
 				getPaths().clear();
 				return;
 		}
@@ -1268,25 +1268,25 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case CyberPhysical_IncidentPackage.INCIDENT_DIAGRAM__CRIME_SCRIPT:
+			case CyberPhysicalIncidentPackage.INCIDENT_DIAGRAM__CRIME_SCRIPT:
 				return crimeScript != null;
-			case CyberPhysical_IncidentPackage.INCIDENT_DIAGRAM__SCENE:
+			case CyberPhysicalIncidentPackage.INCIDENT_DIAGRAM__SCENE:
 				return scene != null && !scene.isEmpty();
-			case CyberPhysical_IncidentPackage.INCIDENT_DIAGRAM__INTENT:
+			case CyberPhysicalIncidentPackage.INCIDENT_DIAGRAM__INTENT:
 				return intent != null;
-			case CyberPhysical_IncidentPackage.INCIDENT_DIAGRAM__GOAL:
+			case CyberPhysicalIncidentPackage.INCIDENT_DIAGRAM__GOAL:
 				return goal != null && !goal.isEmpty();
-			case CyberPhysical_IncidentPackage.INCIDENT_DIAGRAM__MOTIVE:
+			case CyberPhysicalIncidentPackage.INCIDENT_DIAGRAM__MOTIVE:
 				return motive != null && !motive.isEmpty();
-			case CyberPhysical_IncidentPackage.INCIDENT_DIAGRAM__ASSET:
+			case CyberPhysicalIncidentPackage.INCIDENT_DIAGRAM__ASSET:
 				return asset != null && !asset.isEmpty();
-			case CyberPhysical_IncidentPackage.INCIDENT_DIAGRAM__RESOURCE:
+			case CyberPhysicalIncidentPackage.INCIDENT_DIAGRAM__RESOURCE:
 				return resource != null && !resource.isEmpty();
-			case CyberPhysical_IncidentPackage.INCIDENT_DIAGRAM__ACTOR:
+			case CyberPhysicalIncidentPackage.INCIDENT_DIAGRAM__ACTOR:
 				return actor != null && !actor.isEmpty();
-			case CyberPhysical_IncidentPackage.INCIDENT_DIAGRAM__CONNECTION:
+			case CyberPhysicalIncidentPackage.INCIDENT_DIAGRAM__CONNECTION:
 				return connection != null && !connection.isEmpty();
-			case CyberPhysical_IncidentPackage.INCIDENT_DIAGRAM__PATHS:
+			case CyberPhysicalIncidentPackage.INCIDENT_DIAGRAM__PATHS:
 				return paths != null && !paths.isEmpty();
 		}
 		return super.eIsSet(featureID);
@@ -1298,7 +1298,7 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 		
 	}
 
-	protected EList<Activity> getActivity() {
+	public EList<Activity> getActivity() {
 		
 		if(activity != null) {
 			return activity;

@@ -2,8 +2,8 @@
  */
 package cyberPhysical_Incident.impl;
 
-import cyberPhysical_Incident.CyberPhysical_IncidentPackage;
 import cyberPhysical_Incident.Connectivity;
+import cyberPhysical_Incident.CyberPhysicalIncidentPackage;
 import cyberPhysical_Incident.InnerName;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -96,7 +96,7 @@ public class InnerNameImpl extends MinimalEObjectImpl.Container implements Inner
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CyberPhysical_IncidentPackage.Literals.INNER_NAME;
+		return CyberPhysicalIncidentPackage.Literals.INNER_NAME;
 	}
 
 	/**
@@ -117,7 +117,7 @@ public class InnerNameImpl extends MinimalEObjectImpl.Container implements Inner
 		String oldName = name;
 		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysical_IncidentPackage.INNER_NAME__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysicalIncidentPackage.INNER_NAME__NAME, oldName, name));
 	}
 
 	/**
@@ -138,7 +138,7 @@ public class InnerNameImpl extends MinimalEObjectImpl.Container implements Inner
 		boolean oldIsClosed = isClosed;
 		isClosed = newIsClosed;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysical_IncidentPackage.INNER_NAME__IS_CLOSED, oldIsClosed, isClosed));
+			eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysicalIncidentPackage.INNER_NAME__IS_CLOSED, oldIsClosed, isClosed));
 	}
 
 	/**
@@ -152,7 +152,7 @@ public class InnerNameImpl extends MinimalEObjectImpl.Container implements Inner
 			outername = (Connectivity)eResolveProxy(oldOutername);
 			if (outername != oldOutername) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CyberPhysical_IncidentPackage.INNER_NAME__OUTERNAME, oldOutername, outername));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CyberPhysicalIncidentPackage.INNER_NAME__OUTERNAME, oldOutername, outername));
 			}
 		}
 		return outername;
@@ -176,7 +176,7 @@ public class InnerNameImpl extends MinimalEObjectImpl.Container implements Inner
 		Connectivity oldOutername = outername;
 		outername = newOutername;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysical_IncidentPackage.INNER_NAME__OUTERNAME, oldOutername, outername));
+			eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysicalIncidentPackage.INNER_NAME__OUTERNAME, oldOutername, outername));
 	}
 
 	/**
@@ -187,11 +187,11 @@ public class InnerNameImpl extends MinimalEObjectImpl.Container implements Inner
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case CyberPhysical_IncidentPackage.INNER_NAME__NAME:
+			case CyberPhysicalIncidentPackage.INNER_NAME__NAME:
 				return getName();
-			case CyberPhysical_IncidentPackage.INNER_NAME__IS_CLOSED:
+			case CyberPhysicalIncidentPackage.INNER_NAME__IS_CLOSED:
 				return isIsClosed();
-			case CyberPhysical_IncidentPackage.INNER_NAME__OUTERNAME:
+			case CyberPhysicalIncidentPackage.INNER_NAME__OUTERNAME:
 				if (resolve) return getOutername();
 				return basicGetOutername();
 		}
@@ -206,13 +206,13 @@ public class InnerNameImpl extends MinimalEObjectImpl.Container implements Inner
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case CyberPhysical_IncidentPackage.INNER_NAME__NAME:
+			case CyberPhysicalIncidentPackage.INNER_NAME__NAME:
 				setName((String)newValue);
 				return;
-			case CyberPhysical_IncidentPackage.INNER_NAME__IS_CLOSED:
+			case CyberPhysicalIncidentPackage.INNER_NAME__IS_CLOSED:
 				setIsClosed((Boolean)newValue);
 				return;
-			case CyberPhysical_IncidentPackage.INNER_NAME__OUTERNAME:
+			case CyberPhysicalIncidentPackage.INNER_NAME__OUTERNAME:
 				setOutername((Connectivity)newValue);
 				return;
 		}
@@ -227,13 +227,13 @@ public class InnerNameImpl extends MinimalEObjectImpl.Container implements Inner
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case CyberPhysical_IncidentPackage.INNER_NAME__NAME:
+			case CyberPhysicalIncidentPackage.INNER_NAME__NAME:
 				setName(NAME_EDEFAULT);
 				return;
-			case CyberPhysical_IncidentPackage.INNER_NAME__IS_CLOSED:
+			case CyberPhysicalIncidentPackage.INNER_NAME__IS_CLOSED:
 				setIsClosed(IS_CLOSED_EDEFAULT);
 				return;
-			case CyberPhysical_IncidentPackage.INNER_NAME__OUTERNAME:
+			case CyberPhysicalIncidentPackage.INNER_NAME__OUTERNAME:
 				setOutername((Connectivity)null);
 				return;
 		}
@@ -248,11 +248,11 @@ public class InnerNameImpl extends MinimalEObjectImpl.Container implements Inner
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case CyberPhysical_IncidentPackage.INNER_NAME__NAME:
+			case CyberPhysicalIncidentPackage.INNER_NAME__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case CyberPhysical_IncidentPackage.INNER_NAME__IS_CLOSED:
+			case CyberPhysicalIncidentPackage.INNER_NAME__IS_CLOSED:
 				return isClosed != IS_CLOSED_EDEFAULT;
-			case CyberPhysical_IncidentPackage.INNER_NAME__OUTERNAME:
+			case CyberPhysicalIncidentPackage.INNER_NAME__OUTERNAME:
 				return outername != null;
 		}
 		return super.eIsSet(featureID);

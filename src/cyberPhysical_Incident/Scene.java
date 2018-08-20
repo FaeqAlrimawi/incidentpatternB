@@ -22,7 +22,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link cyberPhysical_Incident.Scene#getActivity <em>Activity</em>}</li>
  * </ul>
  *
- * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getScene()
+ * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getScene()
  * @model
  * @generated
  */
@@ -37,7 +37,7 @@ public interface Scene extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
-	 * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getScene_Name()
+	 * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getScene_Name()
 	 * @model id="true"
 	 * @generated
 	 */
@@ -63,7 +63,7 @@ public interface Scene extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Next Scenes</em>' reference list.
-	 * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getScene_NextScenes()
+	 * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getScene_NextScenes()
 	 * @model
 	 * @generated
 	 */
@@ -79,7 +79,7 @@ public interface Scene extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Previous Scenes</em>' reference list.
-	 * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getScene_PreviousScenes()
+	 * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getScene_PreviousScenes()
 	 * @model
 	 * @generated
 	 */
@@ -95,7 +95,7 @@ public interface Scene extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
-	 * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getScene_Description()
+	 * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getScene_Description()
 	 * @model
 	 * @generated
 	 */
@@ -121,7 +121,7 @@ public interface Scene extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Activity</em>' containment reference list.
-	 * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getScene_Activity()
+	 * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getScene_Activity()
 	 * @model containment="true"
 	 * @generated
 	 */

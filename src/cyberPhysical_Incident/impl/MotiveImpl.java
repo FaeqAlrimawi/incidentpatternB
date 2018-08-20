@@ -2,7 +2,7 @@
  */
 package cyberPhysical_Incident.impl;
 
-import cyberPhysical_Incident.CyberPhysical_IncidentPackage;
+import cyberPhysical_Incident.CyberPhysicalIncidentPackage;
 import cyberPhysical_Incident.Motive;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -104,7 +104,7 @@ public class MotiveImpl extends MinimalEObjectImpl.Container implements Motive {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CyberPhysical_IncidentPackage.Literals.MOTIVE;
+		return CyberPhysicalIncidentPackage.Literals.MOTIVE;
 	}
 
 	/**
@@ -125,7 +125,7 @@ public class MotiveImpl extends MinimalEObjectImpl.Container implements Motive {
 		String oldName = name;
 		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysical_IncidentPackage.MOTIVE__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysicalIncidentPackage.MOTIVE__NAME, oldName, name));
 	}
 
 	/**
@@ -146,7 +146,7 @@ public class MotiveImpl extends MinimalEObjectImpl.Container implements Motive {
 		String oldDescription = description;
 		description = newDescription;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysical_IncidentPackage.MOTIVE__DESCRIPTION, oldDescription, description));
+			eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysicalIncidentPackage.MOTIVE__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -167,7 +167,7 @@ public class MotiveImpl extends MinimalEObjectImpl.Container implements Motive {
 		boolean oldIsPrimary = isPrimary;
 		isPrimary = newIsPrimary;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysical_IncidentPackage.MOTIVE__IS_PRIMARY, oldIsPrimary, isPrimary));
+			eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysicalIncidentPackage.MOTIVE__IS_PRIMARY, oldIsPrimary, isPrimary));
 	}
 
 	/**
@@ -178,11 +178,11 @@ public class MotiveImpl extends MinimalEObjectImpl.Container implements Motive {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case CyberPhysical_IncidentPackage.MOTIVE__NAME:
+			case CyberPhysicalIncidentPackage.MOTIVE__NAME:
 				return getName();
-			case CyberPhysical_IncidentPackage.MOTIVE__DESCRIPTION:
+			case CyberPhysicalIncidentPackage.MOTIVE__DESCRIPTION:
 				return getDescription();
-			case CyberPhysical_IncidentPackage.MOTIVE__IS_PRIMARY:
+			case CyberPhysicalIncidentPackage.MOTIVE__IS_PRIMARY:
 				return isIsPrimary();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -196,13 +196,13 @@ public class MotiveImpl extends MinimalEObjectImpl.Container implements Motive {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case CyberPhysical_IncidentPackage.MOTIVE__NAME:
+			case CyberPhysicalIncidentPackage.MOTIVE__NAME:
 				setName((String)newValue);
 				return;
-			case CyberPhysical_IncidentPackage.MOTIVE__DESCRIPTION:
+			case CyberPhysicalIncidentPackage.MOTIVE__DESCRIPTION:
 				setDescription((String)newValue);
 				return;
-			case CyberPhysical_IncidentPackage.MOTIVE__IS_PRIMARY:
+			case CyberPhysicalIncidentPackage.MOTIVE__IS_PRIMARY:
 				setIsPrimary((Boolean)newValue);
 				return;
 		}
@@ -217,13 +217,13 @@ public class MotiveImpl extends MinimalEObjectImpl.Container implements Motive {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case CyberPhysical_IncidentPackage.MOTIVE__NAME:
+			case CyberPhysicalIncidentPackage.MOTIVE__NAME:
 				setName(NAME_EDEFAULT);
 				return;
-			case CyberPhysical_IncidentPackage.MOTIVE__DESCRIPTION:
+			case CyberPhysicalIncidentPackage.MOTIVE__DESCRIPTION:
 				setDescription(DESCRIPTION_EDEFAULT);
 				return;
-			case CyberPhysical_IncidentPackage.MOTIVE__IS_PRIMARY:
+			case CyberPhysicalIncidentPackage.MOTIVE__IS_PRIMARY:
 				setIsPrimary(IS_PRIMARY_EDEFAULT);
 				return;
 		}
@@ -238,11 +238,11 @@ public class MotiveImpl extends MinimalEObjectImpl.Container implements Motive {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case CyberPhysical_IncidentPackage.MOTIVE__NAME:
+			case CyberPhysicalIncidentPackage.MOTIVE__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case CyberPhysical_IncidentPackage.MOTIVE__DESCRIPTION:
+			case CyberPhysicalIncidentPackage.MOTIVE__DESCRIPTION:
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
-			case CyberPhysical_IncidentPackage.MOTIVE__IS_PRIMARY:
+			case CyberPhysicalIncidentPackage.MOTIVE__IS_PRIMARY:
 				return isPrimary != IS_PRIMARY_EDEFAULT;
 		}
 		return super.eIsSet(featureID);

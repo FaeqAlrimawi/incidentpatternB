@@ -20,7 +20,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link cyberPhysical_Incident.Type#getSuperType <em>Super Type</em>}</li>
  * </ul>
  *
- * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getType()
+ * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getType()
  * @model
  * @generated
  */
@@ -35,7 +35,7 @@ public interface Type extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
-	 * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getType_Name()
+	 * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getType_Name()
 	 * @model
 	 * @generated
 	 */
@@ -61,7 +61,7 @@ public interface Type extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Has Super Type</em>' attribute.
 	 * @see #setHasSuperType(boolean)
-	 * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getType_HasSuperType()
+	 * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getType_HasSuperType()
 	 * @model
 	 * @generated
 	 */
@@ -87,7 +87,7 @@ public interface Type extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Super Type</em>' containment reference list.
-	 * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getType_SuperType()
+	 * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getType_SuperType()
 	 * @model containment="true"
 	 * @generated
 	 */

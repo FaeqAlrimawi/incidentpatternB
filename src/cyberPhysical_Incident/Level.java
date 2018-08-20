@@ -13,7 +13,7 @@ import org.eclipse.emf.common.util.Enumerator;
  * A representation of the literals of the enumeration '<em><b>Level</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
- * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getLevel()
+ * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getLevel()
  * @model
  * @generated
  */

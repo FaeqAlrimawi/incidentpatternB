@@ -25,7 +25,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link cyberPhysical_Incident.Goal#getState <em>State</em>}</li>
  * </ul>
  *
- * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getGoal()
+ * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getGoal()
  * @model
  * @generated
  */
@@ -40,7 +40,7 @@ public interface Goal extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
-	 * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getGoal_Name()
+	 * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getGoal_Name()
 	 * @model id="true"
 	 * @generated
 	 */
@@ -66,7 +66,7 @@ public interface Goal extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
-	 * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getGoal_Description()
+	 * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getGoal_Description()
 	 * @model
 	 * @generated
 	 */
@@ -92,7 +92,7 @@ public interface Goal extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Activities</em>' reference list.
-	 * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getGoal_Activities()
+	 * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getGoal_Activities()
 	 * @model
 	 * @generated
 	 */
@@ -108,7 +108,7 @@ public interface Goal extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>State</em>' containment reference list.
-	 * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getGoal_State()
+	 * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getGoal_State()
 	 * @model containment="true"
 	 * @generated
 	 */

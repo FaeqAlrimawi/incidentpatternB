@@ -23,7 +23,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link cyberPhysical_Incident.Connection#getType <em>Type</em>}</li>
  * </ul>
  *
- * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getConnection()
+ * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getConnection()
  * @model
  * @generated
  */
@@ -45,7 +45,7 @@ public interface Connection extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
-	 * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getConnection_Name()
+	 * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getConnection_Name()
 	 * @model id="true"
 	 * @generated
 	 */
@@ -71,7 +71,7 @@ public interface Connection extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Constraints</em>' attribute list.
-	 * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getConnection_Constraints()
+	 * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getConnection_Constraints()
 	 * @model
 	 * @generated
 	 */
@@ -87,7 +87,7 @@ public interface Connection extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Entity1</em>' reference.
 	 * @see #setEntity1(Location)
-	 * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getConnection_Entity1()
+	 * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getConnection_Entity1()
 	 * @model
 	 * @generated
 	 */
@@ -113,7 +113,7 @@ public interface Connection extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Entity2</em>' reference.
 	 * @see #setEntity2(Location)
-	 * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getConnection_Entity2()
+	 * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getConnection_Entity2()
 	 * @model
 	 * @generated
 	 */
@@ -139,7 +139,7 @@ public interface Connection extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Connection Probability</em>' attribute.
 	 * @see #setConnectionProbability(double)
-	 * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getConnection_ConnectionProbability()
+	 * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getConnection_ConnectionProbability()
 	 * @model
 	 * @generated
 	 */
@@ -165,7 +165,7 @@ public interface Connection extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Type</em>' containment reference.
 	 * @see #setType(Type)
-	 * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getConnection_Type()
+	 * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getConnection_Type()
 	 * @model containment="true"
 	 * @generated
 	 */

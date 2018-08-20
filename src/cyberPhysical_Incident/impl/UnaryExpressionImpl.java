@@ -2,7 +2,7 @@
  */
 package cyberPhysical_Incident.impl;
 
-import cyberPhysical_Incident.CyberPhysical_IncidentPackage;
+import cyberPhysical_Incident.CyberPhysicalIncidentPackage;
 import cyberPhysical_Incident.Expression;
 import cyberPhysical_Incident.UnaryExpression;
 
@@ -54,7 +54,7 @@ public abstract class UnaryExpressionImpl extends ExpressionImpl implements Unar
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CyberPhysical_IncidentPackage.Literals.UNARY_EXPRESSION;
+		return CyberPhysicalIncidentPackage.Literals.UNARY_EXPRESSION;
 	}
 
 	/**
@@ -75,7 +75,7 @@ public abstract class UnaryExpressionImpl extends ExpressionImpl implements Unar
 		Expression oldOperand = operand;
 		operand = newOperand;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CyberPhysical_IncidentPackage.UNARY_EXPRESSION__OPERAND, oldOperand, newOperand);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CyberPhysicalIncidentPackage.UNARY_EXPRESSION__OPERAND, oldOperand, newOperand);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -90,14 +90,14 @@ public abstract class UnaryExpressionImpl extends ExpressionImpl implements Unar
 		if (newOperand != operand) {
 			NotificationChain msgs = null;
 			if (operand != null)
-				msgs = ((InternalEObject)operand).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CyberPhysical_IncidentPackage.UNARY_EXPRESSION__OPERAND, null, msgs);
+				msgs = ((InternalEObject)operand).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CyberPhysicalIncidentPackage.UNARY_EXPRESSION__OPERAND, null, msgs);
 			if (newOperand != null)
-				msgs = ((InternalEObject)newOperand).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CyberPhysical_IncidentPackage.UNARY_EXPRESSION__OPERAND, null, msgs);
+				msgs = ((InternalEObject)newOperand).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CyberPhysicalIncidentPackage.UNARY_EXPRESSION__OPERAND, null, msgs);
 			msgs = basicSetOperand(newOperand, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysical_IncidentPackage.UNARY_EXPRESSION__OPERAND, newOperand, newOperand));
+			eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysicalIncidentPackage.UNARY_EXPRESSION__OPERAND, newOperand, newOperand));
 	}
 
 	/**
@@ -108,7 +108,7 @@ public abstract class UnaryExpressionImpl extends ExpressionImpl implements Unar
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case CyberPhysical_IncidentPackage.UNARY_EXPRESSION__OPERAND:
+			case CyberPhysicalIncidentPackage.UNARY_EXPRESSION__OPERAND:
 				return basicSetOperand(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -122,7 +122,7 @@ public abstract class UnaryExpressionImpl extends ExpressionImpl implements Unar
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case CyberPhysical_IncidentPackage.UNARY_EXPRESSION__OPERAND:
+			case CyberPhysicalIncidentPackage.UNARY_EXPRESSION__OPERAND:
 				return getOperand();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -136,7 +136,7 @@ public abstract class UnaryExpressionImpl extends ExpressionImpl implements Unar
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case CyberPhysical_IncidentPackage.UNARY_EXPRESSION__OPERAND:
+			case CyberPhysicalIncidentPackage.UNARY_EXPRESSION__OPERAND:
 				setOperand((Expression)newValue);
 				return;
 		}
@@ -151,7 +151,7 @@ public abstract class UnaryExpressionImpl extends ExpressionImpl implements Unar
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case CyberPhysical_IncidentPackage.UNARY_EXPRESSION__OPERAND:
+			case CyberPhysicalIncidentPackage.UNARY_EXPRESSION__OPERAND:
 				setOperand((Expression)null);
 				return;
 		}
@@ -166,7 +166,7 @@ public abstract class UnaryExpressionImpl extends ExpressionImpl implements Unar
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case CyberPhysical_IncidentPackage.UNARY_EXPRESSION__OPERAND:
+			case CyberPhysicalIncidentPackage.UNARY_EXPRESSION__OPERAND:
 				return operand != null;
 		}
 		return super.eIsSet(featureID);

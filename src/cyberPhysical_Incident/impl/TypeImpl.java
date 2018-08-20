@@ -2,7 +2,7 @@
  */
 package cyberPhysical_Incident.impl;
 
-import cyberPhysical_Incident.CyberPhysical_IncidentPackage;
+import cyberPhysical_Incident.CyberPhysicalIncidentPackage;
 import cyberPhysical_Incident.Type;
 
 import java.util.Collection;
@@ -103,7 +103,7 @@ public class TypeImpl extends MinimalEObjectImpl.Container implements Type {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CyberPhysical_IncidentPackage.Literals.TYPE;
+		return CyberPhysicalIncidentPackage.Literals.TYPE;
 	}
 
 	/**
@@ -124,7 +124,7 @@ public class TypeImpl extends MinimalEObjectImpl.Container implements Type {
 		String oldName = name;
 		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysical_IncidentPackage.TYPE__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysicalIncidentPackage.TYPE__NAME, oldName, name));
 	}
 
 	/**
@@ -145,7 +145,7 @@ public class TypeImpl extends MinimalEObjectImpl.Container implements Type {
 		boolean oldHasSuperType = hasSuperType;
 		hasSuperType = newHasSuperType;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysical_IncidentPackage.TYPE__HAS_SUPER_TYPE, oldHasSuperType, hasSuperType));
+			eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysicalIncidentPackage.TYPE__HAS_SUPER_TYPE, oldHasSuperType, hasSuperType));
 	}
 
 	/**
@@ -155,7 +155,7 @@ public class TypeImpl extends MinimalEObjectImpl.Container implements Type {
 	 */
 	public EList<Type> getSuperType() {
 		if (superType == null) {
-			superType = new EObjectContainmentEList<Type>(Type.class, this, CyberPhysical_IncidentPackage.TYPE__SUPER_TYPE);
+			superType = new EObjectContainmentEList<Type>(Type.class, this, CyberPhysicalIncidentPackage.TYPE__SUPER_TYPE);
 		}
 		return superType;
 	}
@@ -168,7 +168,7 @@ public class TypeImpl extends MinimalEObjectImpl.Container implements Type {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case CyberPhysical_IncidentPackage.TYPE__SUPER_TYPE:
+			case CyberPhysicalIncidentPackage.TYPE__SUPER_TYPE:
 				return ((InternalEList<?>)getSuperType()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -182,11 +182,11 @@ public class TypeImpl extends MinimalEObjectImpl.Container implements Type {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case CyberPhysical_IncidentPackage.TYPE__NAME:
+			case CyberPhysicalIncidentPackage.TYPE__NAME:
 				return getName();
-			case CyberPhysical_IncidentPackage.TYPE__HAS_SUPER_TYPE:
+			case CyberPhysicalIncidentPackage.TYPE__HAS_SUPER_TYPE:
 				return isHasSuperType();
-			case CyberPhysical_IncidentPackage.TYPE__SUPER_TYPE:
+			case CyberPhysicalIncidentPackage.TYPE__SUPER_TYPE:
 				return getSuperType();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -201,13 +201,13 @@ public class TypeImpl extends MinimalEObjectImpl.Container implements Type {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case CyberPhysical_IncidentPackage.TYPE__NAME:
+			case CyberPhysicalIncidentPackage.TYPE__NAME:
 				setName((String)newValue);
 				return;
-			case CyberPhysical_IncidentPackage.TYPE__HAS_SUPER_TYPE:
+			case CyberPhysicalIncidentPackage.TYPE__HAS_SUPER_TYPE:
 				setHasSuperType((Boolean)newValue);
 				return;
-			case CyberPhysical_IncidentPackage.TYPE__SUPER_TYPE:
+			case CyberPhysicalIncidentPackage.TYPE__SUPER_TYPE:
 				getSuperType().clear();
 				getSuperType().addAll((Collection<? extends Type>)newValue);
 				return;
@@ -223,13 +223,13 @@ public class TypeImpl extends MinimalEObjectImpl.Container implements Type {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case CyberPhysical_IncidentPackage.TYPE__NAME:
+			case CyberPhysicalIncidentPackage.TYPE__NAME:
 				setName(NAME_EDEFAULT);
 				return;
-			case CyberPhysical_IncidentPackage.TYPE__HAS_SUPER_TYPE:
+			case CyberPhysicalIncidentPackage.TYPE__HAS_SUPER_TYPE:
 				setHasSuperType(HAS_SUPER_TYPE_EDEFAULT);
 				return;
-			case CyberPhysical_IncidentPackage.TYPE__SUPER_TYPE:
+			case CyberPhysicalIncidentPackage.TYPE__SUPER_TYPE:
 				getSuperType().clear();
 				return;
 		}
@@ -244,11 +244,11 @@ public class TypeImpl extends MinimalEObjectImpl.Container implements Type {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case CyberPhysical_IncidentPackage.TYPE__NAME:
+			case CyberPhysicalIncidentPackage.TYPE__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case CyberPhysical_IncidentPackage.TYPE__HAS_SUPER_TYPE:
+			case CyberPhysicalIncidentPackage.TYPE__HAS_SUPER_TYPE:
 				return hasSuperType != HAS_SUPER_TYPE_EDEFAULT;
-			case CyberPhysical_IncidentPackage.TYPE__SUPER_TYPE:
+			case CyberPhysicalIncidentPackage.TYPE__SUPER_TYPE:
 				return superType != null && !superType.isEmpty();
 		}
 		return super.eIsSet(featureID);

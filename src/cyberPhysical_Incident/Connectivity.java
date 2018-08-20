@@ -17,7 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link cyberPhysical_Incident.Connectivity#isIsClosed <em>Is Closed</em>}</li>
  * </ul>
  *
- * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getConnectivity()
+ * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getConnectivity()
  * @model
  * @generated
  */
@@ -32,7 +32,7 @@ public interface Connectivity extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
-	 * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getConnectivity_Name()
+	 * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getConnectivity_Name()
 	 * @model required="true"
 	 * @generated
 	 */
@@ -58,7 +58,7 @@ public interface Connectivity extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Is Closed</em>' attribute.
 	 * @see #setIsClosed(boolean)
-	 * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getConnectivity_IsClosed()
+	 * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getConnectivity_IsClosed()
 	 * @model
 	 * @generated
 	 */

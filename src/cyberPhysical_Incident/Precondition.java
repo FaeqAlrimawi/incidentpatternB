@@ -9,7 +9,7 @@ package cyberPhysical_Incident;
  * <!-- end-user-doc -->
  *
  *
- * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getPrecondition()
+ * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getPrecondition()
  * @model
  * @generated
  */

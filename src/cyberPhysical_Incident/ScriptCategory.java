@@ -13,7 +13,7 @@ import org.eclipse.emf.common.util.Enumerator;
  * A representation of the literals of the enumeration '<em><b>Script Category</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
- * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getScriptCategory()
+ * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getScriptCategory()
  * @model
  * @generated
  */

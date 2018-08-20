@@ -3,7 +3,7 @@
 package cyberPhysical_Incident.impl;
 
 import cyberPhysical_Incident.Activity;
-import cyberPhysical_Incident.CyberPhysical_IncidentPackage;
+import cyberPhysical_Incident.CyberPhysicalIncidentPackage;
 import cyberPhysical_Incident.Path;
 
 import java.util.Collection;
@@ -80,7 +80,7 @@ public class PathImpl extends MinimalEObjectImpl.Container implements Path {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CyberPhysical_IncidentPackage.Literals.PATH;
+		return CyberPhysicalIncidentPackage.Literals.PATH;
 	}
 
 	/**
@@ -101,7 +101,7 @@ public class PathImpl extends MinimalEObjectImpl.Container implements Path {
 		String oldName = name;
 		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysical_IncidentPackage.PATH__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysicalIncidentPackage.PATH__NAME, oldName, name));
 	}
 
 	/**
@@ -111,7 +111,7 @@ public class PathImpl extends MinimalEObjectImpl.Container implements Path {
 	 */
 	public EList<Activity> getActivities() {
 		if (activities == null) {
-			activities = new EObjectResolvingEList<Activity>(Activity.class, this, CyberPhysical_IncidentPackage.PATH__ACTIVITIES);
+			activities = new EObjectResolvingEList<Activity>(Activity.class, this, CyberPhysicalIncidentPackage.PATH__ACTIVITIES);
 		}
 		return activities;
 	}
@@ -124,9 +124,9 @@ public class PathImpl extends MinimalEObjectImpl.Container implements Path {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case CyberPhysical_IncidentPackage.PATH__NAME:
+			case CyberPhysicalIncidentPackage.PATH__NAME:
 				return getName();
-			case CyberPhysical_IncidentPackage.PATH__ACTIVITIES:
+			case CyberPhysicalIncidentPackage.PATH__ACTIVITIES:
 				return getActivities();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -141,10 +141,10 @@ public class PathImpl extends MinimalEObjectImpl.Container implements Path {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case CyberPhysical_IncidentPackage.PATH__NAME:
+			case CyberPhysicalIncidentPackage.PATH__NAME:
 				setName((String)newValue);
 				return;
-			case CyberPhysical_IncidentPackage.PATH__ACTIVITIES:
+			case CyberPhysicalIncidentPackage.PATH__ACTIVITIES:
 				getActivities().clear();
 				getActivities().addAll((Collection<? extends Activity>)newValue);
 				return;
@@ -160,10 +160,10 @@ public class PathImpl extends MinimalEObjectImpl.Container implements Path {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case CyberPhysical_IncidentPackage.PATH__NAME:
+			case CyberPhysicalIncidentPackage.PATH__NAME:
 				setName(NAME_EDEFAULT);
 				return;
-			case CyberPhysical_IncidentPackage.PATH__ACTIVITIES:
+			case CyberPhysicalIncidentPackage.PATH__ACTIVITIES:
 				getActivities().clear();
 				return;
 		}
@@ -178,9 +178,9 @@ public class PathImpl extends MinimalEObjectImpl.Container implements Path {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case CyberPhysical_IncidentPackage.PATH__NAME:
+			case CyberPhysicalIncidentPackage.PATH__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case CyberPhysical_IncidentPackage.PATH__ACTIVITIES:
+			case CyberPhysicalIncidentPackage.PATH__ACTIVITIES:
 				return activities != null && !activities.isEmpty();
 		}
 		return super.eIsSet(featureID);

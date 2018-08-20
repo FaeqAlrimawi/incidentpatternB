@@ -21,7 +21,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link cyberPhysical_Incident.Entity#getSite <em>Site</em>}</li>
  * </ul>
  *
- * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getEntity()
+ * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getEntity()
  * @model
  * @generated
  */
@@ -36,7 +36,7 @@ public interface Entity extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
-	 * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getEntity_Name()
+	 * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getEntity_Name()
 	 * @model required="true"
 	 *        extendedMetaData="namespace='' group='#newAttribute' processing='strict'"
 	 * @generated
@@ -63,7 +63,7 @@ public interface Entity extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Entity</em>' containment reference list.
-	 * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getEntity_Entity()
+	 * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getEntity_Entity()
 	 * @model containment="true"
 	 * @generated
 	 */
@@ -79,7 +79,7 @@ public interface Entity extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Connectivity</em>' containment reference list.
-	 * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getEntity_Connectivity()
+	 * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getEntity_Connectivity()
 	 * @model containment="true"
 	 * @generated
 	 */
@@ -95,7 +95,7 @@ public interface Entity extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Site</em>' containment reference.
 	 * @see #setSite(Site)
-	 * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getEntity_Site()
+	 * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getEntity_Site()
 	 * @model containment="true"
 	 * @generated
 	 */

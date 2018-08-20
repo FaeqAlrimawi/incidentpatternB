@@ -2,7 +2,7 @@
  */
 package cyberPhysical_Incident.impl;
 
-import cyberPhysical_Incident.CyberPhysical_IncidentPackage;
+import cyberPhysical_Incident.CyberPhysicalIncidentPackage;
 import cyberPhysical_Incident.Postcondition;
 
 import org.eclipse.emf.ecore.EClass;
@@ -17,8 +17,8 @@ import org.eclipse.emf.ecore.EClass;
 public class PostconditionImpl extends ConditionImpl implements Postcondition {
 
 	
-	protected static int condNum = 1;
-	protected static String condName = "postcondition";
+//	protected static int condNum = 1;
+//	protected static String condName = "postcondition";
 	
 	/**
 	 * <!-- begin-user-doc -->
@@ -28,13 +28,13 @@ public class PostconditionImpl extends ConditionImpl implements Postcondition {
 	protected PostconditionImpl() {
 		super();
 		
-		setName(condName+"_"+condNum);
+		/*setName(condName+"_"+condNum);
 		
 		condNum++;
 		
 		if((Long.MAX_VALUE-condNum) < 100) {
 			condNum  =1;
-		}
+		}*/
 	}
 
 	/**
@@ -44,7 +44,7 @@ public class PostconditionImpl extends ConditionImpl implements Postcondition {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CyberPhysical_IncidentPackage.Literals.POSTCONDITION;
+		return CyberPhysicalIncidentPackage.Literals.POSTCONDITION;
 	}
 
 } //PostconditionImpl

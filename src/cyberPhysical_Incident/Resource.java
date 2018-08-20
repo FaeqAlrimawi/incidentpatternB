@@ -14,7 +14,7 @@ package cyberPhysical_Incident;
  *   <li>{@link cyberPhysical_Incident.Resource#getDescription <em>Description</em>}</li>
  * </ul>
  *
- * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getResource()
+ * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getResource()
  * @model
  * @generated
  */
@@ -29,7 +29,7 @@ public interface Resource extends IncidentEntity {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
-	 * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getResource_Description()
+	 * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getResource_Description()
 	 * @model
 	 * @generated
 	 */

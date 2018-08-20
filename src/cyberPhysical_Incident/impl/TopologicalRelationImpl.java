@@ -2,7 +2,7 @@
  */
 package cyberPhysical_Incident.impl;
 
-import cyberPhysical_Incident.CyberPhysical_IncidentPackage;
+import cyberPhysical_Incident.CyberPhysicalIncidentPackage;
 import cyberPhysical_Incident.TopologicalRelation;
 
 import org.eclipse.emf.ecore.EClass;
@@ -31,7 +31,7 @@ public abstract class TopologicalRelationImpl extends BinaryExpressionImpl imple
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CyberPhysical_IncidentPackage.Literals.TOPOLOGICAL_RELATION;
+		return CyberPhysicalIncidentPackage.Literals.TOPOLOGICAL_RELATION;
 	}
 
 } //TopologicalRelationImpl

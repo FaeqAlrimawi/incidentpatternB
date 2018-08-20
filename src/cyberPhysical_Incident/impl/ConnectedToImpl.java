@@ -2,9 +2,9 @@
  */
 package cyberPhysical_Incident.impl;
 
-import cyberPhysical_Incident.CyberPhysical_IncidentPackage;
 import cyberPhysical_Incident.ConnectedTo;
 
+import cyberPhysical_Incident.CyberPhysicalIncidentPackage;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -31,7 +31,7 @@ public abstract class ConnectedToImpl extends TopologicalRelationImpl implements
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CyberPhysical_IncidentPackage.Literals.CONNECTED_TO;
+		return CyberPhysicalIncidentPackage.Literals.CONNECTED_TO;
 	}
 
 } //ConnectedToImpl

@@ -3,7 +3,7 @@
 package cyberPhysical_Incident.impl;
 
 import cyberPhysical_Incident.BinaryExpression;
-import cyberPhysical_Incident.CyberPhysical_IncidentPackage;
+import cyberPhysical_Incident.CyberPhysicalIncidentPackage;
 import cyberPhysical_Incident.Expression;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -65,7 +65,7 @@ public abstract class BinaryExpressionImpl extends ExpressionImpl implements Bin
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CyberPhysical_IncidentPackage.Literals.BINARY_EXPRESSION;
+		return CyberPhysicalIncidentPackage.Literals.BINARY_EXPRESSION;
 	}
 
 	/**
@@ -86,7 +86,7 @@ public abstract class BinaryExpressionImpl extends ExpressionImpl implements Bin
 		Expression oldLeft = left;
 		left = newLeft;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CyberPhysical_IncidentPackage.BINARY_EXPRESSION__LEFT, oldLeft, newLeft);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CyberPhysicalIncidentPackage.BINARY_EXPRESSION__LEFT, oldLeft, newLeft);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -101,14 +101,14 @@ public abstract class BinaryExpressionImpl extends ExpressionImpl implements Bin
 		if (newLeft != left) {
 			NotificationChain msgs = null;
 			if (left != null)
-				msgs = ((InternalEObject)left).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CyberPhysical_IncidentPackage.BINARY_EXPRESSION__LEFT, null, msgs);
+				msgs = ((InternalEObject)left).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CyberPhysicalIncidentPackage.BINARY_EXPRESSION__LEFT, null, msgs);
 			if (newLeft != null)
-				msgs = ((InternalEObject)newLeft).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CyberPhysical_IncidentPackage.BINARY_EXPRESSION__LEFT, null, msgs);
+				msgs = ((InternalEObject)newLeft).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CyberPhysicalIncidentPackage.BINARY_EXPRESSION__LEFT, null, msgs);
 			msgs = basicSetLeft(newLeft, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysical_IncidentPackage.BINARY_EXPRESSION__LEFT, newLeft, newLeft));
+			eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysicalIncidentPackage.BINARY_EXPRESSION__LEFT, newLeft, newLeft));
 	}
 
 	/**
@@ -129,7 +129,7 @@ public abstract class BinaryExpressionImpl extends ExpressionImpl implements Bin
 		Expression oldRight = right;
 		right = newRight;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CyberPhysical_IncidentPackage.BINARY_EXPRESSION__RIGHT, oldRight, newRight);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CyberPhysicalIncidentPackage.BINARY_EXPRESSION__RIGHT, oldRight, newRight);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -144,14 +144,14 @@ public abstract class BinaryExpressionImpl extends ExpressionImpl implements Bin
 		if (newRight != right) {
 			NotificationChain msgs = null;
 			if (right != null)
-				msgs = ((InternalEObject)right).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CyberPhysical_IncidentPackage.BINARY_EXPRESSION__RIGHT, null, msgs);
+				msgs = ((InternalEObject)right).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CyberPhysicalIncidentPackage.BINARY_EXPRESSION__RIGHT, null, msgs);
 			if (newRight != null)
-				msgs = ((InternalEObject)newRight).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CyberPhysical_IncidentPackage.BINARY_EXPRESSION__RIGHT, null, msgs);
+				msgs = ((InternalEObject)newRight).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CyberPhysicalIncidentPackage.BINARY_EXPRESSION__RIGHT, null, msgs);
 			msgs = basicSetRight(newRight, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysical_IncidentPackage.BINARY_EXPRESSION__RIGHT, newRight, newRight));
+			eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysicalIncidentPackage.BINARY_EXPRESSION__RIGHT, newRight, newRight));
 	}
 
 	/**
@@ -162,9 +162,9 @@ public abstract class BinaryExpressionImpl extends ExpressionImpl implements Bin
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case CyberPhysical_IncidentPackage.BINARY_EXPRESSION__LEFT:
+			case CyberPhysicalIncidentPackage.BINARY_EXPRESSION__LEFT:
 				return basicSetLeft(null, msgs);
-			case CyberPhysical_IncidentPackage.BINARY_EXPRESSION__RIGHT:
+			case CyberPhysicalIncidentPackage.BINARY_EXPRESSION__RIGHT:
 				return basicSetRight(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -178,9 +178,9 @@ public abstract class BinaryExpressionImpl extends ExpressionImpl implements Bin
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case CyberPhysical_IncidentPackage.BINARY_EXPRESSION__LEFT:
+			case CyberPhysicalIncidentPackage.BINARY_EXPRESSION__LEFT:
 				return getLeft();
-			case CyberPhysical_IncidentPackage.BINARY_EXPRESSION__RIGHT:
+			case CyberPhysicalIncidentPackage.BINARY_EXPRESSION__RIGHT:
 				return getRight();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -194,10 +194,10 @@ public abstract class BinaryExpressionImpl extends ExpressionImpl implements Bin
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case CyberPhysical_IncidentPackage.BINARY_EXPRESSION__LEFT:
+			case CyberPhysicalIncidentPackage.BINARY_EXPRESSION__LEFT:
 				setLeft((Expression)newValue);
 				return;
-			case CyberPhysical_IncidentPackage.BINARY_EXPRESSION__RIGHT:
+			case CyberPhysicalIncidentPackage.BINARY_EXPRESSION__RIGHT:
 				setRight((Expression)newValue);
 				return;
 		}
@@ -212,10 +212,10 @@ public abstract class BinaryExpressionImpl extends ExpressionImpl implements Bin
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case CyberPhysical_IncidentPackage.BINARY_EXPRESSION__LEFT:
+			case CyberPhysicalIncidentPackage.BINARY_EXPRESSION__LEFT:
 				setLeft((Expression)null);
 				return;
-			case CyberPhysical_IncidentPackage.BINARY_EXPRESSION__RIGHT:
+			case CyberPhysicalIncidentPackage.BINARY_EXPRESSION__RIGHT:
 				setRight((Expression)null);
 				return;
 		}
@@ -230,9 +230,9 @@ public abstract class BinaryExpressionImpl extends ExpressionImpl implements Bin
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case CyberPhysical_IncidentPackage.BINARY_EXPRESSION__LEFT:
+			case CyberPhysicalIncidentPackage.BINARY_EXPRESSION__LEFT:
 				return left != null;
-			case CyberPhysical_IncidentPackage.BINARY_EXPRESSION__RIGHT:
+			case CyberPhysicalIncidentPackage.BINARY_EXPRESSION__RIGHT:
 				return right != null;
 		}
 		return super.eIsSet(featureID);

@@ -15,7 +15,7 @@ package cyberPhysical_Incident;
  *   <li>{@link cyberPhysical_Incident.UnaryExpression#getOperand <em>Operand</em>}</li>
  * </ul>
  *
- * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getUnaryExpression()
+ * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getUnaryExpression()
  * @model abstract="true"
  * @generated
  */
@@ -30,7 +30,7 @@ public interface UnaryExpression extends Expression {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Operand</em>' containment reference.
 	 * @see #setOperand(Expression)
-	 * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getUnaryExpression_Operand()
+	 * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getUnaryExpression_Operand()
 	 * @model containment="true" required="true"
 	 * @generated
 	 */

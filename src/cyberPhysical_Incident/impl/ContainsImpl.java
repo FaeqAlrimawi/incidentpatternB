@@ -2,9 +2,9 @@
  */
 package cyberPhysical_Incident.impl;
 
-import cyberPhysical_Incident.CyberPhysical_IncidentPackage;
 import cyberPhysical_Incident.Contains;
 
+import cyberPhysical_Incident.CyberPhysicalIncidentPackage;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -31,7 +31,7 @@ public abstract class ContainsImpl extends TopologicalRelationImpl implements Co
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CyberPhysical_IncidentPackage.Literals.CONTAINS;
+		return CyberPhysicalIncidentPackage.Literals.CONTAINS;
 	}
 
 } //ContainsImpl

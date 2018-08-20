@@ -493,13 +493,13 @@ public interface CyberPhysicalIncidentPackage extends EPackage {
 	int SCENE__DESCRIPTION = 3;
 
 	/**
-	 * The feature id for the '<em><b>Activities</b></em>' reference list.
+	 * The feature id for the '<em><b>Activity</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SCENE__ACTIVITIES = 4;
+	int SCENE__ACTIVITY = 4;
 
 	/**
 	 * The number of structural features of the '<em>Scene</em>' class.
@@ -1459,22 +1459,13 @@ public interface CyberPhysicalIncidentPackage extends EPackage {
 	int INCIDENT_DIAGRAM__PATHS = 9;
 
 	/**
-	 * The feature id for the '<em><b>Activity</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INCIDENT_DIAGRAM__ACTIVITY = 10;
-
-	/**
 	 * The number of structural features of the '<em>Incident Diagram</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INCIDENT_DIAGRAM_FEATURE_COUNT = 11;
+	int INCIDENT_DIAGRAM_FEATURE_COUNT = 10;
 
 	/**
 	 * The number of operations of the '<em>Incident Diagram</em>' class.
@@ -3286,15 +3277,15 @@ public interface CyberPhysicalIncidentPackage extends EPackage {
 	EAttribute getScene_Description();
 
 	/**
-	 * Returns the meta object for the reference list '{@link cyberPhysical_Incident.Scene#getActivities <em>Activities</em>}'.
+	 * Returns the meta object for the containment reference list '{@link cyberPhysical_Incident.Scene#getActivity <em>Activity</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Activities</em>'.
-	 * @see cyberPhysical_Incident.Scene#getActivities()
+	 * @return the meta object for the containment reference list '<em>Activity</em>'.
+	 * @see cyberPhysical_Incident.Scene#getActivity()
 	 * @see #getScene()
 	 * @generated
 	 */
-	EReference getScene_Activities();
+	EReference getScene_Activity();
 
 	/**
 	 * Returns the meta object for class '{@link cyberPhysical_Incident.Motive <em>Motive</em>}'.
@@ -3812,17 +3803,6 @@ public interface CyberPhysicalIncidentPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getIncidentDiagram_Paths();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link cyberPhysical_Incident.IncidentDiagram#getActivity <em>Activity</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Activity</em>'.
-	 * @see cyberPhysical_Incident.IncidentDiagram#getActivity()
-	 * @see #getIncidentDiagram()
-	 * @generated
-	 */
-	EReference getIncidentDiagram_Activity();
 
 	/**
 	 * Returns the meta object for class '{@link cyberPhysical_Incident.Property <em>Property</em>}'.
@@ -4878,12 +4858,12 @@ public interface CyberPhysicalIncidentPackage extends EPackage {
 		EAttribute SCENE__DESCRIPTION = eINSTANCE.getScene_Description();
 
 		/**
-		 * The meta object literal for the '<em><b>Activities</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Activity</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference SCENE__ACTIVITIES = eINSTANCE.getScene_Activities();
+		EReference SCENE__ACTIVITY = eINSTANCE.getScene_Activity();
 
 		/**
 		 * The meta object literal for the '{@link cyberPhysical_Incident.impl.MotiveImpl <em>Motive</em>}' class.
@@ -5290,14 +5270,6 @@ public interface CyberPhysicalIncidentPackage extends EPackage {
 		 * @generated
 		 */
 		EReference INCIDENT_DIAGRAM__PATHS = eINSTANCE.getIncidentDiagram_Paths();
-
-		/**
-		 * The meta object literal for the '<em><b>Activity</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference INCIDENT_DIAGRAM__ACTIVITY = eINSTANCE.getIncidentDiagram_Activity();
 
 		/**
 		 * The meta object literal for the '{@link cyberPhysical_Incident.impl.PropertyImpl <em>Property</em>}' class.

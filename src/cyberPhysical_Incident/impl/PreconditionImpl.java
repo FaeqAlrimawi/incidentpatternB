@@ -2,7 +2,7 @@
  */
 package cyberPhysical_Incident.impl;
 
-import cyberPhysical_Incident.CyberPhysical_IncidentPackage;
+import cyberPhysical_Incident.CyberPhysicalIncidentPackage;
 import cyberPhysical_Incident.Precondition;
 
 import org.eclipse.emf.ecore.EClass;
@@ -17,8 +17,8 @@ import org.eclipse.emf.ecore.EClass;
 public class PreconditionImpl extends ConditionImpl implements Precondition {
 	
 	
-	protected static int condNum = 1;
-	protected static String condName = "precondition";
+//	protected static int condNum = 1;
+//	protected static String condName = "precondition";
 	
 	/**
 	 * <!-- begin-user-doc -->
@@ -28,13 +28,13 @@ public class PreconditionImpl extends ConditionImpl implements Precondition {
 	protected PreconditionImpl() {
 		super();
 		
-		setName(condName+"_"+condNum);
+		/*setName(condName+"_"+condNum);
 		
 		condNum++;
 		
 		if((Long.MAX_VALUE-condNum) < 100) {
 			condNum  =1;
-		}
+		}*/
 	}
 
 	/**
@@ -44,7 +44,7 @@ public class PreconditionImpl extends ConditionImpl implements Precondition {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CyberPhysical_IncidentPackage.Literals.PRECONDITION;
+		return CyberPhysicalIncidentPackage.Literals.PRECONDITION;
 	}
 
 } //PreconditionImpl

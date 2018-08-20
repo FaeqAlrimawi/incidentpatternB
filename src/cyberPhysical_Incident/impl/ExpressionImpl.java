@@ -2,7 +2,7 @@
  */
 package cyberPhysical_Incident.impl;
 
-import cyberPhysical_Incident.CyberPhysical_IncidentPackage;
+import cyberPhysical_Incident.CyberPhysicalIncidentPackage;
 import cyberPhysical_Incident.Expression;
 
 import org.eclipse.emf.ecore.EClass;
@@ -33,7 +33,7 @@ public abstract class ExpressionImpl extends MinimalEObjectImpl.Container implem
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CyberPhysical_IncidentPackage.Literals.EXPRESSION;
+		return CyberPhysicalIncidentPackage.Literals.EXPRESSION;
 	}
 
 } //ExpressionImpl

@@ -17,7 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link cyberPhysical_Incident.Property#getValue <em>Value</em>}</li>
  * </ul>
  *
- * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getProperty()
+ * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getProperty()
  * @model
  * @generated
  */
@@ -32,7 +32,7 @@ public interface Property extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
-	 * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getProperty_Name()
+	 * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getProperty_Name()
 	 * @model id="true"
 	 * @generated
 	 */
@@ -58,7 +58,7 @@ public interface Property extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Value</em>' attribute.
 	 * @see #setValue(String)
-	 * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getProperty_Value()
+	 * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getProperty_Value()
 	 * @model
 	 * @generated
 	 */

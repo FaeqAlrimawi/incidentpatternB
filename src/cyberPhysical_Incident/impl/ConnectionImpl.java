@@ -3,7 +3,6 @@
 package cyberPhysical_Incident.impl;
 
 import cyberPhysical_Incident.CyberPhysicalIncidentPackage;
-import cyberPhysical_Incident.CyberPhysical_IncidentPackage;
 import cyberPhysical_Incident.Connection;
 import cyberPhysical_Incident.Location;
 import cyberPhysical_Incident.Type;
@@ -153,7 +152,7 @@ public class ConnectionImpl extends MinimalEObjectImpl.Container implements Conn
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CyberPhysical_IncidentPackage.Literals.CONNECTION;
+		return CyberPhysicalIncidentPackage.Literals.CONNECTION;
 	}
 
 	/**
@@ -174,7 +173,7 @@ public class ConnectionImpl extends MinimalEObjectImpl.Container implements Conn
 		String oldName = name;
 		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysical_IncidentPackage.CONNECTION__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysicalIncidentPackage.CONNECTION__NAME, oldName, name));
 	}
 
 	/**
@@ -184,7 +183,7 @@ public class ConnectionImpl extends MinimalEObjectImpl.Container implements Conn
 	 */
 	public EList<String> getConstraints() {
 		if (constraints == null) {
-			constraints = new EDataTypeUniqueEList<String>(String.class, this, CyberPhysical_IncidentPackage.CONNECTION__CONSTRAINTS);
+			constraints = new EDataTypeUniqueEList<String>(String.class, this, CyberPhysicalIncidentPackage.CONNECTION__CONSTRAINTS);
 		}
 		return constraints;
 	}
@@ -200,7 +199,7 @@ public class ConnectionImpl extends MinimalEObjectImpl.Container implements Conn
 			entity1 = (Location)eResolveProxy(oldEntity1);
 			if (entity1 != oldEntity1) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CyberPhysical_IncidentPackage.CONNECTION__ENTITY1, oldEntity1, entity1));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CyberPhysicalIncidentPackage.CONNECTION__ENTITY1, oldEntity1, entity1));
 			}
 		}
 		return entity1;
@@ -288,7 +287,7 @@ public class ConnectionImpl extends MinimalEObjectImpl.Container implements Conn
 			entity2 = (Location)eResolveProxy(oldEntity2);
 			if (entity2 != oldEntity2) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CyberPhysical_IncidentPackage.CONNECTION__ENTITY2, oldEntity2, entity2));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CyberPhysicalIncidentPackage.CONNECTION__ENTITY2, oldEntity2, entity2));
 			}
 		}
 		return entity2;
@@ -350,7 +349,7 @@ public class ConnectionImpl extends MinimalEObjectImpl.Container implements Conn
 		double oldConnectionProbability = connectionProbability;
 		connectionProbability = newConnectionProbability;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysical_IncidentPackage.CONNECTION__CONNECTION_PROBABILITY, oldConnectionProbability, connectionProbability));
+			eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysicalIncidentPackage.CONNECTION__CONNECTION_PROBABILITY, oldConnectionProbability, connectionProbability));
 	}
 
 	/**
@@ -371,7 +370,7 @@ public class ConnectionImpl extends MinimalEObjectImpl.Container implements Conn
 		Type oldType = type;
 		type = newType;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CyberPhysical_IncidentPackage.CONNECTION__TYPE, oldType, newType);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CyberPhysicalIncidentPackage.CONNECTION__TYPE, oldType, newType);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -386,14 +385,14 @@ public class ConnectionImpl extends MinimalEObjectImpl.Container implements Conn
 		if (newType != type) {
 			NotificationChain msgs = null;
 			if (type != null)
-				msgs = ((InternalEObject)type).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CyberPhysical_IncidentPackage.CONNECTION__TYPE, null, msgs);
+				msgs = ((InternalEObject)type).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CyberPhysicalIncidentPackage.CONNECTION__TYPE, null, msgs);
 			if (newType != null)
-				msgs = ((InternalEObject)newType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CyberPhysical_IncidentPackage.CONNECTION__TYPE, null, msgs);
+				msgs = ((InternalEObject)newType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CyberPhysicalIncidentPackage.CONNECTION__TYPE, null, msgs);
 			msgs = basicSetType(newType, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysical_IncidentPackage.CONNECTION__TYPE, newType, newType));
+			eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysicalIncidentPackage.CONNECTION__TYPE, newType, newType));
 	}
 
 	/**
@@ -404,7 +403,7 @@ public class ConnectionImpl extends MinimalEObjectImpl.Container implements Conn
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case CyberPhysical_IncidentPackage.CONNECTION__TYPE:
+			case CyberPhysicalIncidentPackage.CONNECTION__TYPE:
 				return basicSetType(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -418,19 +417,19 @@ public class ConnectionImpl extends MinimalEObjectImpl.Container implements Conn
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case CyberPhysical_IncidentPackage.CONNECTION__NAME:
+			case CyberPhysicalIncidentPackage.CONNECTION__NAME:
 				return getName();
-			case CyberPhysical_IncidentPackage.CONNECTION__CONSTRAINTS:
+			case CyberPhysicalIncidentPackage.CONNECTION__CONSTRAINTS:
 				return getConstraints();
-			case CyberPhysical_IncidentPackage.CONNECTION__ENTITY1:
+			case CyberPhysicalIncidentPackage.CONNECTION__ENTITY1:
 				if (resolve) return getEntity1();
 				return basicGetEntity1();
-			case CyberPhysical_IncidentPackage.CONNECTION__ENTITY2:
+			case CyberPhysicalIncidentPackage.CONNECTION__ENTITY2:
 				if (resolve) return getEntity2();
 				return basicGetEntity2();
-			case CyberPhysical_IncidentPackage.CONNECTION__CONNECTION_PROBABILITY:
+			case CyberPhysicalIncidentPackage.CONNECTION__CONNECTION_PROBABILITY:
 				return getConnectionProbability();
-			case CyberPhysical_IncidentPackage.CONNECTION__TYPE:
+			case CyberPhysicalIncidentPackage.CONNECTION__TYPE:
 				return getType();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -445,23 +444,23 @@ public class ConnectionImpl extends MinimalEObjectImpl.Container implements Conn
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case CyberPhysical_IncidentPackage.CONNECTION__NAME:
+			case CyberPhysicalIncidentPackage.CONNECTION__NAME:
 				setName((String)newValue);
 				return;
-			case CyberPhysical_IncidentPackage.CONNECTION__CONSTRAINTS:
+			case CyberPhysicalIncidentPackage.CONNECTION__CONSTRAINTS:
 				getConstraints().clear();
 				getConstraints().addAll((Collection<? extends String>)newValue);
 				return;
-			case CyberPhysical_IncidentPackage.CONNECTION__ENTITY1:
+			case CyberPhysicalIncidentPackage.CONNECTION__ENTITY1:
 				setEntity1((Location)newValue);
 				return;
-			case CyberPhysical_IncidentPackage.CONNECTION__ENTITY2:
+			case CyberPhysicalIncidentPackage.CONNECTION__ENTITY2:
 				setEntity2((Location)newValue);
 				return;
-			case CyberPhysical_IncidentPackage.CONNECTION__CONNECTION_PROBABILITY:
+			case CyberPhysicalIncidentPackage.CONNECTION__CONNECTION_PROBABILITY:
 				setConnectionProbability((Double)newValue);
 				return;
-			case CyberPhysical_IncidentPackage.CONNECTION__TYPE:
+			case CyberPhysicalIncidentPackage.CONNECTION__TYPE:
 				setType((Type)newValue);
 				return;
 		}
@@ -476,22 +475,22 @@ public class ConnectionImpl extends MinimalEObjectImpl.Container implements Conn
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case CyberPhysical_IncidentPackage.CONNECTION__NAME:
+			case CyberPhysicalIncidentPackage.CONNECTION__NAME:
 				setName(NAME_EDEFAULT);
 				return;
-			case CyberPhysical_IncidentPackage.CONNECTION__CONSTRAINTS:
+			case CyberPhysicalIncidentPackage.CONNECTION__CONSTRAINTS:
 				getConstraints().clear();
 				return;
-			case CyberPhysical_IncidentPackage.CONNECTION__ENTITY1:
+			case CyberPhysicalIncidentPackage.CONNECTION__ENTITY1:
 				setEntity1((Location)null);
 				return;
-			case CyberPhysical_IncidentPackage.CONNECTION__ENTITY2:
+			case CyberPhysicalIncidentPackage.CONNECTION__ENTITY2:
 				setEntity2((Location)null);
 				return;
-			case CyberPhysical_IncidentPackage.CONNECTION__CONNECTION_PROBABILITY:
+			case CyberPhysicalIncidentPackage.CONNECTION__CONNECTION_PROBABILITY:
 				setConnectionProbability(CONNECTION_PROBABILITY_EDEFAULT);
 				return;
-			case CyberPhysical_IncidentPackage.CONNECTION__TYPE:
+			case CyberPhysicalIncidentPackage.CONNECTION__TYPE:
 				setType((Type)null);
 				return;
 		}
@@ -506,17 +505,17 @@ public class ConnectionImpl extends MinimalEObjectImpl.Container implements Conn
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case CyberPhysical_IncidentPackage.CONNECTION__NAME:
+			case CyberPhysicalIncidentPackage.CONNECTION__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case CyberPhysical_IncidentPackage.CONNECTION__CONSTRAINTS:
+			case CyberPhysicalIncidentPackage.CONNECTION__CONSTRAINTS:
 				return constraints != null && !constraints.isEmpty();
-			case CyberPhysical_IncidentPackage.CONNECTION__ENTITY1:
+			case CyberPhysicalIncidentPackage.CONNECTION__ENTITY1:
 				return entity1 != null;
-			case CyberPhysical_IncidentPackage.CONNECTION__ENTITY2:
+			case CyberPhysicalIncidentPackage.CONNECTION__ENTITY2:
 				return entity2 != null;
-			case CyberPhysical_IncidentPackage.CONNECTION__CONNECTION_PROBABILITY:
+			case CyberPhysicalIncidentPackage.CONNECTION__CONNECTION_PROBABILITY:
 				return connectionProbability != CONNECTION_PROBABILITY_EDEFAULT;
-			case CyberPhysical_IncidentPackage.CONNECTION__TYPE:
+			case CyberPhysicalIncidentPackage.CONNECTION__TYPE:
 				return type != null;
 		}
 		return super.eIsSet(featureID);

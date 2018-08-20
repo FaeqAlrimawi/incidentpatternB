@@ -15,7 +15,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 import cyberPhysical_Incident.BigraphExpression;
 import cyberPhysical_Incident.Connectivity;
-import cyberPhysical_Incident.CyberPhysical_IncidentPackage;
+import cyberPhysical_Incident.CyberPhysicalIncidentPackage;
 import cyberPhysical_Incident.Entity;
 import cyberPhysical_Incident.InnerName;
 
@@ -242,7 +242,7 @@ public class BigraphExpressionImpl extends ExpressionImpl implements BigraphExpr
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CyberPhysical_IncidentPackage.Literals.BIGRAPH_EXPRESSION;
+		return CyberPhysicalIncidentPackage.Literals.BIGRAPH_EXPRESSION;
 	}
 
 	/**
@@ -252,7 +252,7 @@ public class BigraphExpressionImpl extends ExpressionImpl implements BigraphExpr
 	 */
 	public EList<Entity> getEntity() {
 		if (entity == null) {
-			entity = new EObjectContainmentEList<Entity>(Entity.class, this, CyberPhysical_IncidentPackage.BIGRAPH_EXPRESSION__ENTITY);
+			entity = new EObjectContainmentEList<Entity>(Entity.class, this, CyberPhysicalIncidentPackage.BIGRAPH_EXPRESSION__ENTITY);
 		}
 		return entity;
 	}
@@ -264,7 +264,7 @@ public class BigraphExpressionImpl extends ExpressionImpl implements BigraphExpr
 	 */
 	public EList<InnerName> getInnername() {
 		if (innername == null) {
-			innername = new EObjectContainmentEList<InnerName>(InnerName.class, this, CyberPhysical_IncidentPackage.BIGRAPH_EXPRESSION__INNERNAME);
+			innername = new EObjectContainmentEList<InnerName>(InnerName.class, this, CyberPhysicalIncidentPackage.BIGRAPH_EXPRESSION__INNERNAME);
 		}
 		return innername;
 	}
@@ -277,9 +277,9 @@ public class BigraphExpressionImpl extends ExpressionImpl implements BigraphExpr
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case CyberPhysical_IncidentPackage.BIGRAPH_EXPRESSION__ENTITY:
+			case CyberPhysicalIncidentPackage.BIGRAPH_EXPRESSION__ENTITY:
 				return ((InternalEList<?>)getEntity()).basicRemove(otherEnd, msgs);
-			case CyberPhysical_IncidentPackage.BIGRAPH_EXPRESSION__INNERNAME:
+			case CyberPhysicalIncidentPackage.BIGRAPH_EXPRESSION__INNERNAME:
 				return ((InternalEList<?>)getInnername()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -293,9 +293,9 @@ public class BigraphExpressionImpl extends ExpressionImpl implements BigraphExpr
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case CyberPhysical_IncidentPackage.BIGRAPH_EXPRESSION__ENTITY:
+			case CyberPhysicalIncidentPackage.BIGRAPH_EXPRESSION__ENTITY:
 				return getEntity();
-			case CyberPhysical_IncidentPackage.BIGRAPH_EXPRESSION__INNERNAME:
+			case CyberPhysicalIncidentPackage.BIGRAPH_EXPRESSION__INNERNAME:
 				return getInnername();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -310,11 +310,11 @@ public class BigraphExpressionImpl extends ExpressionImpl implements BigraphExpr
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case CyberPhysical_IncidentPackage.BIGRAPH_EXPRESSION__ENTITY:
+			case CyberPhysicalIncidentPackage.BIGRAPH_EXPRESSION__ENTITY:
 				getEntity().clear();
 				getEntity().addAll((Collection<? extends Entity>)newValue);
 				return;
-			case CyberPhysical_IncidentPackage.BIGRAPH_EXPRESSION__INNERNAME:
+			case CyberPhysicalIncidentPackage.BIGRAPH_EXPRESSION__INNERNAME:
 				getInnername().clear();
 				getInnername().addAll((Collection<? extends InnerName>)newValue);
 				return;
@@ -330,10 +330,10 @@ public class BigraphExpressionImpl extends ExpressionImpl implements BigraphExpr
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case CyberPhysical_IncidentPackage.BIGRAPH_EXPRESSION__ENTITY:
+			case CyberPhysicalIncidentPackage.BIGRAPH_EXPRESSION__ENTITY:
 				getEntity().clear();
 				return;
-			case CyberPhysical_IncidentPackage.BIGRAPH_EXPRESSION__INNERNAME:
+			case CyberPhysicalIncidentPackage.BIGRAPH_EXPRESSION__INNERNAME:
 				getInnername().clear();
 				return;
 		}
@@ -348,9 +348,9 @@ public class BigraphExpressionImpl extends ExpressionImpl implements BigraphExpr
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case CyberPhysical_IncidentPackage.BIGRAPH_EXPRESSION__ENTITY:
+			case CyberPhysicalIncidentPackage.BIGRAPH_EXPRESSION__ENTITY:
 				return entity != null && !entity.isEmpty();
-			case CyberPhysical_IncidentPackage.BIGRAPH_EXPRESSION__INNERNAME:
+			case CyberPhysicalIncidentPackage.BIGRAPH_EXPRESSION__INNERNAME:
 				return innername != null && !innername.isEmpty();
 		}
 		return super.eIsSet(featureID);

@@ -3,7 +3,7 @@
 package cyberPhysical_Incident.impl;
 
 import cyberPhysical_Incident.Actor;
-import cyberPhysical_Incident.CyberPhysical_IncidentPackage;
+import cyberPhysical_Incident.CyberPhysicalIncidentPackage;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -60,7 +60,7 @@ public class ActorImpl extends IncidentEntityImpl implements Actor {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CyberPhysical_IncidentPackage.Literals.ACTOR;
+		return CyberPhysicalIncidentPackage.Literals.ACTOR;
 	}
 
 	/**
@@ -81,7 +81,7 @@ public class ActorImpl extends IncidentEntityImpl implements Actor {
 		String oldRole = role;
 		role = newRole;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysical_IncidentPackage.ACTOR__ROLE, oldRole, role));
+			eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysicalIncidentPackage.ACTOR__ROLE, oldRole, role));
 	}
 
 	/**
@@ -92,7 +92,7 @@ public class ActorImpl extends IncidentEntityImpl implements Actor {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case CyberPhysical_IncidentPackage.ACTOR__ROLE:
+			case CyberPhysicalIncidentPackage.ACTOR__ROLE:
 				return getRole();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -107,7 +107,7 @@ public class ActorImpl extends IncidentEntityImpl implements Actor {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case CyberPhysical_IncidentPackage.ACTOR__ROLE:
+			case CyberPhysicalIncidentPackage.ACTOR__ROLE:
 				setRole((String)newValue);
 				return;
 		}
@@ -122,7 +122,7 @@ public class ActorImpl extends IncidentEntityImpl implements Actor {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case CyberPhysical_IncidentPackage.ACTOR__ROLE:
+			case CyberPhysicalIncidentPackage.ACTOR__ROLE:
 				setRole(ROLE_EDEFAULT);
 				return;
 		}
@@ -137,7 +137,7 @@ public class ActorImpl extends IncidentEntityImpl implements Actor {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case CyberPhysical_IncidentPackage.ACTOR__ROLE:
+			case CyberPhysicalIncidentPackage.ACTOR__ROLE:
 				return ROLE_EDEFAULT == null ? role != null : !ROLE_EDEFAULT.equals(role);
 		}
 		return super.eIsSet(featureID);

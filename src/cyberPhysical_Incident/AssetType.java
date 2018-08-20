@@ -10,7 +10,7 @@ import org.eclipse.emf.ecore.EObject;
  * <!-- end-user-doc -->
  *
  *
- * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getAssetType()
+ * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getAssetType()
  * @model abstract="true"
  * @generated
  */

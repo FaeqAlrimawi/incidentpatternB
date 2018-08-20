@@ -2,8 +2,8 @@
  */
 package cyberPhysical_Incident.impl;
 
-import cyberPhysical_Incident.CyberPhysical_IncidentPackage;
 import cyberPhysical_Incident.Connectivity;
+import cyberPhysical_Incident.CyberPhysicalIncidentPackage;
 import cyberPhysical_Incident.Entity;
 import cyberPhysical_Incident.Site;
 
@@ -107,7 +107,7 @@ public class EntityImpl extends MinimalEObjectImpl.Container implements Entity {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CyberPhysical_IncidentPackage.Literals.ENTITY;
+		return CyberPhysicalIncidentPackage.Literals.ENTITY;
 	}
 
 	/**
@@ -128,7 +128,7 @@ public class EntityImpl extends MinimalEObjectImpl.Container implements Entity {
 		String oldName = name;
 		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysical_IncidentPackage.ENTITY__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysicalIncidentPackage.ENTITY__NAME, oldName, name));
 	}
 
 	/**
@@ -138,7 +138,7 @@ public class EntityImpl extends MinimalEObjectImpl.Container implements Entity {
 	 */
 	public EList<Entity> getEntity() {
 		if (entity == null) {
-			entity = new EObjectContainmentEList<Entity>(Entity.class, this, CyberPhysical_IncidentPackage.ENTITY__ENTITY);
+			entity = new EObjectContainmentEList<Entity>(Entity.class, this, CyberPhysicalIncidentPackage.ENTITY__ENTITY);
 		}
 		return entity;
 	}
@@ -150,7 +150,7 @@ public class EntityImpl extends MinimalEObjectImpl.Container implements Entity {
 	 */
 	public EList<Connectivity> getConnectivity() {
 		if (connectivity == null) {
-			connectivity = new EObjectContainmentEList<Connectivity>(Connectivity.class, this, CyberPhysical_IncidentPackage.ENTITY__CONNECTIVITY);
+			connectivity = new EObjectContainmentEList<Connectivity>(Connectivity.class, this, CyberPhysicalIncidentPackage.ENTITY__CONNECTIVITY);
 		}
 		return connectivity;
 	}
@@ -173,7 +173,7 @@ public class EntityImpl extends MinimalEObjectImpl.Container implements Entity {
 		Site oldSite = site;
 		site = newSite;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CyberPhysical_IncidentPackage.ENTITY__SITE, oldSite, newSite);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CyberPhysicalIncidentPackage.ENTITY__SITE, oldSite, newSite);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -188,14 +188,14 @@ public class EntityImpl extends MinimalEObjectImpl.Container implements Entity {
 		if (newSite != site) {
 			NotificationChain msgs = null;
 			if (site != null)
-				msgs = ((InternalEObject)site).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CyberPhysical_IncidentPackage.ENTITY__SITE, null, msgs);
+				msgs = ((InternalEObject)site).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CyberPhysicalIncidentPackage.ENTITY__SITE, null, msgs);
 			if (newSite != null)
-				msgs = ((InternalEObject)newSite).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CyberPhysical_IncidentPackage.ENTITY__SITE, null, msgs);
+				msgs = ((InternalEObject)newSite).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CyberPhysicalIncidentPackage.ENTITY__SITE, null, msgs);
 			msgs = basicSetSite(newSite, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysical_IncidentPackage.ENTITY__SITE, newSite, newSite));
+			eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysicalIncidentPackage.ENTITY__SITE, newSite, newSite));
 	}
 
 	/**
@@ -206,11 +206,11 @@ public class EntityImpl extends MinimalEObjectImpl.Container implements Entity {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case CyberPhysical_IncidentPackage.ENTITY__ENTITY:
+			case CyberPhysicalIncidentPackage.ENTITY__ENTITY:
 				return ((InternalEList<?>)getEntity()).basicRemove(otherEnd, msgs);
-			case CyberPhysical_IncidentPackage.ENTITY__CONNECTIVITY:
+			case CyberPhysicalIncidentPackage.ENTITY__CONNECTIVITY:
 				return ((InternalEList<?>)getConnectivity()).basicRemove(otherEnd, msgs);
-			case CyberPhysical_IncidentPackage.ENTITY__SITE:
+			case CyberPhysicalIncidentPackage.ENTITY__SITE:
 				return basicSetSite(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -224,13 +224,13 @@ public class EntityImpl extends MinimalEObjectImpl.Container implements Entity {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case CyberPhysical_IncidentPackage.ENTITY__NAME:
+			case CyberPhysicalIncidentPackage.ENTITY__NAME:
 				return getName();
-			case CyberPhysical_IncidentPackage.ENTITY__ENTITY:
+			case CyberPhysicalIncidentPackage.ENTITY__ENTITY:
 				return getEntity();
-			case CyberPhysical_IncidentPackage.ENTITY__CONNECTIVITY:
+			case CyberPhysicalIncidentPackage.ENTITY__CONNECTIVITY:
 				return getConnectivity();
-			case CyberPhysical_IncidentPackage.ENTITY__SITE:
+			case CyberPhysicalIncidentPackage.ENTITY__SITE:
 				return getSite();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -245,18 +245,18 @@ public class EntityImpl extends MinimalEObjectImpl.Container implements Entity {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case CyberPhysical_IncidentPackage.ENTITY__NAME:
+			case CyberPhysicalIncidentPackage.ENTITY__NAME:
 				setName((String)newValue);
 				return;
-			case CyberPhysical_IncidentPackage.ENTITY__ENTITY:
+			case CyberPhysicalIncidentPackage.ENTITY__ENTITY:
 				getEntity().clear();
 				getEntity().addAll((Collection<? extends Entity>)newValue);
 				return;
-			case CyberPhysical_IncidentPackage.ENTITY__CONNECTIVITY:
+			case CyberPhysicalIncidentPackage.ENTITY__CONNECTIVITY:
 				getConnectivity().clear();
 				getConnectivity().addAll((Collection<? extends Connectivity>)newValue);
 				return;
-			case CyberPhysical_IncidentPackage.ENTITY__SITE:
+			case CyberPhysicalIncidentPackage.ENTITY__SITE:
 				setSite((Site)newValue);
 				return;
 		}
@@ -271,16 +271,16 @@ public class EntityImpl extends MinimalEObjectImpl.Container implements Entity {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case CyberPhysical_IncidentPackage.ENTITY__NAME:
+			case CyberPhysicalIncidentPackage.ENTITY__NAME:
 				setName(NAME_EDEFAULT);
 				return;
-			case CyberPhysical_IncidentPackage.ENTITY__ENTITY:
+			case CyberPhysicalIncidentPackage.ENTITY__ENTITY:
 				getEntity().clear();
 				return;
-			case CyberPhysical_IncidentPackage.ENTITY__CONNECTIVITY:
+			case CyberPhysicalIncidentPackage.ENTITY__CONNECTIVITY:
 				getConnectivity().clear();
 				return;
-			case CyberPhysical_IncidentPackage.ENTITY__SITE:
+			case CyberPhysicalIncidentPackage.ENTITY__SITE:
 				setSite((Site)null);
 				return;
 		}
@@ -295,13 +295,13 @@ public class EntityImpl extends MinimalEObjectImpl.Container implements Entity {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case CyberPhysical_IncidentPackage.ENTITY__NAME:
+			case CyberPhysicalIncidentPackage.ENTITY__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case CyberPhysical_IncidentPackage.ENTITY__ENTITY:
+			case CyberPhysicalIncidentPackage.ENTITY__ENTITY:
 				return entity != null && !entity.isEmpty();
-			case CyberPhysical_IncidentPackage.ENTITY__CONNECTIVITY:
+			case CyberPhysicalIncidentPackage.ENTITY__CONNECTIVITY:
 				return connectivity != null && !connectivity.isEmpty();
-			case CyberPhysical_IncidentPackage.ENTITY__SITE:
+			case CyberPhysicalIncidentPackage.ENTITY__SITE:
 				return site != null;
 		}
 		return super.eIsSet(featureID);

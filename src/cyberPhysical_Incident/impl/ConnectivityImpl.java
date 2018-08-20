@@ -2,9 +2,9 @@
  */
 package cyberPhysical_Incident.impl;
 
-import cyberPhysical_Incident.CyberPhysical_IncidentPackage;
 import cyberPhysical_Incident.Connectivity;
 
+import cyberPhysical_Incident.CyberPhysicalIncidentPackage;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
@@ -83,7 +83,7 @@ public class ConnectivityImpl extends MinimalEObjectImpl.Container implements Co
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CyberPhysical_IncidentPackage.Literals.CONNECTIVITY;
+		return CyberPhysicalIncidentPackage.Literals.CONNECTIVITY;
 	}
 
 	/**
@@ -104,7 +104,7 @@ public class ConnectivityImpl extends MinimalEObjectImpl.Container implements Co
 		String oldName = name;
 		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysical_IncidentPackage.CONNECTIVITY__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysicalIncidentPackage.CONNECTIVITY__NAME, oldName, name));
 	}
 
 	/**
@@ -125,7 +125,7 @@ public class ConnectivityImpl extends MinimalEObjectImpl.Container implements Co
 		boolean oldIsClosed = isClosed;
 		isClosed = newIsClosed;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysical_IncidentPackage.CONNECTIVITY__IS_CLOSED, oldIsClosed, isClosed));
+			eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysicalIncidentPackage.CONNECTIVITY__IS_CLOSED, oldIsClosed, isClosed));
 	}
 
 	/**
@@ -136,9 +136,9 @@ public class ConnectivityImpl extends MinimalEObjectImpl.Container implements Co
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case CyberPhysical_IncidentPackage.CONNECTIVITY__NAME:
+			case CyberPhysicalIncidentPackage.CONNECTIVITY__NAME:
 				return getName();
-			case CyberPhysical_IncidentPackage.CONNECTIVITY__IS_CLOSED:
+			case CyberPhysicalIncidentPackage.CONNECTIVITY__IS_CLOSED:
 				return isIsClosed();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -152,10 +152,10 @@ public class ConnectivityImpl extends MinimalEObjectImpl.Container implements Co
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case CyberPhysical_IncidentPackage.CONNECTIVITY__NAME:
+			case CyberPhysicalIncidentPackage.CONNECTIVITY__NAME:
 				setName((String)newValue);
 				return;
-			case CyberPhysical_IncidentPackage.CONNECTIVITY__IS_CLOSED:
+			case CyberPhysicalIncidentPackage.CONNECTIVITY__IS_CLOSED:
 				setIsClosed((Boolean)newValue);
 				return;
 		}
@@ -170,10 +170,10 @@ public class ConnectivityImpl extends MinimalEObjectImpl.Container implements Co
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case CyberPhysical_IncidentPackage.CONNECTIVITY__NAME:
+			case CyberPhysicalIncidentPackage.CONNECTIVITY__NAME:
 				setName(NAME_EDEFAULT);
 				return;
-			case CyberPhysical_IncidentPackage.CONNECTIVITY__IS_CLOSED:
+			case CyberPhysicalIncidentPackage.CONNECTIVITY__IS_CLOSED:
 				setIsClosed(IS_CLOSED_EDEFAULT);
 				return;
 		}
@@ -188,9 +188,9 @@ public class ConnectivityImpl extends MinimalEObjectImpl.Container implements Co
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case CyberPhysical_IncidentPackage.CONNECTIVITY__NAME:
+			case CyberPhysicalIncidentPackage.CONNECTIVITY__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case CyberPhysical_IncidentPackage.CONNECTIVITY__IS_CLOSED:
+			case CyberPhysicalIncidentPackage.CONNECTIVITY__IS_CLOSED:
 				return isClosed != IS_CLOSED_EDEFAULT;
 		}
 		return super.eIsSet(featureID);

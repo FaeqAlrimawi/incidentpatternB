@@ -19,7 +19,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link cyberPhysical_Incident.BigraphExpression#getInnername <em>Innername</em>}</li>
  * </ul>
  *
- * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getBigraphExpression()
+ * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getBigraphExpression()
  * @model
  * @generated
  */
@@ -44,7 +44,7 @@ public interface BigraphExpression extends Expression {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Entity</em>' containment reference list.
-	 * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getBigraphExpression_Entity()
+	 * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getBigraphExpression_Entity()
 	 * @model containment="true" required="true"
 	 * @generated
 	 */
@@ -60,7 +60,7 @@ public interface BigraphExpression extends Expression {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Innername</em>' containment reference list.
-	 * @see cyberPhysical_Incident.CyberPhysical_IncidentPackage#getBigraphExpression_Innername()
+	 * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getBigraphExpression_Innername()
 	 * @model containment="true"
 	 * @generated
 	 */
