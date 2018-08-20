@@ -97,6 +97,8 @@ public abstract class ConditionImpl extends MinimalEObjectImpl.Container impleme
 	 * @ordered
 	 */
 	protected String description = DESCRIPTION_EDEFAULT;
+	
+	
 	protected static int condNum = 1;
 	
 	/**
@@ -107,18 +109,18 @@ public abstract class ConditionImpl extends MinimalEObjectImpl.Container impleme
 	protected ConditionImpl() {
 		super();
 		
-		if(getName() == null) {
+		if(eGet(CyberPhysicalIncidentPackage.CONDITION__NAME, false, false) == null) {
 			String name;
 			
 			if(PreconditionImpl.class.isInstance(this)) {
-				name = "precondition_"+condNum++;
+				name = "pre_"+condNum++;
 			} else if(PostconditionImpl.class.isInstance(this)) {
 				name = "postcondition_"+condNum++;
 			} else {
 				name = "condition_"+condNum++;
 			}
 			
-			setName(name);
+			eSet(CyberPhysicalIncidentPackage.CONDITION__NAME, name);
 		}
 		
 		if(getExpression() == null) {
