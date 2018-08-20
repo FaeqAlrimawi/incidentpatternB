@@ -130,19 +130,19 @@ public class ConnectionImpl extends MinimalEObjectImpl.Container implements Conn
 	 */
 	protected ConnectionImpl() {
 		super();
-		//set default name
-				String currentName = getName();
+
+		//set name to random if there's no name
+		String currentName = getName();
+		if(currentName == null || currentName.isEmpty()) {	
 				String className = this.getClass().getName();
 				String [] names = className.split("\\.");
 				String cName = names[names.length-1].replace("Impl", "");
-				
-				if(currentName == null || currentName.isEmpty()) {
-						String name = cName + connectionNumber++;
-						char c[] = name.toCharArray();
-						c[0] = Character.toLowerCase(c[0]);
-						name = new String(c);
-						setName(name);
-					}
+				String name = cName + connectionNumber++;
+				char c[] = name.toCharArray();
+				c[0] = Character.toLowerCase(c[0]);
+				name = new String(c);
+				setName(name);
+		}
 	}
 
 	/**
@@ -222,7 +222,7 @@ public class ConnectionImpl extends MinimalEObjectImpl.Container implements Conn
 		Location oldEntity1 = entity1;
 		entity1 = newEntity1;
 	
-		//update asset1 with the connection
+/*		//update asset1 with the connection
 				if(entity1 != null) {
 					EList<Connection> connections = entity1.getConnections();
 //					
@@ -236,7 +236,7 @@ public class ConnectionImpl extends MinimalEObjectImpl.Container implements Conn
 				//remove connection from old asset
 				if(oldEntity1 != null) {
 					oldEntity1.getConnections().remove(this);
-				}
+				}*/
 				
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysicalIncidentPackage.CONNECTION__ENTITY1, oldEntity1, entity1));
@@ -311,7 +311,7 @@ public class ConnectionImpl extends MinimalEObjectImpl.Container implements Conn
 		Location oldEntity2 = entity2;
 		entity2 = newEntity2;
 		
-		//update asset1 with the connection
+	/*	//update asset1 with the connection
 		if(entity2 != null) {
 			EList<Connection> connections = entity2.getConnections();
 			
@@ -324,7 +324,7 @@ public class ConnectionImpl extends MinimalEObjectImpl.Container implements Conn
 		//remove connection from old asset
 		if(oldEntity2 != null) {
 			oldEntity2.getConnections().remove(this);
-		}
+		}*/
 		
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysicalIncidentPackage.CONNECTION__ENTITY2, oldEntity2, entity2));

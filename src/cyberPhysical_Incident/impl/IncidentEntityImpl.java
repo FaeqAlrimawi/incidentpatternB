@@ -3,6 +3,9 @@
 package cyberPhysical_Incident.impl;
 
 import java.util.Collection;
+import java.util.HashSet;
+import java.util.Set;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
@@ -267,28 +270,43 @@ public class IncidentEntityImpl extends MinimalEObjectImpl.Container implements 
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysicalIncidentPackage.INCIDENT_ENTITY__PARENT_ENTITY, oldParentEntity, parentEntity));
 	
-		/*//add this object as a child to the parent as well and remove from old parent if any
+	/*	//add this object as a child to the parent as well and remove from old parent if any
 		if(newParentEntity != null) {
 			newParentEntity.getContainedEntities().add(this);
-			removeDuplicates(newParentEntity.getContainedEntities());
+//			removeDuplicates(newParentEntity.getContainedEntities());
 		}
 	
 		//remove this from old parent
 		if(oldParentEntity != null) {
 			oldParentEntity.getContainedEntities().remove(this);
 			//removeDuplicates(oldParentEntity.getContainedEntities());
-		}*/
-		
+		}
+		*/
 	}
 
 	/*private void removeDuplicates(Collection<Location> entities) {
 
+		System.out.println("remove duplicate\nbefore:"+getEntityNames(entities));
 		Set<Location> hs = new HashSet<Location>();
 		hs.addAll(entities);
 		entities.clear();
-		entities.addAll(hs);		
-	}*/
+		entities.addAll(hs);
+		
+		System.out.println("after:"+getEntityNames(entities));
+	}
 	
+	private String getEntityNames(Collection<Location> entities) {
+		
+		StringBuilder str = new StringBuilder();
+		str.append("[");
+		for(Location  entity : entities) {
+			IncidentEntity ent = (IncidentEntity) entity;
+			str.append(ent.getName()).append(", ");
+		}
+		str.append("]");
+		
+		return str.toString();
+	}*/
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -296,6 +314,7 @@ public class IncidentEntityImpl extends MinimalEObjectImpl.Container implements 
 	 */
 	public EList<Location> getContainedEntities() {
 		if (containedEntities == null) {
+			
 			containedEntities = new EObjectResolvingEList<Location>(Location.class, this, CyberPhysicalIncidentPackage.INCIDENT_ENTITY__CONTAINED_ENTITIES);
 		}
 		
@@ -307,6 +326,7 @@ public class IncidentEntityImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
+	 * 
 	 */
 	public Knowledge getConnectionsKnowledge() {
 		return connectionsKnowledge;
