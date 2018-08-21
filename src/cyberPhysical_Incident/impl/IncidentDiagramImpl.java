@@ -497,7 +497,9 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 
 			return null;
 		}
+		
 		Activity mergedActivity = null;
+		
 		
 		//first try to merge based on containment
 		mergedActivity = mergeAccordingToContainment(activitySequence);
@@ -529,7 +531,7 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 		// 3- have the same activity initiator 
 		// 4- have the same activity type (e.g., physical)
 
-		if(activitySequence == null || activitySequence.size() == 0) {
+		if(activitySequence == null || activitySequence.size() < 2) {
 			return false;
 		}
 		
@@ -608,14 +610,14 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 		// and a postcondition from the next activity postcondition
 		//This method uses the first two activities of the sequence at the moment
 		
-		if (activitySequence == null || activitySequence.size()==0) {
-			return null;
-		}
+//		if (activitySequence == null || activitySequence.size()<2) {
+//			return null;
+//		}
 		
 		//currently only the first two activity are checked
 		
 		Activity firstActivity = activitySequence.get(0);
-		Activity secondActivity = activitySequence.get(1);
+		Activity secondActivity = activitySequence.get(1); //can be extended to include last activity
 		
 		if(firstActivity == null || secondActivity == null) {
 			return null;
@@ -686,9 +688,9 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 		
 		Activity mergedActivity = null;
 		
-		if (activitySequence == null || activitySequence.size()==0) {
-			return null;
-		}
+//		if (activitySequence == null || activitySequence.size()==0) {
+//			return null;
+//		}
 		
 		//currently only the first two activity are checked
 		
@@ -765,6 +767,24 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 		newSequence.add(activitySequence.get(1));
 		
 		mergedActivity = createMergedActivity(newSequence);
+		
+		return mergedActivity;
+	}
+	
+	
+	public Activity mergeActivitiesBasedOnCollectDataPattern(List<Activity> activitySequence) {
+		
+		Activity mergedActivity = null;
+		
+		/** [basic conditions for merging does not apply to this mainly the need for having the same action in both activities]
+		 * Criteria for matching:
+		 * 1- In first activity: pre: Initiator does NOT have a computing device, post: Initiator has a computing device
+		 * 2- In second activity: pre: Initiator is NOT connected to a network (e.g., IP, Bus), post: Initiator connected to the network
+		 * Further criteria related to the properties of entities mentioned in 1 & 2:
+		 * -Netowrk required properties: has [valuable] asset(s) connected to it.
+		 * 2-This computing device is connected to a system network (e.g., IP, Bus) 
+		 * 
+		 */
 		
 		return mergedActivity;
 	}

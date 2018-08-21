@@ -93,6 +93,7 @@ public interface IncidentDiagram extends EObject {
 	 */
 	Activity mergeAccordingToConnectivity(List<Activity> activitySequence);
 	
+	Activity mergeActivitiesBasedOnCollectDataPattern(List<Activity> activitySequence);
 	/**
 	 *  * Merges the activity sequence starting from the given argument activity (it included) until the activity that is located the last in the given number of activities. 
 	 * Returns a new activity that replaces the sequence, or null if it cannot be repalced.
