@@ -304,6 +304,20 @@ public class IncidentEntityImpl extends MinimalEObjectImpl.Container implements 
 		
 		return str.toString();
 	}*/
+	
+	public boolean contains(String entityName) {
+		
+		for(Location loc : getContainedEntities()) {
+			IncidentEntity entity = (IncidentEntity)loc;
+			String name = entity.getName();
+			if(name != null && name.equals(entityName)) {
+				return true;
+			}
+		}
+		
+		return false;
+	}
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -898,12 +898,30 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 		//check that 2nd target asset is contained in the first target asset (i.e. data from common resource)
 		Asset secondTargetAsset = secondActivity.getTargetedAssets().get(0);
 		
+		//holds the data that is collected
+		Asset secondExploitedAsset = secondActivity.getExploitedAssets().get(0);
+		
+		//check that the exploited asset is contained in the first target asset (i.e. data from common resource)
+		if(secondExploitedAsset != null ) {
+			if(!firstTargetAsset.contains(secondExploitedAsset.getName())) {
+				return null;
+			}
+		} else {
+			return null;
+		}
+		
+		//check if the target asset of the 2nd activity is contained in the exploited asset (i.e. information extracted from data)
 		if(secondTargetAsset != null) {
 			
+			if(!firstTargetAsset.contains(secondTargetAsset.getName())) {
+				return null;
+			}
 			
 		} else {
 			return null;
 		}
+		
+		
 		
 		return mergedActivity;
 	}

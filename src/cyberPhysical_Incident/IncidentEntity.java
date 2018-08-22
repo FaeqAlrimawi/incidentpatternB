@@ -26,6 +26,7 @@ public interface IncidentEntity extends ActivityInitiator, Location {
 	
 	
 	//boolean loadEntityInformation(String xmlInfo);
+	boolean contains(String entityName);
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
