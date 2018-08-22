@@ -942,7 +942,36 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 		}
 		
 		//6-device contains sensitive data
-		//in the postcondition check if device 
+		
+		//in the postcondition check if device contains targeted asset
+		
+		Postcondition secondPost = secondActivity.getPostcondition();
+		
+		BigraphExpression secondPostBigraph = (BigraphExpression)secondPost.getExpression();
+		
+		List<Entity> postCotnainedEntities = secondPostBigraph.getContainedEntities(device.getName());
+		
+		
+		isCotnained = false;
+		
+		for(Entity ent : postCotnainedEntities) {
+			if(ent.getName().equals(secondTargetAsset.getName())) {
+				isCotnained = true;
+				break;
+			}
+		}
+	
+		if(!isCotnained) {
+			return null;
+		}
+		
+		///at this point all conditions are matched, so a merged activity is created
+		EList<Activity> newSequence = new BasicEList<Activity>();
+		newSequence.add(activitySequence.get(0));
+		newSequence.add(activitySequence.get(1));
+		
+		mergedActivity = createMergedActivity(newSequence);
+		
 		return mergedActivity;
 	}
 	
