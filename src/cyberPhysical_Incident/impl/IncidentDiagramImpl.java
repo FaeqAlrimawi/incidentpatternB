@@ -778,10 +778,14 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 		
 		/** [basic conditions for merging does not apply to this mainly the need for having the same action in both activities]
 		 * Criteria for matching:
-		 * 1- In first activity: pre: Initiator does NOT have a computing device, post: Initiator has a computing device
-		 * 2- In second activity: pre: Initiator is NOT connected to a network (e.g., IP, Bus), post: Initiator connected to the network
+		 * 
+		 * 1st activity: pre: Initiator is NOT connected to a [Common Resource] (e.g., network, workstation), post: Initiator connected to the [Common Resource] using a smart device
+		 * 
+		 * 2nd activity: pre: Initiator starts collecting data
+		 * 
 		 * Further criteria related to the properties of entities mentioned in 1 & 2:
-		 * -Netowrk required properties: has [valuable] asset(s) connected to it.
+		 * -Network properties: has [valuable] asset(s) connected to it.
+		 * -Potential actions from first to second can be [obtain ]
 		 * 2-This computing device is connected to a system network (e.g., IP, Bus) 
 		 * 
 		 */
