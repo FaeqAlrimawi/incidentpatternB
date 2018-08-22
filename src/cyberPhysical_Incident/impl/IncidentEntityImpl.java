@@ -3,9 +3,6 @@
 package cyberPhysical_Incident.impl;
 
 import java.util.Collection;
-import java.util.HashSet;
-import java.util.Set;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
@@ -326,7 +323,6 @@ public class IncidentEntityImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
-	 * 
 	 */
 	public Knowledge getConnectionsKnowledge() {
 		return connectionsKnowledge;

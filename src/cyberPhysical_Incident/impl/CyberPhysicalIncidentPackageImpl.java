@@ -6,6 +6,8 @@ import cyberPhysical_Incident.Activity;
 import cyberPhysical_Incident.ActivityInitiator;
 import cyberPhysical_Incident.ActivityType;
 import cyberPhysical_Incident.Actor;
+import cyberPhysical_Incident.ActorLevel;
+import cyberPhysical_Incident.ActorRole;
 import cyberPhysical_Incident.And;
 import cyberPhysical_Incident.Asset;
 import cyberPhysical_Incident.AssetType;
@@ -387,6 +389,20 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * @generated
 	 */
 	private EEnum scriptCategoryEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum actorRoleEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum actorLevelEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -1192,6 +1208,15 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getActor_Level() {
+		return (EAttribute)actorEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getIncidentDiagram() {
 		return incidentDiagramEClass;
 	}
@@ -1867,6 +1892,24 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EEnum getActorRole() {
+		return actorRoleEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EEnum getActorLevel() {
+		return actorLevelEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public CyberPhysicalIncidentFactory getCyberPhysicalIncidentFactory() {
 		return (CyberPhysicalIncidentFactory)getEFactoryInstance();
 	}
@@ -1984,6 +2027,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 
 		actorEClass = createEClass(ACTOR);
 		createEAttribute(actorEClass, ACTOR__ROLE);
+		createEAttribute(actorEClass, ACTOR__LEVEL);
 
 		incidentDiagramEClass = createEClass(INCIDENT_DIAGRAM);
 		createEReference(incidentDiagramEClass, INCIDENT_DIAGRAM__CRIME_SCRIPT);
@@ -2089,6 +2133,8 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 		behaviourEEnum = createEEnum(BEHAVIOUR);
 		knowledgeEEnum = createEEnum(KNOWLEDGE);
 		scriptCategoryEEnum = createEEnum(SCRIPT_CATEGORY);
+		actorRoleEEnum = createEEnum(ACTOR_ROLE);
+		actorLevelEEnum = createEEnum(ACTOR_LEVEL);
 	}
 
 	/**
@@ -2235,7 +2281,8 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 		initEClass(activityInitiatorEClass, ActivityInitiator.class, "ActivityInitiator", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(actorEClass, Actor.class, "Actor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getActor_Role(), ecorePackage.getEString(), "role", null, 0, 1, Actor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getActor_Role(), this.getActorRole(), "role", null, 0, 1, Actor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getActor_Level(), this.getActorLevel(), "level", null, 0, 1, Actor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(incidentDiagramEClass, IncidentDiagram.class, "IncidentDiagram", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getIncidentDiagram_CrimeScript(), this.getCrimeScript(), null, "crimeScript", null, 1, 1, IncidentDiagram.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2366,6 +2413,16 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 		addEEnumLiteral(scriptCategoryEEnum, ScriptCategory.PROTOSCRIPT);
 		addEEnumLiteral(scriptCategoryEEnum, ScriptCategory.METASCRIPT);
 		addEEnumLiteral(scriptCategoryEEnum, ScriptCategory.INSTANCE);
+
+		initEEnum(actorRoleEEnum, ActorRole.class, "ActorRole");
+		addEEnumLiteral(actorRoleEEnum, ActorRole.OFFENDER);
+		addEEnumLiteral(actorRoleEEnum, ActorRole.ACCOMPLICE);
+		addEEnumLiteral(actorRoleEEnum, ActorRole.VICTIM);
+
+		initEEnum(actorLevelEEnum, ActorLevel.class, "ActorLevel");
+		addEEnumLiteral(actorLevelEEnum, ActorLevel.INDIVIDUAL);
+		addEEnumLiteral(actorLevelEEnum, ActorLevel.GROUP);
+		addEEnumLiteral(actorLevelEEnum, ActorLevel.ORGANISATION);
 
 		// Create resource
 		createResource(eNS_URI);

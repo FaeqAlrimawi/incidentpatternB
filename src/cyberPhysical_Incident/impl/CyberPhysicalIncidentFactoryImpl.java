@@ -104,6 +104,10 @@ public class CyberPhysicalIncidentFactoryImpl extends EFactoryImpl implements Cy
 				return createKnowledgeFromString(eDataType, initialValue);
 			case CyberPhysicalIncidentPackage.SCRIPT_CATEGORY:
 				return createScriptCategoryFromString(eDataType, initialValue);
+			case CyberPhysicalIncidentPackage.ACTOR_ROLE:
+				return createActorRoleFromString(eDataType, initialValue);
+			case CyberPhysicalIncidentPackage.ACTOR_LEVEL:
+				return createActorLevelFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -127,6 +131,10 @@ public class CyberPhysicalIncidentFactoryImpl extends EFactoryImpl implements Cy
 				return convertKnowledgeToString(eDataType, instanceValue);
 			case CyberPhysicalIncidentPackage.SCRIPT_CATEGORY:
 				return convertScriptCategoryToString(eDataType, instanceValue);
+			case CyberPhysicalIncidentPackage.ACTOR_ROLE:
+				return convertActorRoleToString(eDataType, instanceValue);
+			case CyberPhysicalIncidentPackage.ACTOR_LEVEL:
+				return convertActorLevelToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -469,6 +477,46 @@ public class CyberPhysicalIncidentFactoryImpl extends EFactoryImpl implements Cy
 	 * @generated
 	 */
 	public String convertScriptCategoryToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ActorRole createActorRoleFromString(EDataType eDataType, String initialValue) {
+		ActorRole result = ActorRole.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertActorRoleToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ActorLevel createActorLevelFromString(EDataType eDataType, String initialValue) {
+		ActorLevel result = ActorLevel.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertActorLevelToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

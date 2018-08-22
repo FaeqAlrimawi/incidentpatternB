@@ -1341,13 +1341,22 @@ public interface CyberPhysicalIncidentPackage extends EPackage {
 	int ACTOR__ROLE = INCIDENT_ENTITY_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Level</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTOR__LEVEL = INCIDENT_ENTITY_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Actor</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ACTOR_FEATURE_COUNT = INCIDENT_ENTITY_FEATURE_COUNT + 1;
+	int ACTOR_FEATURE_COUNT = INCIDENT_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Actor</em>' class.
@@ -2796,6 +2805,27 @@ public interface CyberPhysicalIncidentPackage extends EPackage {
 
 
 	/**
+	 * The meta object id for the '{@link cyberPhysical_Incident.ActorRole <em>Actor Role</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see cyberPhysical_Incident.ActorRole
+	 * @see cyberPhysical_Incident.impl.CyberPhysicalIncidentPackageImpl#getActorRole()
+	 * @generated
+	 */
+	int ACTOR_ROLE = 46;
+
+	/**
+	 * The meta object id for the '{@link cyberPhysical_Incident.ActorLevel <em>Actor Level</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see cyberPhysical_Incident.ActorLevel
+	 * @see cyberPhysical_Incident.impl.CyberPhysicalIncidentPackageImpl#getActorLevel()
+	 * @generated
+	 */
+	int ACTOR_LEVEL = 47;
+
+
+	/**
 	 * Returns the meta object for class '{@link cyberPhysical_Incident.Activity <em>Activity</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3685,6 +3715,17 @@ public interface CyberPhysicalIncidentPackage extends EPackage {
 	EAttribute getActor_Role();
 
 	/**
+	 * Returns the meta object for the attribute '{@link cyberPhysical_Incident.Actor#getLevel <em>Level</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Level</em>'.
+	 * @see cyberPhysical_Incident.Actor#getLevel()
+	 * @see #getActor()
+	 * @generated
+	 */
+	EAttribute getActor_Level();
+
+	/**
 	 * Returns the meta object for class '{@link cyberPhysical_Incident.IncidentDiagram <em>Incident Diagram</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4477,6 +4518,26 @@ public interface CyberPhysicalIncidentPackage extends EPackage {
 	EEnum getScriptCategory();
 
 	/**
+	 * Returns the meta object for enum '{@link cyberPhysical_Incident.ActorRole <em>Actor Role</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Actor Role</em>'.
+	 * @see cyberPhysical_Incident.ActorRole
+	 * @generated
+	 */
+	EEnum getActorRole();
+
+	/**
+	 * Returns the meta object for enum '{@link cyberPhysical_Incident.ActorLevel <em>Actor Level</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Actor Level</em>'.
+	 * @see cyberPhysical_Incident.ActorLevel
+	 * @generated
+	 */
+	EEnum getActorLevel();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5182,6 +5243,14 @@ public interface CyberPhysicalIncidentPackage extends EPackage {
 		EAttribute ACTOR__ROLE = eINSTANCE.getActor_Role();
 
 		/**
+		 * The meta object literal for the '<em><b>Level</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ACTOR__LEVEL = eINSTANCE.getActor_Level();
+
+		/**
 		 * The meta object literal for the '{@link cyberPhysical_Incident.impl.IncidentDiagramImpl <em>Incident Diagram</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -5846,6 +5915,26 @@ public interface CyberPhysicalIncidentPackage extends EPackage {
 		 * @generated
 		 */
 		EEnum SCRIPT_CATEGORY = eINSTANCE.getScriptCategory();
+
+		/**
+		 * The meta object literal for the '{@link cyberPhysical_Incident.ActorRole <em>Actor Role</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see cyberPhysical_Incident.ActorRole
+		 * @see cyberPhysical_Incident.impl.CyberPhysicalIncidentPackageImpl#getActorRole()
+		 * @generated
+		 */
+		EEnum ACTOR_ROLE = eINSTANCE.getActorRole();
+
+		/**
+		 * The meta object literal for the '{@link cyberPhysical_Incident.ActorLevel <em>Actor Level</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see cyberPhysical_Incident.ActorLevel
+		 * @see cyberPhysical_Incident.impl.CyberPhysicalIncidentPackageImpl#getActorLevel()
+		 * @generated
+		 */
+		EEnum ACTOR_LEVEL = eINSTANCE.getActorLevel();
 
 	}
 

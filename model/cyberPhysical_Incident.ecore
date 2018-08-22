@@ -157,7 +157,8 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ActivityInitiator" abstract="true" interface="true"/>
   <eClassifiers xsi:type="ecore:EClass" name="Actor" eSuperTypes="#//IncidentEntity">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="role" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="role" eType="#//ActorRole"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="level" eType="#//ActorLevel"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="IncidentDiagram">
     <eStructuralFeatures xsi:type="ecore:EReference" name="crimeScript" lowerBound="1"
@@ -299,5 +300,15 @@
   <eClassifiers xsi:type="ecore:EClass" name="Site">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isClosed" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ActorRole">
+    <eLiterals name="OFFENDER"/>
+    <eLiterals name="ACCOMPLICE" value="1"/>
+    <eLiterals name="VICTIM" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ActorLevel">
+    <eLiterals name="INDIVIDUAL"/>
+    <eLiterals name="GROUP" value="1"/>
+    <eLiterals name="ORGANISATION" value="2"/>
   </eClassifiers>
 </ecore:EPackage>

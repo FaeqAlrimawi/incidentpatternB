@@ -772,7 +772,7 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 	}
 	
 	
-	public Activity mergeActivitiesBasedOnCollectDataPattern(List<Activity> activitySequence) {
+	public Activity mergeAccordingToCollectData(List<Activity> activitySequence) {
 		
 		Activity mergedActivity = null;
 		
@@ -792,15 +792,20 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 		 * post: identify [sensitive data]
 		 * 
 		 * Further criteria related to the properties of entities mentioned in 1 & 2:
-		 * -Sensitive data: currently used is "Address of "
 		 * -Common resource: Currently used a "Network (IP or Bus)"
+		 * -Sensitive data: currently used is "Digital Asset", which is mainly related to data that is moved from the [common resource] to the [device]
 		 * -Device: currently used "Computing Device"
+		 * Initiator: role is "offender"
 		 * -Reach (as action): currently used as "Connect"
 		 * -Collect (as action): 
 		 * -Identify (as action): currently used as "Analyse"
 		 * 
 		 * generated activity can be labelled as "suspicious"
 		 */
+		
+		Activity firstActivity = activitySequence.get(0);
+		Activity secondActivity = activitySequence.get(1);
+		
 		
 		return mergedActivity;
 	}

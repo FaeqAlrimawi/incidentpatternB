@@ -3,6 +3,8 @@
 package cyberPhysical_Incident.impl;
 
 import cyberPhysical_Incident.Actor;
+import cyberPhysical_Incident.ActorLevel;
+import cyberPhysical_Incident.ActorRole;
 import cyberPhysical_Incident.CyberPhysicalIncidentPackage;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
@@ -17,6 +19,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link cyberPhysical_Incident.impl.ActorImpl#getRole <em>Role</em>}</li>
+ *   <li>{@link cyberPhysical_Incident.impl.ActorImpl#getLevel <em>Level</em>}</li>
  * </ul>
  *
  * @generated
@@ -30,7 +33,7 @@ public class ActorImpl extends IncidentEntityImpl implements Actor {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String ROLE_EDEFAULT = null;
+	protected static final ActorRole ROLE_EDEFAULT = ActorRole.OFFENDER;
 
 	/**
 	 * The cached value of the '{@link #getRole() <em>Role</em>}' attribute.
@@ -40,7 +43,27 @@ public class ActorImpl extends IncidentEntityImpl implements Actor {
 	 * @generated
 	 * @ordered
 	 */
-	protected String role = ROLE_EDEFAULT;
+	protected ActorRole role = ROLE_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getLevel() <em>Level</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLevel()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final ActorLevel LEVEL_EDEFAULT = ActorLevel.INDIVIDUAL;
+
+	/**
+	 * The cached value of the '{@link #getLevel() <em>Level</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLevel()
+	 * @generated
+	 * @ordered
+	 */
+	protected ActorLevel level = LEVEL_EDEFAULT;
 
 	protected String defaultTypeName = "Actor";
 	
@@ -68,7 +91,7 @@ public class ActorImpl extends IncidentEntityImpl implements Actor {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getRole() {
+	public ActorRole getRole() {
 		return role;
 	}
 
@@ -77,11 +100,32 @@ public class ActorImpl extends IncidentEntityImpl implements Actor {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setRole(String newRole) {
-		String oldRole = role;
-		role = newRole;
+	public void setRole(ActorRole newRole) {
+		ActorRole oldRole = role;
+		role = newRole == null ? ROLE_EDEFAULT : newRole;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysicalIncidentPackage.ACTOR__ROLE, oldRole, role));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ActorLevel getLevel() {
+		return level;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setLevel(ActorLevel newLevel) {
+		ActorLevel oldLevel = level;
+		level = newLevel == null ? LEVEL_EDEFAULT : newLevel;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysicalIncidentPackage.ACTOR__LEVEL, oldLevel, level));
 	}
 
 	/**
@@ -94,6 +138,8 @@ public class ActorImpl extends IncidentEntityImpl implements Actor {
 		switch (featureID) {
 			case CyberPhysicalIncidentPackage.ACTOR__ROLE:
 				return getRole();
+			case CyberPhysicalIncidentPackage.ACTOR__LEVEL:
+				return getLevel();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -108,7 +154,10 @@ public class ActorImpl extends IncidentEntityImpl implements Actor {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case CyberPhysicalIncidentPackage.ACTOR__ROLE:
-				setRole((String)newValue);
+				setRole((ActorRole)newValue);
+				return;
+			case CyberPhysicalIncidentPackage.ACTOR__LEVEL:
+				setLevel((ActorLevel)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -125,6 +174,9 @@ public class ActorImpl extends IncidentEntityImpl implements Actor {
 			case CyberPhysicalIncidentPackage.ACTOR__ROLE:
 				setRole(ROLE_EDEFAULT);
 				return;
+			case CyberPhysicalIncidentPackage.ACTOR__LEVEL:
+				setLevel(LEVEL_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -138,7 +190,9 @@ public class ActorImpl extends IncidentEntityImpl implements Actor {
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case CyberPhysicalIncidentPackage.ACTOR__ROLE:
-				return ROLE_EDEFAULT == null ? role != null : !ROLE_EDEFAULT.equals(role);
+				return role != ROLE_EDEFAULT;
+			case CyberPhysicalIncidentPackage.ACTOR__LEVEL:
+				return level != LEVEL_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -155,6 +209,8 @@ public class ActorImpl extends IncidentEntityImpl implements Actor {
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (role: ");
 		result.append(role);
+		result.append(", level: ");
+		result.append(level);
 		result.append(')');
 		return result.toString();
 	}
