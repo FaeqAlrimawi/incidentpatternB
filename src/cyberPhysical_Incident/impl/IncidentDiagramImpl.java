@@ -778,16 +778,28 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 		
 		/** [basic conditions for merging does not apply to this mainly the need for having the same action in both activities]
 		 * Criteria for matching:
+		 * Collect data pattern is defined as:
+		 * Collect [Data (sensitive), which can be used to undermine the security of the target] 
+		 * from [Common Resource (or Asset), well-known locations for resources] 
+		 * using a [device]
 		 * 
-		 * 1st activity: pre: Initiator is NOT connected to a [Common Resource] (e.g., network, workstation), post: Initiator connected to the [Common Resource] using a smart device
+		 * 1st activity (or action in system): 
+		 * pre: Initiator didn't reach a [Common Resource (or Asset)] (e.g., network, workstation)
+		 * post: Initiator reached a [Common Resource] using a [device]
 		 * 
-		 * 2nd activity: pre: Initiator starts collecting data
+		 * 2nd activity (or action in system): 
+		 * pre: Initiator starts collecting data
+		 * post: identify [sensitive data]
 		 * 
 		 * Further criteria related to the properties of entities mentioned in 1 & 2:
-		 * -Network properties: has [valuable] asset(s) connected to it.
-		 * -Potential actions from first to second can be [obtain ]
-		 * 2-This computing device is connected to a system network (e.g., IP, Bus) 
+		 * -Sensitive data: currently used is "Address of "
+		 * -Common resource: Currently used a "Network (IP or Bus)"
+		 * -Device: currently used "Computing Device"
+		 * -Reach (as action): currently used as "Connect"
+		 * -Collect (as action): 
+		 * -Identify (as action): currently used as "Analyse"
 		 * 
+		 * generated activity can be labelled as "suspicious"
 		 */
 		
 		return mergedActivity;
