@@ -20,6 +20,7 @@ import cyberPhysical_Incident.Activity;
 import cyberPhysical_Incident.ActivityInitiator;
 import cyberPhysical_Incident.ActivityType;
 import cyberPhysical_Incident.Actor;
+import cyberPhysical_Incident.ActorRole;
 import cyberPhysical_Incident.Asset;
 import cyberPhysical_Incident.BigraphExpression;
 import cyberPhysical_Incident.Connection;
@@ -803,8 +804,58 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 		 * generated activity can be labelled as "suspicious"
 		 */
 		
+		/**
+		 * Criteria checked:
+		 * 1-Action should be "connect" in first activity and the target asset should be a Network (IP or Bus)
+		 * 2-Initiator of the first activity should an Actor with a Role as OFFENDER
+		 * 3-Device used (i.e. resource) by the initiator should be of type ComputingDevice
+		 * 4-there's a connection in the post condition established between device and network
+		 */
 		Activity firstActivity = activitySequence.get(0);
 		Activity secondActivity = activitySequence.get(1);
+		
+		//1-in the first activity look for the action to be "connect" and the target asset to be network (IP or bus)
+		String firstAction =  firstActivity.getSystemAction();
+		Asset firstTargetAsset = firstActivity.getTargetedAssets().get(0); //assuming there's only one
+		
+		if(!firstAction.equalsIgnoreCase("connect")
+				|| !(environment.IPNetwork.class.isInstance(firstTargetAsset) || environment.BusNetwork.class.isInstance(firstTargetAsset))){
+			return null;
+		}
+		
+		//2-if initiator is actor then he/she should be offender
+		ActivityInitiator firstInitiator = firstActivity.getInitiator();
+		
+		//for now consider only actors
+		if(Actor.class.isInstance(firstInitiator)) {
+			Actor actor = (Actor) firstInitiator;
+			
+			if(! (actor.getRole().equals(ActorRole.OFFENDER))){
+				return null;
+			}
+		} else { //can be extended to check for digital processes and tools that can collect data
+			return null;
+		}
+
+		//3- deviced used by the initiator is contained by the initiator and is of type computing device
+		Resource device = firstActivity.getResources().get(0); //assuming there's one resource
+		
+		//is the deivce used in the post condition at least? if no then it fails to satisfy 3 as it is not connected to the target asset
+		List<String> firstcontainedEntities = firstActivity.getInitiatorContainedEntities();
+		
+		if(!firstcontainedEntities.contains(device.getName())) {
+			return null;
+		}
+		
+		//if the device is not of type computingDevice then it fails to satisfy the conditions
+		if(!environment.ComputingDevice.class.isInstance(device)) {
+			return null;
+		}
+		
+		if(firstActivity.getConnectionChangesBetweenEntities(device.getName(), firstTargetAsset.getName()) != Connection.CONNECTIONS_INCREASE) {
+			return null;
+		}
+		
 		
 		
 		return mergedActivity;

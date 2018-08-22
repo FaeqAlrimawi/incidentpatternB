@@ -193,15 +193,6 @@
           <styles xmi:type="notation:ShapeStyle" xmi:id="_GWVyjKO_EeiMT4uHEbbEeA" fontName="Segoe UI" fontHeight="8"/>
           <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GWVyjaO_EeiMT4uHEbbEeA" x="2592" y="491"/>
         </children>
-        <children xmi:type="notation:Node" xmi:id="_GWWZlKO_EeiMT4uHEbbEeA" type="2003" element="_GTmAgKO_EeiMT4uHEbbEeA">
-          <children xmi:type="notation:Node" xmi:id="_GWWZl6O_EeiMT4uHEbbEeA" type="5007"/>
-          <children xmi:type="notation:Node" xmi:id="_GWXAoKO_EeiMT4uHEbbEeA" type="7004">
-            <styles xmi:type="notation:SortingStyle" xmi:id="_GWXAoaO_EeiMT4uHEbbEeA"/>
-            <styles xmi:type="notation:FilteringStyle" xmi:id="_GWXAoqO_EeiMT4uHEbbEeA"/>
-          </children>
-          <styles xmi:type="notation:ShapeStyle" xmi:id="_GWWZlaO_EeiMT4uHEbbEeA" fontName="Segoe UI" fontHeight="8" italic="true"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GWWZlqO_EeiMT4uHEbbEeA" x="192"/>
-        </children>
         <children xmi:type="notation:Node" xmi:id="_GWXnsKO_EeiMT4uHEbbEeA" type="2003" element="_GTnOoKO_EeiMT4uHEbbEeA">
           <children xmi:type="notation:Node" xmi:id="_GWXns6O_EeiMT4uHEbbEeA" type="5007"/>
           <children xmi:type="notation:Node" xmi:id="_GWXntKO_EeiMT4uHEbbEeA" type="7004">
@@ -2142,15 +2133,6 @@
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
       </ownedElements>
-    </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_GTmAgKO_EeiMT4uHEbbEeA" name="AssetType" tooltipText="" width="12" height="10">
-      <target xmi:type="ecore:EClass" href="cyberPhysical_Incident.ecore#//AssetType"/>
-      <semanticElements xmi:type="ecore:EClass" href="cyberPhysical_Incident.ecore#//AssetType"/>
-      <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_GTmnkKO_EeiMT4uHEbbEeA" iconPath="/org.eclipse.emf.ecoretools.design/icons/full/obj16/EClass_abstract.gif" borderSize="1" borderSizeComputationExpression="1" borderColor="125,125,125" backgroundStyle="Liquid" foregroundColor="228,228,228">
-        <labelFormat>italic</labelFormat>
-        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@conditionnalStyles.1/@style"/>
-      </ownedStyle>
-      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
     </ownedDiagramElements>
     <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_GTnOoKO_EeiMT4uHEbbEeA" name="Behaviour" tooltipText="" width="12" height="10">
       <target xmi:type="ecore:EEnum" href="cyberPhysical_Incident.ecore#//Behaviour"/>

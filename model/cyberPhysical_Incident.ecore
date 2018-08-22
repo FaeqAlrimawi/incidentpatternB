@@ -202,7 +202,6 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="severity" eType="#//Level"
         defaultValueLiteral="MEDIUM"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="AssetType" abstract="true"/>
   <eClassifiers xsi:type="ecore:EEnum" name="Behaviour">
     <eLiterals name="NORMAL"/>
     <eLiterals name="SUSPICIOUS" value="1"/>
