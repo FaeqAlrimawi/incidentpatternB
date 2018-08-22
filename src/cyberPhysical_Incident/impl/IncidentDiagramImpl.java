@@ -27,6 +27,7 @@ import cyberPhysical_Incident.Connection;
 import cyberPhysical_Incident.CrimeScript;
 import cyberPhysical_Incident.CyberPhysicalIncidentFactory;
 import cyberPhysical_Incident.CyberPhysicalIncidentPackage;
+import cyberPhysical_Incident.Entity;
 import cyberPhysical_Incident.Goal;
 import cyberPhysical_Incident.IncidentDiagram;
 import cyberPhysical_Incident.IncidentEntity;
@@ -818,6 +819,7 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 		 * 
 		 * In second activity:
 		 * 5-Device contains data from the Common Resource
+		 * 6-Device contains sensitive data
 		 */
 		Activity firstActivity = activitySequence.get(0);
 		Activity secondActivity = activitySequence.get(1);
@@ -871,9 +873,7 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 		
 		///till this point we can establish that the first activity is connectivity activity
 		
-		// 5-Device contains data from the Common Resource
-		
-		//check if 2nd activity contains the same resource as in the 1st activity
+		// 5-Device contains data from the Common Resource (precondition of 2nd activity)
 		
 		//currently assuming there's 1 resource available
 		Resource secondDevice = secondActivity.getResources().get(0);
@@ -913,7 +913,7 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 		//check if the target asset of the 2nd activity is contained in the exploited asset (i.e. information extracted from data)
 		if(secondTargetAsset != null) {
 			
-			if(!firstTargetAsset.contains(secondTargetAsset.getName())) {
+			if(!secondExploitedAsset.contains(secondTargetAsset.getName())) {
 				return null;
 			}
 			
@@ -921,8 +921,28 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 			return null;
 		}
 		
+		Precondition secondPre = secondActivity.getPrecondition();
 		
+		BigraphExpression secondBigraph = (BigraphExpression)secondPre.getExpression();
 		
+		List<Entity> cotnainedEntities = secondBigraph.getContainedEntities(device.getName());
+		
+		boolean isCotnained = false;
+		
+		//check that the device contains the exploited asset in the precondition (if so, this satisfies 5)
+		for(Entity ent : cotnainedEntities) {
+			if(ent.getName().equals(secondExploitedAsset.getName())) {
+				isCotnained = true;
+				break;
+			}
+		}
+	
+		if(!isCotnained) {
+			return null;
+		}
+		
+		//6-device contains sensitive data
+		//in the postcondition check if device 
 		return mergedActivity;
 	}
 	
