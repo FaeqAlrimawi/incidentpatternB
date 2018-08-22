@@ -788,13 +788,13 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 		 * pre: Initiator didn't reach a [Common Resource (or Asset)] (e.g., network, workstation)
 		 * post: Initiator reached a [Common Resource] using a [device]
 		 * 
-		 * 2nd activity (i.e. collect data): 
-		 * pre: currently is not relevant (but could be set to be having a resource contained by the [device])
-		 * post: collect data available
+		 * 2nd activity (i.e. identify sensitive data):
+		 * pre: collect data available from [common resource]
+		 * post: obtain sensitive data
 		 * 
-		 * 3rd activity (i.e. identify sensitive data):
-		 * pre: currently not relevant (but could be set to be using some tool or disocnnecting for the common source)
-		 * post: obtain sensetive data
+		 * (possible extension) Middle activity (i.e. collect data): 
+		 * pre: currently is not relevant (but could be set to be having a resource contained by the [device])
+		 * post: collect data available from [common resource]
 		 * 
 		 * Further criteria related to the properties of entities mentioned in 1 & 2:
 		 * -Common resource: Currently used a "Network (IP or Bus)"
@@ -810,19 +810,27 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 		
 		/**
 		 * Criteria checked:
-		 * 1-Action should be "connect" in first activity and the target asset should be a Network (IP or Bus)
-		 * 2-Initiator of the first activity should an Actor with a Role as OFFENDER
-		 * 3-Device used (i.e. resource) by the initiator should be of type ComputingDevice
-		 * 4-there's a connection in the post condition established between device and network
+		 * In first activity:
+		 * 1-Action should be "connect" and the Target Asset should be a Network (IP or Bus)
+		 * 2-Initiator should an Actor with a Role as OFFENDER
+		 * 3-Device used (i.e. resource) by the Initiator should be of type ComputingDevice
+		 * 4-there's a Connection in the post condition established between Device and Network
+		 * 
+		 * In second activity:
+		 * 5-Device contains data from the Common Resource
 		 */
 		Activity firstActivity = activitySequence.get(0);
 		Activity secondActivity = activitySequence.get(1);
+		
+		if( firstActivity == null || secondActivity == null) {
+			return null;
+		}
 		
 		//1-in the first activity look for the action to be "connect" and the target asset to be network (IP or bus)
 		String firstAction =  firstActivity.getSystemAction();
 		Asset firstTargetAsset = firstActivity.getTargetedAssets().get(0); //assuming there's only one
 		
-		if(!firstAction.equalsIgnoreCase("connect")
+		if(firstAction == null || firstTargetAsset == null || !firstAction.equalsIgnoreCase("connect")
 				|| !(environment.IPNetwork.class.isInstance(firstTargetAsset) || environment.BusNetwork.class.isInstance(firstTargetAsset))){
 			return null;
 		}
@@ -847,7 +855,7 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 		//is the deivce used in the post condition at least? if no then it fails to satisfy 3 as it is not connected to the target asset
 		List<String> firstcontainedEntities = firstActivity.getInitiatorContainedEntities();
 		
-		if(!firstcontainedEntities.contains(device.getName())) {
+		if(device == null || firstcontainedEntities == null || !firstcontainedEntities.contains(device.getName())) {
 			return null;
 		}
 		
@@ -863,7 +871,39 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 		
 		///till this point we can establish that the first activity is connectivity activity
 		
+		// 5-Device contains data from the Common Resource
 		
+		//check if 2nd activity contains the same resource as in the 1st activity
+		
+		//currently assuming there's 1 resource available
+		Resource secondDevice = secondActivity.getResources().get(0);
+		ActivityInitiator secondInitiator = secondActivity.getInitiator();
+		
+		//check if initiator is the same 
+		if(Actor.class.isInstance(secondInitiator)) {
+			Actor actor = (Actor) secondInitiator;
+			
+			if(! (actor.getName().equals(((Actor)firstInitiator).getName()))){
+				return null;
+			}
+		} else { //can be extended to check for digital processes and tools that can collect data
+			return null;
+		}
+		
+		//check if the device is still the same
+		if(secondDevice == null || !secondDevice.getName().equals(device)) {
+			return null;
+		}
+		
+		//check that 2nd target asset is contained in the first target asset (i.e. data from common resource)
+		Asset secondTargetAsset = secondActivity.getTargetedAssets().get(0);
+		
+		if(secondTargetAsset != null) {
+			
+			
+		} else {
+			return null;
+		}
 		
 		return mergedActivity;
 	}
