@@ -784,13 +784,17 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 		 * from [Common Resource (or Asset), well-known locations for resources] 
 		 * using a [device]
 		 * 
-		 * 1st activity (or action in system): 
+		 * 1st activity (i.e. reach common resource): 
 		 * pre: Initiator didn't reach a [Common Resource (or Asset)] (e.g., network, workstation)
 		 * post: Initiator reached a [Common Resource] using a [device]
 		 * 
-		 * 2nd activity (or action in system): 
-		 * pre: Initiator starts collecting data
-		 * post: identify [sensitive data]
+		 * 2nd activity (i.e. collect data): 
+		 * pre: currently is not relevant (but could be set to be having a resource contained by the [device])
+		 * post: collect data available
+		 * 
+		 * 3rd activity (i.e. identify sensitive data):
+		 * pre: currently not relevant (but could be set to be using some tool or disocnnecting for the common source)
+		 * post: obtain sensetive data
 		 * 
 		 * Further criteria related to the properties of entities mentioned in 1 & 2:
 		 * -Common resource: Currently used a "Network (IP or Bus)"
@@ -852,9 +856,12 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 			return null;
 		}
 		
+		//4- check if there's a connection in the post condition established between device and network
 		if(firstActivity.getConnectionChangesBetweenEntities(device.getName(), firstTargetAsset.getName()) != Connection.CONNECTIONS_INCREASE) {
 			return null;
 		}
+		
+		///till this point we can establish that the first activity is connectivity activity
 		
 		
 		
