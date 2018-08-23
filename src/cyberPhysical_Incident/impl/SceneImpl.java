@@ -117,6 +117,34 @@ public class SceneImpl extends MinimalEObjectImpl.Container implements Scene {
 		super();
 	}
 
+	public Activity getInitialActivity() {
+		
+		Activity initialActivity = null;
+		EList<Activity> activities = getActivity();
+		
+		for(Activity act : activities) {
+			
+			EList<Activity> preActivities = act.getPreviousActivities();
+			
+			//if it does not have previous activites (i.e. activity is the first activity in the first scene)
+			if(preActivities == null || preActivities.size() == 0) {
+				return act;
+			}
+			
+			if(!activities.containsAll(preActivities)) {
+				return act;
+			}
+			
+			/*for(Activity prev : preActivities) {
+				//if it has previous activities to activities of different scene
+				if(!activities.contains(prev)) {
+					return act;
+				}
+			}*/
+		}
+		return initialActivity;
+	}
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

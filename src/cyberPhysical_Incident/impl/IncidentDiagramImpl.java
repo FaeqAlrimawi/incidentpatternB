@@ -265,15 +265,24 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 		if(getActivity().size() < 2) {
 			return;
 		}
-		
-		Activity currentActivity = getInitialActivity();
-		
-		Activity nextActivity = null;
 
-		while (currentActivity.getNextActivities().size()>0) {
+		//merging of activities is only limited to same scene
+		for(Scene scene : getScene()) {
 			
-			nextActivity = currentActivity.getNextActivities().get(0); //assuming only 1 activity is next
+			EList<Activity> sceneActivities = scene.getActivity();
 			
+			Activity currentActivity = scene.getInitialActivity();
+		
+			Activity nextActivity = null;
+
+			while (currentActivity.getNextActivities().size()>0) {
+				
+				nextActivity = currentActivity.getNextActivities().get(0); //assuming only 1 activity is next
+			
+				if(!sceneActivities.contains(nextActivity)) {
+					break;
+				}
+				
 			Activity mergedActivity = mergeActivities(currentActivity, nextActivity);
 			
 			//if there was no merging then move to the next activity
@@ -283,6 +292,7 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 			} else {
 				currentActivity = mergedActivity;
 			}
+		}
 		}
 
 	}

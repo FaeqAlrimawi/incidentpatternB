@@ -1558,8 +1558,25 @@ public class ActivityImpl extends MinimalEObjectImpl.Container implements Activi
 	@Override
 	public void replaceEntityName(String oldEntityName, String newEntityName) {
 		
-		((BigraphExpression)getPrecondition().getExpression()).replaceEntityName(oldEntityName, newEntityName);
-		((BigraphExpression)getPostcondition().getExpression()).replaceEntityName(oldEntityName, newEntityName);
+		Precondition pre = getPrecondition();
+		
+		if(pre != null) {
+			BigraphExpression preCon = ((BigraphExpression)pre.getExpression());	
+			
+			if(preCon != null) {
+				preCon.replaceEntityName(oldEntityName, newEntityName);
+			}
+		}
+		
+		Postcondition post = getPostcondition();
+		
+		if(post != null) {
+			BigraphExpression postCon = ((BigraphExpression)post.getExpression());
+			
+			if(postCon != null) {
+				postCon.replaceEntityName(oldEntityName, newEntityName);
+			}
+		}
 		
 	}
 	
