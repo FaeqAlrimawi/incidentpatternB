@@ -272,7 +272,7 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 
 		while (currentActivity.getNextActivities().size()>0) {
 			
-			nextActivity = currentActivity.getNextActivities().get(0);
+			nextActivity = currentActivity.getNextActivities().get(0); //assuming only 1 activity is next
 			
 			Activity mergedActivity = mergeActivities(currentActivity, nextActivity);
 			
@@ -494,21 +494,25 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 	public Activity mergeActivities(List<Activity> activitySequence) {
 		
 		MessagePrinter.printMsg(this, "trying to merge act ["+activitySequence.get(0).getName()+"] act ["+activitySequence.get(1).getName()+"]");
+		Activity mergedActivity = null;
 		
+		//try to merge sequence based on collect data pattern
+		mergedActivity = mergeAccordingToCollectData(activitySequence);
+
+		//this is currently specific containment & connectivity 
 		if(!canMergeBasedOnBasics(activitySequence)) {
 
 			return null;
 		}
 		
-		Activity mergedActivity = null;
 		
 		
 		//first try to merge based on containment
-		mergedActivity = mergeAccordingToContainment(activitySequence);
+//		mergedActivity = mergeAccordingToContainment(activitySequence);
 		
 		//if not successful, then try connectivity
 		if(mergedActivity == null) {
-		mergedActivity = mergeAccordingToConnectivity(activitySequence);	
+//		mergedActivity = mergeAccordingToConnectivity(activitySequence);	
 		}
 		
 		//other rules for merging can be added here in the future\\
@@ -821,6 +825,7 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 		 * 5-Device contains data from the Common Resource
 		 * 6-Device contains sensitive data
 		 */
+		
 		Activity firstActivity = activitySequence.get(0);
 		Activity secondActivity = activitySequence.get(1);
 		
@@ -828,14 +833,20 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 			return null;
 		}
 		
+		System.out.println("collect data-merging: "+firstActivity.getName()+" "+secondActivity.getName());
+		
 		//1-in the first activity look for the action to be "connect" and the target asset to be network (IP or bus)
 		String firstAction =  firstActivity.getSystemAction();
 		Asset firstTargetAsset = firstActivity.getTargetedAssets().get(0); //assuming there's only one
+		String firstTargetAssetType = firstTargetAsset.getType()!=null?firstTargetAsset.getType().getName():"";
 		
 		if(firstAction == null || firstTargetAsset == null || !firstAction.equalsIgnoreCase("connect")
-				|| !(environment.IPNetwork.class.isInstance(firstTargetAsset) || environment.BusNetwork.class.isInstance(firstTargetAsset))){
+				|| !(environment.IPNetwork.class.getSimpleName().equalsIgnoreCase(firstTargetAssetType) 
+						|| environment.BusNetwork.class.getSimpleName().equalsIgnoreCase(firstTargetAssetType))){
 			return null;
 		}
+		
+		System.out.println("1st con is good");
 		
 		//2-if initiator is actor then he/she should be offender
 		ActivityInitiator firstInitiator = firstActivity.getInitiator();
@@ -844,39 +855,56 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 		if(Actor.class.isInstance(firstInitiator)) {
 			Actor actor = (Actor) firstInitiator;
 			
-			if(! (actor.getRole().equals(ActorRole.OFFENDER))){
+			if(!(actor.getRole().equals(ActorRole.OFFENDER))){
 				return null;
 			}
 		} else { //can be extended to check for digital processes and tools that can collect data
 			return null;
 		}
 
-		//3- deviced used by the initiator is contained by the initiator and is of type computing device
+		System.out.println("2nd con is good");
+		
+		//3- device is contained by the initiator and is of type computing device
+		if(firstActivity.getResources() == null || firstActivity.getResources().isEmpty()) {
+			return null;
+		}
+		
 		Resource device = firstActivity.getResources().get(0); //assuming there's one resource
 		
 		//is the deivce used in the post condition at least? if no then it fails to satisfy 3 as it is not connected to the target asset
 		List<String> firstcontainedEntities = firstActivity.getInitiatorContainedEntities();
 		
-		if(device == null || firstcontainedEntities == null || !firstcontainedEntities.contains(device.getName())) {
+		if(device == null || firstcontainedEntities == null) {
+			return null;
+		}
+		
+		if(!firstcontainedEntities.contains(device.getName())) {
 			return null;
 		}
 		
 		//if the device is not of type computingDevice then it fails to satisfy the conditions
-		if(!environment.ComputingDevice.class.isInstance(device)) {
+		String deviceType = device.getType() != null?device.getType().getName():"";
+		
+		if(!environment.ComputingDevice.class.getSimpleName().equalsIgnoreCase(deviceType)) {
 			return null;
 		}
+		
+		System.out.println("3rd con is good");
 		
 		//4- check if there's a connection in the post condition established between device and network
 		if(firstActivity.getConnectionChangesBetweenEntities(device.getName(), firstTargetAsset.getName()) != Connection.CONNECTIONS_INCREASE) {
 			return null;
 		}
 		
+		System.out.println("4th con is good");
+		
 		///till this point we can establish that the first activity is connectivity activity
 		
 		// 5-Device contains data from the Common Resource (precondition of 2nd activity)
 		
 		//currently assuming there's 1 resource available
-		Resource secondDevice = secondActivity.getResources().get(0);
+		Resource secondDevice = secondActivity.getResources()!=null?secondActivity.getResources().get(0):null;
+		
 		ActivityInitiator secondInitiator = secondActivity.getInitiator();
 		
 		//check if initiator is the same 
@@ -891,15 +919,12 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 		}
 		
 		//check if the device is still the same
-		if(secondDevice == null || !secondDevice.getName().equals(device)) {
+		if(secondDevice == null || secondDevice.getName() == null || !secondDevice.getName().equals(device.getName())) {
 			return null;
 		}
 		
-		//check that 2nd target asset is contained in the first target asset (i.e. data from common resource)
-		Asset secondTargetAsset = secondActivity.getTargetedAssets().get(0);
-		
-		//holds the data that is collected
-		Asset secondExploitedAsset = secondActivity.getExploitedAssets().get(0);
+		Asset secondTargetAsset = secondActivity.getTargetedAssets() != null?secondActivity.getTargetedAssets().get(0):null;
+		Asset secondExploitedAsset = secondActivity.getExploitedAssets()!=null?secondActivity.getExploitedAssets().get(0):null;
 		
 		//check that the exploited asset is contained in the first target asset (i.e. data from common resource)
 		if(secondExploitedAsset != null ) {
@@ -929,6 +954,11 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 		
 		boolean isCotnained = false;
 		
+		//if it is null then it is likely that the given deivce name does not exist in the precondition
+		if(cotnainedEntities == null) {
+			return null;
+		}
+		
 		//check that the device contains the exploited asset in the precondition (if so, this satisfies 5)
 		for(Entity ent : cotnainedEntities) {
 			if(ent.getName().equals(secondExploitedAsset.getName())) {
@@ -954,6 +984,10 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 		
 		isCotnained = false;
 		
+		if(postCotnainedEntities == null) {
+			return null;
+		}
+		
 		for(Entity ent : postCotnainedEntities) {
 			if(ent.getName().equals(secondTargetAsset.getName())) {
 				isCotnained = true;
@@ -964,6 +998,9 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 		if(!isCotnained) {
 			return null;
 		}
+		
+		
+		System.out.println("All goood");
 		
 		///at this point all conditions are matched, so a merged activity is created
 		EList<Activity> newSequence = new BasicEList<Activity>();
@@ -1050,14 +1087,6 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 		// initial activity in the sequence
 		replacePreviousActivities(initialActivity, mergedActivity);
 
-		// add merged activity to the sequence of activities at the position
-		// where the starting activity in the sequence is located
-		for (int i = 0; i < this.getActivity().size(); i++) {
-			if (this.getActivity().get(i).equals(initialActivity)) {
-				this.getActivity().add(i, mergedActivity);
-				break;
-			}
-		}
 
 		// update conditions (pre & post)
 		//get precondition of first activity. In future, check for null condition, if it is null then it can be replaced with the next precondition
@@ -1067,19 +1096,72 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 		
 		mergedActivity.setPrecondition(pre);
 		mergedActivity.setPostcondition(post);
+		
+		// add merged activity to the sequence of activities at the position
+		// where the starting activity in the sequence is located
+		/*for (int i = 0; i < this.getActivity().size(); i++) {
+			if (this.getActivity().get(i).equals(initialActivity)) {
+				this.getActivity().add(i, mergedActivity);
+				break;
+			}
+		}*/
+		addNewActivityToSequence(mergedActivity, initialActivity);
+
 			
 		// remove the sequence of activities
-		this.getActivity().removeAll(activitySequence);
+		removeMergedActivitiesFromSequence(activitySequence);
+		
+		this.activity = null;
+//		this.getActivity().removeAll(activitySequence);
 
 		return mergedActivity;
 	}
 
+	/**
+	 * Adds the new merged activity to the original sequence of activities. It is added in place of the
+	 * given second argument 
+	 * @param mergedActivity new merged activity
+	 * @param originalActivity the activity in aequence where the new activity will be placed before
+	 */
+	protected void addNewActivityToSequence(Activity mergedActivity, Activity originalActivity){
+		
+		for(Scene scene:  getScene()) {
+			EList<Activity> sceneActivities = scene.getActivity();
+			for (int i = 0; i < sceneActivities.size(); i++) {
+				if (sceneActivities.get(i).equals(originalActivity)) {
+					sceneActivities.add(i, mergedActivity);
+					break;
+				}
+			}
+		}
+	}
+	
+	protected void removeMergedActivitiesFromSequence(EList<Activity> activitySequence) {
+		
+//		List<Activity> activitiesToRemove = new LinkedList<Activity>();
+		
+		for(Scene scene:  getScene()) {
+			EList<Activity> sceneActivities = scene.getActivity();
+			for (int i = 0; i < sceneActivities.size(); i++) {
+				if (sceneActivities.get(i).equals(activitySequence.get(0))) {
+					sceneActivities.removeAll(activitySequence);
+					/*for(int j=i;j<sceneActivities.size();j++) {
+						
+					}*/
+//					sceneActivities.add(i, mergedActivity);
+					break;
+				}
+			}
+		}
+	}
+	
 	protected void replaceNextActivities(Activity sourceActivity, Activity  targetActivity) {
 		
 		//set next activities, which is the next activity in the source activity
 		if (sourceActivity.getNextActivities().size() > 0) {
 			for (Activity nextAct : sourceActivity.getNextActivities()) {
 				targetActivity.getNextActivities().add(nextAct);
+				
 				// set previous activity of the next activity to be the target
 				// activity
 				nextAct.getPreviousActivities().remove(sourceActivity);
@@ -1089,9 +1171,11 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 	}
 	
 	protected void replacePreviousActivities(Activity sourceActivity,Activity  targetActivity) {
+		
 		if(sourceActivity.getPreviousActivities().size() >0) {
 			for(Activity prevActivity : sourceActivity.getPreviousActivities()) {
 				targetActivity.getPreviousActivities().add(prevActivity);
+				
 				//set the next activity of the previous activity to be the target activity
 				prevActivity.getNextActivities().remove(sourceActivity);
 				prevActivity.getNextActivities().add(targetActivity);
