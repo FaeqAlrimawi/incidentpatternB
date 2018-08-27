@@ -3,6 +3,7 @@
 package cyberPhysical_Incident;
 
 import java.util.List;
+import java.util.Map;
 
 import org.eclipse.emf.common.util.EList;
 
@@ -38,14 +39,22 @@ import environment.EnvironmentDiagram;
 public interface IncidentDiagram extends EObject {
 	
 	
+	static final int CONTAINMENT_MERGE_RULE = 0;
+	static final int CONNECTIVITY_MERGE_RULE = 1;
+	static final int COLLECTDATA_MERGE_RULE = 2;
+	
 	 IncidentDiagram createAbstractIncident(EnvironmentDiagram systemModel);
 	 IncidentDiagram createAbstractIncident();
 	 void setSystemModel(EnvironmentDiagram systemModel);
 	 EList<Activity> getActivity();
+	 List<Integer> getMergedRules();
+	 Map<Activity, List<Activity>> getMergedActivities();
+	 void setMergedRules();
+	 
 	/**
 	 *Finds possible pairs of activities that can be merged based on containment and connectivity heuristics 
 	 */
-	void abstractActivities();
+	 Map<Activity, List<Activity>> abstractActivities();
 	
 	/**
 	 * Abstracts assets found in the incident model, which correspod to assets in the system model. 
@@ -93,6 +102,30 @@ public interface IncidentDiagram extends EObject {
 	 */
 	Activity mergeAccordingToConnectivity(List<Activity> activitySequence);
 	
+	/**
+	 * Merges the first two activities of the given sequence based on 'collect Data' pattern. 
+	 * Pattern: collect [Data (sensitive), which can be used to undermine the security of the target] 
+	 * from [Common Resource (or Asset), well-known locations for resources] 
+	 * using a [device].
+	 * <p>
+	 * Criteria is: <br>
+	 * 1st activity (connect [reach] to network [common resource]): <br>
+	 	 * <<em>action</em>: "connect"  <br>
+	 	 * <em>Target asset</em>: Network (IP or Bus)<br>
+	 	 * <em>Initiator</em>: Actor with role as OFFENDER<br>
+	 	 * <em>Resource</em>: ComputingDevice contained by Initiator<br>
+		 * <em>Precondition</em>: Initiator [Offender] not connected to a Network<br>
+		 * <em>Postcondition</em>: Initiator connected to Network using a computingDevice [device]<br>
+	 *</p> 
+	 * 2nd activity (i.e. identify sensitive data):<br>
+	 	* <em>action</em>: not specified<br>
+	 	* <em>Target Asset</em>: [Sensitive-Data] such as packet payload<br>
+	 	* <em>Exploited Asset</em>: Data collected from Network<br>
+	 	* <em>Precondition</em>: collect Data available from Network<br>
+	 	* <em>Postcondition</em>: obtain Sensitive-Data<br>
+	 * @param activitySequence The sequence of activities to merge
+	 * @return New activity replacing the first two activities in the sequence. Or null if merging is not successful
+	 */
 	Activity mergeAccordingToCollectData(List<Activity> activitySequence);
 	/**
 	 *  * Merges the activity sequence starting from the given argument activity (it included) until the activity that is located the last in the given number of activities. 
@@ -103,6 +136,7 @@ public interface IncidentDiagram extends EObject {
 	 * @return New activity replacing the sequence. Or null if merging is not successful
 	 */
 	Activity mergeActivities(Activity startingActivity, int sequenceLength);
+	
 	
 	/**
 	 * Checks whether the given two incident entities have a connection or not

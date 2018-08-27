@@ -3,9 +3,14 @@
 package cyberPhysical_Incident.impl;
 
 import java.io.File;
+import java.util.Arrays;
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.BasicEList;
@@ -16,6 +21,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+
 import cyberPhysical_Incident.Activity;
 import cyberPhysical_Incident.ActivityInitiator;
 import cyberPhysical_Incident.ActivityType;
@@ -177,6 +183,12 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 	protected environment.EnvironmentDiagram systemModel;
 	protected EList<Activity> activity;
 	
+	//key is new activity and the list is the list of merged activities from the original incident
+	protected Map<Activity, List<Activity>> mergedActivities; 
+	
+	//each entry has the value of the merge rule used to create the new activity (e.g., containment, connectivity)
+	protected List<Integer> mergedRules; 
+	
 	public IncidentDiagram createAbstractIncident(EnvironmentDiagram system) {
 	
 		setSystemModel(system);
@@ -215,11 +227,16 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 		updateMetaData(potentialAbstractIncident);
 		
 		//abstract activities
-		potentialAbstractIncident.abstractActivities();
-		
-		//abstract entities (assets, resoources, and actors)
-		potentialAbstractIncident.abstractEntities(systemModel);
-		
+		 mergedActivities = potentialAbstractIncident.abstractActivities();
+		 mergedRules = new LinkedList<Integer>(potentialAbstractIncident.getMergedRules());
+		 //remove merged rules from abstract incident
+		 potentialAbstractIncident.setMergedRules();
+		 
+		 if(systemModel != null) {
+			 //abstract entities (assets, resources, and actors)
+			 potentialAbstractIncident.abstractEntities(systemModel); 
+		 } 
+		 
 		return potentialAbstractIncident;
 	}
 	
@@ -256,16 +273,19 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 		
 	}
 	
-	public void abstractActivities() {
+	public Map<Activity, List<Activity>> abstractActivities() {
 		
 		//currently merging is done based on the first two activities in a given sequence
 		//so I test different sequences to see of they can be merged or not. I try to test all
 		
 		//if there is less than 2 activities then merging is not required
 		if(getActivity().size() < 2) {
-			return;
+			return null;
 		}
 
+		Map<Activity, List<Activity>> mergedActivities = new HashMap<Activity, List<Activity>>();
+		mergedRules = new LinkedList<Integer>();
+		
 		//merging of activities is only limited to same scene
 		for(Scene scene : getScene()) {
 			
@@ -290,10 +310,16 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 				currentActivity = nextActivity;
 			//else use the merged activity for the next merge
 			} else {
+				//store merge event (new activity and the list of merged activities)
+				mergedActivities.put(mergedActivity, Arrays.asList(currentActivity, nextActivity));
+				
 				currentActivity = mergedActivity;
+				
 			}
 		}
 		}
+		
+		return mergedActivities;
 
 	}
 	
@@ -367,7 +393,7 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 		
 		////update type to be of the same type as the abstracted asset
 		Type type = abstractedEntity.getType();
-		
+		 
 		if(type == null) {
 			type = instance.createType();
 		}
@@ -383,7 +409,6 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 		for(Activity act : getActivity()) {
 			act.replaceEntityName(oldEntityName, abstractedEntity.getName());
 		}
-		
 		
 		return abstractedEntity;
 	}
@@ -504,25 +529,41 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 	public Activity mergeActivities(List<Activity> activitySequence) {
 		
 		MessagePrinter.printMsg(this, "trying to merge act ["+activitySequence.get(0).getName()+"] act ["+activitySequence.get(1).getName()+"]");
+		
 		Activity mergedActivity = null;
 		
+		//Merging is done:
+		//1-Checking Collect data pattern, if there's a merge then the merged activity is returned, else
+		//2-Checking Containment pattern, if there's a merge then the merged activity is returned, else
+		//3-Checking Connectivity pattern, if there's a merge then the merged activity is returned, else
+		//default: returns null
+	
 		//try to merge sequence based on collect data pattern
 		mergedActivity = mergeAccordingToCollectData(activitySequence);
 
-		//this is currently specific containment & connectivity 
-		if(!canMergeBasedOnBasics(activitySequence)) {
-
-			return null;
+		if(mergedActivity != null) {
+			mergedRules.add(IncidentDiagram.COLLECTDATA_MERGE_RULE);
+			return mergedActivity;
 		}
 		
-		
-		
-		//first try to merge based on containment
-//		mergedActivity = mergeAccordingToContainment(activitySequence);
-		
-		//if not successful, then try connectivity
-		if(mergedActivity == null) {
-//		mergedActivity = mergeAccordingToConnectivity(activitySequence);	
+		//this is currently specific containment & connectivity 
+		if(canMergeBasedOnBasics(activitySequence)) {
+			
+			//first try to merge based on containment
+			mergedActivity = mergeAccordingToContainment(activitySequence);
+			
+			//if not successful, then try connectivity
+			if(mergedActivity == null) {
+				mergedActivity = mergeAccordingToConnectivity(activitySequence);	
+			
+				if(mergedActivity != null) {
+					mergedRules.add(IncidentDiagram.CONNECTIVITY_MERGE_RULE);
+					return mergedActivity;
+				}
+			} else {
+				mergedRules.add(IncidentDiagram.CONTAINMENT_MERGE_RULE);
+				return mergedActivity;
+			}
 		}
 		
 		//other rules for merging can be added here in the future\\
@@ -783,7 +824,7 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 		newSequence.add(activitySequence.get(1));
 		
 		mergedActivity = createMergedActivity(newSequence);
-		
+	
 		return mergedActivity;
 	}
 	
@@ -843,8 +884,6 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 			return null;
 		}
 		
-		System.out.println("collect data-merging: "+firstActivity.getName()+" "+secondActivity.getName());
-		
 		//1-in the first activity look for the action to be "connect" and the target asset to be network (IP or bus)
 		String firstAction =  firstActivity.getSystemAction();
 		Asset firstTargetAsset = firstActivity.getTargetedAssets().get(0); //assuming there's only one
@@ -855,8 +894,6 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 						|| environment.BusNetwork.class.getSimpleName().equalsIgnoreCase(firstTargetAssetType))){
 			return null;
 		}
-		
-		System.out.println("1st con is good");
 		
 		//2-if initiator is actor then he/she should be offender
 		ActivityInitiator firstInitiator = firstActivity.getInitiator();
@@ -872,8 +909,6 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 			return null;
 		}
 
-		System.out.println("2nd con is good");
-		
 		//3- device is contained by the initiator and is of type computing device
 		if(firstActivity.getResources() == null || firstActivity.getResources().isEmpty()) {
 			return null;
@@ -899,14 +934,10 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 			return null;
 		}
 		
-		System.out.println("3rd con is good");
-		
 		//4- check if there's a connection in the post condition established between device and network
 		if(firstActivity.getConnectionChangesBetweenEntities(device.getName(), firstTargetAsset.getName()) != Connection.CONNECTIONS_INCREASE) {
 			return null;
 		}
-		
-		System.out.println("4th con is good");
 		
 		///till this point we can establish that the first activity is connectivity activity
 		
@@ -1008,9 +1039,6 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 		if(!isCotnained) {
 			return null;
 		}
-		
-		
-		System.out.println("All goood");
 		
 		///at this point all conditions are matched, so a merged activity is created
 		EList<Activity> newSequence = new BasicEList<Activity>();
@@ -1192,6 +1220,20 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 			}
 		}
 	}
+	
+	public Map<Activity, List<Activity>> getMergedActivities() {
+		return mergedActivities;
+	}
+	
+	public List<Integer> getMergedRules() {
+		return mergedRules;
+	}
+	
+	//can be used to clean data saved in an abstract incident so that it cannot be accessed via it
+	public void setMergedRules() {
+		mergedRules.clear();
+	}
+	
 	
 /*	protected void print(String msg) {
 		
