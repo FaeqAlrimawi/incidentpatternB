@@ -171,12 +171,6 @@ public class CyberPhysicalIncidentSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case CyberPhysicalIncidentPackage.ASSET_TYPE: {
-				AssetType assetType = (AssetType)theEObject;
-				T result = caseAssetType(assetType);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case CyberPhysicalIncidentPackage.TYPE: {
 				Type type = (Type)theEObject;
 				T result = caseType(type);
@@ -350,6 +344,18 @@ public class CyberPhysicalIncidentSwitch<T> extends Switch<T> {
 			case CyberPhysicalIncidentPackage.SITE: {
 				Site site = (Site)theEObject;
 				T result = caseSite(site);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CyberPhysicalIncidentPackage.ACTIVITY_PATTERN: {
+				ActivityPattern activityPattern = (ActivityPattern)theEObject;
+				T result = caseActivityPattern(activityPattern);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CyberPhysicalIncidentPackage.ABSTRACT_ACTIVITY: {
+				AbstractActivity abstractActivity = (AbstractActivity)theEObject;
+				T result = caseAbstractActivity(abstractActivity);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -594,21 +600,6 @@ public class CyberPhysicalIncidentSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseVulnerability(Vulnerability object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Asset Type</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Asset Type</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseAssetType(AssetType object) {
 		return null;
 	}
 
@@ -969,6 +960,36 @@ public class CyberPhysicalIncidentSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseSite(Site object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Activity Pattern</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Activity Pattern</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseActivityPattern(ActivityPattern object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Abstract Activity</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Abstract Activity</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAbstractActivity(AbstractActivity object) {
 		return null;
 	}
 

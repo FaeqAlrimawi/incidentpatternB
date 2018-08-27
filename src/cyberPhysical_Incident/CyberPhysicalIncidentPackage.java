@@ -720,7 +720,7 @@ public interface CyberPhysicalIncidentPackage extends EPackage {
 	 * @see cyberPhysical_Incident.impl.CyberPhysicalIncidentPackageImpl#getIncidentEntity()
 	 * @generated
 	 */
-	int INCIDENT_ENTITY = 37;
+	int INCIDENT_ENTITY = 36;
 
 	/**
 	 * The feature id for the '<em><b>Connections</b></em>' reference list.
@@ -1596,34 +1596,6 @@ public interface CyberPhysicalIncidentPackage extends EPackage {
 	int VULNERABILITY_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link cyberPhysical_Incident.impl.AssetTypeImpl <em>Asset Type</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see cyberPhysical_Incident.impl.AssetTypeImpl
-	 * @see cyberPhysical_Incident.impl.CyberPhysicalIncidentPackageImpl#getAssetType()
-	 * @generated
-	 */
-	int ASSET_TYPE = 16;
-
-	/**
-	 * The number of structural features of the '<em>Asset Type</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ASSET_TYPE_FEATURE_COUNT = 0;
-
-	/**
-	 * The number of operations of the '<em>Asset Type</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ASSET_TYPE_OPERATION_COUNT = 0;
-
-	/**
 	 * The meta object id for the '{@link cyberPhysical_Incident.impl.TypeImpl <em>Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1631,7 +1603,7 @@ public interface CyberPhysicalIncidentPackage extends EPackage {
 	 * @see cyberPhysical_Incident.impl.CyberPhysicalIncidentPackageImpl#getType()
 	 * @generated
 	 */
-	int TYPE = 17;
+	int TYPE = 16;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1686,7 +1658,7 @@ public interface CyberPhysicalIncidentPackage extends EPackage {
 	 * @see cyberPhysical_Incident.impl.CyberPhysicalIncidentPackageImpl#getExpression()
 	 * @generated
 	 */
-	int EXPRESSION = 18;
+	int EXPRESSION = 17;
 
 	/**
 	 * The number of structural features of the '<em>Expression</em>' class.
@@ -1714,7 +1686,7 @@ public interface CyberPhysicalIncidentPackage extends EPackage {
 	 * @see cyberPhysical_Incident.impl.CyberPhysicalIncidentPackageImpl#getUnaryExpression()
 	 * @generated
 	 */
-	int UNARY_EXPRESSION = 19;
+	int UNARY_EXPRESSION = 18;
 
 	/**
 	 * The feature id for the '<em><b>Operand</b></em>' containment reference.
@@ -1751,7 +1723,7 @@ public interface CyberPhysicalIncidentPackage extends EPackage {
 	 * @see cyberPhysical_Incident.impl.CyberPhysicalIncidentPackageImpl#getBinaryExpression()
 	 * @generated
 	 */
-	int BINARY_EXPRESSION = 20;
+	int BINARY_EXPRESSION = 19;
 
 	/**
 	 * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1797,7 +1769,7 @@ public interface CyberPhysicalIncidentPackage extends EPackage {
 	 * @see cyberPhysical_Incident.impl.CyberPhysicalIncidentPackageImpl#getTopologicalRelation()
 	 * @generated
 	 */
-	int TOPOLOGICAL_RELATION = 26;
+	int TOPOLOGICAL_RELATION = 25;
 
 	/**
 	 * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1843,7 +1815,7 @@ public interface CyberPhysicalIncidentPackage extends EPackage {
 	 * @see cyberPhysical_Incident.impl.CyberPhysicalIncidentPackageImpl#getContains()
 	 * @generated
 	 */
-	int CONTAINS = 21;
+	int CONTAINS = 20;
 
 	/**
 	 * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1889,7 +1861,7 @@ public interface CyberPhysicalIncidentPackage extends EPackage {
 	 * @see cyberPhysical_Incident.impl.CyberPhysicalIncidentPackageImpl#getConnectedTo()
 	 * @generated
 	 */
-	int CONNECTED_TO = 22;
+	int CONNECTED_TO = 21;
 
 	/**
 	 * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1935,7 +1907,7 @@ public interface CyberPhysicalIncidentPackage extends EPackage {
 	 * @see cyberPhysical_Incident.impl.CyberPhysicalIncidentPackageImpl#getNot()
 	 * @generated
 	 */
-	int NOT = 23;
+	int NOT = 22;
 
 	/**
 	 * The feature id for the '<em><b>Operand</b></em>' containment reference.
@@ -1972,7 +1944,7 @@ public interface CyberPhysicalIncidentPackage extends EPackage {
 	 * @see cyberPhysical_Incident.impl.CyberPhysicalIncidentPackageImpl#getEntity()
 	 * @generated
 	 */
-	int ENTITY = 24;
+	int ENTITY = 23;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2036,7 +2008,7 @@ public interface CyberPhysicalIncidentPackage extends EPackage {
 	 * @see cyberPhysical_Incident.impl.CyberPhysicalIncidentPackageImpl#getCondition()
 	 * @generated
 	 */
-	int CONDITION = 34;
+	int CONDITION = 33;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2100,7 +2072,7 @@ public interface CyberPhysicalIncidentPackage extends EPackage {
 	 * @see cyberPhysical_Incident.impl.CyberPhysicalIncidentPackageImpl#getPrecondition()
 	 * @generated
 	 */
-	int PRECONDITION = 25;
+	int PRECONDITION = 24;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2164,7 +2136,7 @@ public interface CyberPhysicalIncidentPackage extends EPackage {
 	 * @see cyberPhysical_Incident.impl.CyberPhysicalIncidentPackageImpl#getEqual()
 	 * @generated
 	 */
-	int EQUAL = 27;
+	int EQUAL = 26;
 
 	/**
 	 * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -2210,7 +2182,7 @@ public interface CyberPhysicalIncidentPackage extends EPackage {
 	 * @see cyberPhysical_Incident.impl.CyberPhysicalIncidentPackageImpl#getGreater()
 	 * @generated
 	 */
-	int GREATER = 28;
+	int GREATER = 27;
 
 	/**
 	 * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -2256,7 +2228,7 @@ public interface CyberPhysicalIncidentPackage extends EPackage {
 	 * @see cyberPhysical_Incident.impl.CyberPhysicalIncidentPackageImpl#getAnd()
 	 * @generated
 	 */
-	int AND = 29;
+	int AND = 28;
 
 	/**
 	 * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -2302,7 +2274,7 @@ public interface CyberPhysicalIncidentPackage extends EPackage {
 	 * @see cyberPhysical_Incident.impl.CyberPhysicalIncidentPackageImpl#getBigraphExpression()
 	 * @generated
 	 */
-	int BIGRAPH_EXPRESSION = 30;
+	int BIGRAPH_EXPRESSION = 29;
 
 	/**
 	 * The feature id for the '<em><b>Entity</b></em>' containment reference list.
@@ -2348,7 +2320,7 @@ public interface CyberPhysicalIncidentPackage extends EPackage {
 	 * @see cyberPhysical_Incident.impl.CyberPhysicalIncidentPackageImpl#getOr()
 	 * @generated
 	 */
-	int OR = 31;
+	int OR = 30;
 
 	/**
 	 * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -2394,7 +2366,7 @@ public interface CyberPhysicalIncidentPackage extends EPackage {
 	 * @see cyberPhysical_Incident.impl.CyberPhysicalIncidentPackageImpl#getReachableFrom()
 	 * @generated
 	 */
-	int REACHABLE_FROM = 32;
+	int REACHABLE_FROM = 31;
 
 	/**
 	 * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -2440,7 +2412,7 @@ public interface CyberPhysicalIncidentPackage extends EPackage {
 	 * @see cyberPhysical_Incident.impl.CyberPhysicalIncidentPackageImpl#getNear()
 	 * @generated
 	 */
-	int NEAR = 33;
+	int NEAR = 32;
 
 	/**
 	 * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -2486,7 +2458,7 @@ public interface CyberPhysicalIncidentPackage extends EPackage {
 	 * @see cyberPhysical_Incident.impl.CyberPhysicalIncidentPackageImpl#getPostcondition()
 	 * @generated
 	 */
-	int POSTCONDITION = 35;
+	int POSTCONDITION = 34;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2550,7 +2522,7 @@ public interface CyberPhysicalIncidentPackage extends EPackage {
 	 * @see cyberPhysical_Incident.impl.CyberPhysicalIncidentPackageImpl#getFacilitatingCondition()
 	 * @generated
 	 */
-	int FACILITATING_CONDITION = 36;
+	int FACILITATING_CONDITION = 35;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2614,7 +2586,7 @@ public interface CyberPhysicalIncidentPackage extends EPackage {
 	 * @see cyberPhysical_Incident.impl.CyberPhysicalIncidentPackageImpl#getConnectivity()
 	 * @generated
 	 */
-	int CONNECTIVITY = 38;
+	int CONNECTIVITY = 37;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2660,7 +2632,7 @@ public interface CyberPhysicalIncidentPackage extends EPackage {
 	 * @see cyberPhysical_Incident.impl.CyberPhysicalIncidentPackageImpl#getInnerName()
 	 * @generated
 	 */
-	int INNER_NAME = 39;
+	int INNER_NAME = 38;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2715,7 +2687,7 @@ public interface CyberPhysicalIncidentPackage extends EPackage {
 	 * @see cyberPhysical_Incident.impl.CyberPhysicalIncidentPackageImpl#getSite()
 	 * @generated
 	 */
-	int SITE = 40;
+	int SITE = 39;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2754,6 +2726,215 @@ public interface CyberPhysicalIncidentPackage extends EPackage {
 	int SITE_OPERATION_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link cyberPhysical_Incident.impl.ActivityPatternImpl <em>Activity Pattern</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see cyberPhysical_Incident.impl.ActivityPatternImpl
+	 * @see cyberPhysical_Incident.impl.CyberPhysicalIncidentPackageImpl#getActivityPattern()
+	 * @generated
+	 */
+	int ACTIVITY_PATTERN = 40;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTIVITY_PATTERN__NAME = 0;
+
+	/**
+	 * The feature id for the '<em><b>Severity</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTIVITY_PATTERN__SEVERITY = 1;
+
+	/**
+	 * The feature id for the '<em><b>Abstractactivity</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTIVITY_PATTERN__ABSTRACTACTIVITY = 2;
+
+	/**
+	 * The feature id for the '<em><b>Incidententity</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTIVITY_PATTERN__INCIDENTENTITY = 3;
+
+	/**
+	 * The feature id for the '<em><b>Patterns Follow</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTIVITY_PATTERN__PATTERNS_FOLLOW = 4;
+
+	/**
+	 * The number of structural features of the '<em>Activity Pattern</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTIVITY_PATTERN_FEATURE_COUNT = 5;
+
+	/**
+	 * The number of operations of the '<em>Activity Pattern</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTIVITY_PATTERN_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link cyberPhysical_Incident.impl.AbstractActivityImpl <em>Abstract Activity</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see cyberPhysical_Incident.impl.AbstractActivityImpl
+	 * @see cyberPhysical_Incident.impl.CyberPhysicalIncidentPackageImpl#getAbstractActivity()
+	 * @generated
+	 */
+	int ABSTRACT_ACTIVITY = 41;
+
+	/**
+	 * The feature id for the '<em><b>Behaviour Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_ACTIVITY__BEHAVIOUR_TYPE = 0;
+
+	/**
+	 * The feature id for the '<em><b>Duration</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_ACTIVITY__DURATION = 1;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_ACTIVITY__TYPE = 2;
+
+	/**
+	 * The feature id for the '<em><b>System Action</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_ACTIVITY__SYSTEM_ACTION = 3;
+
+	/**
+	 * The feature id for the '<em><b>Exploited Assets</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_ACTIVITY__EXPLOITED_ASSETS = 4;
+
+	/**
+	 * The feature id for the '<em><b>Target Assets</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_ACTIVITY__TARGET_ASSETS = 5;
+
+	/**
+	 * The feature id for the '<em><b>Resources</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_ACTIVITY__RESOURCES = 6;
+
+	/**
+	 * The feature id for the '<em><b>Location</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_ACTIVITY__LOCATION = 7;
+
+	/**
+	 * The feature id for the '<em><b>Precondition</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_ACTIVITY__PRECONDITION = 8;
+
+	/**
+	 * The feature id for the '<em><b>Postcondition</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_ACTIVITY__POSTCONDITION = 9;
+
+	/**
+	 * The feature id for the '<em><b>Activityinitiator</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_ACTIVITY__ACTIVITYINITIATOR = 10;
+
+	/**
+	 * The feature id for the '<em><b>Victims</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_ACTIVITY__VICTIMS = 11;
+
+	/**
+	 * The number of structural features of the '<em>Abstract Activity</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_ACTIVITY_FEATURE_COUNT = 12;
+
+	/**
+	 * The number of operations of the '<em>Abstract Activity</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_ACTIVITY_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link cyberPhysical_Incident.Level <em>Level</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2761,7 +2942,7 @@ public interface CyberPhysicalIncidentPackage extends EPackage {
 	 * @see cyberPhysical_Incident.impl.CyberPhysicalIncidentPackageImpl#getLevel()
 	 * @generated
 	 */
-	int LEVEL = 41;
+	int LEVEL = 42;
 
 	/**
 	 * The meta object id for the '{@link cyberPhysical_Incident.ActivityType <em>Activity Type</em>}' enum.
@@ -2771,7 +2952,7 @@ public interface CyberPhysicalIncidentPackage extends EPackage {
 	 * @see cyberPhysical_Incident.impl.CyberPhysicalIncidentPackageImpl#getActivityType()
 	 * @generated
 	 */
-	int ACTIVITY_TYPE = 42;
+	int ACTIVITY_TYPE = 43;
 
 	/**
 	 * The meta object id for the '{@link cyberPhysical_Incident.Behaviour <em>Behaviour</em>}' enum.
@@ -2781,7 +2962,7 @@ public interface CyberPhysicalIncidentPackage extends EPackage {
 	 * @see cyberPhysical_Incident.impl.CyberPhysicalIncidentPackageImpl#getBehaviour()
 	 * @generated
 	 */
-	int BEHAVIOUR = 43;
+	int BEHAVIOUR = 44;
 
 	/**
 	 * The meta object id for the '{@link cyberPhysical_Incident.Knowledge <em>Knowledge</em>}' enum.
@@ -2791,7 +2972,7 @@ public interface CyberPhysicalIncidentPackage extends EPackage {
 	 * @see cyberPhysical_Incident.impl.CyberPhysicalIncidentPackageImpl#getKnowledge()
 	 * @generated
 	 */
-	int KNOWLEDGE = 44;
+	int KNOWLEDGE = 45;
 
 	/**
 	 * The meta object id for the '{@link cyberPhysical_Incident.ScriptCategory <em>Script Category</em>}' enum.
@@ -2801,7 +2982,7 @@ public interface CyberPhysicalIncidentPackage extends EPackage {
 	 * @see cyberPhysical_Incident.impl.CyberPhysicalIncidentPackageImpl#getScriptCategory()
 	 * @generated
 	 */
-	int SCRIPT_CATEGORY = 45;
+	int SCRIPT_CATEGORY = 46;
 
 
 	/**
@@ -2812,7 +2993,7 @@ public interface CyberPhysicalIncidentPackage extends EPackage {
 	 * @see cyberPhysical_Incident.impl.CyberPhysicalIncidentPackageImpl#getActorRole()
 	 * @generated
 	 */
-	int ACTOR_ROLE = 46;
+	int ACTOR_ROLE = 47;
 
 	/**
 	 * The meta object id for the '{@link cyberPhysical_Incident.ActorLevel <em>Actor Level</em>}' enum.
@@ -2822,8 +3003,18 @@ public interface CyberPhysicalIncidentPackage extends EPackage {
 	 * @see cyberPhysical_Incident.impl.CyberPhysicalIncidentPackageImpl#getActorLevel()
 	 * @generated
 	 */
-	int ACTOR_LEVEL = 47;
+	int ACTOR_LEVEL = 48;
 
+
+	/**
+	 * The meta object id for the '{@link cyberPhysical_Incident.ActivityPatternSeverity <em>Activity Pattern Severity</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see cyberPhysical_Incident.ActivityPatternSeverity
+	 * @see cyberPhysical_Incident.impl.CyberPhysicalIncidentPackageImpl#getActivityPatternSeverity()
+	 * @generated
+	 */
+	int ACTIVITY_PATTERN_SEVERITY = 49;
 
 	/**
 	 * Returns the meta object for class '{@link cyberPhysical_Incident.Activity <em>Activity</em>}'.
@@ -3932,16 +4123,6 @@ public interface CyberPhysicalIncidentPackage extends EPackage {
 	EAttribute getVulnerability_Severity();
 
 	/**
-	 * Returns the meta object for class '{@link cyberPhysical_Incident.AssetType <em>Asset Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Asset Type</em>'.
-	 * @see cyberPhysical_Incident.AssetType
-	 * @generated
-	 */
-	EClass getAssetType();
-
-	/**
 	 * Returns the meta object for class '{@link cyberPhysical_Incident.Type <em>Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4468,6 +4649,213 @@ public interface CyberPhysicalIncidentPackage extends EPackage {
 	EAttribute getSite_IsClosed();
 
 	/**
+	 * Returns the meta object for class '{@link cyberPhysical_Incident.ActivityPattern <em>Activity Pattern</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Activity Pattern</em>'.
+	 * @see cyberPhysical_Incident.ActivityPattern
+	 * @generated
+	 */
+	EClass getActivityPattern();
+
+	/**
+	 * Returns the meta object for the attribute '{@link cyberPhysical_Incident.ActivityPattern#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see cyberPhysical_Incident.ActivityPattern#getName()
+	 * @see #getActivityPattern()
+	 * @generated
+	 */
+	EAttribute getActivityPattern_Name();
+
+	/**
+	 * Returns the meta object for the attribute '{@link cyberPhysical_Incident.ActivityPattern#getSeverity <em>Severity</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Severity</em>'.
+	 * @see cyberPhysical_Incident.ActivityPattern#getSeverity()
+	 * @see #getActivityPattern()
+	 * @generated
+	 */
+	EAttribute getActivityPattern_Severity();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link cyberPhysical_Incident.ActivityPattern#getAbstractactivity <em>Abstractactivity</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Abstractactivity</em>'.
+	 * @see cyberPhysical_Incident.ActivityPattern#getAbstractactivity()
+	 * @see #getActivityPattern()
+	 * @generated
+	 */
+	EReference getActivityPattern_Abstractactivity();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link cyberPhysical_Incident.ActivityPattern#getIncidententity <em>Incidententity</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Incidententity</em>'.
+	 * @see cyberPhysical_Incident.ActivityPattern#getIncidententity()
+	 * @see #getActivityPattern()
+	 * @generated
+	 */
+	EReference getActivityPattern_Incidententity();
+
+	/**
+	 * Returns the meta object for the reference list '{@link cyberPhysical_Incident.ActivityPattern#getPatternsFollow <em>Patterns Follow</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Patterns Follow</em>'.
+	 * @see cyberPhysical_Incident.ActivityPattern#getPatternsFollow()
+	 * @see #getActivityPattern()
+	 * @generated
+	 */
+	EReference getActivityPattern_PatternsFollow();
+
+	/**
+	 * Returns the meta object for class '{@link cyberPhysical_Incident.AbstractActivity <em>Abstract Activity</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Abstract Activity</em>'.
+	 * @see cyberPhysical_Incident.AbstractActivity
+	 * @generated
+	 */
+	EClass getAbstractActivity();
+
+	/**
+	 * Returns the meta object for the attribute '{@link cyberPhysical_Incident.AbstractActivity#getDuration <em>Duration</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Duration</em>'.
+	 * @see cyberPhysical_Incident.AbstractActivity#getDuration()
+	 * @see #getAbstractActivity()
+	 * @generated
+	 */
+	EAttribute getAbstractActivity_Duration();
+
+	/**
+	 * Returns the meta object for the attribute '{@link cyberPhysical_Incident.AbstractActivity#getType <em>Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Type</em>'.
+	 * @see cyberPhysical_Incident.AbstractActivity#getType()
+	 * @see #getAbstractActivity()
+	 * @generated
+	 */
+	EAttribute getAbstractActivity_Type();
+
+	/**
+	 * Returns the meta object for the attribute '{@link cyberPhysical_Incident.AbstractActivity#getBehaviourType <em>Behaviour Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Behaviour Type</em>'.
+	 * @see cyberPhysical_Incident.AbstractActivity#getBehaviourType()
+	 * @see #getAbstractActivity()
+	 * @generated
+	 */
+	EAttribute getAbstractActivity_BehaviourType();
+
+	/**
+	 * Returns the meta object for the attribute '{@link cyberPhysical_Incident.AbstractActivity#getSystemAction <em>System Action</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>System Action</em>'.
+	 * @see cyberPhysical_Incident.AbstractActivity#getSystemAction()
+	 * @see #getAbstractActivity()
+	 * @generated
+	 */
+	EAttribute getAbstractActivity_SystemAction();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link cyberPhysical_Incident.AbstractActivity#getPrecondition <em>Precondition</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Precondition</em>'.
+	 * @see cyberPhysical_Incident.AbstractActivity#getPrecondition()
+	 * @see #getAbstractActivity()
+	 * @generated
+	 */
+	EReference getAbstractActivity_Precondition();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link cyberPhysical_Incident.AbstractActivity#getPostcondition <em>Postcondition</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Postcondition</em>'.
+	 * @see cyberPhysical_Incident.AbstractActivity#getPostcondition()
+	 * @see #getAbstractActivity()
+	 * @generated
+	 */
+	EReference getAbstractActivity_Postcondition();
+
+	/**
+	 * Returns the meta object for the reference '{@link cyberPhysical_Incident.AbstractActivity#getActivityinitiator <em>Activityinitiator</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Activityinitiator</em>'.
+	 * @see cyberPhysical_Incident.AbstractActivity#getActivityinitiator()
+	 * @see #getAbstractActivity()
+	 * @generated
+	 */
+	EReference getAbstractActivity_Activityinitiator();
+
+	/**
+	 * Returns the meta object for the reference list '{@link cyberPhysical_Incident.AbstractActivity#getVictims <em>Victims</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Victims</em>'.
+	 * @see cyberPhysical_Incident.AbstractActivity#getVictims()
+	 * @see #getAbstractActivity()
+	 * @generated
+	 */
+	EReference getAbstractActivity_Victims();
+
+	/**
+	 * Returns the meta object for the reference list '{@link cyberPhysical_Incident.AbstractActivity#getResources <em>Resources</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Resources</em>'.
+	 * @see cyberPhysical_Incident.AbstractActivity#getResources()
+	 * @see #getAbstractActivity()
+	 * @generated
+	 */
+	EReference getAbstractActivity_Resources();
+
+	/**
+	 * Returns the meta object for the reference '{@link cyberPhysical_Incident.AbstractActivity#getLocation <em>Location</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Location</em>'.
+	 * @see cyberPhysical_Incident.AbstractActivity#getLocation()
+	 * @see #getAbstractActivity()
+	 * @generated
+	 */
+	EReference getAbstractActivity_Location();
+
+	/**
+	 * Returns the meta object for the reference list '{@link cyberPhysical_Incident.AbstractActivity#getExploitedAssets <em>Exploited Assets</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Exploited Assets</em>'.
+	 * @see cyberPhysical_Incident.AbstractActivity#getExploitedAssets()
+	 * @see #getAbstractActivity()
+	 * @generated
+	 */
+	EReference getAbstractActivity_ExploitedAssets();
+
+	/**
+	 * Returns the meta object for the reference list '{@link cyberPhysical_Incident.AbstractActivity#getTargetAssets <em>Target Assets</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Target Assets</em>'.
+	 * @see cyberPhysical_Incident.AbstractActivity#getTargetAssets()
+	 * @see #getAbstractActivity()
+	 * @generated
+	 */
+	EReference getAbstractActivity_TargetAssets();
+
+	/**
 	 * Returns the meta object for enum '{@link cyberPhysical_Incident.Level <em>Level</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4536,6 +4924,16 @@ public interface CyberPhysicalIncidentPackage extends EPackage {
 	 * @generated
 	 */
 	EEnum getActorLevel();
+
+	/**
+	 * Returns the meta object for enum '{@link cyberPhysical_Incident.ActivityPatternSeverity <em>Activity Pattern Severity</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Activity Pattern Severity</em>'.
+	 * @see cyberPhysical_Incident.ActivityPatternSeverity
+	 * @generated
+	 */
+	EEnum getActivityPatternSeverity();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -5409,16 +5807,6 @@ public interface CyberPhysicalIncidentPackage extends EPackage {
 		EAttribute VULNERABILITY__SEVERITY = eINSTANCE.getVulnerability_Severity();
 
 		/**
-		 * The meta object literal for the '{@link cyberPhysical_Incident.impl.AssetTypeImpl <em>Asset Type</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see cyberPhysical_Incident.impl.AssetTypeImpl
-		 * @see cyberPhysical_Incident.impl.CyberPhysicalIncidentPackageImpl#getAssetType()
-		 * @generated
-		 */
-		EClass ASSET_TYPE = eINSTANCE.getAssetType();
-
-		/**
 		 * The meta object literal for the '{@link cyberPhysical_Incident.impl.TypeImpl <em>Type</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -5867,6 +6255,162 @@ public interface CyberPhysicalIncidentPackage extends EPackage {
 		EAttribute SITE__IS_CLOSED = eINSTANCE.getSite_IsClosed();
 
 		/**
+		 * The meta object literal for the '{@link cyberPhysical_Incident.impl.ActivityPatternImpl <em>Activity Pattern</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see cyberPhysical_Incident.impl.ActivityPatternImpl
+		 * @see cyberPhysical_Incident.impl.CyberPhysicalIncidentPackageImpl#getActivityPattern()
+		 * @generated
+		 */
+		EClass ACTIVITY_PATTERN = eINSTANCE.getActivityPattern();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ACTIVITY_PATTERN__NAME = eINSTANCE.getActivityPattern_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Severity</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ACTIVITY_PATTERN__SEVERITY = eINSTANCE.getActivityPattern_Severity();
+
+		/**
+		 * The meta object literal for the '<em><b>Abstractactivity</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ACTIVITY_PATTERN__ABSTRACTACTIVITY = eINSTANCE.getActivityPattern_Abstractactivity();
+
+		/**
+		 * The meta object literal for the '<em><b>Incidententity</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ACTIVITY_PATTERN__INCIDENTENTITY = eINSTANCE.getActivityPattern_Incidententity();
+
+		/**
+		 * The meta object literal for the '<em><b>Patterns Follow</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ACTIVITY_PATTERN__PATTERNS_FOLLOW = eINSTANCE.getActivityPattern_PatternsFollow();
+
+		/**
+		 * The meta object literal for the '{@link cyberPhysical_Incident.impl.AbstractActivityImpl <em>Abstract Activity</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see cyberPhysical_Incident.impl.AbstractActivityImpl
+		 * @see cyberPhysical_Incident.impl.CyberPhysicalIncidentPackageImpl#getAbstractActivity()
+		 * @generated
+		 */
+		EClass ABSTRACT_ACTIVITY = eINSTANCE.getAbstractActivity();
+
+		/**
+		 * The meta object literal for the '<em><b>Duration</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ABSTRACT_ACTIVITY__DURATION = eINSTANCE.getAbstractActivity_Duration();
+
+		/**
+		 * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ABSTRACT_ACTIVITY__TYPE = eINSTANCE.getAbstractActivity_Type();
+
+		/**
+		 * The meta object literal for the '<em><b>Behaviour Type</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ABSTRACT_ACTIVITY__BEHAVIOUR_TYPE = eINSTANCE.getAbstractActivity_BehaviourType();
+
+		/**
+		 * The meta object literal for the '<em><b>System Action</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ABSTRACT_ACTIVITY__SYSTEM_ACTION = eINSTANCE.getAbstractActivity_SystemAction();
+
+		/**
+		 * The meta object literal for the '<em><b>Precondition</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ABSTRACT_ACTIVITY__PRECONDITION = eINSTANCE.getAbstractActivity_Precondition();
+
+		/**
+		 * The meta object literal for the '<em><b>Postcondition</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ABSTRACT_ACTIVITY__POSTCONDITION = eINSTANCE.getAbstractActivity_Postcondition();
+
+		/**
+		 * The meta object literal for the '<em><b>Activityinitiator</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ABSTRACT_ACTIVITY__ACTIVITYINITIATOR = eINSTANCE.getAbstractActivity_Activityinitiator();
+
+		/**
+		 * The meta object literal for the '<em><b>Victims</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ABSTRACT_ACTIVITY__VICTIMS = eINSTANCE.getAbstractActivity_Victims();
+
+		/**
+		 * The meta object literal for the '<em><b>Resources</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ABSTRACT_ACTIVITY__RESOURCES = eINSTANCE.getAbstractActivity_Resources();
+
+		/**
+		 * The meta object literal for the '<em><b>Location</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ABSTRACT_ACTIVITY__LOCATION = eINSTANCE.getAbstractActivity_Location();
+
+		/**
+		 * The meta object literal for the '<em><b>Exploited Assets</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ABSTRACT_ACTIVITY__EXPLOITED_ASSETS = eINSTANCE.getAbstractActivity_ExploitedAssets();
+
+		/**
+		 * The meta object literal for the '<em><b>Target Assets</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ABSTRACT_ACTIVITY__TARGET_ASSETS = eINSTANCE.getAbstractActivity_TargetAssets();
+
+		/**
 		 * The meta object literal for the '{@link cyberPhysical_Incident.Level <em>Level</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -5935,6 +6479,16 @@ public interface CyberPhysicalIncidentPackage extends EPackage {
 		 * @generated
 		 */
 		EEnum ACTOR_LEVEL = eINSTANCE.getActorLevel();
+
+		/**
+		 * The meta object literal for the '{@link cyberPhysical_Incident.ActivityPatternSeverity <em>Activity Pattern Severity</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see cyberPhysical_Incident.ActivityPatternSeverity
+		 * @see cyberPhysical_Incident.impl.CyberPhysicalIncidentPackageImpl#getActivityPatternSeverity()
+		 * @generated
+		 */
+		EEnum ACTIVITY_PATTERN_SEVERITY = eINSTANCE.getActivityPatternSeverity();
 
 	}
 

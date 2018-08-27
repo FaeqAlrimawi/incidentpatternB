@@ -310,4 +310,39 @@
     <eLiterals name="GROUP" value="1"/>
     <eLiterals name="ORGANISATION" value="2"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ActivityPattern">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Severity" eType="#//ActivityPatternSeverity"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="abstractactivity" upperBound="-1"
+        eType="#//AbstractActivity" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="incidententity" upperBound="-1"
+        eType="#//IncidentEntity" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="patternsFollow" upperBound="-1"
+        eType="#//ActivityPattern"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractActivity">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="behaviourType" eType="#//Behaviour"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="duration" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//ActivityType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="systemAction" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="exploitedAssets" upperBound="-1"
+        eType="#//Asset"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="targetAssets" upperBound="-1"
+        eType="#//Asset"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="resources" upperBound="-1"
+        eType="#//Resource"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="location" eType="#//Location"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="precondition" eType="#//Precondition"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="postcondition" eType="#//Postcondition"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="activityinitiator" eType="#//ActivityInitiator"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="victims" upperBound="-1"
+        eType="#//Actor"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ActivityPatternSeverity">
+    <eLiterals name="LOW"/>
+    <eLiterals name="MEDIUM" value="1"/>
+    <eLiterals name="HIGH" value="2"/>
+  </eClassifiers>
 </ecore:EPackage>

@@ -537,9 +537,26 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 		//3-Checking Connectivity pattern, if there's a merge then the merged activity is returned, else
 		//default: returns null
 	
-		//try to merge sequence based on collect data pattern
+		//try to merge sequence based on collect data pattern (first based on severity provided by CAPEC)
+		//severity = medium (can be more severe if target asset is more critical)
 		mergedActivity = mergeBasedOnCollectData(activitySequence);
 
+		//try to merge sequence based on collect data pattern (first based on severity provided by CAPEC)
+		//severity = medium
+		Activity mergedActivity2 = mergeBasedOnEstablishRogueLocation(activitySequence);
+		
+		//if patterns have same similarity and also apply to the given activity sequence
+		//then return both activities (generated from merging the sequence) and let the user decide
+		//which activity to add.
+		//Maybe provide different sequences for the user and let them choose
+		
+		if(mergedActivity != null && mergedActivity2 != null) {
+			//then produce two activity sequences which a user can choose from
+			//TBI (To Be Implemented)
+		} else if(mergedActivity == null && mergedActivity2 != null) {
+			mergedActivity = mergedActivity2;
+		}
+	
 		if(mergedActivity != null) {
 			mergedRules.add(IncidentDiagram.COLLECTDATA_MERGE_RULE);
 			return mergedActivity;

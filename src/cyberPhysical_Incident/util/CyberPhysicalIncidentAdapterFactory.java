@@ -132,10 +132,6 @@ public class CyberPhysicalIncidentAdapterFactory extends AdapterFactoryImpl {
 				return createVulnerabilityAdapter();
 			}
 			@Override
-			public Adapter caseAssetType(AssetType object) {
-				return createAssetTypeAdapter();
-			}
-			@Override
 			public Adapter caseType(Type object) {
 				return createTypeAdapter();
 			}
@@ -230,6 +226,14 @@ public class CyberPhysicalIncidentAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseSite(Site object) {
 				return createSiteAdapter();
+			}
+			@Override
+			public Adapter caseActivityPattern(ActivityPattern object) {
+				return createActivityPatternAdapter();
+			}
+			@Override
+			public Adapter caseAbstractActivity(AbstractActivity object) {
+				return createAbstractActivityAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -472,20 +476,6 @@ public class CyberPhysicalIncidentAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createVulnerabilityAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link cyberPhysical_Incident.AssetType <em>Asset Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see cyberPhysical_Incident.AssetType
-	 * @generated
-	 */
-	public Adapter createAssetTypeAdapter() {
 		return null;
 	}
 
@@ -822,6 +812,34 @@ public class CyberPhysicalIncidentAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createSiteAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link cyberPhysical_Incident.ActivityPattern <em>Activity Pattern</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see cyberPhysical_Incident.ActivityPattern
+	 * @generated
+	 */
+	public Adapter createActivityPatternAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link cyberPhysical_Incident.AbstractActivity <em>Abstract Activity</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see cyberPhysical_Incident.AbstractActivity
+	 * @generated
+	 */
+	public Adapter createAbstractActivityAdapter() {
 		return null;
 	}
 

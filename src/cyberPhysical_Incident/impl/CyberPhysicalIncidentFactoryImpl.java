@@ -81,6 +81,8 @@ public class CyberPhysicalIncidentFactoryImpl extends EFactoryImpl implements Cy
 			case CyberPhysicalIncidentPackage.CONNECTIVITY: return createConnectivity();
 			case CyberPhysicalIncidentPackage.INNER_NAME: return createInnerName();
 			case CyberPhysicalIncidentPackage.SITE: return createSite();
+			case CyberPhysicalIncidentPackage.ACTIVITY_PATTERN: return createActivityPattern();
+			case CyberPhysicalIncidentPackage.ABSTRACT_ACTIVITY: return createAbstractActivity();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -108,6 +110,8 @@ public class CyberPhysicalIncidentFactoryImpl extends EFactoryImpl implements Cy
 				return createActorRoleFromString(eDataType, initialValue);
 			case CyberPhysicalIncidentPackage.ACTOR_LEVEL:
 				return createActorLevelFromString(eDataType, initialValue);
+			case CyberPhysicalIncidentPackage.ACTIVITY_PATTERN_SEVERITY:
+				return createActivityPatternSeverityFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -135,6 +139,8 @@ public class CyberPhysicalIncidentFactoryImpl extends EFactoryImpl implements Cy
 				return convertActorRoleToString(eDataType, instanceValue);
 			case CyberPhysicalIncidentPackage.ACTOR_LEVEL:
 				return convertActorLevelToString(eDataType, instanceValue);
+			case CyberPhysicalIncidentPackage.ACTIVITY_PATTERN_SEVERITY:
+				return convertActivityPatternSeverityToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -385,6 +391,26 @@ public class CyberPhysicalIncidentFactoryImpl extends EFactoryImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public ActivityPattern createActivityPattern() {
+		ActivityPatternImpl activityPattern = new ActivityPatternImpl();
+		return activityPattern;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public AbstractActivity createAbstractActivity() {
+		AbstractActivityImpl abstractActivity = new AbstractActivityImpl();
+		return abstractActivity;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public Level createLevelFromString(EDataType eDataType, String initialValue) {
 		Level result = Level.get(initialValue);
 		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
@@ -517,6 +543,26 @@ public class CyberPhysicalIncidentFactoryImpl extends EFactoryImpl implements Cy
 	 * @generated
 	 */
 	public String convertActorLevelToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ActivityPatternSeverity createActivityPatternSeverityFromString(EDataType eDataType, String initialValue) {
+		ActivityPatternSeverity result = ActivityPatternSeverity.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertActivityPatternSeverityToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 
