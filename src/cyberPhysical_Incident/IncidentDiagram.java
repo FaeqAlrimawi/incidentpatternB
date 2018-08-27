@@ -90,7 +90,7 @@ public interface IncidentDiagram extends EObject {
 	 * @param activitySequence The sequence of activities to merge
 	 * @return New activity replacing the first two activities in the sequence. Or null if merging is not successful
 	 */
-	Activity mergeAccordingToContainment(List<Activity> activitySequence);
+	Activity mergeBasedOnContainment(List<Activity> activitySequence);
 	
 	/**
 	 *  Merges the first two activities of the given sequence. Criteria is:
@@ -100,7 +100,7 @@ public interface IncidentDiagram extends EObject {
 	 * @param activitySequence The sequence of activities to merge
 	 * @return New activity replacing the first two activities in the sequence. Or null if merging is not successful
 	 */
-	Activity mergeAccordingToConnectivity(List<Activity> activitySequence);
+	Activity mergeBasedOnConnectivity(List<Activity> activitySequence);
 	
 	/**
 	 * Merges the first two activities of the given sequence based on 'collect Data' pattern. 
@@ -126,7 +126,12 @@ public interface IncidentDiagram extends EObject {
 	 * @param activitySequence The sequence of activities to merge
 	 * @return New activity replacing the first two activities in the sequence. Or null if merging is not successful
 	 */
-	Activity mergeAccordingToCollectData(List<Activity> activitySequence);
+	Activity mergeBasedOnCollectData(List<Activity> activitySequence);
+	
+	Activity mergeBasedOnEstablishRogueLocation(List<Activity> activitySequence);
+	Activity mergeBasedOnByPassCardSystem(List<Activity> activitySequence);
+//	Activity mergeBasedOnExploit(List<Activity> activitySequence);
+	
 	/**
 	 *  * Merges the activity sequence starting from the given argument activity (it included) until the activity that is located the last in the given number of activities. 
 	 * Returns a new activity that replaces the sequence, or null if it cannot be repalced.

@@ -9,7 +9,6 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -539,7 +538,7 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 		//default: returns null
 	
 		//try to merge sequence based on collect data pattern
-		mergedActivity = mergeAccordingToCollectData(activitySequence);
+		mergedActivity = mergeBasedOnCollectData(activitySequence);
 
 		if(mergedActivity != null) {
 			mergedRules.add(IncidentDiagram.COLLECTDATA_MERGE_RULE);
@@ -550,11 +549,11 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 		if(canMergeBasedOnBasics(activitySequence)) {
 			
 			//first try to merge based on containment
-			mergedActivity = mergeAccordingToContainment(activitySequence);
+			mergedActivity = mergeBasedOnContainment(activitySequence);
 			
 			//if not successful, then try connectivity
 			if(mergedActivity == null) {
-				mergedActivity = mergeAccordingToConnectivity(activitySequence);	
+				mergedActivity = mergeBasedOnConnectivity(activitySequence);	
 			
 				if(mergedActivity != null) {
 					mergedRules.add(IncidentDiagram.CONNECTIVITY_MERGE_RULE);
@@ -657,7 +656,7 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 	 * 2-Container of initiator in the second activity should be different from the contianer in postcondition of the first activity
 	 * 3-A connection between the containers of the postconditions in the first and second activity should exist
 	 */
-	public Activity mergeAccordingToContainment(List<Activity> activitySequence) {
+	public Activity mergeBasedOnContainment(List<Activity> activitySequence) {
 		
 		//merge activities from startingActivity to endActivity if certain conditions are met
 		//conditions for merging activities:
@@ -741,7 +740,7 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 	 * @param activitySequence The sequence of activities to merge
 	 * @return New activity replacing the first two activities in the sequence. Or null if merging is not successful
 	 */
-	public Activity mergeAccordingToConnectivity(List<Activity> activitySequence) {
+	public Activity mergeBasedOnConnectivity(List<Activity> activitySequence) {
 		
 		Activity mergedActivity = null;
 		
@@ -829,7 +828,7 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 	}
 	
 	
-	public Activity mergeAccordingToCollectData(List<Activity> activitySequence) {
+	public Activity mergeBasedOnCollectData(List<Activity> activitySequence) {
 		
 		Activity mergedActivity = null;
 		
@@ -1048,6 +1047,20 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 		mergedActivity = createMergedActivity(newSequence);
 		
 		return mergedActivity;
+	}
+	
+	public Activity mergeBasedOnEstablishRogueLocation(List<Activity> activitySequence) {
+		
+		//to be implemented
+		
+		return null;
+	}
+	
+	public Activity mergeBasedOnByPassCardSystem(List<Activity> activitySequence) {
+		
+		//to be implemented
+		
+		return null;
 	}
 	
 	/**
