@@ -28,6 +28,7 @@ import cyberPhysical_Incident.Actor;
 import cyberPhysical_Incident.ActorRole;
 import cyberPhysical_Incident.Asset;
 import cyberPhysical_Incident.BigraphExpression;
+import cyberPhysical_Incident.Condition;
 import cyberPhysical_Incident.Connection;
 import cyberPhysical_Incident.CrimeScript;
 import cyberPhysical_Incident.CyberPhysicalIncidentFactory;
@@ -37,6 +38,7 @@ import cyberPhysical_Incident.Goal;
 import cyberPhysical_Incident.IncidentDiagram;
 import cyberPhysical_Incident.IncidentEntity;
 import cyberPhysical_Incident.Intent;
+import cyberPhysical_Incident.Location;
 import cyberPhysical_Incident.Motive;
 import cyberPhysical_Incident.Path;
 import cyberPhysical_Incident.Postcondition;
@@ -912,16 +914,11 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 		}
 		
 		//2-if initiator is actor then he/she should be offender
-		ActivityInitiator firstInitiator = firstActivity.getInitiator();
+//		ActivityInitiator firstInitiator = firstActivity.getInitiator();
 		
 		//for now consider only actors
-		if(Actor.class.isInstance(firstInitiator)) {
-			Actor actor = (Actor) firstInitiator;
-			
-			if(!(actor.getRole().equals(ActorRole.OFFENDER))){
-				return null;
-			}
-		} else { //can be extended to check for digital processes and tools that can collect data
+		if(!firstActivity.isInitiatorOffender()) {
+			//can be extended to check for digital processes and tools that can collect data
 			return null;
 		}
 
@@ -962,16 +959,11 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 		//currently assuming there's 1 resource available
 		Resource secondDevice = secondActivity.getResources()!=null?secondActivity.getResources().get(0):null;
 		
-		ActivityInitiator secondInitiator = secondActivity.getInitiator();
+//		ActivityInitiator secondInitiator = secondActivity.getInitiator();
 		
 		//check if initiator is the same 
-		if(Actor.class.isInstance(secondInitiator)) {
-			Actor actor = (Actor) secondInitiator;
-			
-			if(! (actor.getName().equals(((Actor)firstInitiator).getName()))){
-				return null;
-			}
-		} else { //can be extended to check for digital processes and tools that can collect data
+		if(!secondActivity.isSameInitiator(firstActivity)) {
+			//can be extended to check for digital processes and tools that can collect data
 			return null;
 		}
 		
@@ -1072,8 +1064,73 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 		/**
 		 * "Establish rogue location" pattern
 		 * In this pattern [Offender] (sets up) a malicious version of an [Asset] in a some [Location]
-		 * then Offender waits till a [Vicitm] (accesses) it  
+		 * then Offender waits till a [Vicitm] (accesses) it
+		 * 
+		 *  1st activity:
+		 *  action: not specified
+		 *  Initiator: Actor with role as OFFENDER
+		 *  Resource: malicious assets in this case it is of type AccessPoint
+		 *  Location: Room (could be a room that is near or has connection to another room that contains a sensitive asset)
+		 *  precondition: Offender in Location
+		 *  postcondition: Offender places Resource in Location (i.e. Location contains Resource)
+		 *  
+		 *  2n activity:
+		 *  action: "connect" or "access"
+		 *  Initiator: Actor with role as VICITM
+		 *  Target asset:
+		 *  Resource: malicious Asset, in this case it is of type AccessPoint
+		 *  Location: Room (could be a room that is near or has connection to another room that contains a sensitive asset)
+		 *  precondition: Victim in Location
+		 *  postcondition: Vicitm (accessed) Resource
+		 *  
 		 */
+		
+		Activity firstActivity = activitySequence.get(0);
+		Activity secondActivity = activitySequence.get(1);
+		
+		if( firstActivity == null || secondActivity == null) {
+			return null;
+		}
+		
+	
+		//check if initiator of first activity is an Offender
+		if(!firstActivity.isInitiatorOffender()) {
+			return null;
+		}
+		
+		//check if resource of first activity has type "Acccess Point"
+		Resource firstResource = firstActivity.getResources().get(0); //assuming there's only 1 resource
+		Type resourceType = firstResource!=null?firstResource.getType():null;
+		String targetResourceType = "AccessPoint";
+		
+		if(resourceType == null ||
+				resourceType.getName() == null ||
+				!resourceType.getName().equalsIgnoreCase(targetResourceType)) {
+			return null;
+		}
+		
+		//check if location of first activity has type Room
+		Location firstLocation = firstActivity.getLocation();
+		Type locationType = firstLocation!=null?((IncidentEntity)firstLocation).getType():null;
+		
+		if(locationType == null ||
+				locationType.getName() == null ||
+				!locationType.getName().equalsIgnoreCase("Room")) {
+			return null;
+		}
+		
+		//check if precondition of first activity has the Loction containing the initiator		
+		String firstInitiatorContainer = firstActivity.getInitiatorContainer(BigraphExpression.PRECONDITION_EXPRESSION);
+		
+		if(firstInitiatorContainer == null ||
+				!firstInitiatorContainer.equals(((IncidentEntity)firstLocation).getName())){
+			return null;
+		}
+		
+		
+		//check if in postcondition Location contains Resource
+		
+		
 		return null;
 	}
 	

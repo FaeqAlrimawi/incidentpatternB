@@ -60,7 +60,8 @@ public interface Activity extends EObject {
 	List<String> getInitiatorContainedEntities(int expressionType);
 	int getConnectionChangesBetweenEntities(String entity1, String entity2);
 	void replaceEntityName(String oldEntityName, String newEntityName);
-	
+	boolean isInitiatorOffender();
+	boolean isSameInitiator(Activity other);
 	/**
 	 * Returns the entities contained by the initiator both in the pre and post conditions
 	 * @return List of entity names

@@ -21,6 +21,7 @@ import cyberPhysical_Incident.Activity;
 import cyberPhysical_Incident.ActivityInitiator;
 import cyberPhysical_Incident.ActivityType;
 import cyberPhysical_Incident.Actor;
+import cyberPhysical_Incident.ActorRole;
 import cyberPhysical_Incident.Asset;
 import cyberPhysical_Incident.Behaviour;
 import cyberPhysical_Incident.BigraphExpression;
@@ -680,6 +681,30 @@ public class ActivityImpl extends MinimalEObjectImpl.Container implements Activi
 		}
 		
 		return Connection.CONNECTIONS_UNKNOWN;
+	}
+	
+	public boolean isInitiatorOffender() {
+		
+		ActivityInitiator initiator = getInitiator();
+		
+		if(initiator == null) {
+			return false;
+		}
+		
+		if(Actor.class.isInstance(initiator)) {
+			Actor actor = (Actor)initiator;
+			
+			if(actor.getRole().equals(ActorRole.OFFENDER)) {
+				return true;
+			}
+		}
+		
+		return false;
+	}
+	
+	public boolean isSameInitiator(Activity other){
+		
+		return getInitiator().equals(other.getInitiator());
 	}
 	
 	@Override
