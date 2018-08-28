@@ -1127,9 +1127,20 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 			return null;
 		}
 		
-		
 		//check if in postcondition Location contains Resource
+		Postcondition firstPost = firstActivity.getPostcondition();
+		BigraphExpression firstPostExp = firstPost!=null?(BigraphExpression)firstPost.getExpression():null;
 		
+		String resourceContainer = firstPostExp.getContainer(firstResource.getName());
+		
+		if(resourceContainer == null ||
+				!resourceContainer.equals(((IncidentEntity)firstLocation).getName())) {
+			return null;
+		}
+		
+		//till this point the given sequence satisfies the first activity in the pattern
+		
+		//need to check the 2nd activity
 		
 		return null;
 	}
