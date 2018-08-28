@@ -49,6 +49,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  *   <li>{@link cyberPhysical_Incident.impl.AbstractActivityImpl#getPostcondition <em>Postcondition</em>}</li>
  *   <li>{@link cyberPhysical_Incident.impl.AbstractActivityImpl#getActivityinitiator <em>Activityinitiator</em>}</li>
  *   <li>{@link cyberPhysical_Incident.impl.AbstractActivityImpl#getVictims <em>Victims</em>}</li>
+ *   <li>{@link cyberPhysical_Incident.impl.AbstractActivityImpl#getNextAbstractactivity <em>Next Abstractactivity</em>}</li>
  * </ul>
  *
  * @generated
@@ -213,6 +214,16 @@ public class AbstractActivityImpl extends MinimalEObjectImpl.Container implement
 	 * @ordered
 	 */
 	protected EList<Actor> victims;
+
+	/**
+	 * The cached value of the '{@link #getNextAbstractactivity() <em>Next Abstractactivity</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getNextAbstractactivity()
+	 * @generated
+	 * @ordered
+	 */
+	protected AbstractActivity nextAbstractactivity;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -458,6 +469,44 @@ public class AbstractActivityImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public AbstractActivity getNextAbstractactivity() {
+		if (nextAbstractactivity != null && nextAbstractactivity.eIsProxy()) {
+			InternalEObject oldNextAbstractactivity = (InternalEObject)nextAbstractactivity;
+			nextAbstractactivity = (AbstractActivity)eResolveProxy(oldNextAbstractactivity);
+			if (nextAbstractactivity != oldNextAbstractactivity) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CyberPhysicalIncidentPackage.ABSTRACT_ACTIVITY__NEXT_ABSTRACTACTIVITY, oldNextAbstractactivity, nextAbstractactivity));
+			}
+		}
+		return nextAbstractactivity;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public AbstractActivity basicGetNextAbstractactivity() {
+		return nextAbstractactivity;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setNextAbstractactivity(AbstractActivity newNextAbstractactivity) {
+		AbstractActivity oldNextAbstractactivity = nextAbstractactivity;
+		nextAbstractactivity = newNextAbstractactivity;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysicalIncidentPackage.ABSTRACT_ACTIVITY__NEXT_ABSTRACTACTIVITY, oldNextAbstractactivity, nextAbstractactivity));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EList<Resource> getResources() {
 		if (resources == null) {
 			resources = new EObjectResolvingEList<Resource>(Resource.class, this, CyberPhysicalIncidentPackage.ABSTRACT_ACTIVITY__RESOURCES);
@@ -577,6 +626,9 @@ public class AbstractActivityImpl extends MinimalEObjectImpl.Container implement
 				return basicGetActivityinitiator();
 			case CyberPhysicalIncidentPackage.ABSTRACT_ACTIVITY__VICTIMS:
 				return getVictims();
+			case CyberPhysicalIncidentPackage.ABSTRACT_ACTIVITY__NEXT_ABSTRACTACTIVITY:
+				if (resolve) return getNextAbstractactivity();
+				return basicGetNextAbstractactivity();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -630,6 +682,9 @@ public class AbstractActivityImpl extends MinimalEObjectImpl.Container implement
 				getVictims().clear();
 				getVictims().addAll((Collection<? extends Actor>)newValue);
 				return;
+			case CyberPhysicalIncidentPackage.ABSTRACT_ACTIVITY__NEXT_ABSTRACTACTIVITY:
+				setNextAbstractactivity((AbstractActivity)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -678,6 +733,9 @@ public class AbstractActivityImpl extends MinimalEObjectImpl.Container implement
 			case CyberPhysicalIncidentPackage.ABSTRACT_ACTIVITY__VICTIMS:
 				getVictims().clear();
 				return;
+			case CyberPhysicalIncidentPackage.ABSTRACT_ACTIVITY__NEXT_ABSTRACTACTIVITY:
+				setNextAbstractactivity((AbstractActivity)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -714,6 +772,8 @@ public class AbstractActivityImpl extends MinimalEObjectImpl.Container implement
 				return activityinitiator != null;
 			case CyberPhysicalIncidentPackage.ABSTRACT_ACTIVITY__VICTIMS:
 				return victims != null && !victims.isEmpty();
+			case CyberPhysicalIncidentPackage.ABSTRACT_ACTIVITY__NEXT_ABSTRACTACTIVITY:
+				return nextAbstractactivity != null;
 		}
 		return super.eIsSet(featureID);
 	}

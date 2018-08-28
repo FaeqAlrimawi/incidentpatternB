@@ -50,6 +50,7 @@ import cyberPhysical_Incident.Resource;
 import cyberPhysical_Incident.Scene;
 import cyberPhysical_Incident.ScriptCategory;
 import cyberPhysical_Incident.Site;
+import cyberPhysical_Incident.Skill_Level;
 import cyberPhysical_Incident.TopologicalRelation;
 import cyberPhysical_Incident.Type;
 import cyberPhysical_Incident.UnaryExpression;
@@ -418,6 +419,13 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * @generated
 	 */
 	private EEnum activityPatternSeverityEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum skill_LevelEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -1907,6 +1915,15 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getActivityPattern_SkillsRequired() {
+		return (EAttribute)activityPatternEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getAbstractActivity() {
 		return abstractActivityEClass;
 	}
@@ -1981,6 +1998,15 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 */
 	public EReference getAbstractActivity_Victims() {
 		return (EReference)abstractActivityEClass.getEStructuralFeatures().get(11);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getAbstractActivity_NextAbstractactivity() {
+		return (EReference)abstractActivityEClass.getEStructuralFeatures().get(12);
 	}
 
 	/**
@@ -2089,6 +2115,15 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 */
 	public EEnum getActivityPatternSeverity() {
 		return activityPatternSeverityEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EEnum getSkill_Level() {
+		return skill_LevelEEnum;
 	}
 
 	/**
@@ -2317,6 +2352,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 		createEReference(activityPatternEClass, ACTIVITY_PATTERN__ABSTRACTACTIVITY);
 		createEReference(activityPatternEClass, ACTIVITY_PATTERN__INCIDENTENTITY);
 		createEReference(activityPatternEClass, ACTIVITY_PATTERN__PATTERNS_FOLLOW);
+		createEAttribute(activityPatternEClass, ACTIVITY_PATTERN__SKILLS_REQUIRED);
 
 		abstractActivityEClass = createEClass(ABSTRACT_ACTIVITY);
 		createEAttribute(abstractActivityEClass, ABSTRACT_ACTIVITY__BEHAVIOUR_TYPE);
@@ -2331,6 +2367,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 		createEReference(abstractActivityEClass, ABSTRACT_ACTIVITY__POSTCONDITION);
 		createEReference(abstractActivityEClass, ABSTRACT_ACTIVITY__ACTIVITYINITIATOR);
 		createEReference(abstractActivityEClass, ABSTRACT_ACTIVITY__VICTIMS);
+		createEReference(abstractActivityEClass, ABSTRACT_ACTIVITY__NEXT_ABSTRACTACTIVITY);
 
 		// Create enums
 		levelEEnum = createEEnum(LEVEL);
@@ -2341,6 +2378,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 		actorRoleEEnum = createEEnum(ACTOR_ROLE);
 		actorLevelEEnum = createEEnum(ACTOR_LEVEL);
 		activityPatternSeverityEEnum = createEEnum(ACTIVITY_PATTERN_SEVERITY);
+		skill_LevelEEnum = createEEnum(SKILL_LEVEL);
 	}
 
 	/**
@@ -2592,6 +2630,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 		initEReference(getActivityPattern_Abstractactivity(), this.getAbstractActivity(), null, "abstractactivity", null, 0, -1, ActivityPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getActivityPattern_Incidententity(), this.getIncidentEntity(), null, "incidententity", null, 0, -1, ActivityPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getActivityPattern_PatternsFollow(), this.getActivityPattern(), null, "patternsFollow", null, 0, -1, ActivityPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getActivityPattern_SkillsRequired(), this.getSkill_Level(), "skillsRequired", null, 0, 1, ActivityPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(abstractActivityEClass, AbstractActivity.class, "AbstractActivity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAbstractActivity_BehaviourType(), this.getBehaviour(), "behaviourType", null, 0, 1, AbstractActivity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2606,6 +2645,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 		initEReference(getAbstractActivity_Postcondition(), this.getPostcondition(), null, "postcondition", null, 0, 1, AbstractActivity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getAbstractActivity_Activityinitiator(), this.getActivityInitiator(), null, "activityinitiator", null, 0, 1, AbstractActivity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getAbstractActivity_Victims(), this.getActor(), null, "victims", null, 0, -1, AbstractActivity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAbstractActivity_NextAbstractactivity(), this.getAbstractActivity(), null, "nextAbstractactivity", null, 0, 1, AbstractActivity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(levelEEnum, Level.class, "Level");
@@ -2653,6 +2693,11 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 		addEEnumLiteral(activityPatternSeverityEEnum, ActivityPatternSeverity.LOW);
 		addEEnumLiteral(activityPatternSeverityEEnum, ActivityPatternSeverity.MEDIUM);
 		addEEnumLiteral(activityPatternSeverityEEnum, ActivityPatternSeverity.HIGH);
+
+		initEEnum(skill_LevelEEnum, Skill_Level.class, "Skill_Level");
+		addEEnumLiteral(skill_LevelEEnum, Skill_Level.LOW);
+		addEEnumLiteral(skill_LevelEEnum, Skill_Level.MEDIUM);
+		addEEnumLiteral(skill_LevelEEnum, Skill_Level.HIGH);
 
 		// Create resource
 		createResource(eNS_URI);

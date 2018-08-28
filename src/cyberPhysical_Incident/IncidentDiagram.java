@@ -130,6 +130,7 @@ public interface IncidentDiagram extends EObject {
 	
 	Activity mergeBasedOnEstablishRogueLocation(List<Activity> activitySequence);
 	Activity mergeBasedOnByPassCardSystem(List<Activity> activitySequence);
+	
 //	Activity mergeBasedOnExploit(List<Activity> activitySequence);
 	
 	/**

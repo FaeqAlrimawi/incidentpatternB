@@ -319,6 +319,7 @@
         eType="#//IncidentEntity" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="patternsFollow" upperBound="-1"
         eType="#//ActivityPattern"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="skillsRequired" eType="#//Skill_Level"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AbstractActivity">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="behaviourType" eType="#//Behaviour"/>
@@ -339,8 +340,14 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="activityinitiator" eType="#//ActivityInitiator"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="victims" upperBound="-1"
         eType="#//Actor"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="nextAbstractactivity" eType="#//AbstractActivity"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="ActivityPatternSeverity">
+    <eLiterals name="LOW"/>
+    <eLiterals name="MEDIUM" value="1"/>
+    <eLiterals name="HIGH" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Skill_Level">
     <eLiterals name="LOW"/>
     <eLiterals name="MEDIUM" value="1"/>
     <eLiterals name="HIGH" value="2"/>

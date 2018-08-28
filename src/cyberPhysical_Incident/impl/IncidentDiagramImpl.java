@@ -1069,7 +1069,11 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 	public Activity mergeBasedOnEstablishRogueLocation(List<Activity> activitySequence) {
 		
 		//to be implemented
-		
+		/**
+		 * "Establish rogue location" pattern
+		 * In this pattern [Offender] (sets up) a malicious version of an [Asset] in a some [Location]
+		 * then Offender waits till a [Vicitm] (accesses) it  
+		 */
 		return null;
 	}
 	

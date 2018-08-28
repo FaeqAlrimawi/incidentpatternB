@@ -27,6 +27,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link cyberPhysical_Incident.AbstractActivity#getPostcondition <em>Postcondition</em>}</li>
  *   <li>{@link cyberPhysical_Incident.AbstractActivity#getActivityinitiator <em>Activityinitiator</em>}</li>
  *   <li>{@link cyberPhysical_Incident.AbstractActivity#getVictims <em>Victims</em>}</li>
+ *   <li>{@link cyberPhysical_Incident.AbstractActivity#getNextAbstractactivity <em>Next Abstractactivity</em>}</li>
  * </ul>
  *
  * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getAbstractActivity()
@@ -237,6 +238,32 @@ public interface AbstractActivity extends EObject {
 	 * @generated
 	 */
 	EList<Actor> getVictims();
+
+	/**
+	 * Returns the value of the '<em><b>Next Abstractactivity</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Next Abstractactivity</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Next Abstractactivity</em>' reference.
+	 * @see #setNextAbstractactivity(AbstractActivity)
+	 * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getAbstractActivity_NextAbstractactivity()
+	 * @model
+	 * @generated
+	 */
+	AbstractActivity getNextAbstractactivity();
+
+	/**
+	 * Sets the value of the '{@link cyberPhysical_Incident.AbstractActivity#getNextAbstractactivity <em>Next Abstractactivity</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Next Abstractactivity</em>' reference.
+	 * @see #getNextAbstractactivity()
+	 * @generated
+	 */
+	void setNextAbstractactivity(AbstractActivity value);
 
 	/**
 	 * Returns the value of the '<em><b>Resources</b></em>' reference list.

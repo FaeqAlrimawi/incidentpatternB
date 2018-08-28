@@ -2781,13 +2781,22 @@ public interface CyberPhysicalIncidentPackage extends EPackage {
 	int ACTIVITY_PATTERN__PATTERNS_FOLLOW = 4;
 
 	/**
+	 * The feature id for the '<em><b>Skills Required</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTIVITY_PATTERN__SKILLS_REQUIRED = 5;
+
+	/**
 	 * The number of structural features of the '<em>Activity Pattern</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ACTIVITY_PATTERN_FEATURE_COUNT = 5;
+	int ACTIVITY_PATTERN_FEATURE_COUNT = 6;
 
 	/**
 	 * The number of operations of the '<em>Activity Pattern</em>' class.
@@ -2917,13 +2926,22 @@ public interface CyberPhysicalIncidentPackage extends EPackage {
 	int ABSTRACT_ACTIVITY__VICTIMS = 11;
 
 	/**
+	 * The feature id for the '<em><b>Next Abstractactivity</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_ACTIVITY__NEXT_ABSTRACTACTIVITY = 12;
+
+	/**
 	 * The number of structural features of the '<em>Abstract Activity</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_ACTIVITY_FEATURE_COUNT = 12;
+	int ABSTRACT_ACTIVITY_FEATURE_COUNT = 13;
 
 	/**
 	 * The number of operations of the '<em>Abstract Activity</em>' class.
@@ -3015,6 +3033,16 @@ public interface CyberPhysicalIncidentPackage extends EPackage {
 	 * @generated
 	 */
 	int ACTIVITY_PATTERN_SEVERITY = 49;
+
+	/**
+	 * The meta object id for the '{@link cyberPhysical_Incident.Skill_Level <em>Skill Level</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see cyberPhysical_Incident.Skill_Level
+	 * @see cyberPhysical_Incident.impl.CyberPhysicalIncidentPackageImpl#getSkill_Level()
+	 * @generated
+	 */
+	int SKILL_LEVEL = 50;
 
 	/**
 	 * Returns the meta object for class '{@link cyberPhysical_Incident.Activity <em>Activity</em>}'.
@@ -4714,6 +4742,17 @@ public interface CyberPhysicalIncidentPackage extends EPackage {
 	EReference getActivityPattern_PatternsFollow();
 
 	/**
+	 * Returns the meta object for the attribute '{@link cyberPhysical_Incident.ActivityPattern#getSkillsRequired <em>Skills Required</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Skills Required</em>'.
+	 * @see cyberPhysical_Incident.ActivityPattern#getSkillsRequired()
+	 * @see #getActivityPattern()
+	 * @generated
+	 */
+	EAttribute getActivityPattern_SkillsRequired();
+
+	/**
 	 * Returns the meta object for class '{@link cyberPhysical_Incident.AbstractActivity <em>Abstract Activity</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4810,6 +4849,17 @@ public interface CyberPhysicalIncidentPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getAbstractActivity_Victims();
+
+	/**
+	 * Returns the meta object for the reference '{@link cyberPhysical_Incident.AbstractActivity#getNextAbstractactivity <em>Next Abstractactivity</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Next Abstractactivity</em>'.
+	 * @see cyberPhysical_Incident.AbstractActivity#getNextAbstractactivity()
+	 * @see #getAbstractActivity()
+	 * @generated
+	 */
+	EReference getAbstractActivity_NextAbstractactivity();
 
 	/**
 	 * Returns the meta object for the reference list '{@link cyberPhysical_Incident.AbstractActivity#getResources <em>Resources</em>}'.
@@ -4934,6 +4984,16 @@ public interface CyberPhysicalIncidentPackage extends EPackage {
 	 * @generated
 	 */
 	EEnum getActivityPatternSeverity();
+
+	/**
+	 * Returns the meta object for enum '{@link cyberPhysical_Incident.Skill_Level <em>Skill Level</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Skill Level</em>'.
+	 * @see cyberPhysical_Incident.Skill_Level
+	 * @generated
+	 */
+	EEnum getSkill_Level();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -6305,6 +6365,14 @@ public interface CyberPhysicalIncidentPackage extends EPackage {
 		EReference ACTIVITY_PATTERN__PATTERNS_FOLLOW = eINSTANCE.getActivityPattern_PatternsFollow();
 
 		/**
+		 * The meta object literal for the '<em><b>Skills Required</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ACTIVITY_PATTERN__SKILLS_REQUIRED = eINSTANCE.getActivityPattern_SkillsRequired();
+
+		/**
 		 * The meta object literal for the '{@link cyberPhysical_Incident.impl.AbstractActivityImpl <em>Abstract Activity</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -6377,6 +6445,14 @@ public interface CyberPhysicalIncidentPackage extends EPackage {
 		 * @generated
 		 */
 		EReference ABSTRACT_ACTIVITY__VICTIMS = eINSTANCE.getAbstractActivity_Victims();
+
+		/**
+		 * The meta object literal for the '<em><b>Next Abstractactivity</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ABSTRACT_ACTIVITY__NEXT_ABSTRACTACTIVITY = eINSTANCE.getAbstractActivity_NextAbstractactivity();
 
 		/**
 		 * The meta object literal for the '<em><b>Resources</b></em>' reference list feature.
@@ -6489,6 +6565,16 @@ public interface CyberPhysicalIncidentPackage extends EPackage {
 		 * @generated
 		 */
 		EEnum ACTIVITY_PATTERN_SEVERITY = eINSTANCE.getActivityPatternSeverity();
+
+		/**
+		 * The meta object literal for the '{@link cyberPhysical_Incident.Skill_Level <em>Skill Level</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see cyberPhysical_Incident.Skill_Level
+		 * @see cyberPhysical_Incident.impl.CyberPhysicalIncidentPackageImpl#getSkill_Level()
+		 * @generated
+		 */
+		EEnum SKILL_LEVEL = eINSTANCE.getSkill_Level();
 
 	}
 

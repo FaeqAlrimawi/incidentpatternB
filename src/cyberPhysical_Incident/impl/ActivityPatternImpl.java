@@ -7,6 +7,7 @@ import cyberPhysical_Incident.ActivityPattern;
 import cyberPhysical_Incident.ActivityPatternSeverity;
 import cyberPhysical_Incident.CyberPhysicalIncidentPackage;
 import cyberPhysical_Incident.IncidentEntity;
+import cyberPhysical_Incident.Skill_Level;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -37,6 +38,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link cyberPhysical_Incident.impl.ActivityPatternImpl#getAbstractactivity <em>Abstractactivity</em>}</li>
  *   <li>{@link cyberPhysical_Incident.impl.ActivityPatternImpl#getIncidententity <em>Incidententity</em>}</li>
  *   <li>{@link cyberPhysical_Incident.impl.ActivityPatternImpl#getPatternsFollow <em>Patterns Follow</em>}</li>
+ *   <li>{@link cyberPhysical_Incident.impl.ActivityPatternImpl#getSkillsRequired <em>Skills Required</em>}</li>
  * </ul>
  *
  * @generated
@@ -111,6 +113,26 @@ public class ActivityPatternImpl extends MinimalEObjectImpl.Container implements
 	 * @ordered
 	 */
 	protected EList<ActivityPattern> patternsFollow;
+
+	/**
+	 * The default value of the '{@link #getSkillsRequired() <em>Skills Required</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSkillsRequired()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final Skill_Level SKILLS_REQUIRED_EDEFAULT = Skill_Level.LOW;
+
+	/**
+	 * The cached value of the '{@link #getSkillsRequired() <em>Skills Required</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSkillsRequired()
+	 * @generated
+	 * @ordered
+	 */
+	protected Skill_Level skillsRequired = SKILLS_REQUIRED_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -214,6 +236,27 @@ public class ActivityPatternImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Skill_Level getSkillsRequired() {
+		return skillsRequired;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setSkillsRequired(Skill_Level newSkillsRequired) {
+		Skill_Level oldSkillsRequired = skillsRequired;
+		skillsRequired = newSkillsRequired == null ? SKILLS_REQUIRED_EDEFAULT : newSkillsRequired;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysicalIncidentPackage.ACTIVITY_PATTERN__SKILLS_REQUIRED, oldSkillsRequired, skillsRequired));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -243,6 +286,8 @@ public class ActivityPatternImpl extends MinimalEObjectImpl.Container implements
 				return getIncidententity();
 			case CyberPhysicalIncidentPackage.ACTIVITY_PATTERN__PATTERNS_FOLLOW:
 				return getPatternsFollow();
+			case CyberPhysicalIncidentPackage.ACTIVITY_PATTERN__SKILLS_REQUIRED:
+				return getSkillsRequired();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -274,6 +319,9 @@ public class ActivityPatternImpl extends MinimalEObjectImpl.Container implements
 				getPatternsFollow().clear();
 				getPatternsFollow().addAll((Collection<? extends ActivityPattern>)newValue);
 				return;
+			case CyberPhysicalIncidentPackage.ACTIVITY_PATTERN__SKILLS_REQUIRED:
+				setSkillsRequired((Skill_Level)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -301,6 +349,9 @@ public class ActivityPatternImpl extends MinimalEObjectImpl.Container implements
 			case CyberPhysicalIncidentPackage.ACTIVITY_PATTERN__PATTERNS_FOLLOW:
 				getPatternsFollow().clear();
 				return;
+			case CyberPhysicalIncidentPackage.ACTIVITY_PATTERN__SKILLS_REQUIRED:
+				setSkillsRequired(SKILLS_REQUIRED_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -323,6 +374,8 @@ public class ActivityPatternImpl extends MinimalEObjectImpl.Container implements
 				return incidententity != null && !incidententity.isEmpty();
 			case CyberPhysicalIncidentPackage.ACTIVITY_PATTERN__PATTERNS_FOLLOW:
 				return patternsFollow != null && !patternsFollow.isEmpty();
+			case CyberPhysicalIncidentPackage.ACTIVITY_PATTERN__SKILLS_REQUIRED:
+				return skillsRequired != SKILLS_REQUIRED_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -341,6 +394,8 @@ public class ActivityPatternImpl extends MinimalEObjectImpl.Container implements
 		result.append(name);
 		result.append(", Severity: ");
 		result.append(severity);
+		result.append(", skillsRequired: ");
+		result.append(skillsRequired);
 		result.append(')');
 		return result.toString();
 	}
