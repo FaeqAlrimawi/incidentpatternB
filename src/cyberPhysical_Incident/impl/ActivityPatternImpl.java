@@ -22,6 +22,9 @@ import cyberPhysical_Incident.ActivityInitiator;
 import cyberPhysical_Incident.ActivityPattern;
 import cyberPhysical_Incident.ActivityPatternSeverity;
 import cyberPhysical_Incident.ActivityType;
+import cyberPhysical_Incident.Actor;
+import cyberPhysical_Incident.ActorLevel;
+import cyberPhysical_Incident.ActorRole;
 import cyberPhysical_Incident.Asset;
 import cyberPhysical_Incident.Behaviour;
 import cyberPhysical_Incident.Connection;
@@ -200,6 +203,8 @@ public class ActivityPatternImpl extends MinimalEObjectImpl.Container implements
 		//1-Behaviour Type (e.g., normal, malicious)
 		//2-System action
 		//3-Type (e.g., physical, digital)
+		//4-Duration (to be implemented)
+		//5-Timing (to be implemented)
 		
 		//1- Behaviour Type (e.g., normal, malicious)
 		Behaviour incActBehaviour = incidentActivity.getBehaviourType();
@@ -237,9 +242,13 @@ public class ActivityPatternImpl extends MinimalEObjectImpl.Container implements
 		//4-Exploited assets
 		//5-Location
 		//6-Vicitms
+		//7-Precondition
+		//8-Postcondition
+		//-9-Accomplices (to be implemented)
+		
 		
 		//1-Initiator: compare initiator attributes found in the pattern activity to that in the incident activity
-		boolean canBeApplied = compareInitiators(incidentActivity.getInitiator(), patternActivity.getInitiator());
+		boolean canBeApplied = compareInitiators(patternActivity.getInitiator(), incidentActivity.getInitiator());
 		
 		if(!canBeApplied) {
 			return false;
@@ -259,7 +268,7 @@ public class ActivityPatternImpl extends MinimalEObjectImpl.Container implements
 		Resource ptrResource = patternActivity.getResources()!=null?patternActivity.getResources().get(0):null;
 		Resource incResource = incidentActivity.getResources()!=null?incidentActivity.getResources().get(0):null;
 		
-		canBeApplied = compareIncidentEntities(ptrResource, incResource);
+		canBeApplied = compareResources(ptrResource, incResource);
 		
 		if(!canBeApplied) {
 			return false;
@@ -285,13 +294,20 @@ public class ActivityPatternImpl extends MinimalEObjectImpl.Container implements
 			return false;
 		}
 		
+		//6-Vicitms
+		Actor ptrVicitm = patternActivity.getVictims()!=null?patternActivity.getVictims().get(0):null;
+		Actor incVicitm = incidentActivity.getVictims()!=null?incidentActivity.getVictims().get(0):null;
+			
+		canBeApplied = compareActors(ptrVicitm, incVicitm);
 		
-				
+		if(!canBeApplied) {
+			return false;
+		}
+		
 		return true;
 	}
 	
-	protected boolean compareInitiators(ActivityInitiator incidentActivityInitiator, 
-			ActivityInitiator patternActivityInitiator) {
+	protected boolean compareInitiators(ActivityInitiator patternActivityInitiator, ActivityInitiator incidentActivityInitiator) {
 	
 		//if both don't have an initiator then return true
 		if(incidentActivityInitiator == null && patternActivityInitiator == null) {
@@ -311,10 +327,20 @@ public class ActivityPatternImpl extends MinimalEObjectImpl.Container implements
 			return false;
 		}
 		
-		IncidentEntity incActEntity = (IncidentEntity)incidentActivityInitiator;
-		IncidentEntity ptrActEntity = (IncidentEntity)patternActivityInitiator;
+		boolean canBeApplied = false;
 		
-		if(!compareIncidentEntities(ptrActEntity, incActEntity)) {
+		if(Actor.class.isInstance(patternActivityInitiator)) {
+			canBeApplied = compareActors((Actor)patternActivityInitiator, (Actor)incidentActivityInitiator);
+		} else if(Asset.class.isInstance(patternActivityInitiator)) {
+			canBeApplied = compareAssets((Asset)patternActivityInitiator, (Asset)incidentActivityInitiator);
+		} else if(Resource.class.isInstance(patternActivityInitiator)) {
+			canBeApplied = compareResources((Resource)patternActivityInitiator, (Resource)incidentActivityInitiator);
+		} else {
+			canBeApplied = compareIncidentEntities((IncidentEntity)patternActivityInitiator, 
+					(IncidentEntity)incidentActivityInitiator);
+		}
+
+		if(!canBeApplied) {
 			return false;
 		}
 	
@@ -323,6 +349,15 @@ public class ActivityPatternImpl extends MinimalEObjectImpl.Container implements
 	
 	protected boolean compareIncidentEntities(IncidentEntity patternEntity, IncidentEntity incidentEntity) {
 		
+		
+		if(patternEntity != null && incidententity == null) {
+			return false;
+		}
+		
+		if(patternEntity == null) {
+			return true;
+		}
+
 		//Attributes:
 		//1-Type
 		//2-Parent Entity
@@ -472,9 +507,77 @@ public class ActivityPatternImpl extends MinimalEObjectImpl.Container implements
 		return true;
 	}
 	
+	protected boolean compareActors(Actor patternActor, Actor incidentActor) {
+	
+		if(patternActor != null && incidentActor == null) {
+			return false;
+		}
+		
+		if(patternActor == null) {
+			return true;
+		}
+		
+		boolean canBeApplied = compareIncidentEntities(patternActor, incidentActor);
+		
+		if(!canBeApplied) {
+			return false;
+		}
+		
+		//Attributes to compare:
+		//1-Role (e.g., offender, vicitm)
+		//2-Level (e.g., individual, group)
+
+		//1-Role
+		ActorRole ptrRole = patternActor.getRole();
+		ActorRole incRole = incidentActor.getRole();
+		
+		if(!ptrRole.equals(incRole)) {
+			return false;
+		}
+		
+		//2-Level
+		ActorLevel ptrLevel = patternActor.getLevel();
+		ActorLevel incLevel = incidentActor.getLevel();
+		
+		if(!ptrLevel.equals(incLevel)) {
+			return false;
+		}
+		
+		return true;
+	}
+	
+	
+	protected boolean compareResources(Resource patternResource, Resource incidentResource) {
+		
+		if(patternResource != null && incidentResource == null) {
+			return false;
+		}
+		
+		if(patternResource == null) {
+			return true;
+		}
+		
+		boolean canBeApplied = compareIncidentEntities(patternResource, incidentResource);
+		
+		if(!canBeApplied) {
+			return false;
+		}
+		
+		//specific comparison criteria for resources can be defined here
+		
+		return true;
+	}
+	
 	protected boolean compareLocations(Location patternLocation, Location incidentLocation) {
 		
-	
+		if(patternLocation != null && incidentLocation == null) {
+			return false;
+		}
+		
+		if(patternLocation == null) {
+			return true;
+		}
+		
 		boolean canBeApplied = compareIncidentEntities((IncidentEntity)patternLocation, (IncidentEntity)incidentLocation);
 		
 		if(!canBeApplied) {
