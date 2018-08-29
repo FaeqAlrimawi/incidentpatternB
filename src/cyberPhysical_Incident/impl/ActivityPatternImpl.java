@@ -29,6 +29,7 @@ import cyberPhysical_Incident.CyberPhysicalIncidentPackage;
 import cyberPhysical_Incident.IncidentEntity;
 import cyberPhysical_Incident.Knowledge;
 import cyberPhysical_Incident.Location;
+import cyberPhysical_Incident.Resource;
 import cyberPhysical_Incident.Skill_Level;
 import cyberPhysical_Incident.Vulnerability;
 
@@ -228,8 +229,7 @@ public class ActivityPatternImpl extends MinimalEObjectImpl.Container implements
 				!ptrActType.equals(incActType)) {
 			return false;
 		}
-		
-		
+			
 		//activity references:
 		//1-Initiator
 		//2-Target assets
@@ -245,19 +245,48 @@ public class ActivityPatternImpl extends MinimalEObjectImpl.Container implements
 			return false;
 		}
 		
-		//target assets
+		//2-Target assets
 		Asset ptrTargetAsset = patternActivity.getTargetedAssets()!=null?patternActivity.getTargetedAssets().get(0):null;
 		Asset incTargetAsset = incidentActivity.getTargetedAssets()!=null?incidentActivity.getTargetedAssets().get(0):null;
 		
-		canBeApplied = compareIncidentEntities(ptrTargetAsset, incTargetAsset);
+		canBeApplied = compareAssets(ptrTargetAsset, incTargetAsset);
 		
-		if(canBeApplied) {
-			//compare as assets (for extra attributes)
-		} else {
+		if(!canBeApplied) {
+			return false;
+		}
+		
+		//3-Resources
+		Resource ptrResource = patternActivity.getResources()!=null?patternActivity.getResources().get(0):null;
+		Resource incResource = incidentActivity.getResources()!=null?incidentActivity.getResources().get(0):null;
+		
+		canBeApplied = compareIncidentEntities(ptrResource, incResource);
+		
+		if(!canBeApplied) {
+			return false;
+		}
+		
+		//4-Exploited assets
+		Asset ptrExploitedAsset = patternActivity.getExploitedAssets()!=null?patternActivity.getExploitedAssets().get(0):null;
+		Asset incExploitedAsset = incidentActivity.getExploitedAssets()!=null?incidentActivity.getExploitedAssets().get(0):null;
+				
+		canBeApplied = compareAssets(ptrExploitedAsset, incExploitedAsset);
+				
+		if(!canBeApplied) {
+			return false;
+		}
+			
+		//5-Locations
+		Location ptrLocation = patternActivity.getLocation();
+		Location incLocation = incidentActivity.getLocation();
+		
+		canBeApplied = compareLocations(ptrLocation, incLocation);
+		
+		if(!canBeApplied) {
 			return false;
 		}
 		
 		
+				
 		return true;
 	}
 	
@@ -390,9 +419,14 @@ public class ActivityPatternImpl extends MinimalEObjectImpl.Container implements
 			return false;
 		}
 		
-		//this indicates that there's no asset in the pattern to compare to 
 		if(patternAsset == null) {
 			return true;
+		}
+		
+		boolean isApplicable = compareIncidentEntities(patternAsset, incidentAsset);
+		
+		if(!isApplicable) {
+			return false;
 		}
 		
 		EList<Vulnerability> ptrVuls = patternAsset.getVulnerability();
@@ -426,7 +460,7 @@ public class ActivityPatternImpl extends MinimalEObjectImpl.Container implements
 				} 
 			}
 			
-			//if none of the incident contained entities match the pattern contained entities then it is a mismatch
+			//if none of the incident vulnerabilities match the pattern vulnerabilities then it is a mismatch
 			if(!isVulMatched) {
 				return false;
 			}
@@ -437,6 +471,23 @@ public class ActivityPatternImpl extends MinimalEObjectImpl.Container implements
 		
 		return true;
 	}
+	
+	protected boolean compareLocations(Location patternLocation, Location incidentLocation) {
+		
+	
+		boolean canBeApplied = compareIncidentEntities((IncidentEntity)patternLocation, (IncidentEntity)incidentLocation);
+		
+		if(!canBeApplied) {
+			return false;
+		}
+		
+		//more specifc criteria to locations can be defined here
+		//for example, connection ends can be further explored here
+		
+		return true;
+	
+	}
+	
 	/**
 	 * Finds if the given patternType parameter is of the same class or super class of the given incidentType parameter 
 	 * @param patternType
