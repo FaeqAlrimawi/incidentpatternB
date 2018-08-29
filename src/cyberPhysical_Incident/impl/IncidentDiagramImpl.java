@@ -25,10 +25,8 @@ import cyberPhysical_Incident.Activity;
 import cyberPhysical_Incident.ActivityInitiator;
 import cyberPhysical_Incident.ActivityType;
 import cyberPhysical_Incident.Actor;
-import cyberPhysical_Incident.ActorRole;
 import cyberPhysical_Incident.Asset;
 import cyberPhysical_Incident.BigraphExpression;
-import cyberPhysical_Incident.Condition;
 import cyberPhysical_Incident.Connection;
 import cyberPhysical_Incident.CrimeScript;
 import cyberPhysical_Incident.CyberPhysicalIncidentFactory;
@@ -914,8 +912,7 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 		}
 		
 		//2-if initiator is actor then he/she should be offender
-//		ActivityInitiator firstInitiator = firstActivity.getInitiator();
-		
+
 		//for now consider only actors
 		if(!firstActivity.isInitiatorOffender()) {
 			//can be extended to check for digital processes and tools that can collect data
@@ -929,6 +926,13 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 		
 		Resource device = firstActivity.getResources().get(0); //assuming there's one resource
 		
+		//if the device is not of type computingDevice then it fails to satisfy the conditions
+		String deviceType = device.getType() != null?device.getType().getName():"";
+		
+		if(!environment.ComputingDevice.class.getSimpleName().equalsIgnoreCase(deviceType)) {
+			return null;
+		}
+		
 		//is the deivce used in the post condition at least? if no then it fails to satisfy 3 as it is not connected to the target asset
 		List<String> firstcontainedEntities = firstActivity.getInitiatorContainedEntities();
 		
@@ -937,13 +941,6 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 		}
 		
 		if(!firstcontainedEntities.contains(device.getName())) {
-			return null;
-		}
-		
-		//if the device is not of type computingDevice then it fails to satisfy the conditions
-		String deviceType = device.getType() != null?device.getType().getName():"";
-		
-		if(!environment.ComputingDevice.class.getSimpleName().equalsIgnoreCase(deviceType)) {
 			return null;
 		}
 		
@@ -1091,7 +1088,6 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 		if( firstActivity == null || secondActivity == null) {
 			return null;
 		}
-		
 	
 		//check if initiator of first activity is an Offender
 		if(!firstActivity.isInitiatorOffender()) {
@@ -1099,7 +1095,7 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 		}
 		
 		//check if resource of first activity has type "Acccess Point"
-		Resource firstResource = firstActivity.getResources().get(0); //assuming there's only 1 resource
+		Resource firstResource = firstActivity.getResources().isEmpty()?null:firstActivity.getResources().get(0); //assuming there's only 1 resource
 		Type resourceType = firstResource!=null?firstResource.getType():null;
 		String targetResourceType = "AccessPoint";
 		

@@ -82,7 +82,6 @@ public class CyberPhysicalIncidentFactoryImpl extends EFactoryImpl implements Cy
 			case CyberPhysicalIncidentPackage.INNER_NAME: return createInnerName();
 			case CyberPhysicalIncidentPackage.SITE: return createSite();
 			case CyberPhysicalIncidentPackage.ACTIVITY_PATTERN: return createActivityPattern();
-			case CyberPhysicalIncidentPackage.ABSTRACT_ACTIVITY: return createAbstractActivity();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -398,16 +397,6 @@ public class CyberPhysicalIncidentFactoryImpl extends EFactoryImpl implements Cy
 	public ActivityPattern createActivityPattern() {
 		ActivityPatternImpl activityPattern = new ActivityPatternImpl();
 		return activityPattern;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public AbstractActivity createAbstractActivity() {
-		AbstractActivityImpl abstractActivity = new AbstractActivityImpl();
-		return abstractActivity;
 	}
 
 	/**

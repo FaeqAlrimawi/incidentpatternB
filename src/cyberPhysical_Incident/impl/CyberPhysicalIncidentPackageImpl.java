@@ -2,7 +2,6 @@
  */
 package cyberPhysical_Incident.impl;
 
-import cyberPhysical_Incident.AbstractActivity;
 import cyberPhysical_Incident.Activity;
 import cyberPhysical_Incident.ActivityInitiator;
 import cyberPhysical_Incident.ActivityPattern;
@@ -356,13 +355,6 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * @generated
 	 */
 	private EClass activityPatternEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass abstractActivityEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -1888,8 +1880,8 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getActivityPattern_Abstractactivity() {
-		return (EReference)activityPatternEClass.getEStructuralFeatures().get(2);
+	public EAttribute getActivityPattern_Description() {
+		return (EAttribute)activityPatternEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1898,7 +1890,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * @generated
 	 */
 	public EReference getActivityPattern_Incidententity() {
-		return (EReference)activityPatternEClass.getEStructuralFeatures().get(3);
+		return (EReference)activityPatternEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -1916,7 +1908,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * @generated
 	 */
 	public EAttribute getActivityPattern_SkillsRequired() {
-		return (EAttribute)activityPatternEClass.getEStructuralFeatures().get(5);
+		return (EAttribute)activityPatternEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -1924,125 +1916,8 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getAbstractActivity() {
-		return abstractActivityEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getAbstractActivity_Duration() {
-		return (EAttribute)abstractActivityEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getAbstractActivity_Type() {
-		return (EAttribute)abstractActivityEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getAbstractActivity_BehaviourType() {
-		return (EAttribute)abstractActivityEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getAbstractActivity_SystemAction() {
-		return (EAttribute)abstractActivityEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getAbstractActivity_Precondition() {
-		return (EReference)abstractActivityEClass.getEStructuralFeatures().get(8);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getAbstractActivity_Postcondition() {
-		return (EReference)abstractActivityEClass.getEStructuralFeatures().get(9);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getAbstractActivity_Activityinitiator() {
-		return (EReference)abstractActivityEClass.getEStructuralFeatures().get(10);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getAbstractActivity_Victims() {
-		return (EReference)abstractActivityEClass.getEStructuralFeatures().get(11);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getAbstractActivity_NextAbstractactivity() {
-		return (EReference)abstractActivityEClass.getEStructuralFeatures().get(12);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getAbstractActivity_Resources() {
-		return (EReference)abstractActivityEClass.getEStructuralFeatures().get(6);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getAbstractActivity_Location() {
-		return (EReference)abstractActivityEClass.getEStructuralFeatures().get(7);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getAbstractActivity_ExploitedAssets() {
-		return (EReference)abstractActivityEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getAbstractActivity_TargetAssets() {
-		return (EReference)abstractActivityEClass.getEStructuralFeatures().get(5);
+	public EReference getActivityPattern_AbstractActivity() {
+		return (EReference)activityPatternEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -2349,25 +2224,11 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 		activityPatternEClass = createEClass(ACTIVITY_PATTERN);
 		createEAttribute(activityPatternEClass, ACTIVITY_PATTERN__NAME);
 		createEAttribute(activityPatternEClass, ACTIVITY_PATTERN__SEVERITY);
-		createEReference(activityPatternEClass, ACTIVITY_PATTERN__ABSTRACTACTIVITY);
-		createEReference(activityPatternEClass, ACTIVITY_PATTERN__INCIDENTENTITY);
-		createEReference(activityPatternEClass, ACTIVITY_PATTERN__PATTERNS_FOLLOW);
+		createEAttribute(activityPatternEClass, ACTIVITY_PATTERN__DESCRIPTION);
 		createEAttribute(activityPatternEClass, ACTIVITY_PATTERN__SKILLS_REQUIRED);
-
-		abstractActivityEClass = createEClass(ABSTRACT_ACTIVITY);
-		createEAttribute(abstractActivityEClass, ABSTRACT_ACTIVITY__BEHAVIOUR_TYPE);
-		createEAttribute(abstractActivityEClass, ABSTRACT_ACTIVITY__DURATION);
-		createEAttribute(abstractActivityEClass, ABSTRACT_ACTIVITY__TYPE);
-		createEAttribute(abstractActivityEClass, ABSTRACT_ACTIVITY__SYSTEM_ACTION);
-		createEReference(abstractActivityEClass, ABSTRACT_ACTIVITY__EXPLOITED_ASSETS);
-		createEReference(abstractActivityEClass, ABSTRACT_ACTIVITY__TARGET_ASSETS);
-		createEReference(abstractActivityEClass, ABSTRACT_ACTIVITY__RESOURCES);
-		createEReference(abstractActivityEClass, ABSTRACT_ACTIVITY__LOCATION);
-		createEReference(abstractActivityEClass, ABSTRACT_ACTIVITY__PRECONDITION);
-		createEReference(abstractActivityEClass, ABSTRACT_ACTIVITY__POSTCONDITION);
-		createEReference(abstractActivityEClass, ABSTRACT_ACTIVITY__ACTIVITYINITIATOR);
-		createEReference(abstractActivityEClass, ABSTRACT_ACTIVITY__VICTIMS);
-		createEReference(abstractActivityEClass, ABSTRACT_ACTIVITY__NEXT_ABSTRACTACTIVITY);
+		createEReference(activityPatternEClass, ACTIVITY_PATTERN__PATTERNS_FOLLOW);
+		createEReference(activityPatternEClass, ACTIVITY_PATTERN__ABSTRACT_ACTIVITY);
+		createEReference(activityPatternEClass, ACTIVITY_PATTERN__INCIDENTENTITY);
 
 		// Create enums
 		levelEEnum = createEEnum(LEVEL);
@@ -2627,25 +2488,11 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 		initEClass(activityPatternEClass, ActivityPattern.class, "ActivityPattern", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getActivityPattern_Name(), ecorePackage.getEString(), "name", null, 0, 1, ActivityPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getActivityPattern_Severity(), this.getActivityPatternSeverity(), "Severity", null, 0, 1, ActivityPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getActivityPattern_Abstractactivity(), this.getAbstractActivity(), null, "abstractactivity", null, 0, -1, ActivityPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getActivityPattern_Incidententity(), this.getIncidentEntity(), null, "incidententity", null, 0, -1, ActivityPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getActivityPattern_PatternsFollow(), this.getActivityPattern(), null, "patternsFollow", null, 0, -1, ActivityPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getActivityPattern_Description(), ecorePackage.getEString(), "description", null, 0, 1, ActivityPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getActivityPattern_SkillsRequired(), this.getSkill_Level(), "skillsRequired", null, 0, 1, ActivityPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(abstractActivityEClass, AbstractActivity.class, "AbstractActivity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getAbstractActivity_BehaviourType(), this.getBehaviour(), "behaviourType", null, 0, 1, AbstractActivity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAbstractActivity_Duration(), ecorePackage.getEInt(), "duration", null, 0, 1, AbstractActivity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAbstractActivity_Type(), this.getActivityType(), "type", null, 0, 1, AbstractActivity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAbstractActivity_SystemAction(), ecorePackage.getEString(), "systemAction", null, 0, 1, AbstractActivity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getAbstractActivity_ExploitedAssets(), this.getAsset(), null, "exploitedAssets", null, 0, -1, AbstractActivity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getAbstractActivity_TargetAssets(), this.getAsset(), null, "targetAssets", null, 0, -1, AbstractActivity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getAbstractActivity_Resources(), this.getResource(), null, "resources", null, 0, -1, AbstractActivity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getAbstractActivity_Location(), this.getLocation(), null, "location", null, 0, 1, AbstractActivity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getAbstractActivity_Precondition(), this.getPrecondition(), null, "precondition", null, 0, 1, AbstractActivity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getAbstractActivity_Postcondition(), this.getPostcondition(), null, "postcondition", null, 0, 1, AbstractActivity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getAbstractActivity_Activityinitiator(), this.getActivityInitiator(), null, "activityinitiator", null, 0, 1, AbstractActivity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getAbstractActivity_Victims(), this.getActor(), null, "victims", null, 0, -1, AbstractActivity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getAbstractActivity_NextAbstractactivity(), this.getAbstractActivity(), null, "nextAbstractactivity", null, 0, 1, AbstractActivity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getActivityPattern_PatternsFollow(), this.getActivityPattern(), null, "patternsFollow", null, 0, -1, ActivityPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getActivityPattern_AbstractActivity(), this.getActivity(), null, "abstractActivity", null, 0, -1, ActivityPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getActivityPattern_Incidententity(), this.getIncidentEntity(), null, "incidententity", null, 0, -1, ActivityPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(levelEEnum, Level.class, "Level");

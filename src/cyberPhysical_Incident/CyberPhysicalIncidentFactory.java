@@ -247,15 +247,6 @@ public interface CyberPhysicalIncidentFactory extends EFactory {
 	ActivityPattern createActivityPattern();
 
 	/**
-	 * Returns a new object of class '<em>Abstract Activity</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Abstract Activity</em>'.
-	 * @generated
-	 */
-	AbstractActivity createAbstractActivity();
-
-	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
