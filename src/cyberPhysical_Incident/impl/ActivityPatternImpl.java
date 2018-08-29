@@ -2,11 +2,27 @@
  */
 package cyberPhysical_Incident.impl;
 
+import java.util.Collection;
+import java.util.LinkedList;
+import java.util.List;
+
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.emf.ecore.util.InternalEList;
+
 import cyberPhysical_Incident.Activity;
 import cyberPhysical_Incident.ActivityInitiator;
 import cyberPhysical_Incident.ActivityPattern;
 import cyberPhysical_Incident.ActivityPatternSeverity;
 import cyberPhysical_Incident.ActivityType;
+import cyberPhysical_Incident.Asset;
 import cyberPhysical_Incident.Behaviour;
 import cyberPhysical_Incident.Connection;
 import cyberPhysical_Incident.CyberPhysicalIncidentPackage;
@@ -14,27 +30,7 @@ import cyberPhysical_Incident.IncidentEntity;
 import cyberPhysical_Incident.Knowledge;
 import cyberPhysical_Incident.Location;
 import cyberPhysical_Incident.Skill_Level;
-import cyberPhysical_Incident.Type;
-import environment.Asset;
-
-import java.util.Collection;
-import java.util.LinkedList;
-import java.util.List;
-
-import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
-
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-import org.eclipse.emf.ecore.util.InternalEList;
+import cyberPhysical_Incident.Vulnerability;
 
 /**
  * <!-- begin-user-doc -->
@@ -243,11 +239,29 @@ public class ActivityPatternImpl extends MinimalEObjectImpl.Container implements
 		//6-Vicitms
 		
 		//1-Initiator: compare initiator attributes found in the pattern activity to that in the incident activity
-		boolean canBeApplied = compareInitiator(incidentActivity.getInitiator(), patternActivity.getInitiator());
+		boolean canBeApplied = compareInitiators(incidentActivity.getInitiator(), patternActivity.getInitiator());
+		
+		if(!canBeApplied) {
+			return false;
+		}
+		
+		//target assets
+		Asset ptrTargetAsset = patternActivity.getTargetedAssets()!=null?patternActivity.getTargetedAssets().get(0):null;
+		Asset incTargetAsset = incidentActivity.getTargetedAssets()!=null?incidentActivity.getTargetedAssets().get(0):null;
+		
+		canBeApplied = compareIncidentEntities(ptrTargetAsset, incTargetAsset);
+		
+		if(canBeApplied) {
+			//compare as assets (for extra attributes)
+		} else {
+			return false;
+		}
+		
+		
 		return true;
 	}
 	
-	protected boolean compareInitiator(ActivityInitiator incidentActivityInitiator, 
+	protected boolean compareInitiators(ActivityInitiator incidentActivityInitiator, 
 			ActivityInitiator patternActivityInitiator) {
 	
 		//if both don't have an initiator then return true
@@ -262,13 +276,6 @@ public class ActivityPatternImpl extends MinimalEObjectImpl.Container implements
 		
 		//attributes to compare between initiators
 		//1-Initiator Type (i.e. are they of the same class such as actor or asset)
-		//Attributes common as IncidentEntity objects:
-		//2-Type
-		//3-Parent Entity
-		//4-Contained Entities
-		//5-Connections
-		
-		//1-Initiator type
 		
 		//if the class of the pattern activity initiator is the same (or superclass) of the incident activity initiator then return false
 		if(!patternActivityInitiator.getClass().isInstance(incidentActivityInitiator)) {
@@ -278,9 +285,24 @@ public class ActivityPatternImpl extends MinimalEObjectImpl.Container implements
 		IncidentEntity incActEntity = (IncidentEntity)incidentActivityInitiator;
 		IncidentEntity ptrActEntity = (IncidentEntity)patternActivityInitiator;
 		
-		//2-type: compare the types of both entities
-		String ptrActType = ptrActEntity.getType()!=null?ptrActEntity.getType().getName():null;
-		String incActType = incActEntity.getType()!=null?incActEntity.getType().getName():null;
+		if(!compareIncidentEntities(ptrActEntity, incActEntity)) {
+			return false;
+		}
+	
+		return true;
+	}
+	
+	protected boolean compareIncidentEntities(IncidentEntity patternEntity, IncidentEntity incidentEntity) {
+		
+		//Attributes:
+		//1-Type
+		//2-Parent Entity
+		//3-Contained Entities
+		//4-Connections
+		
+		//1-type: compare the types of both entities
+		String ptrActType = incidentEntity.getType()!=null?incidentEntity.getType().getName():null;
+		String incActType = patternEntity.getType()!=null?patternEntity.getType().getName():null;
 		
 		if(ptrActType != null && incActType == null) {
 			return false;
@@ -292,33 +314,33 @@ public class ActivityPatternImpl extends MinimalEObjectImpl.Container implements
 			}
 		}
 		
-		//3-parent entity: find out if the type of the parent entity is of the same type or super type to that of the incident activity
-		IncidentEntity ptrActParent = (IncidentEntity)ptrActEntity.getParentEntity();
-		IncidentEntity incActParent = (IncidentEntity)incActEntity.getParentEntity();
+		//2-parent entity: find out if the type of the parent entity is of the same type or super type to that of the incident activity
+		IncidentEntity ptrActParent = (IncidentEntity)incidentEntity.getParentEntity();
+		IncidentEntity incActParent = (IncidentEntity)patternEntity.getParentEntity();
 		
-		if(ptrActEntity != null && incActParent == null) {
+		if(incidentEntity != null && incActParent == null) {
 			return false;
 		}
 		
 		//check parent types (pattern parent type should be same class or super class of incident parent type)
 		if(ptrActParent != null && incActParent != null) {
  
-			String ptrParentType = ptrActEntity.getType()!=null?ptrActEntity.getType().getName():null;
-			String incParentType = incActEntity.getType()!=null?incActEntity.getType().getName():null;
+			String ptrParentType = incidentEntity.getType()!=null?incidentEntity.getType().getName():null;
+			String incParentType = patternEntity.getType()!=null?patternEntity.getType().getName():null;
 			
 			if(!isSameClassOrSuperClass(ptrParentType, incParentType)) {
 				return false;
 			}
 		}
 		
-		//4-Contained Entities: check number & types
+		//3-Contained Entities: check number & types
 		//if knowledge is complete in pattern entity then both should have the same number, 
 		//and type of pattern contained entities should be same class or superclass
-		Knowledge ptrCotnainedEntitiesKnowledge = ptrActEntity.getContainedAssetsKnowledge();
-//		Knowledge incContainedEntitiesKnowledge = incActEntity.getContainedAssetsKnowledge();
+		Knowledge ptrCotnainedEntitiesKnowledge = incidentEntity.getContainedAssetsKnowledge();
+//		Knowledge incContainedEntitiesKnowledge = patternEntity.getContainedAssetsKnowledge();
 		
-		EList<Location> ptrContainedEntities = ptrActEntity.getContainedEntities();
-		EList<Location> incContainedEntities = incActEntity.getContainedEntities();
+		EList<Location> ptrContainedEntities = incidentEntity.getContainedEntities();
+		EList<Location> incContainedEntities = patternEntity.getContainedEntities();
 		
 		//check if the knowledge is exact then both should have the same number of entities
 		if(ptrCotnainedEntitiesKnowledge.equals(Knowledge.EXACT)) {
@@ -335,14 +357,14 @@ public class ActivityPatternImpl extends MinimalEObjectImpl.Container implements
 			return false;
 		}
 		
-		//5-Connections: check number & types
+		//4-Connections: check number & types
 		//if knowledge is complete in pattern entity then both should have the same number, 
 		//and type of pattern contained entities should be same class or superclass
-		Knowledge ptrConnectionsKnowledge = ptrActEntity.getConnectionsKnowledge();
-//		Knowledge incContainedEntitiesKnowledge = incActEntity.getContainedAssetsKnowledge();
+		Knowledge ptrConnectionsKnowledge = incidentEntity.getConnectionsKnowledge();
+//		Knowledge incContainedEntitiesKnowledge = patternEntity.getContainedAssetsKnowledge();
 		
-		EList<Connection> ptrConnections = ptrActEntity.getConnections();
-		EList<Connection> incConnections = incActEntity.getConnections();
+		EList<Connection> ptrConnections = incidentEntity.getConnections();
+		EList<Connection> incConnections = patternEntity.getConnections();
 		
 		//check if the knowledge is exact then both should have the same number of entities
 		if(ptrConnectionsKnowledge.equals(Knowledge.EXACT)) {
@@ -362,6 +384,59 @@ public class ActivityPatternImpl extends MinimalEObjectImpl.Container implements
 		return true;
 	}
 	
+	protected boolean compareAssets(Asset patternAsset, Asset incidentAsset) {
+		
+		if(patternAsset != null && incidentAsset == null) {
+			return false;
+		}
+		
+		//this indicates that there's no asset in the pattern to compare to 
+		if(patternAsset == null) {
+			return true;
+		}
+		
+		EList<Vulnerability> ptrVuls = patternAsset.getVulnerability();
+		EList<Vulnerability> incVuls = incidentAsset.getVulnerability();
+		
+		//compare vulnerabilities
+		List<Integer> matchedConnections = new LinkedList<Integer>();
+		
+		for(Vulnerability ptrVul : ptrVuls) {
+			
+			if(ptrVul.getName() == null || ptrVul.getName().isEmpty()) {
+				continue;//ignored
+			}
+
+			boolean isVulMatched = false;
+			
+			Vulnerability incVul = null;
+			
+			for(int i=0;i<incVuls.size();i++) {
+				
+				if(matchedConnections.contains(i)) {
+					continue;
+				}
+				
+				incVul = incVuls.get(i);
+				
+				if(ptrVul.equals(incVul)) {
+					matchedConnections.add(i);
+					isVulMatched = true;
+					break;
+				} 
+			}
+			
+			//if none of the incident contained entities match the pattern contained entities then it is a mismatch
+			if(!isVulMatched) {
+				return false;
+			}
+			
+			isVulMatched = false;
+			
+		}
+		
+		return true;
+	}
 	/**
 	 * Finds if the given patternType parameter is of the same class or super class of the given incidentType parameter 
 	 * @param patternType
