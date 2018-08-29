@@ -8,6 +8,7 @@ import cyberPhysical_Incident.ActivityPattern;
 import cyberPhysical_Incident.ActivityPatternSeverity;
 import cyberPhysical_Incident.ActivityType;
 import cyberPhysical_Incident.Behaviour;
+import cyberPhysical_Incident.Connection;
 import cyberPhysical_Incident.CyberPhysicalIncidentPackage;
 import cyberPhysical_Incident.IncidentEntity;
 import cyberPhysical_Incident.Knowledge;
@@ -310,11 +311,11 @@ public class ActivityPatternImpl extends MinimalEObjectImpl.Container implements
 			}
 		}
 		
-		//4-Contained Entities: check types
+		//4-Contained Entities: check number & types
 		//if knowledge is complete in pattern entity then both should have the same number, 
 		//and type of pattern contained entities should be same class or superclass
 		Knowledge ptrCotnainedEntitiesKnowledge = ptrActEntity.getContainedAssetsKnowledge();
-		Knowledge incContainedEntitiesKnowledge = incActEntity.getContainedAssetsKnowledge();
+//		Knowledge incContainedEntitiesKnowledge = incActEntity.getContainedAssetsKnowledge();
 		
 		EList<Location> ptrContainedEntities = ptrActEntity.getContainedEntities();
 		EList<Location> incContainedEntities = incActEntity.getContainedEntities();
@@ -326,7 +327,38 @@ public class ActivityPatternImpl extends MinimalEObjectImpl.Container implements
 			}
 		}
 		
+		//check for the case when the pattern has more cotnained entities
+		//what should be done!? Allow it? return false?
 		
+		//check the types of both (pattern types should be same class or superclass of the incident ones)
+		if(!checkContainedEntities(ptrContainedEntities, incContainedEntities)) {
+			return false;
+		}
+		
+		//5-Connections: check number & types
+		//if knowledge is complete in pattern entity then both should have the same number, 
+		//and type of pattern contained entities should be same class or superclass
+		Knowledge ptrConnectionsKnowledge = ptrActEntity.getConnectionsKnowledge();
+//		Knowledge incContainedEntitiesKnowledge = incActEntity.getContainedAssetsKnowledge();
+		
+		EList<Connection> ptrConnections = ptrActEntity.getConnections();
+		EList<Connection> incConnections = incActEntity.getConnections();
+		
+		//check if the knowledge is exact then both should have the same number of entities
+		if(ptrConnectionsKnowledge.equals(Knowledge.EXACT)) {
+			if(ptrConnections.size() != incConnections.size()) {
+				return false;
+			}
+		}
+		
+		//check for the case when the pattern has more cotnained entities
+		//what should be done!? Allow it? return false?
+		
+		//check the types of both (pattern types should be same class or superclass of the incident ones)
+		if(!checkConnections(ptrConnections, incConnections)) {
+			return false;
+		}
+	
 		return true;
 	}
 	
@@ -380,71 +412,41 @@ public class ActivityPatternImpl extends MinimalEObjectImpl.Container implements
 	protected boolean checkContainedEntities(EList<Location> patternContainedEntities, 
 			EList<Location> incidentContainedEntities) {
 		
-		if(entity.getContainedAssetsKnowledge().compareTo(Knowledge.EXACT) == 0) {
-			if(entity.getContainedEntities().size() != entity.getContainedEntities().size()) {
-			
-				return false;
-			}
-		}
-		
-		//if the incident entity has more connections then it cannot be subset of the asset connections
-		//thus there's no match
-		if(entity.getContainedEntities().size() > entity.getContainedEntities().size()) {
-			return false;
-		}
-		
-		//compare connection type (simialr to asset type)
+		//compare type
 		LinkedList<Integer> matchedcontainedAssets = new LinkedList<Integer>();
 		
-		for(Location ent : entity.getContainedEntities()) {
+		for(Location ent :patternContainedEntities) {
 			
-			IncidentEntity containedEntity = (IncidentEntity)ent;
+			IncidentEntity ptrcontainedEntity = (IncidentEntity)ent;
 			
-			if(containedEntity.getType() == null) {
+			if(ptrcontainedEntity.getType() == null) {
 				continue;//ignored
 			}
 			
-			String typeName = containedEntity.getType().getName();
-			
-			try {
-			String potentialClassName = "environment.impl."+typeName;
-			
-			if(!typeName.endsWith("Impl")) {
-				potentialClassName +="Impl";
-			}
-			
-			potentialClass = Class.forName(potentialClassName);
-			
-			} catch (ClassNotFoundException e) {
-				//type mismatch i.e. there is no type available in the system model 
-				//currently returns false
-				return false;
-			}
-			
-			//if the current asset connection object is not of the same class or subclass of the potential class
-			//then return false (connection type mismatch)
+			String ptrTypeName = ptrcontainedEntity.getType().getName();
+
 			boolean iscontainedEntityMatched = false;
 			
-			List<environment.Asset> containedAssets = (List<Asset>)asset.getContainedAssets();
+			IncidentEntity incContainedEntity = null;
 			
-			environment.Asset containedAsset = null;
-			
-			for(int i=0;i<containedAssets.size();i++) {
+			for(int i=0;i<incidentContainedEntities.size();i++) {
 				
 				if(matchedcontainedAssets.contains(i)) {
 					continue;
 				}
 				
-				containedAsset = containedAssets.get(i);
+				incContainedEntity = (IncidentEntity)incidentContainedEntities.get(i);
 				
-				if(potentialClass.isInstance(containedAsset)) {
+				String incTypeName = incContainedEntity.getType()!=null?incContainedEntity.getType().getName():null;
+				
+				if(isSameClassOrSuperClass(ptrTypeName, incTypeName)) {
 					matchedcontainedAssets.add(i);
 					iscontainedEntityMatched = true;
 					break;
 				} 
 			}
 			
-			//if none of the asset connections match the incident connection then it is a mismatch
+			//if none of the incident contained entities match the pattern contained entities then it is a mismatch
 			if(!iscontainedEntityMatched) {
 				return false;
 			}
@@ -452,8 +454,59 @@ public class ActivityPatternImpl extends MinimalEObjectImpl.Container implements
 			iscontainedEntityMatched = false;
 			
 		}
+		
+		
 		return true;
 	}
+	
+	protected boolean checkConnections(EList<Connection> patternConnections, 
+			EList<Connection> incidentConnections) {
+		
+		//compare type
+		LinkedList<Integer> matchedConnections = new LinkedList<Integer>();
+		
+		for(Connection ptrConnection :patternConnections) {
+			
+			if(ptrConnection.getType() == null) {
+				continue;//ignored
+			}
+			
+			String ptrTypeName = ptrConnection.getType().getName();
+
+			boolean isConnectionMatched = false;
+			
+			Connection incConnection = null;
+			
+			for(int i=0;i<incidentConnections.size();i++) {
+				
+				if(matchedConnections.contains(i)) {
+					continue;
+				}
+				
+				incConnection = incidentConnections.get(i);
+				
+				String incTypeName = incConnection.getType()!=null?incConnection.getType().getName():null;
+				
+				if(isSameClassOrSuperClass(ptrTypeName, incTypeName)) {
+					matchedConnections.add(i);
+					isConnectionMatched = true;
+					break;
+				} 
+			}
+			
+			//if none of the incident contained entities match the pattern contained entities then it is a mismatch
+			if(!isConnectionMatched) {
+				return false;
+			}
+			
+			isConnectionMatched = false;
+			
+		}
+		
+		
+		return true;
+	}
+	
 	protected Activity getInitialActivity() {
 		
 		List<Activity> notFirst = new LinkedList<Activity>();
