@@ -179,6 +179,8 @@ public class ActivityPatternImpl extends MinimalEObjectImpl.Container implements
 	public Activity applyTo(List<Activity> activitySequence) {
 		
 		Activity patternInitialActivity = getInitialActivity();
+		Activity patternNextActivity = patternInitialActivity!=null?patternInitialActivity.getNextActivities().get(0):null;
+		
 		Activity firstActivity = activitySequence.get(0);
 		Activity secondActivity = activitySequence.get(1);
 		
@@ -186,10 +188,14 @@ public class ActivityPatternImpl extends MinimalEObjectImpl.Container implements
 			return null;
 		}
 		
-		//compare attributes and references of initial activity
+		boolean canBeApplied1 = canBeApplied(patternInitialActivity, firstActivity);
+		boolean canBeApplied2 = canBeApplied(patternNextActivity, secondActivity);
 		
-		//basic activity attributes
-		//1- Behaviour Type (e.g., normal, malicious)
+		//if both activities apply to the pattern then create a new activity representing a merge of the two incident activities
+		if(canBeApplied1 && canBeApplied2) {
+			//create a new activity
+			//TBD
+		}
 		
 		return null;
 	}
