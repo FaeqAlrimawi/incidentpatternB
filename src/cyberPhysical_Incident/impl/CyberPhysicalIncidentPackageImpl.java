@@ -1898,6 +1898,15 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getActivityPattern_Connection() {
+		return (EReference)activityPatternEClass.getEStructuralFeatures().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EReference getActivityPattern_PatternsFollow() {
 		return (EReference)activityPatternEClass.getEStructuralFeatures().get(4);
 	}
@@ -2229,6 +2238,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 		createEReference(activityPatternEClass, ACTIVITY_PATTERN__PATTERNS_FOLLOW);
 		createEReference(activityPatternEClass, ACTIVITY_PATTERN__ABSTRACT_ACTIVITY);
 		createEReference(activityPatternEClass, ACTIVITY_PATTERN__INCIDENTENTITY);
+		createEReference(activityPatternEClass, ACTIVITY_PATTERN__CONNECTION);
 
 		// Create enums
 		levelEEnum = createEEnum(LEVEL);
@@ -2493,6 +2503,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 		initEReference(getActivityPattern_PatternsFollow(), this.getActivityPattern(), null, "patternsFollow", null, 0, -1, ActivityPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getActivityPattern_AbstractActivity(), this.getActivity(), null, "abstractActivity", null, 0, -1, ActivityPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getActivityPattern_Incidententity(), this.getIncidentEntity(), null, "incidententity", null, 0, -1, ActivityPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getActivityPattern_Connection(), this.getConnection(), null, "connection", null, 0, -1, ActivityPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(levelEEnum, Level.class, "Level");

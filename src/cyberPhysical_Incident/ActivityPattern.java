@@ -24,6 +24,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link cyberPhysical_Incident.ActivityPattern#getPatternsFollow <em>Patterns Follow</em>}</li>
  *   <li>{@link cyberPhysical_Incident.ActivityPattern#getAbstractActivity <em>Abstract Activity</em>}</li>
  *   <li>{@link cyberPhysical_Incident.ActivityPattern#getIncidententity <em>Incidententity</em>}</li>
+ *   <li>{@link cyberPhysical_Incident.ActivityPattern#getConnection <em>Connection</em>}</li>
  * </ul>
  *
  * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getActivityPattern()
@@ -200,5 +201,21 @@ public interface ActivityPattern extends EObject {
 	 * @generated
 	 */
 	EList<IncidentEntity> getIncidententity();
+
+	/**
+	 * Returns the value of the '<em><b>Connection</b></em>' containment reference list.
+	 * The list contents are of type {@link cyberPhysical_Incident.Connection}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Connection</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Connection</em>' containment reference list.
+	 * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getActivityPattern_Connection()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Connection> getConnection();
 
 } // ActivityPattern

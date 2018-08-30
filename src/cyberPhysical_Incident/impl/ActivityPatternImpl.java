@@ -28,14 +28,17 @@ import cyberPhysical_Incident.ActorLevel;
 import cyberPhysical_Incident.ActorRole;
 import cyberPhysical_Incident.Asset;
 import cyberPhysical_Incident.Behaviour;
+import cyberPhysical_Incident.BigraphExpression;
 import cyberPhysical_Incident.Connection;
 import cyberPhysical_Incident.CyberPhysicalIncidentPackage;
 import cyberPhysical_Incident.IncidentEntity;
 import cyberPhysical_Incident.Knowledge;
 import cyberPhysical_Incident.Location;
+import cyberPhysical_Incident.Precondition;
 import cyberPhysical_Incident.Resource;
 import cyberPhysical_Incident.Skill_Level;
 import cyberPhysical_Incident.Vulnerability;
+import it.uniud.mads.jlibbig.core.std.Bigraph;
 
 /**
  * <!-- begin-user-doc -->
@@ -52,6 +55,7 @@ import cyberPhysical_Incident.Vulnerability;
  *   <li>{@link cyberPhysical_Incident.impl.ActivityPatternImpl#getPatternsFollow <em>Patterns Follow</em>}</li>
  *   <li>{@link cyberPhysical_Incident.impl.ActivityPatternImpl#getAbstractActivity <em>Abstract Activity</em>}</li>
  *   <li>{@link cyberPhysical_Incident.impl.ActivityPatternImpl#getIncidententity <em>Incidententity</em>}</li>
+ *   <li>{@link cyberPhysical_Incident.impl.ActivityPatternImpl#getConnection <em>Connection</em>}</li>
  * </ul>
  *
  * @generated
@@ -168,6 +172,16 @@ public class ActivityPatternImpl extends MinimalEObjectImpl.Container implements
 	protected EList<IncidentEntity> incidententity;
 
 	/**
+	 * The cached value of the '{@link #getConnection() <em>Connection</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getConnection()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Connection> connection;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -190,10 +204,10 @@ public class ActivityPatternImpl extends MinimalEObjectImpl.Container implements
 		}
 		
 		boolean canBeApplied1 = canBeApplied(patternInitialActivity, firstActivity);
-		boolean canBeApplied2 = canBeApplied(patternNextActivity, secondActivity);
+//		boolean canBeApplied2 = canBeApplied(patternNextActivity, secondActivity);
 		
 		//if both activities apply to the pattern then create a new activity representing a merge of the two incident activities
-		if(canBeApplied1 && canBeApplied2) {
+		if(canBeApplied1) {// && canBeApplied2) {
 			//create a new activity
 			//TBD
 			System.out.println("both activities apply to the pattern");
@@ -317,7 +331,18 @@ public class ActivityPatternImpl extends MinimalEObjectImpl.Container implements
 			return false;
 		}
 		
-		//evaluate pre & post
+		//evaluate precondition
+		Precondition ptrPre = patternActivity.getPrecondition();
+		BigraphExpression ptrBigExp = ptrPre!=null?(BigraphExpression)ptrPre.getExpression():null;
+		
+		Precondition incPre = incidentActivity.getPrecondition();
+		BigraphExpression incBigExp = incPre!=null?(BigraphExpression)incPre.getExpression():null;
+		
+		canBeApplied = comparePreconditions(ptrBigExp, incBigExp);
+		
+		if(!canBeApplied) {
+			return false;
+		}
 		
 		return true;
 	}
@@ -793,6 +818,26 @@ public class ActivityPatternImpl extends MinimalEObjectImpl.Container implements
 		return true;
 	}
 	
+	protected boolean comparePreconditions(BigraphExpression patternPrecondition, BigraphExpression incidentPrecondition) {
+		
+		if(patternPrecondition == null) {
+			return true;
+		}
+		
+		if(patternPrecondition != null && incidentPrecondition == null) {
+			return false;
+		}
+		
+		Bigraph big = incidentPrecondition.createBigraph();
+		
+		if(big != null) {
+			
+			System.out.println(big);	
+		}
+		
+		
+		return true;
+	}
 	protected Activity getInitialActivity() {
 		
 		List<Activity> notFirst = new LinkedList<Activity>();
@@ -947,6 +992,19 @@ public class ActivityPatternImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<Connection> getConnection() {
+		if (connection == null) {
+			connection = new EObjectContainmentEList<Connection>(Connection.class, this, CyberPhysicalIncidentPackage.ACTIVITY_PATTERN__CONNECTION);
+		}
+		return connection;
+	}
+
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -954,6 +1012,8 @@ public class ActivityPatternImpl extends MinimalEObjectImpl.Container implements
 				return ((InternalEList<?>)getAbstractActivity()).basicRemove(otherEnd, msgs);
 			case CyberPhysicalIncidentPackage.ACTIVITY_PATTERN__INCIDENTENTITY:
 				return ((InternalEList<?>)getIncidententity()).basicRemove(otherEnd, msgs);
+			case CyberPhysicalIncidentPackage.ACTIVITY_PATTERN__CONNECTION:
+				return ((InternalEList<?>)getConnection()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -980,6 +1040,8 @@ public class ActivityPatternImpl extends MinimalEObjectImpl.Container implements
 				return getAbstractActivity();
 			case CyberPhysicalIncidentPackage.ACTIVITY_PATTERN__INCIDENTENTITY:
 				return getIncidententity();
+			case CyberPhysicalIncidentPackage.ACTIVITY_PATTERN__CONNECTION:
+				return getConnection();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -1017,6 +1079,10 @@ public class ActivityPatternImpl extends MinimalEObjectImpl.Container implements
 				getIncidententity().clear();
 				getIncidententity().addAll((Collection<? extends IncidentEntity>)newValue);
 				return;
+			case CyberPhysicalIncidentPackage.ACTIVITY_PATTERN__CONNECTION:
+				getConnection().clear();
+				getConnection().addAll((Collection<? extends Connection>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -1050,6 +1116,9 @@ public class ActivityPatternImpl extends MinimalEObjectImpl.Container implements
 			case CyberPhysicalIncidentPackage.ACTIVITY_PATTERN__INCIDENTENTITY:
 				getIncidententity().clear();
 				return;
+			case CyberPhysicalIncidentPackage.ACTIVITY_PATTERN__CONNECTION:
+				getConnection().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -1076,6 +1145,8 @@ public class ActivityPatternImpl extends MinimalEObjectImpl.Container implements
 				return abstractActivity != null && !abstractActivity.isEmpty();
 			case CyberPhysicalIncidentPackage.ACTIVITY_PATTERN__INCIDENTENTITY:
 				return incidententity != null && !incidententity.isEmpty();
+			case CyberPhysicalIncidentPackage.ACTIVITY_PATTERN__CONNECTION:
+				return connection != null && !connection.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

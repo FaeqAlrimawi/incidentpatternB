@@ -6,6 +6,8 @@ import java.util.List;
 
 import org.eclipse.emf.common.util.EList;
 
+import it.uniud.mads.jlibbig.core.std.Bigraph;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Bigraph Expression</b></em>'.
@@ -33,7 +35,8 @@ public interface BigraphExpression extends Expression {
 	List<Connectivity> getConnections(String entityName1, String entityName2);
 	Entity getEntity(String entityName);
 	void replaceEntityName(String oldeEntityName, String newEntityName);
-	
+	 boolean matches(BigraphExpression other);
+	 Bigraph createBigraph();
 	/**
 	 * Returns the value of the '<em><b>Entity</b></em>' containment reference list.
 	 * The list contents are of type {@link cyberPhysical_Incident.Entity}.

@@ -2799,13 +2799,22 @@ public interface CyberPhysicalIncidentPackage extends EPackage {
 	int ACTIVITY_PATTERN__INCIDENTENTITY = 6;
 
 	/**
+	 * The feature id for the '<em><b>Connection</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTIVITY_PATTERN__CONNECTION = 7;
+
+	/**
 	 * The number of structural features of the '<em>Activity Pattern</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ACTIVITY_PATTERN_FEATURE_COUNT = 7;
+	int ACTIVITY_PATTERN_FEATURE_COUNT = 8;
 
 	/**
 	 * The number of operations of the '<em>Activity Pattern</em>' class.
@@ -4595,6 +4604,17 @@ public interface CyberPhysicalIncidentPackage extends EPackage {
 	EReference getActivityPattern_Incidententity();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link cyberPhysical_Incident.ActivityPattern#getConnection <em>Connection</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Connection</em>'.
+	 * @see cyberPhysical_Incident.ActivityPattern#getConnection()
+	 * @see #getActivityPattern()
+	 * @generated
+	 */
+	EReference getActivityPattern_Connection();
+
+	/**
 	 * Returns the meta object for the reference list '{@link cyberPhysical_Incident.ActivityPattern#getPatternsFollow <em>Patterns Follow</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6077,6 +6097,14 @@ public interface CyberPhysicalIncidentPackage extends EPackage {
 		 * @generated
 		 */
 		EReference ACTIVITY_PATTERN__INCIDENTENTITY = eINSTANCE.getActivityPattern_Incidententity();
+
+		/**
+		 * The meta object literal for the '<em><b>Connection</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ACTIVITY_PATTERN__CONNECTION = eINSTANCE.getActivityPattern_Connection();
 
 		/**
 		 * The meta object literal for the '<em><b>Patterns Follow</b></em>' reference list feature.
