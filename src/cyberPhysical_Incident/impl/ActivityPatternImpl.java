@@ -3,8 +3,10 @@
 package cyberPhysical_Incident.impl;
 
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -181,6 +183,7 @@ public class ActivityPatternImpl extends MinimalEObjectImpl.Container implements
 	 */
 	protected EList<Connection> connection;
 
+	protected Map<String, String> entityMap = new HashMap<String, String>();
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -271,13 +274,19 @@ public class ActivityPatternImpl extends MinimalEObjectImpl.Container implements
 	
 		
 		//1-Initiator: compare initiator attributes found in the pattern activity to that in the incident activity
-		boolean canBeApplied = compareInitiators(patternActivity.getInitiator(), incidentActivity.getInitiator());
+		ActivityInitiator ptrInitiator = patternActivity.getInitiator();
+		ActivityInitiator incInitiator = incidentActivity.getInitiator();
+		
+		boolean canBeApplied = compareInitiators(ptrInitiator, incInitiator);
 		
 		if(!canBeApplied) {
-			
 			return false;
 		}
 		
+		if(ptrInitiator != null) {
+			entityMap.put(((IncidentEntity)ptrInitiator).getName(), 
+					((IncidentEntity)incInitiator).getName());
+		}
 		
 		
 		//2-Target assets
@@ -290,6 +299,9 @@ public class ActivityPatternImpl extends MinimalEObjectImpl.Container implements
 			return false;
 		}
 		
+		if(ptrTargetAsset != null) {
+			entityMap.put(ptrTargetAsset.getName(), incTargetAsset.getName());
+		}
 	
 		//3-Resources
 		Resource ptrResource = !patternActivity.getResources().isEmpty()?patternActivity.getResources().get(0):null;
@@ -301,6 +313,10 @@ public class ActivityPatternImpl extends MinimalEObjectImpl.Container implements
 			return false;
 		}
 		
+		if(ptrResource != null) {
+			entityMap.put(ptrResource.getName(), incResource.getName());
+		}
+		
 		//4-Exploited assets
 		Asset ptrExploitedAsset = !patternActivity.getExploitedAssets().isEmpty()?patternActivity.getExploitedAssets().get(0):null;
 		Asset incExploitedAsset = !incidentActivity.getExploitedAssets().isEmpty()?incidentActivity.getExploitedAssets().get(0):null;
@@ -310,7 +326,11 @@ public class ActivityPatternImpl extends MinimalEObjectImpl.Container implements
 		if(!canBeApplied) {
 			return false;
 		}
-				
+		
+		if(ptrExploitedAsset != null) {
+			entityMap.put(ptrExploitedAsset.getName(), incExploitedAsset.getName());
+		}
+		
 		//5-Locations
 		Location ptrLocation = patternActivity.getLocation();
 		Location incLocation = incidentActivity.getLocation();
@@ -321,6 +341,11 @@ public class ActivityPatternImpl extends MinimalEObjectImpl.Container implements
 			return false;
 		}
 		
+		if(ptrLocation != null) {
+			entityMap.put(((IncidentEntity)ptrLocation).getName(), 
+					((IncidentEntity)incLocation).getName());
+		}
+		
 		//6-Vicitms
 		Actor ptrVicitm = !patternActivity.getVictims().isEmpty()?patternActivity.getVictims().get(0):null;
 		Actor incVicitm = !incidentActivity.getVictims().isEmpty()?incidentActivity.getVictims().get(0):null;
@@ -329,6 +354,10 @@ public class ActivityPatternImpl extends MinimalEObjectImpl.Container implements
 		
 		if(!canBeApplied) {
 			return false;
+		}
+		
+		if(ptrVicitm != null) {
+			entityMap.put(ptrVicitm.getName(), incVicitm.getName());
 		}
 		
 		//evaluate precondition
@@ -831,7 +860,7 @@ public class ActivityPatternImpl extends MinimalEObjectImpl.Container implements
 		Bigraph big = incidentPrecondition.createBigraph();
 		
 		if(big != null) {
-			
+	
 			System.out.println(big);	
 		}
 		

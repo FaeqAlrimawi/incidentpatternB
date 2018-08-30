@@ -29,7 +29,6 @@ import it.uniud.mads.jlibbig.core.std.OuterName;
 import it.uniud.mads.jlibbig.core.std.Root;
 import it.uniud.mads.jlibbig.core.std.Signature;
 import it.uniud.mads.jlibbig.core.std.SignatureBuilder;
-import it.uniud.mads.jlibbig.core.std.Site;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model object '<em><b>Bigraph
@@ -68,6 +67,7 @@ public class BigraphExpressionImpl extends ExpressionImpl implements BigraphExpr
 	protected EList<InnerName> innername;
 
 	protected int maxOuterNameNumber = 10;
+
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
@@ -259,18 +259,11 @@ public class BigraphExpressionImpl extends ExpressionImpl implements BigraphExpr
 		BigraphNode node;
 		Map<String, externalUtility.BigraphNode> nodes = new HashMap<String, externalUtility.BigraphNode>();
 		SignatureBuilder sigBuilder = new SignatureBuilder();
-		LinkedList<BigraphNode.OuterName> outerNames = new LinkedList<BigraphNode.OuterName>();
-		LinkedList<BigraphNode.InnerName> innerNames = new LinkedList<BigraphNode.InnerName>();
-		HashMap<String, it.uniud.mads.jlibbig.core.std.OuterName> libBigOuterNames = new HashMap<String, it.uniud.mads.jlibbig.core.std.OuterName>();
-		HashMap<String, it.uniud.mads.jlibbig.core.std.InnerName> libBigInnerNames = new HashMap<String, it.uniud.mads.jlibbig.core.std.InnerName>();
-		HashMap<String, Node> libBigNodes = new HashMap<String, Node>();
-		LinkedList<Root> libBigRoots = new LinkedList<Root>();
-		LinkedList<Site> libBigSites = new LinkedList<Site>();
 
 		int numOfRoots = 0;
-		
-		for(Entity ent : getEntity()) {
-			
+
+		for (Entity ent : getEntity()) {
+
 			node = new BigraphNode();
 
 			node.setId(ent.getName());
@@ -278,13 +271,13 @@ public class BigraphExpressionImpl extends ExpressionImpl implements BigraphExpr
 			// add site
 			node.setSite(ent.getSite() != null ? true : false);
 
-			//add parent
+			// add parent
 			node.setParentRoot(numOfRoots);
 			numOfRoots++;
-			
-			//add control (currently same as the name of the entity)
+
+			// add control (currently same as the name of the entity)
 			node.setControl(ent.getName());
-			
+
 			// add connectivity (outernames)
 			for (Connectivity con : ent.getConnectivity()) {
 				node.addOuterName(con.getName(), con.isIsClosed());
@@ -292,17 +285,65 @@ public class BigraphExpressionImpl extends ExpressionImpl implements BigraphExpr
 
 			nodes.put(node.getId(), node);
 
-//			visitedEntities.addAll(ent.getEntity());
-
 			// create a bigraph signature out of each entity and max arity
 			// number
 			sigBuilder.add(ent.getName(), true, maxOuterNameNumber);
-			
+
 			addChildren(node, ent.getEntity(), nodes, sigBuilder);
 		}
-	
+
 		Signature signature = sigBuilder.makeSignature();
 
+		return BuildBigraph(nodes, signature);
+
+	}
+	
+	public Bigraph createBigraph(Signature signature) {
+
+		BigraphNode node;
+		Map<String, externalUtility.BigraphNode> nodes = new HashMap<String, externalUtility.BigraphNode>();
+
+		int numOfRoots = 0;
+
+		for (Entity ent : getEntity()) {
+
+			node = new BigraphNode();
+
+			node.setId(ent.getName());
+
+			// add site
+			node.setSite(ent.getSite() != null ? true : false);
+
+			// add parent
+			node.setParentRoot(numOfRoots);
+			numOfRoots++;
+
+			// add control (currently same as the name of the entity)
+			node.setControl(ent.getName());
+
+			// add connectivity (outernames)
+			for (Connectivity con : ent.getConnectivity()) {
+				node.addOuterName(con.getName(), con.isIsClosed());
+			}
+
+			nodes.put(node.getId(), node);
+
+			addChildren(node, ent.getEntity(), nodes, null);
+		}
+
+		return BuildBigraph(nodes, signature);
+
+	}
+
+	protected Bigraph BuildBigraph(Map<String, BigraphNode> nodes, Signature signature) {
+
+		LinkedList<BigraphNode.OuterName> outerNames = new LinkedList<BigraphNode.OuterName>();
+		LinkedList<BigraphNode.InnerName> innerNames = new LinkedList<BigraphNode.InnerName>();
+		HashMap<String, it.uniud.mads.jlibbig.core.std.OuterName> libBigOuterNames = new HashMap<String, it.uniud.mads.jlibbig.core.std.OuterName>();
+		HashMap<String, it.uniud.mads.jlibbig.core.std.InnerName> libBigInnerNames = new HashMap<String, it.uniud.mads.jlibbig.core.std.InnerName>();
+		HashMap<String, Node> libBigNodes = new HashMap<String, Node>();
+		LinkedList<Root> libBigRoots = new LinkedList<Root>();
+		
 		// create bigraph
 		BigraphBuilder biBuilder = new BigraphBuilder(signature);
 
@@ -405,18 +446,16 @@ public class BigraphExpressionImpl extends ExpressionImpl implements BigraphExpr
 
 		// System.out.println("a "+biBuilder.makeBigraph());
 		return biBuilder.makeBigraph();
-
 	}
 
-	private Node createNode(BigraphNode node, BigraphBuilder biBuilder, LinkedList<Root> libBigRoots, 
+	protected Node createNode(BigraphNode node, BigraphBuilder biBuilder, LinkedList<Root> libBigRoots,
 			HashMap<String, OuterName> outerNames, HashMap<String, Node> nodes) {
-		
+
 		LinkedList<Handle> names = new LinkedList<Handle>();
-		OuterName tmp; 
+		OuterName tmp;
 		// find the difference between the outernames (i.e. connections) of the
 		// node and the outernames defined for that node in the signature
-		int difference = node.getOuterNames().size()
-				- maxOuterNameNumber;
+		int difference = node.getOuterNames().size() - maxOuterNameNumber;
 
 		// if knowledge is partial for the node,
 		if (node.isKnowledgePartial()) {
@@ -446,42 +485,47 @@ public class BigraphExpressionImpl extends ExpressionImpl implements BigraphExpr
 			}
 		}
 
-		for(String n : node.getOuterNames()) {
+		for (String n : node.getOuterNames()) {
 			names.add(outerNames.get(n));
 		}
-		
-		//if the parent is a root
-		if(node.isParentRoot()) { //if the parent is a root	
-			Node  n = biBuilder.addNode(node.getControl(), libBigRoots.get(node.getParentRoot()), names);
-			
+
+		// if the parent is a root
+		if (node.isParentRoot()) { // if the parent is a root
+			Node n = biBuilder.addNode(node.getControl(), libBigRoots.get(node.getParentRoot()), names);
+
 			nodes.put(node.getId(), n);
 			return n;
 		}
-		
-		//if the parent is already created as a node in the bigraph
-		if(nodes.containsKey(node.getParent().getId())) {
-			Node  n = biBuilder.addNode(node.getControl(), nodes.get(node.getParent().getId()), names);
-			
+
+		// if the parent is already created as a node in the bigraph
+		if (nodes.containsKey(node.getParent().getId())) {
+			Node n = biBuilder.addNode(node.getControl(), nodes.get(node.getParent().getId()), names);
+
 			nodes.put(node.getId(), n);
 			return n;
 		}
-		
-		//a node will take as outernames only the number specified in the bigraph signature
-		//for example, if a node has arity 2, then it will take only two outernames (the first two) and ignore any other that might exist in the names variable
-		//if the number of outernames defined are less than in the signature, then the rest of outernames will be defined as links (i.e. XX:e)
-		Node n = biBuilder.addNode(node.getControl(), createNode(node.getParent(), biBuilder, libBigRoots, outerNames, nodes), names);
+
+		// a node will take as outernames only the number specified in the
+		// bigraph signature
+		// for example, if a node has arity 2, then it will take only two
+		// outernames (the first two) and ignore any other that might exist in
+		// the names variable
+		// if the number of outernames defined are less than in the signature,
+		// then the rest of outernames will be defined as links (i.e. XX:e)
+		Node n = biBuilder.addNode(node.getControl(),
+				createNode(node.getParent(), biBuilder, libBigRoots, outerNames, nodes), names);
 
 		nodes.put(node.getId(), n);
 		return n;
-			
+
 	}
-	
+
 	protected void addChildren(BigraphNode parent, EList<Entity> entities, Map<String, BigraphNode> nodes,
 			SignatureBuilder sigBuilder) {
-	
+
 		BigraphNode node;
-		
-		for(Entity entity : entities) {
+
+		for (Entity entity : entities) {
 			node = new BigraphNode();
 
 			node.setId(entity.getName());
@@ -489,12 +533,12 @@ public class BigraphExpressionImpl extends ExpressionImpl implements BigraphExpr
 			// add site
 			node.setSite(entity.getSite() != null ? true : false);
 
-			//add parent
+			// add parent
 			node.setParent(parent);
-			
-			//add control (currently same as the name of the entity
+
+			// add control (currently same as the name of the entity
 			node.setControl(entity.getName());
-			
+
 			// add connectivity (outernames)
 			for (Connectivity con : entity.getConnectivity()) {
 				node.addOuterName(con.getName(), con.isIsClosed());
@@ -502,14 +546,17 @@ public class BigraphExpressionImpl extends ExpressionImpl implements BigraphExpr
 
 			nodes.put(node.getId(), node);
 
-
 			// create a bigraph signature out of each entity and max arity
 			// number
-			sigBuilder.add(entity.getName(), true, maxOuterNameNumber);
+			if(sigBuilder != null) {
+				sigBuilder.add(entity.getName(), true, maxOuterNameNumber);	
+			}
 			
+
 			addChildren(node, entity.getEntity(), nodes, sigBuilder);
 		}
 	}
+
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
