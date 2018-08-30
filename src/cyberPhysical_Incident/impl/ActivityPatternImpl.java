@@ -220,12 +220,12 @@ public class ActivityPatternImpl extends MinimalEObjectImpl.Container implements
 			return null;
 		}
 
-//		boolean canBeApplied1 = canBeApplied(patternInitialActivity, firstActivity);
+		boolean canBeApplied1 = canBeApplied(patternInitialActivity, firstActivity);
 		 boolean canBeApplied2 = canBeApplied(patternNextActivity, secondActivity);
 
 		// if both activities apply to the pattern then create a new activity
 		// representing a merge of the two incident activities
-		if (canBeApplied2) {
+		if (canBeApplied1 && canBeApplied2) {
 			// create a new activity
 			// TBD
 			System.out.println("both activities apply to the pattern");
@@ -907,14 +907,12 @@ public class ActivityPatternImpl extends MinimalEObjectImpl.Container implements
 		Matcher matcher = new Matcher();
 		
 		if (incBigraph != null) {
-			System.out.println(incBigraph);
 			// update entities names in the pattern precondition by mapping names to the incident conditiosn
 			boolean isAllMapped = updateEntityNames(patternCondition);
 
 			if (isAllMapped) {
 				// create a bigraph of the pattern precondition
 				Bigraph ptrBigraph = patternCondition.createBigraph(incBigraph.getSignature());
-				System.out.println(ptrBigraph);
 				if (matcher.match(incBigraph, ptrBigraph).iterator().hasNext()) {
 					return true;
 				}
