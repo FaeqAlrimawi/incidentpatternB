@@ -40,6 +40,9 @@ public interface ActivityPattern extends EObject {
 	 * @return A new Activity object that represents the merge of the sequence. Or null if the sequence cannot be mapped
 	 */
 	Activity applyTo(List<Activity> activitySequence);
+	
+	Activity applyTo(Activity startingActivity, Activity endActivity);
+	
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->

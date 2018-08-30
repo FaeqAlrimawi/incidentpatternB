@@ -429,12 +429,32 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 	
 	public Activity getInitialActivity() {
 		
-		for(Activity activity : getActivity()) {
-			if(activity.getPreviousActivities() == null || activity.getPreviousActivities().size()==0){
-				return activity;
+		Scene initialScene = getInitialScene();
+		
+		if(initialScene != null) {
+			return initialScene.getInitialActivity();
+		}
+		
+		return null;
+	}
+	
+	public Scene getInitialScene() {
+		
+		for(Scene scene: getScene()) {
+			if(scene.getPreviousScenes() == null || scene.getPreviousScenes().size()==0){
+				return scene;
 			}
 		
 		}
+		return null;
+	}
+	
+	public Activity getInitialActivity(Scene scene) {
+		
+		if(scene != null) {
+			return scene.getInitialActivity();	
+		}
+		
 		return null;
 	}
 	

@@ -8,6 +8,7 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -195,12 +196,13 @@ public class ActivityPatternImpl extends MinimalEObjectImpl.Container implements
 		if(canBeApplied1 && canBeApplied2) {
 			//create a new activity
 			//TBD
+			System.out.println("both activities apply to the pattern");
 		}
 		
 		return null;
 	}
 	
-	protected boolean canBeApplied(Activity incidentActivity, Activity patternActivity) {
+	protected boolean canBeApplied(Activity patternActivity, Activity incidentActivity) {
 	
 		
 		//compare attributes and references of both activities
@@ -252,17 +254,21 @@ public class ActivityPatternImpl extends MinimalEObjectImpl.Container implements
 		//8-Postcondition
 		//-9-Accomplices (to be implemented)
 		
+	
 		
 		//1-Initiator: compare initiator attributes found in the pattern activity to that in the incident activity
 		boolean canBeApplied = compareInitiators(patternActivity.getInitiator(), incidentActivity.getInitiator());
 		
 		if(!canBeApplied) {
+			
 			return false;
 		}
 		
+		
+		
 		//2-Target assets
-		Asset ptrTargetAsset = patternActivity.getTargetedAssets()!=null?patternActivity.getTargetedAssets().get(0):null;
-		Asset incTargetAsset = incidentActivity.getTargetedAssets()!=null?incidentActivity.getTargetedAssets().get(0):null;
+		Asset ptrTargetAsset = !patternActivity.getTargetedAssets().isEmpty()?patternActivity.getTargetedAssets().get(0):null;
+		Asset incTargetAsset = !incidentActivity.getTargetedAssets().isEmpty()?incidentActivity.getTargetedAssets().get(0):null;
 		
 		canBeApplied = compareAssets(ptrTargetAsset, incTargetAsset);
 		
@@ -270,9 +276,10 @@ public class ActivityPatternImpl extends MinimalEObjectImpl.Container implements
 			return false;
 		}
 		
+	
 		//3-Resources
-		Resource ptrResource = patternActivity.getResources()!=null?patternActivity.getResources().get(0):null;
-		Resource incResource = incidentActivity.getResources()!=null?incidentActivity.getResources().get(0):null;
+		Resource ptrResource = !patternActivity.getResources().isEmpty()?patternActivity.getResources().get(0):null;
+		Resource incResource = !incidentActivity.getResources().isEmpty()?incidentActivity.getResources().get(0):null;
 		
 		canBeApplied = compareResources(ptrResource, incResource);
 		
@@ -280,16 +287,19 @@ public class ActivityPatternImpl extends MinimalEObjectImpl.Container implements
 			return false;
 		}
 		
+		
+		System.out.println("checking exploited assets");
 		//4-Exploited assets
-		Asset ptrExploitedAsset = patternActivity.getExploitedAssets()!=null?patternActivity.getExploitedAssets().get(0):null;
-		Asset incExploitedAsset = incidentActivity.getExploitedAssets()!=null?incidentActivity.getExploitedAssets().get(0):null;
+		Asset ptrExploitedAsset = !patternActivity.getExploitedAssets().isEmpty()?patternActivity.getExploitedAssets().get(0):null;
+		Asset incExploitedAsset = !incidentActivity.getExploitedAssets().isEmpty()?incidentActivity.getExploitedAssets().get(0):null;
 				
 		canBeApplied = compareAssets(ptrExploitedAsset, incExploitedAsset);
 				
 		if(!canBeApplied) {
 			return false;
 		}
-			
+		System.out.println("exploited assets applied");
+		
 		//5-Locations
 		Location ptrLocation = patternActivity.getLocation();
 		Location incLocation = incidentActivity.getLocation();
@@ -301,8 +311,8 @@ public class ActivityPatternImpl extends MinimalEObjectImpl.Container implements
 		}
 		
 		//6-Vicitms
-		Actor ptrVicitm = patternActivity.getVictims()!=null?patternActivity.getVictims().get(0):null;
-		Actor incVicitm = incidentActivity.getVictims()!=null?incidentActivity.getVictims().get(0):null;
+		Actor ptrVicitm = !patternActivity.getVictims().isEmpty()?patternActivity.getVictims().get(0):null;
+		Actor incVicitm = !incidentActivity.getVictims().isEmpty()?incidentActivity.getVictims().get(0):null;
 			
 		canBeApplied = compareActors(ptrVicitm, incVicitm);
 		
@@ -315,10 +325,52 @@ public class ActivityPatternImpl extends MinimalEObjectImpl.Container implements
 		return true;
 	}
 	
+	public Activity applyTo(Activity startingActivity, Activity endActivity) {
+		
+		if(startingActivity == null || endActivity == null) {
+			return null;
+		}
+		
+		if(startingActivity.equals(endActivity)) {
+			return startingActivity;
+		}
+		
+		EList<Activity> activitiesToMerge = new BasicEList<Activity>();
+		
+		activitiesToMerge.add(startingActivity);
+		
+		//assuming there's only one next activity. In future, an algorithm for finding all possible sequences between two activities can be implemented
+		Activity nextActivity = null; 
+		
+		if(startingActivity.getNextActivities().size()>0) {
+			nextActivity = startingActivity.getNextActivities().get(0);	
+		}
+		
+		while(nextActivity != null) {
+			
+			activitiesToMerge.add(nextActivity);
+			
+			if(nextActivity.equals(endActivity)) {
+				break;
+			}
+			
+			if(nextActivity.getNextActivities().size()>0) {
+				nextActivity = nextActivity.getNextActivities().get(0);	
+			} else {
+				nextActivity = null;
+			}
+			
+		}
+		
+		return applyTo(activitiesToMerge);
+
+		
+	}
+
 	protected boolean compareInitiators(ActivityInitiator patternActivityInitiator, ActivityInitiator incidentActivityInitiator) {
 	
-		//if both don't have an initiator then return true
-		if(incidentActivityInitiator == null && patternActivityInitiator == null) {
+		
+		if(patternActivityInitiator == null) {
 			return true;
 		}
 		
@@ -373,8 +425,8 @@ public class ActivityPatternImpl extends MinimalEObjectImpl.Container implements
 		//4-Connections
 		
 		//1-type: compare the types of both entities
-		String ptrActType = incidentEntity.getType()!=null?incidentEntity.getType().getName():null;
-		String incActType = patternEntity.getType()!=null?patternEntity.getType().getName():null;
+		String ptrActType = patternEntity.getType()!=null?patternEntity.getType().getName():null;
+		String incActType = incidentEntity.getType()!=null?incidentEntity.getType().getName():null;
 		
 		if(ptrActType != null && incActType == null) {
 			return false;
@@ -387,10 +439,10 @@ public class ActivityPatternImpl extends MinimalEObjectImpl.Container implements
 		}
 		
 		//2-parent entity: find out if the type of the parent entity is of the same type or super type to that of the incident activity
-		IncidentEntity ptrActParent = (IncidentEntity)incidentEntity.getParentEntity();
-		IncidentEntity incActParent = (IncidentEntity)patternEntity.getParentEntity();
+		IncidentEntity ptrActParent = (IncidentEntity)patternEntity.getParentEntity();
+		IncidentEntity incActParent = (IncidentEntity)incidentEntity.getParentEntity();
 		
-		if(incidentEntity != null && incActParent == null) {
+		if(ptrActParent != null && incActParent == null) {
 			return false;
 		}
 		
@@ -411,8 +463,8 @@ public class ActivityPatternImpl extends MinimalEObjectImpl.Container implements
 		Knowledge ptrCotnainedEntitiesKnowledge = incidentEntity.getContainedAssetsKnowledge();
 //		Knowledge incContainedEntitiesKnowledge = patternEntity.getContainedAssetsKnowledge();
 		
-		EList<Location> ptrContainedEntities = incidentEntity.getContainedEntities();
-		EList<Location> incContainedEntities = patternEntity.getContainedEntities();
+		EList<Location> ptrContainedEntities = patternEntity.getContainedEntities();
+		EList<Location> incContainedEntities = incidentEntity.getContainedEntities();
 		
 		//check if the knowledge is exact then both should have the same number of entities
 		if(ptrCotnainedEntitiesKnowledge.equals(Knowledge.EXACT)) {
@@ -432,11 +484,11 @@ public class ActivityPatternImpl extends MinimalEObjectImpl.Container implements
 		//4-Connections: check number & types
 		//if knowledge is complete in pattern entity then both should have the same number, 
 		//and type of pattern contained entities should be same class or superclass
-		Knowledge ptrConnectionsKnowledge = incidentEntity.getConnectionsKnowledge();
+		Knowledge ptrConnectionsKnowledge = patternEntity.getConnectionsKnowledge();
 //		Knowledge incContainedEntitiesKnowledge = patternEntity.getContainedAssetsKnowledge();
 		
-		EList<Connection> ptrConnections = incidentEntity.getConnections();
-		EList<Connection> incConnections = patternEntity.getConnections();
+		EList<Connection> ptrConnections = patternEntity.getConnections();
+		EList<Connection> incConnections = incidentEntity.getConnections();
 		
 		//check if the knowledge is exact then both should have the same number of entities
 		if(ptrConnectionsKnowledge.equals(Knowledge.EXACT)) {
@@ -692,7 +744,6 @@ public class ActivityPatternImpl extends MinimalEObjectImpl.Container implements
 			
 		}
 		
-		
 		return true;
 	}
 	
@@ -739,7 +790,6 @@ public class ActivityPatternImpl extends MinimalEObjectImpl.Container implements
 			isConnectionMatched = false;
 			
 		}
-		
 		
 		return true;
 	}

@@ -153,7 +153,8 @@ public interface IncidentDiagram extends EObject {
 	Connection hasConnection(String incidentEntity1, String incidentEntity2);
 	
 	Activity getInitialActivity();
-	
+	Activity getInitialActivity(Scene scene);
+	Scene getInitialScene();
 	/**
 	 * Returns the value of the '<em><b>Crime Script</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
