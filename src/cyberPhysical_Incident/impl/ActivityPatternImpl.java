@@ -287,8 +287,6 @@ public class ActivityPatternImpl extends MinimalEObjectImpl.Container implements
 			return false;
 		}
 		
-		
-		System.out.println("checking exploited assets");
 		//4-Exploited assets
 		Asset ptrExploitedAsset = !patternActivity.getExploitedAssets().isEmpty()?patternActivity.getExploitedAssets().get(0):null;
 		Asset incExploitedAsset = !incidentActivity.getExploitedAssets().isEmpty()?incidentActivity.getExploitedAssets().get(0):null;
@@ -298,8 +296,7 @@ public class ActivityPatternImpl extends MinimalEObjectImpl.Container implements
 		if(!canBeApplied) {
 			return false;
 		}
-		System.out.println("exploited assets applied");
-		
+				
 		//5-Locations
 		Location ptrLocation = patternActivity.getLocation();
 		Location incLocation = incidentActivity.getLocation();
@@ -438,6 +435,8 @@ public class ActivityPatternImpl extends MinimalEObjectImpl.Container implements
 			}
 		}
 		
+	
+		
 		//2-parent entity: find out if the type of the parent entity is of the same type or super type to that of the incident activity
 		IncidentEntity ptrActParent = (IncidentEntity)patternEntity.getParentEntity();
 		IncidentEntity incActParent = (IncidentEntity)incidentEntity.getParentEntity();
@@ -449,8 +448,8 @@ public class ActivityPatternImpl extends MinimalEObjectImpl.Container implements
 		//check parent types (pattern parent type should be same class or super class of incident parent type)
 		if(ptrActParent != null && incActParent != null) {
  
-			String ptrParentType = incidentEntity.getType()!=null?incidentEntity.getType().getName():null;
-			String incParentType = patternEntity.getType()!=null?patternEntity.getType().getName():null;
+			String ptrParentType = ptrActParent.getType()!=null?ptrActParent.getType().getName():null;
+			String incParentType = incActParent.getType()!=null?incActParent.getType().getName():null;
 			
 			if(!isSameClassOrSuperClass(ptrParentType, incParentType)) {
 				return false;
