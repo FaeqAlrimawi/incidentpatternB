@@ -254,7 +254,7 @@ public class BigraphExpressionImpl extends ExpressionImpl implements BigraphExpr
 		return false;
 	}
 
-	public Bigraph createBigraph() {
+	public Bigraph createBigraph(boolean isGround) {
 
 		BigraphNode node;
 		Map<String, externalUtility.BigraphNode> nodes = new HashMap<String, externalUtility.BigraphNode>();
@@ -268,8 +268,8 @@ public class BigraphExpressionImpl extends ExpressionImpl implements BigraphExpr
 
 			node.setId(ent.getName());
 
-			// add site
-			node.setSite(ent.getSite() != null ? true : false);
+			/*// add site
+			node.setSite(ent.getSite() != null ? true : false);*/
 
 			// add parent
 			node.setParentRoot(numOfRoots);
@@ -289,7 +289,7 @@ public class BigraphExpressionImpl extends ExpressionImpl implements BigraphExpr
 			// number
 			sigBuilder.add(ent.getName(), true, maxOuterNameNumber);
 
-			addChildren(node, ent.getEntity(), nodes, sigBuilder);
+			addChildren(node, ent.getEntity(), nodes, sigBuilder, isGround);
 		}
 
 		Signature signature = sigBuilder.makeSignature();
@@ -328,7 +328,7 @@ public class BigraphExpressionImpl extends ExpressionImpl implements BigraphExpr
 
 			nodes.put(node.getId(), node);
 
-			addChildren(node, ent.getEntity(), nodes, null);
+			addChildren(node, ent.getEntity(), nodes, null, false);
 		}
 
 		return BuildBigraph(nodes, signature);
@@ -521,7 +521,7 @@ public class BigraphExpressionImpl extends ExpressionImpl implements BigraphExpr
 	}
 
 	protected void addChildren(BigraphNode parent, EList<Entity> entities, Map<String, BigraphNode> nodes,
-			SignatureBuilder sigBuilder) {
+			SignatureBuilder sigBuilder, boolean isGround) {
 
 		BigraphNode node;
 
@@ -530,9 +530,11 @@ public class BigraphExpressionImpl extends ExpressionImpl implements BigraphExpr
 
 			node.setId(entity.getName());
 
-			// add site
-			node.setSite(entity.getSite() != null ? true : false);
-
+			if(!isGround) {
+				// add site
+				node.setSite(entity.getSite() != null ? true : false);	
+			}
+			
 			// add parent
 			node.setParent(parent);
 
@@ -553,7 +555,7 @@ public class BigraphExpressionImpl extends ExpressionImpl implements BigraphExpr
 			}
 			
 
-			addChildren(node, entity.getEntity(), nodes, sigBuilder);
+			addChildren(node, entity.getEntity(), nodes, sigBuilder, isGround);
 		}
 	}
 
