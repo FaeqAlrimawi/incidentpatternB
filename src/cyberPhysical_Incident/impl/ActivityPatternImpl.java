@@ -310,6 +310,8 @@ public class ActivityPatternImpl extends MinimalEObjectImpl.Container implements
 			return false;
 		}
 		
+		//evaluate pre & post
+		
 		return true;
 	}
 	
