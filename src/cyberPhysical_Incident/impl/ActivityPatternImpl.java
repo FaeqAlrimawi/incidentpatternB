@@ -279,7 +279,7 @@ public class ActivityPatternImpl extends MinimalEObjectImpl.Container implements
 		if (ptrInitiator != null) {
 			entityMap.put(((IncidentEntity) ptrInitiator).getName(), ((IncidentEntity) incInitiator).getName());
 		}
-
+	
 		// 2-Target assets
 		Asset ptrTargetAsset = !patternActivity.getTargetedAssets().isEmpty()
 				? patternActivity.getTargetedAssets().get(0) : null;
@@ -295,6 +295,7 @@ public class ActivityPatternImpl extends MinimalEObjectImpl.Container implements
 		if (ptrTargetAsset != null) {
 			entityMap.put(ptrTargetAsset.getName(), incTargetAsset.getName());
 		}
+
 
 		// 3-Resources
 		Resource ptrResource = !patternActivity.getResources().isEmpty() ? patternActivity.getResources().get(0) : null;
@@ -327,6 +328,7 @@ public class ActivityPatternImpl extends MinimalEObjectImpl.Container implements
 			entityMap.put(ptrExploitedAsset.getName(), incExploitedAsset.getName());
 		}
 
+
 		// 5-Locations
 		Location ptrLocation = patternActivity.getLocation();
 		Location incLocation = incidentActivity.getLocation();
@@ -336,7 +338,7 @@ public class ActivityPatternImpl extends MinimalEObjectImpl.Container implements
 		if (!canBeApplied) {
 			return false;
 		}
-
+		
 		if (ptrLocation != null) {
 			entityMap.put(((IncidentEntity) ptrLocation).getName(), ((IncidentEntity) incLocation).getName());
 		}
@@ -355,6 +357,7 @@ public class ActivityPatternImpl extends MinimalEObjectImpl.Container implements
 			entityMap.put(ptrVicitm.getName(), incVicitm.getName());
 		}
 
+	
 		// evaluate precondition
 		Precondition ptrPre = patternActivity.getPrecondition();
 		BigraphExpression ptrBigExp = ptrPre != null ? (BigraphExpression) ptrPre.getExpression() : null;
@@ -367,7 +370,7 @@ public class ActivityPatternImpl extends MinimalEObjectImpl.Container implements
 		if (!canBeApplied) {
 			return false;
 		}
-
+		
 		// evaluate postcondition
 		Postcondition ptrPost = patternActivity.getPostcondition();
 		BigraphExpression ptrBigExpPost = ptrPost != null ? (BigraphExpression) ptrPost.getExpression() : null;
@@ -763,6 +766,7 @@ public class ActivityPatternImpl extends MinimalEObjectImpl.Container implements
 
 			Class<?> incidentClass = Class.forName(potentialIncidentClassName);
 
+			
 			if (!patternClass.isAssignableFrom(incidentClass)) {
 				return false;
 			}
@@ -770,7 +774,7 @@ public class ActivityPatternImpl extends MinimalEObjectImpl.Container implements
 			// TODO Auto-generated catch block
 			return false;
 		}
-
+		
 		return true;
 	}
 
@@ -928,9 +932,11 @@ public class ActivityPatternImpl extends MinimalEObjectImpl.Container implements
 		// currently if there are unmapped entities in the pattern condition
 		// then it is a NO match
 		if (notFoundNames.size() != 0) {
+//			System.out.println(notFoundNames);
 			return false;
 		}
-
+		
+//		System.out.println("True");
 		return true;
 	}
 
