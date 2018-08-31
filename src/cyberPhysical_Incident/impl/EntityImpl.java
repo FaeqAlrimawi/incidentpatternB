@@ -94,7 +94,7 @@ public class EntityImpl extends MinimalEObjectImpl.Container implements Entity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * 
 	 */
 	protected EntityImpl() {
 		super();

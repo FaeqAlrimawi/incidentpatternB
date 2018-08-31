@@ -52,22 +52,14 @@ import it.uniud.mads.jlibbig.core.std.Matcher;
  * The following features are implemented:
  * </p>
  * <ul>
- * <li>{@link cyberPhysical_Incident.impl.ActivityPatternImpl#getName
- * <em>Name</em>}</li>
- * <li>{@link cyberPhysical_Incident.impl.ActivityPatternImpl#getSeverity
- * <em>Severity</em>}</li>
- * <li>{@link cyberPhysical_Incident.impl.ActivityPatternImpl#getDescription
- * <em>Description</em>}</li>
- * <li>{@link cyberPhysical_Incident.impl.ActivityPatternImpl#getSkillsRequired
- * <em>Skills Required</em>}</li>
- * <li>{@link cyberPhysical_Incident.impl.ActivityPatternImpl#getPatternsFollow
- * <em>Patterns Follow</em>}</li>
- * <li>{@link cyberPhysical_Incident.impl.ActivityPatternImpl#getAbstractActivity
- * <em>Abstract Activity</em>}</li>
- * <li>{@link cyberPhysical_Incident.impl.ActivityPatternImpl#getIncidententity
- * <em>Incidententity</em>}</li>
- * <li>{@link cyberPhysical_Incident.impl.ActivityPatternImpl#getConnection
- * <em>Connection</em>}</li>
+ *   <li>{@link cyberPhysical_Incident.impl.ActivityPatternImpl#getName <em>Name</em>}</li>
+ *   <li>{@link cyberPhysical_Incident.impl.ActivityPatternImpl#getSeverity <em>Severity</em>}</li>
+ *   <li>{@link cyberPhysical_Incident.impl.ActivityPatternImpl#getDescription <em>Description</em>}</li>
+ *   <li>{@link cyberPhysical_Incident.impl.ActivityPatternImpl#getSkillsRequired <em>Skills Required</em>}</li>
+ *   <li>{@link cyberPhysical_Incident.impl.ActivityPatternImpl#getPatternsFollow <em>Patterns Follow</em>}</li>
+ *   <li>{@link cyberPhysical_Incident.impl.ActivityPatternImpl#getAbstractActivity <em>Abstract Activity</em>}</li>
+ *   <li>{@link cyberPhysical_Incident.impl.ActivityPatternImpl#getIncidententity <em>Incidententity</em>}</li>
+ *   <li>{@link cyberPhysical_Incident.impl.ActivityPatternImpl#getConnection <em>Connection</em>}</li>
  * </ul>
  *
  * @generated
@@ -76,7 +68,6 @@ public class ActivityPatternImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -86,7 +77,6 @@ public class ActivityPatternImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -94,9 +84,8 @@ public class ActivityPatternImpl extends MinimalEObjectImpl.Container implements
 	protected String name = NAME_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getSeverity() <em>Severity</em>}'
-	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The default value of the '{@link #getSeverity() <em>Severity</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getSeverity()
 	 * @generated
 	 * @ordered
@@ -104,9 +93,8 @@ public class ActivityPatternImpl extends MinimalEObjectImpl.Container implements
 	protected static final ActivityPatternSeverity SEVERITY_EDEFAULT = ActivityPatternSeverity.LOW;
 
 	/**
-	 * The cached value of the '{@link #getSeverity() <em>Severity</em>}'
-	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The cached value of the '{@link #getSeverity() <em>Severity</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getSeverity()
 	 * @generated
 	 * @ordered
@@ -114,9 +102,8 @@ public class ActivityPatternImpl extends MinimalEObjectImpl.Container implements
 	protected ActivityPatternSeverity severity = SEVERITY_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getDescription() <em>Description</em>}'
-	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getDescription()
 	 * @generated
 	 * @ordered
@@ -124,9 +111,8 @@ public class ActivityPatternImpl extends MinimalEObjectImpl.Container implements
 	protected static final String DESCRIPTION_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getDescription() <em>Description</em>}'
-	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getDescription()
 	 * @generated
 	 * @ordered
@@ -134,9 +120,8 @@ public class ActivityPatternImpl extends MinimalEObjectImpl.Container implements
 	protected String description = DESCRIPTION_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getSkillsRequired() <em>Skills
-	 * Required</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The default value of the '{@link #getSkillsRequired() <em>Skills Required</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getSkillsRequired()
 	 * @generated
 	 * @ordered
@@ -144,9 +129,8 @@ public class ActivityPatternImpl extends MinimalEObjectImpl.Container implements
 	protected static final Skill_Level SKILLS_REQUIRED_EDEFAULT = Skill_Level.LOW;
 
 	/**
-	 * The cached value of the '{@link #getSkillsRequired() <em>Skills
-	 * Required</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The cached value of the '{@link #getSkillsRequired() <em>Skills Required</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getSkillsRequired()
 	 * @generated
 	 * @ordered
@@ -165,10 +149,9 @@ public class ActivityPatternImpl extends MinimalEObjectImpl.Container implements
 	protected EList<ActivityPattern> patternsFollow;
 
 	/**
-	 * The cached value of the '{@link #getAbstractActivity() <em>Abstract
-	 * Activity</em>}' containment reference list. <!-- begin-user-doc --> <!--
+	 * The cached value of the '{@link #getAbstractActivity() <em>Abstract Activity</em>}' containment reference list.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @see #getAbstractActivity()
 	 * @generated
 	 * @ordered
@@ -176,10 +159,9 @@ public class ActivityPatternImpl extends MinimalEObjectImpl.Container implements
 	protected EList<Activity> abstractActivity;
 
 	/**
-	 * The cached value of the '{@link #getIncidententity()
-	 * <em>Incidententity</em>}' containment reference list. <!-- begin-user-doc
+	 * The cached value of the '{@link #getIncidententity() <em>Incidententity</em>}' containment reference list.
+	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 * 
 	 * @see #getIncidententity()
 	 * @generated
 	 * @ordered
@@ -187,9 +169,8 @@ public class ActivityPatternImpl extends MinimalEObjectImpl.Container implements
 	protected EList<IncidentEntity> incidententity;
 
 	/**
-	 * The cached value of the '{@link #getConnection() <em>Connection</em>}'
-	 * containment reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The cached value of the '{@link #getConnection() <em>Connection</em>}' containment reference list.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getConnection()
 	 * @generated
 	 * @ordered
@@ -200,7 +181,6 @@ public class ActivityPatternImpl extends MinimalEObjectImpl.Container implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	protected ActivityPatternImpl() {
@@ -975,7 +955,6 @@ public class ActivityPatternImpl extends MinimalEObjectImpl.Container implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -985,7 +964,6 @@ public class ActivityPatternImpl extends MinimalEObjectImpl.Container implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public String getName() {
@@ -994,20 +972,17 @@ public class ActivityPatternImpl extends MinimalEObjectImpl.Container implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysicalIncidentPackage.ACTIVITY_PATTERN__NAME,
-					oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysicalIncidentPackage.ACTIVITY_PATTERN__NAME, oldName, name));
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public ActivityPatternSeverity getSeverity() {
@@ -1016,20 +991,17 @@ public class ActivityPatternImpl extends MinimalEObjectImpl.Container implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public void setSeverity(ActivityPatternSeverity newSeverity) {
 		ActivityPatternSeverity oldSeverity = severity;
 		severity = newSeverity == null ? SEVERITY_EDEFAULT : newSeverity;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					CyberPhysicalIncidentPackage.ACTIVITY_PATTERN__SEVERITY, oldSeverity, severity));
+			eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysicalIncidentPackage.ACTIVITY_PATTERN__SEVERITY, oldSeverity, severity));
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public String getDescription() {
@@ -1038,20 +1010,17 @@ public class ActivityPatternImpl extends MinimalEObjectImpl.Container implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public void setDescription(String newDescription) {
 		String oldDescription = description;
 		description = newDescription;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					CyberPhysicalIncidentPackage.ACTIVITY_PATTERN__DESCRIPTION, oldDescription, description));
+			eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysicalIncidentPackage.ACTIVITY_PATTERN__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public Skill_Level getSkillsRequired() {
@@ -1060,229 +1029,212 @@ public class ActivityPatternImpl extends MinimalEObjectImpl.Container implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public void setSkillsRequired(Skill_Level newSkillsRequired) {
 		Skill_Level oldSkillsRequired = skillsRequired;
 		skillsRequired = newSkillsRequired == null ? SKILLS_REQUIRED_EDEFAULT : newSkillsRequired;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					CyberPhysicalIncidentPackage.ACTIVITY_PATTERN__SKILLS_REQUIRED, oldSkillsRequired, skillsRequired));
+			eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysicalIncidentPackage.ACTIVITY_PATTERN__SKILLS_REQUIRED, oldSkillsRequired, skillsRequired));
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public EList<ActivityPattern> getPatternsFollow() {
 		if (patternsFollow == null) {
-			patternsFollow = new EObjectResolvingEList<ActivityPattern>(ActivityPattern.class, this,
-					CyberPhysicalIncidentPackage.ACTIVITY_PATTERN__PATTERNS_FOLLOW);
+			patternsFollow = new EObjectResolvingEList<ActivityPattern>(ActivityPattern.class, this, CyberPhysicalIncidentPackage.ACTIVITY_PATTERN__PATTERNS_FOLLOW);
 		}
 		return patternsFollow;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public EList<Activity> getAbstractActivity() {
 		if (abstractActivity == null) {
-			abstractActivity = new EObjectContainmentEList<Activity>(Activity.class, this,
-					CyberPhysicalIncidentPackage.ACTIVITY_PATTERN__ABSTRACT_ACTIVITY);
+			abstractActivity = new EObjectContainmentEList<Activity>(Activity.class, this, CyberPhysicalIncidentPackage.ACTIVITY_PATTERN__ABSTRACT_ACTIVITY);
 		}
 		return abstractActivity;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public EList<IncidentEntity> getIncidententity() {
 		if (incidententity == null) {
-			incidententity = new EObjectContainmentEList<IncidentEntity>(IncidentEntity.class, this,
-					CyberPhysicalIncidentPackage.ACTIVITY_PATTERN__INCIDENTENTITY);
+			incidententity = new EObjectContainmentEList<IncidentEntity>(IncidentEntity.class, this, CyberPhysicalIncidentPackage.ACTIVITY_PATTERN__INCIDENTENTITY);
 		}
 		return incidententity;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public EList<Connection> getConnection() {
 		if (connection == null) {
-			connection = new EObjectContainmentEList<Connection>(Connection.class, this,
-					CyberPhysicalIncidentPackage.ACTIVITY_PATTERN__CONNECTION);
+			connection = new EObjectContainmentEList<Connection>(Connection.class, this, CyberPhysicalIncidentPackage.ACTIVITY_PATTERN__CONNECTION);
 		}
 		return connection;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case CyberPhysicalIncidentPackage.ACTIVITY_PATTERN__ABSTRACT_ACTIVITY:
-			return ((InternalEList<?>) getAbstractActivity()).basicRemove(otherEnd, msgs);
-		case CyberPhysicalIncidentPackage.ACTIVITY_PATTERN__INCIDENTENTITY:
-			return ((InternalEList<?>) getIncidententity()).basicRemove(otherEnd, msgs);
-		case CyberPhysicalIncidentPackage.ACTIVITY_PATTERN__CONNECTION:
-			return ((InternalEList<?>) getConnection()).basicRemove(otherEnd, msgs);
+			case CyberPhysicalIncidentPackage.ACTIVITY_PATTERN__ABSTRACT_ACTIVITY:
+				return ((InternalEList<?>)getAbstractActivity()).basicRemove(otherEnd, msgs);
+			case CyberPhysicalIncidentPackage.ACTIVITY_PATTERN__INCIDENTENTITY:
+				return ((InternalEList<?>)getIncidententity()).basicRemove(otherEnd, msgs);
+			case CyberPhysicalIncidentPackage.ACTIVITY_PATTERN__CONNECTION:
+				return ((InternalEList<?>)getConnection()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case CyberPhysicalIncidentPackage.ACTIVITY_PATTERN__NAME:
-			return getName();
-		case CyberPhysicalIncidentPackage.ACTIVITY_PATTERN__SEVERITY:
-			return getSeverity();
-		case CyberPhysicalIncidentPackage.ACTIVITY_PATTERN__DESCRIPTION:
-			return getDescription();
-		case CyberPhysicalIncidentPackage.ACTIVITY_PATTERN__SKILLS_REQUIRED:
-			return getSkillsRequired();
-		case CyberPhysicalIncidentPackage.ACTIVITY_PATTERN__PATTERNS_FOLLOW:
-			return getPatternsFollow();
-		case CyberPhysicalIncidentPackage.ACTIVITY_PATTERN__ABSTRACT_ACTIVITY:
-			return getAbstractActivity();
-		case CyberPhysicalIncidentPackage.ACTIVITY_PATTERN__INCIDENTENTITY:
-			return getIncidententity();
-		case CyberPhysicalIncidentPackage.ACTIVITY_PATTERN__CONNECTION:
-			return getConnection();
+			case CyberPhysicalIncidentPackage.ACTIVITY_PATTERN__NAME:
+				return getName();
+			case CyberPhysicalIncidentPackage.ACTIVITY_PATTERN__SEVERITY:
+				return getSeverity();
+			case CyberPhysicalIncidentPackage.ACTIVITY_PATTERN__DESCRIPTION:
+				return getDescription();
+			case CyberPhysicalIncidentPackage.ACTIVITY_PATTERN__SKILLS_REQUIRED:
+				return getSkillsRequired();
+			case CyberPhysicalIncidentPackage.ACTIVITY_PATTERN__PATTERNS_FOLLOW:
+				return getPatternsFollow();
+			case CyberPhysicalIncidentPackage.ACTIVITY_PATTERN__ABSTRACT_ACTIVITY:
+				return getAbstractActivity();
+			case CyberPhysicalIncidentPackage.ACTIVITY_PATTERN__INCIDENTENTITY:
+				return getIncidententity();
+			case CyberPhysicalIncidentPackage.ACTIVITY_PATTERN__CONNECTION:
+				return getConnection();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case CyberPhysicalIncidentPackage.ACTIVITY_PATTERN__NAME:
-			setName((String) newValue);
-			return;
-		case CyberPhysicalIncidentPackage.ACTIVITY_PATTERN__SEVERITY:
-			setSeverity((ActivityPatternSeverity) newValue);
-			return;
-		case CyberPhysicalIncidentPackage.ACTIVITY_PATTERN__DESCRIPTION:
-			setDescription((String) newValue);
-			return;
-		case CyberPhysicalIncidentPackage.ACTIVITY_PATTERN__SKILLS_REQUIRED:
-			setSkillsRequired((Skill_Level) newValue);
-			return;
-		case CyberPhysicalIncidentPackage.ACTIVITY_PATTERN__PATTERNS_FOLLOW:
-			getPatternsFollow().clear();
-			getPatternsFollow().addAll((Collection<? extends ActivityPattern>) newValue);
-			return;
-		case CyberPhysicalIncidentPackage.ACTIVITY_PATTERN__ABSTRACT_ACTIVITY:
-			getAbstractActivity().clear();
-			getAbstractActivity().addAll((Collection<? extends Activity>) newValue);
-			return;
-		case CyberPhysicalIncidentPackage.ACTIVITY_PATTERN__INCIDENTENTITY:
-			getIncidententity().clear();
-			getIncidententity().addAll((Collection<? extends IncidentEntity>) newValue);
-			return;
-		case CyberPhysicalIncidentPackage.ACTIVITY_PATTERN__CONNECTION:
-			getConnection().clear();
-			getConnection().addAll((Collection<? extends Connection>) newValue);
-			return;
+			case CyberPhysicalIncidentPackage.ACTIVITY_PATTERN__NAME:
+				setName((String)newValue);
+				return;
+			case CyberPhysicalIncidentPackage.ACTIVITY_PATTERN__SEVERITY:
+				setSeverity((ActivityPatternSeverity)newValue);
+				return;
+			case CyberPhysicalIncidentPackage.ACTIVITY_PATTERN__DESCRIPTION:
+				setDescription((String)newValue);
+				return;
+			case CyberPhysicalIncidentPackage.ACTIVITY_PATTERN__SKILLS_REQUIRED:
+				setSkillsRequired((Skill_Level)newValue);
+				return;
+			case CyberPhysicalIncidentPackage.ACTIVITY_PATTERN__PATTERNS_FOLLOW:
+				getPatternsFollow().clear();
+				getPatternsFollow().addAll((Collection<? extends ActivityPattern>)newValue);
+				return;
+			case CyberPhysicalIncidentPackage.ACTIVITY_PATTERN__ABSTRACT_ACTIVITY:
+				getAbstractActivity().clear();
+				getAbstractActivity().addAll((Collection<? extends Activity>)newValue);
+				return;
+			case CyberPhysicalIncidentPackage.ACTIVITY_PATTERN__INCIDENTENTITY:
+				getIncidententity().clear();
+				getIncidententity().addAll((Collection<? extends IncidentEntity>)newValue);
+				return;
+			case CyberPhysicalIncidentPackage.ACTIVITY_PATTERN__CONNECTION:
+				getConnection().clear();
+				getConnection().addAll((Collection<? extends Connection>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case CyberPhysicalIncidentPackage.ACTIVITY_PATTERN__NAME:
-			setName(NAME_EDEFAULT);
-			return;
-		case CyberPhysicalIncidentPackage.ACTIVITY_PATTERN__SEVERITY:
-			setSeverity(SEVERITY_EDEFAULT);
-			return;
-		case CyberPhysicalIncidentPackage.ACTIVITY_PATTERN__DESCRIPTION:
-			setDescription(DESCRIPTION_EDEFAULT);
-			return;
-		case CyberPhysicalIncidentPackage.ACTIVITY_PATTERN__SKILLS_REQUIRED:
-			setSkillsRequired(SKILLS_REQUIRED_EDEFAULT);
-			return;
-		case CyberPhysicalIncidentPackage.ACTIVITY_PATTERN__PATTERNS_FOLLOW:
-			getPatternsFollow().clear();
-			return;
-		case CyberPhysicalIncidentPackage.ACTIVITY_PATTERN__ABSTRACT_ACTIVITY:
-			getAbstractActivity().clear();
-			return;
-		case CyberPhysicalIncidentPackage.ACTIVITY_PATTERN__INCIDENTENTITY:
-			getIncidententity().clear();
-			return;
-		case CyberPhysicalIncidentPackage.ACTIVITY_PATTERN__CONNECTION:
-			getConnection().clear();
-			return;
+			case CyberPhysicalIncidentPackage.ACTIVITY_PATTERN__NAME:
+				setName(NAME_EDEFAULT);
+				return;
+			case CyberPhysicalIncidentPackage.ACTIVITY_PATTERN__SEVERITY:
+				setSeverity(SEVERITY_EDEFAULT);
+				return;
+			case CyberPhysicalIncidentPackage.ACTIVITY_PATTERN__DESCRIPTION:
+				setDescription(DESCRIPTION_EDEFAULT);
+				return;
+			case CyberPhysicalIncidentPackage.ACTIVITY_PATTERN__SKILLS_REQUIRED:
+				setSkillsRequired(SKILLS_REQUIRED_EDEFAULT);
+				return;
+			case CyberPhysicalIncidentPackage.ACTIVITY_PATTERN__PATTERNS_FOLLOW:
+				getPatternsFollow().clear();
+				return;
+			case CyberPhysicalIncidentPackage.ACTIVITY_PATTERN__ABSTRACT_ACTIVITY:
+				getAbstractActivity().clear();
+				return;
+			case CyberPhysicalIncidentPackage.ACTIVITY_PATTERN__INCIDENTENTITY:
+				getIncidententity().clear();
+				return;
+			case CyberPhysicalIncidentPackage.ACTIVITY_PATTERN__CONNECTION:
+				getConnection().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case CyberPhysicalIncidentPackage.ACTIVITY_PATTERN__NAME:
-			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-		case CyberPhysicalIncidentPackage.ACTIVITY_PATTERN__SEVERITY:
-			return severity != SEVERITY_EDEFAULT;
-		case CyberPhysicalIncidentPackage.ACTIVITY_PATTERN__DESCRIPTION:
-			return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
-		case CyberPhysicalIncidentPackage.ACTIVITY_PATTERN__SKILLS_REQUIRED:
-			return skillsRequired != SKILLS_REQUIRED_EDEFAULT;
-		case CyberPhysicalIncidentPackage.ACTIVITY_PATTERN__PATTERNS_FOLLOW:
-			return patternsFollow != null && !patternsFollow.isEmpty();
-		case CyberPhysicalIncidentPackage.ACTIVITY_PATTERN__ABSTRACT_ACTIVITY:
-			return abstractActivity != null && !abstractActivity.isEmpty();
-		case CyberPhysicalIncidentPackage.ACTIVITY_PATTERN__INCIDENTENTITY:
-			return incidententity != null && !incidententity.isEmpty();
-		case CyberPhysicalIncidentPackage.ACTIVITY_PATTERN__CONNECTION:
-			return connection != null && !connection.isEmpty();
+			case CyberPhysicalIncidentPackage.ACTIVITY_PATTERN__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case CyberPhysicalIncidentPackage.ACTIVITY_PATTERN__SEVERITY:
+				return severity != SEVERITY_EDEFAULT;
+			case CyberPhysicalIncidentPackage.ACTIVITY_PATTERN__DESCRIPTION:
+				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
+			case CyberPhysicalIncidentPackage.ACTIVITY_PATTERN__SKILLS_REQUIRED:
+				return skillsRequired != SKILLS_REQUIRED_EDEFAULT;
+			case CyberPhysicalIncidentPackage.ACTIVITY_PATTERN__PATTERNS_FOLLOW:
+				return patternsFollow != null && !patternsFollow.isEmpty();
+			case CyberPhysicalIncidentPackage.ACTIVITY_PATTERN__ABSTRACT_ACTIVITY:
+				return abstractActivity != null && !abstractActivity.isEmpty();
+			case CyberPhysicalIncidentPackage.ACTIVITY_PATTERN__INCIDENTENTITY:
+				return incidententity != null && !incidententity.isEmpty();
+			case CyberPhysicalIncidentPackage.ACTIVITY_PATTERN__CONNECTION:
+				return connection != null && !connection.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy())
-			return super.toString();
+		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (name: ");

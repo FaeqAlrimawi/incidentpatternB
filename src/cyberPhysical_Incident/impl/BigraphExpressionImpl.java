@@ -37,19 +37,16 @@ import it.uniud.mads.jlibbig.core.std.SignatureBuilder;
  * The following features are implemented:
  * </p>
  * <ul>
- * <li>{@link cyberPhysical_Incident.impl.BigraphExpressionImpl#getEntity
- * <em>Entity</em>}</li>
- * <li>{@link cyberPhysical_Incident.impl.BigraphExpressionImpl#getInnername
- * <em>Innername</em>}</li>
+ *   <li>{@link cyberPhysical_Incident.impl.BigraphExpressionImpl#getEntity <em>Entity</em>}</li>
+ *   <li>{@link cyberPhysical_Incident.impl.BigraphExpressionImpl#getInnername <em>Innername</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class BigraphExpressionImpl extends ExpressionImpl implements BigraphExpression {
 	/**
-	 * The cached value of the '{@link #getEntity() <em>Entity</em>}'
-	 * containment reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The cached value of the '{@link #getEntity() <em>Entity</em>}' containment reference list.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getEntity()
 	 * @generated
 	 * @ordered
@@ -57,9 +54,8 @@ public class BigraphExpressionImpl extends ExpressionImpl implements BigraphExpr
 	protected EList<Entity> entity;
 
 	/**
-	 * The cached value of the '{@link #getInnername() <em>Innername</em>}'
-	 * containment reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The cached value of the '{@link #getInnername() <em>Innername</em>}' containment reference list.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getInnername()
 	 * @generated
 	 * @ordered
@@ -70,7 +66,6 @@ public class BigraphExpressionImpl extends ExpressionImpl implements BigraphExpr
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	protected BigraphExpressionImpl() {
@@ -561,7 +556,6 @@ public class BigraphExpressionImpl extends ExpressionImpl implements BigraphExpr
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -571,113 +565,104 @@ public class BigraphExpressionImpl extends ExpressionImpl implements BigraphExpr
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public EList<Entity> getEntity() {
 		if (entity == null) {
-			entity = new EObjectContainmentEList<Entity>(Entity.class, this,
-					CyberPhysicalIncidentPackage.BIGRAPH_EXPRESSION__ENTITY);
+			entity = new EObjectContainmentEList<Entity>(Entity.class, this, CyberPhysicalIncidentPackage.BIGRAPH_EXPRESSION__ENTITY);
 		}
 		return entity;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public EList<InnerName> getInnername() {
 		if (innername == null) {
-			innername = new EObjectContainmentEList<InnerName>(InnerName.class, this,
-					CyberPhysicalIncidentPackage.BIGRAPH_EXPRESSION__INNERNAME);
+			innername = new EObjectContainmentEList<InnerName>(InnerName.class, this, CyberPhysicalIncidentPackage.BIGRAPH_EXPRESSION__INNERNAME);
 		}
 		return innername;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case CyberPhysicalIncidentPackage.BIGRAPH_EXPRESSION__ENTITY:
-			return ((InternalEList<?>) getEntity()).basicRemove(otherEnd, msgs);
-		case CyberPhysicalIncidentPackage.BIGRAPH_EXPRESSION__INNERNAME:
-			return ((InternalEList<?>) getInnername()).basicRemove(otherEnd, msgs);
+			case CyberPhysicalIncidentPackage.BIGRAPH_EXPRESSION__ENTITY:
+				return ((InternalEList<?>)getEntity()).basicRemove(otherEnd, msgs);
+			case CyberPhysicalIncidentPackage.BIGRAPH_EXPRESSION__INNERNAME:
+				return ((InternalEList<?>)getInnername()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case CyberPhysicalIncidentPackage.BIGRAPH_EXPRESSION__ENTITY:
-			return getEntity();
-		case CyberPhysicalIncidentPackage.BIGRAPH_EXPRESSION__INNERNAME:
-			return getInnername();
+			case CyberPhysicalIncidentPackage.BIGRAPH_EXPRESSION__ENTITY:
+				return getEntity();
+			case CyberPhysicalIncidentPackage.BIGRAPH_EXPRESSION__INNERNAME:
+				return getInnername();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case CyberPhysicalIncidentPackage.BIGRAPH_EXPRESSION__ENTITY:
-			getEntity().clear();
-			getEntity().addAll((Collection<? extends Entity>) newValue);
-			return;
-		case CyberPhysicalIncidentPackage.BIGRAPH_EXPRESSION__INNERNAME:
-			getInnername().clear();
-			getInnername().addAll((Collection<? extends InnerName>) newValue);
-			return;
+			case CyberPhysicalIncidentPackage.BIGRAPH_EXPRESSION__ENTITY:
+				getEntity().clear();
+				getEntity().addAll((Collection<? extends Entity>)newValue);
+				return;
+			case CyberPhysicalIncidentPackage.BIGRAPH_EXPRESSION__INNERNAME:
+				getInnername().clear();
+				getInnername().addAll((Collection<? extends InnerName>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case CyberPhysicalIncidentPackage.BIGRAPH_EXPRESSION__ENTITY:
-			getEntity().clear();
-			return;
-		case CyberPhysicalIncidentPackage.BIGRAPH_EXPRESSION__INNERNAME:
-			getInnername().clear();
-			return;
+			case CyberPhysicalIncidentPackage.BIGRAPH_EXPRESSION__ENTITY:
+				getEntity().clear();
+				return;
+			case CyberPhysicalIncidentPackage.BIGRAPH_EXPRESSION__INNERNAME:
+				getInnername().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case CyberPhysicalIncidentPackage.BIGRAPH_EXPRESSION__ENTITY:
-			return entity != null && !entity.isEmpty();
-		case CyberPhysicalIncidentPackage.BIGRAPH_EXPRESSION__INNERNAME:
-			return innername != null && !innername.isEmpty();
+			case CyberPhysicalIncidentPackage.BIGRAPH_EXPRESSION__ENTITY:
+				return entity != null && !entity.isEmpty();
+			case CyberPhysicalIncidentPackage.BIGRAPH_EXPRESSION__INNERNAME:
+				return innername != null && !innername.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
