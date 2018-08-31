@@ -36,7 +36,7 @@ public interface BigraphExpression extends Expression {
 	List<Connectivity> getConnections(String entityName1, String entityName2);
 	Entity getEntity(String entityName);
 	void replaceEntityName(String oldeEntityName, String newEntityName);
-	 boolean matches(BigraphExpression other);
+//	 boolean matches(BigraphExpression other);
 	 Bigraph createBigraph(boolean isGround);
 	 Bigraph createBigraph(Signature signature);
 	/**

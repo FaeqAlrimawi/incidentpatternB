@@ -244,11 +244,6 @@ public class BigraphExpressionImpl extends ExpressionImpl implements BigraphExpr
 		return null;
 	}
 
-	public boolean matches(BigraphExpression other) {
-
-		return false;
-	}
-
 	public Bigraph createBigraph(boolean isGround) {
 
 		BigraphNode node;

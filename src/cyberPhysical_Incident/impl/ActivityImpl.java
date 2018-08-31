@@ -412,11 +412,22 @@ public class ActivityImpl extends MinimalEObjectImpl.Container implements Activi
 		
 		activityNumber++;
 		
-		if((MAXIMUM_NUMBER-activityNumber) < 100) {
-			activityNumber = 1;
+		if(getName() == null) {
+			if((MAXIMUM_NUMBER-activityNumber) < 100) {
+				activityNumber = 1;
+			}
+			
+			setName(name);	
 		}
 		
-		setName(name);
+		//create conditions by default
+		if(getPrecondition() == null) {
+			setPrecondition(new PreconditionImpl());
+		}
+		
+		if(getPostcondition() == null) {
+			setPostcondition(new PostconditionImpl());
+		}
 	}
 	
 	protected ActivityImpl(Activity act) {
