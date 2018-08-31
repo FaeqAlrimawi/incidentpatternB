@@ -296,7 +296,7 @@ public class ActivityPatternImpl extends MinimalEObjectImpl.Container implements
 			entityMap.put(ptrTargetAsset.getName(), incTargetAsset.getName());
 		}
 
-
+	
 		// 3-Resources
 		Resource ptrResource = !patternActivity.getResources().isEmpty() ? patternActivity.getResources().get(0) : null;
 		Resource incResource = !incidentActivity.getResources().isEmpty() ? incidentActivity.getResources().get(0)
@@ -311,7 +311,7 @@ public class ActivityPatternImpl extends MinimalEObjectImpl.Container implements
 		if (ptrResource != null) {
 			entityMap.put(ptrResource.getName(), incResource.getName());
 		}
-
+		
 		// 4-Exploited assets
 		Asset ptrExploitedAsset = !patternActivity.getExploitedAssets().isEmpty()
 				? patternActivity.getExploitedAssets().get(0) : null;
@@ -328,7 +328,7 @@ public class ActivityPatternImpl extends MinimalEObjectImpl.Container implements
 			entityMap.put(ptrExploitedAsset.getName(), incExploitedAsset.getName());
 		}
 
-
+	
 		// 5-Locations
 		Location ptrLocation = patternActivity.getLocation();
 		Location incLocation = incidentActivity.getLocation();
@@ -357,7 +357,6 @@ public class ActivityPatternImpl extends MinimalEObjectImpl.Container implements
 			entityMap.put(ptrVicitm.getName(), incVicitm.getName());
 		}
 
-	
 		// evaluate precondition
 		Precondition ptrPre = patternActivity.getPrecondition();
 		BigraphExpression ptrBigExp = ptrPre != null ? (BigraphExpression) ptrPre.getExpression() : null;
