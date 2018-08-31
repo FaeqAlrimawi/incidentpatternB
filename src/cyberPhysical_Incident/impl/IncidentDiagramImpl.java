@@ -1352,7 +1352,17 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 		mergedRules.clear();
 	}
 	
+	public Scene getScene(String sceneName) {
 	
+		 for(Scene scene : getScene()) {
+			 if(scene.getName() != null && scene.getName().equals(sceneName)) {
+				 return scene;
+			 }
+		 }
+		 
+		 return null;
+	 }
+	 
 /*	protected void print(String msg) {
 		
 		if(!isDebug) {

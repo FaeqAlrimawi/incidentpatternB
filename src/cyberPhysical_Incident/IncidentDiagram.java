@@ -50,6 +50,7 @@ public interface IncidentDiagram extends EObject {
 	 List<Integer> getMergedRules();
 	 Map<Activity, List<Activity>> getMergedActivities();
 	 void setMergedRules();
+	 Scene getScene(String sceneName);
 	 
 	/**
 	 *Finds possible pairs of activities that can be merged based on containment and connectivity heuristics 
