@@ -89,7 +89,8 @@ public class EntityImpl extends MinimalEObjectImpl.Container implements Entity {
 	 * @ordered
 	 */
 	protected Site site;
-
+	
+//	protected static int siteNumber = 1;
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -97,6 +98,15 @@ public class EntityImpl extends MinimalEObjectImpl.Container implements Entity {
 	 */
 	protected EntityImpl() {
 		super();
+		
+		//create a default site (instead of having the user creating one). Required when matching to 
+		//a system state. The common state is to have a site associated with an entity
+		if(getSite() == null) {
+			Site site = new SiteImpl();
+//			site.setName(""+siteNumber);
+			setSite(site);
+//			siteNumber++;
+		}
 	}
 
 
