@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry kind="src" path="src"/>
+	<classpathentry exported="true" kind="lib" path="lib/jlibbig/jlibbig.core-0.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/choco-2.1.5/choco-solver-2.1.5.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
 	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/environment.v1"/>
-	<classpathentry kind="lib" path="D:/workspace-neon/FR_Analyser/lib/choco-2.1.5/choco-solver-2.1.5.jar"/>
-	<classpathentry kind="lib" path="D:/workspace-neon/FR_Analyser/lib/jlibbig/jlibbig.core-0.1.jar"/>
+	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
