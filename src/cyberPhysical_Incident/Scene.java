@@ -28,6 +28,7 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Scene extends EObject {
 	
+	Activity getFinalActivity();
 	Activity getInitialActivity();
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.

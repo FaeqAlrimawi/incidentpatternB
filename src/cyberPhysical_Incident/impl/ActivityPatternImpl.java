@@ -895,7 +895,7 @@ public class ActivityPatternImpl extends MinimalEObjectImpl.Container implements
 
 			if (isAllMapped) {
 				// create a bigraph of the pattern precondition
-				Bigraph ptrBigraph = patternCondition.createBigraph(incBigraph.getSignature());
+				Bigraph ptrBigraph = patternCondition.createBigraph(!isGround);
 				if (matcher.match(incBigraph, ptrBigraph).iterator().hasNext()) {
 					return true;
 				}

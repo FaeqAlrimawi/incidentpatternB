@@ -28,6 +28,7 @@ import cyberPhysical_Incident.Actor;
 import cyberPhysical_Incident.Asset;
 import cyberPhysical_Incident.BigraphExpression;
 import cyberPhysical_Incident.Connection;
+import cyberPhysical_Incident.Connectivity;
 import cyberPhysical_Incident.CrimeScript;
 import cyberPhysical_Incident.CyberPhysicalIncidentFactory;
 import cyberPhysical_Incident.CyberPhysicalIncidentPackage;
@@ -46,7 +47,11 @@ import cyberPhysical_Incident.Scene;
 import cyberPhysical_Incident.ScriptCategory;
 import cyberPhysical_Incident.Type;
 import environment.EnvironmentDiagram;
+import externalUtility.BigraphNode;
 import externalUtility.IncidentModelHandler;
+import it.uniud.mads.jlibbig.core.std.Bigraph;
+import it.uniud.mads.jlibbig.core.std.Signature;
+import it.uniud.mads.jlibbig.core.std.SignatureBuilder;
 
 /**
  * <!-- begin-user-doc -->
@@ -75,6 +80,8 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 	protected static int activityNum = 1;
 	protected static final int MAX_LENGTH = 1000000;
 	protected static final String ACTIVITY_NAME = "abstracted-Activity";
+	protected static Signature signature;
+	protected int maxOuterNameNumber = 10;
 	
 	boolean isDebug = false;
 	
@@ -606,6 +613,69 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 		
 		return mergedActivity;	
 	}
+	
+	public Signature createBigraphSignature() {
+
+		SignatureBuilder sigBuilder = new SignatureBuilder();
+		EList<IncidentEntity> entities = new BasicEList<IncidentEntity>();
+		
+		entities.addAll(getAsset());
+		entities.addAll(getResource());
+		entities.addAll(getActor());
+
+		for (IncidentEntity ent : entities) {
+			// create a bigraph signature out of each entity and max arity
+			// number
+			sigBuilder.add(ent.getName(), true, maxOuterNameNumber);
+
+			//addChildren(node, ent.getEntity(), nodes, sigBuilder);
+		}
+
+		entities = null;
+		signature = sigBuilder.makeSignature();
+
+		return signature;
+
+	}
+	
+	/*protected void addChildren(BigraphNode parent, EList<Entity> entities, Map<String, BigraphNode> nodes,
+			SignatureBuilder sigBuilder, boolean isGround) {
+
+		BigraphNode node;
+
+		for (Entity entity : entities) {
+			node = new BigraphNode();
+
+			node.setId(entity.getName());
+
+			if(!isGround) {
+				// add site
+				node.setSite(entity.getSite() != null ? true : false);	
+			}
+			
+			// add parent
+			node.setParent(parent);
+
+			// add control (currently same as the name of the entity
+			node.setControl(entity.getName());
+
+			// add connectivity (outernames)
+			for (Connectivity con : entity.getConnectivity()) {
+				node.addOuterName(con.getName(), con.isIsClosed());
+			}
+
+			nodes.put(node.getId(), node);
+
+			// create a bigraph signature out of each entity and max arity
+			// number
+			if(sigBuilder != null) {
+				sigBuilder.add(entity.getName(), true, maxOuterNameNumber);	
+			}
+			
+
+			addChildren(node, entity.getEntity(), nodes, sigBuilder, isGround);
+		}
+	}*/
 	
 	/**
 	 * Checks whether the given sequence satisfies the following conditions:

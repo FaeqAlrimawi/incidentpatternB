@@ -10,6 +10,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 
 import environment.EnvironmentDiagram;
+import it.uniud.mads.jlibbig.core.std.Signature;
 
 /**
  * <!-- begin-user-doc -->
@@ -51,6 +52,7 @@ public interface IncidentDiagram extends EObject {
 	 Map<Activity, List<Activity>> getMergedActivities();
 	 void setMergedRules();
 	 Scene getScene(String sceneName);
+	 public Signature createBigraphSignature();
 	 
 	/**
 	 *Finds possible pairs of activities that can be merged based on containment and connectivity heuristics 

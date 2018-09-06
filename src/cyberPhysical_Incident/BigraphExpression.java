@@ -38,7 +38,8 @@ public interface BigraphExpression extends Expression {
 	void replaceEntityName(String oldeEntityName, String newEntityName);
 //	 boolean matches(BigraphExpression other);
 	 Bigraph createBigraph(boolean isGround);
-	 Bigraph createBigraph(Signature signature);
+//	 Bigraph createBigraph(Signature signature);
+	 boolean isEmpty();
 	/**
 	 * Returns the value of the '<em><b>Entity</b></em>' containment reference list.
 	 * The list contents are of type {@link cyberPhysical_Incident.Entity}.

@@ -19,6 +19,7 @@ import cyberPhysical_Incident.BigraphExpression;
 import cyberPhysical_Incident.Connectivity;
 import cyberPhysical_Incident.CyberPhysicalIncidentPackage;
 import cyberPhysical_Incident.Entity;
+import cyberPhysical_Incident.IncidentDiagram;
 import cyberPhysical_Incident.InnerName;
 import externalUtility.BigraphNode;
 import it.uniud.mads.jlibbig.core.std.Bigraph;
@@ -244,11 +245,20 @@ public class BigraphExpressionImpl extends ExpressionImpl implements BigraphExpr
 		return null;
 	}
 
+	public boolean isEmpty() {
+		
+		if(getEntity().isEmpty()) {
+			return true;
+		}
+		
+		return false;
+	}
+	
 	public Bigraph createBigraph(boolean isGround) {
 
 		BigraphNode node;
 		Map<String, externalUtility.BigraphNode> nodes = new HashMap<String, externalUtility.BigraphNode>();
-		SignatureBuilder sigBuilder = new SignatureBuilder();
+		//SignatureBuilder sigBuilder = new SignatureBuilder();
 
 		int numOfRoots = 0;
 
@@ -277,18 +287,18 @@ public class BigraphExpressionImpl extends ExpressionImpl implements BigraphExpr
 
 			// create a bigraph signature out of each entity and max arity
 			// number
-			sigBuilder.add(ent.getName(), true, maxOuterNameNumber);
+			//sigBuilder.add(ent.getName(), true, maxOuterNameNumber);
 
-			addChildren(node, ent.getEntity(), nodes, sigBuilder, isGround);
+			addChildren(node, ent.getEntity(), nodes, isGround);
 		}
 
-		Signature signature = sigBuilder.makeSignature();
+		//Signature signature = sigBuilder.makeSignature();
 
-		return BuildBigraph(nodes, signature);
+		return BuildBigraph(nodes, IncidentDiagramImpl.signature);
 
 	}
 	
-	public Bigraph createBigraph(Signature signature) {
+	/*public Bigraph createBigraph(Signature signature) {
 
 		BigraphNode node;
 		Map<String, externalUtility.BigraphNode> nodes = new HashMap<String, externalUtility.BigraphNode>();
@@ -318,13 +328,13 @@ public class BigraphExpressionImpl extends ExpressionImpl implements BigraphExpr
 
 			nodes.put(node.getId(), node);
 
-			addChildren(node, ent.getEntity(), nodes, null, false);
+			addChildren(node, ent.getEntity(), nodes, false);
 		}
 
 		return BuildBigraph(nodes, signature);
 
 	}
-
+*/
 	protected Bigraph BuildBigraph(Map<String, BigraphNode> nodes, Signature signature) {
 
 		LinkedList<BigraphNode.OuterName> outerNames = new LinkedList<BigraphNode.OuterName>();
@@ -511,7 +521,7 @@ public class BigraphExpressionImpl extends ExpressionImpl implements BigraphExpr
 	}
 
 	protected void addChildren(BigraphNode parent, EList<Entity> entities, Map<String, BigraphNode> nodes,
-			SignatureBuilder sigBuilder, boolean isGround) {
+			boolean isGround) {
 
 		BigraphNode node;
 
@@ -537,15 +547,8 @@ public class BigraphExpressionImpl extends ExpressionImpl implements BigraphExpr
 			}
 
 			nodes.put(node.getId(), node);
-
-			// create a bigraph signature out of each entity and max arity
-			// number
-			if(sigBuilder != null) {
-				sigBuilder.add(entity.getName(), true, maxOuterNameNumber);	
-			}
 			
-
-			addChildren(node, entity.getEntity(), nodes, sigBuilder, isGround);
+			addChildren(node, entity.getEntity(), nodes, isGround);
 		}
 	}
 
