@@ -187,7 +187,7 @@ public class ActivityPatternImpl extends MinimalEObjectImpl.Container implements
 		super();
 	}
 
-	public Activity applyTo(List<Activity> activitySequence) {
+/*	public Activity applyTo(List<Activity> activitySequence) {
 
 		Activity patternInitialActivity = getInitialActivity();
 		Activity patternNextActivity = patternInitialActivity != null
@@ -728,14 +728,14 @@ public class ActivityPatternImpl extends MinimalEObjectImpl.Container implements
 
 	}
 
-	/**
+	*//**
 	 * Finds if the given patternType parameter is of the same class or super
 	 * class of the given incidentType parameter
 	 * 
 	 * @param patternType
 	 * @param incidentType
 	 * @return
-	 */
+	 *//*
 	protected boolean isSameClassOrSuperClass(String patternType, String incidentType) {
 
 		// depends on the classes of the cyber physical system
@@ -937,7 +937,7 @@ public class ActivityPatternImpl extends MinimalEObjectImpl.Container implements
 		
 //		System.out.println("True");
 		return true;
-	}
+	}*/
 
 	protected Activity getInitialActivity() {
 
