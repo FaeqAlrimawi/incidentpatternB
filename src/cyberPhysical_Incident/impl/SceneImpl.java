@@ -145,6 +145,21 @@ public class SceneImpl extends MinimalEObjectImpl.Container implements Scene {
 		return initialActivity;
 	}
 	
+	public Activity getActivity(String activityName) {
+		
+		if(activityName == null || activityName.isEmpty()) {
+			return null;
+		}
+		
+		for(Activity act : getActivity()) {
+			if(act.getName().equals(activityName)) {
+				return act;
+			}
+		}
+		
+		return null;
+	}
+	
 	public Activity getFinalActivity() {
 		
 		Activity finalActivity = null;

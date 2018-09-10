@@ -72,6 +72,20 @@ public class BigraphExpressionImpl extends ExpressionImpl implements BigraphExpr
 	protected BigraphExpressionImpl() {
 		super();
 	}
+	
+	protected BigraphExpressionImpl(BigraphExpression expression) {
+		super();
+		
+		//copy entities
+		for(Entity entity : expression.getEntity()) {
+			getEntity().add(new EntityImpl(entity));
+		}
+		
+		//copy innernames
+		for(InnerName innerName : expression.getInnername()) {
+			getInnername().add(new InnerNameImpl(innerName));
+		}
+	}
 
 	public String getContainer(String entityName) {
 
@@ -162,7 +176,7 @@ public class BigraphExpressionImpl extends ExpressionImpl implements BigraphExpr
 
 	public boolean hasEntity(String entityName) {
 	
-		if(entityName == null && entityName.isEmpty()) {
+		if(entityName == null || entityName.isEmpty()) {
 			return false;
 		}
 		
@@ -567,6 +581,10 @@ public class BigraphExpressionImpl extends ExpressionImpl implements BigraphExpr
 		}
 	}
 
+	public BigraphExpression clone() {
+		return new BigraphExpressionImpl(this);
+	}
+	
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated

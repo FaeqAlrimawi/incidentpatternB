@@ -109,7 +109,25 @@ public class EntityImpl extends MinimalEObjectImpl.Container implements Entity {
 		}
 	}
 
-
+	protected EntityImpl(Entity entity) {
+		super();
+	
+		setName(entity.getName());
+		
+		//add sub-entities
+		for(Entity ent : entity.getEntity()) {
+		
+			getEntity().add(new EntityImpl(ent));
+		}
+		
+		//add connectivities
+		for(Connectivity con : entity.getConnectivity()) {
+			getConnectivity().add(new ConnectivityImpl(con));
+		}
+		
+		setSite(new SiteImpl(entity.getSite()));
+		
+	}
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

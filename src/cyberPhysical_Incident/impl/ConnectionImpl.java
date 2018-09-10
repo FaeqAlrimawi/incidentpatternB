@@ -145,6 +145,7 @@ public class ConnectionImpl extends MinimalEObjectImpl.Container implements Conn
 		}
 	}
 
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

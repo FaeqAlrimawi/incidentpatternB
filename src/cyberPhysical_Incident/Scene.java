@@ -30,6 +30,7 @@ public interface Scene extends EObject {
 	
 	Activity getFinalActivity();
 	Activity getInitialActivity();
+	Activity getActivity(String activityName);
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->

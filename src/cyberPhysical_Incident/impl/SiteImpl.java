@@ -75,6 +75,13 @@ public class SiteImpl extends MinimalEObjectImpl.Container implements Site {
 	protected SiteImpl() {
 		super();
 	}
+	
+	protected SiteImpl(Site site) {
+		super();
+		
+		setName(site.getName());
+		setIsClosed(site.isIsClosed());
+	}
 
 	/**
 	 * <!-- begin-user-doc -->

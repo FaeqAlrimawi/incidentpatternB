@@ -5,6 +5,8 @@ package cyberPhysical_Incident.impl;
 import cyberPhysical_Incident.Connectivity;
 
 import cyberPhysical_Incident.CyberPhysicalIncidentPackage;
+
+import org.eclipse.core.runtime.preferences.IScope;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
@@ -74,6 +76,13 @@ public class ConnectivityImpl extends MinimalEObjectImpl.Container implements Co
 	 */
 	protected ConnectivityImpl() {
 		super();
+	}
+	
+	protected ConnectivityImpl(Connectivity connectivity) {
+		super();
+		
+		setName(connectivity.getName());
+		setIsClosed(connectivity.isIsClosed());
 	}
 
 	/**
