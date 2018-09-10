@@ -160,6 +160,17 @@ public class BigraphExpressionImpl extends ExpressionImpl implements BigraphExpr
 		}
 	}
 
+	public boolean hasEntity(String entityName) {
+	
+		Entity result = getEntity(entityName);
+		
+		if(result != null) {
+			return true;
+		}
+		
+		return false;
+	}
+	
 	public Entity getEntity(String entityName) {
 
 		Entity result = null;
