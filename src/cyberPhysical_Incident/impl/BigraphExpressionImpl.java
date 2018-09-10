@@ -162,6 +162,10 @@ public class BigraphExpressionImpl extends ExpressionImpl implements BigraphExpr
 
 	public boolean hasEntity(String entityName) {
 	
+		if(entityName == null && entityName.isEmpty()) {
+			return false;
+		}
+		
 		Entity result = getEntity(entityName);
 		
 		if(result != null) {
