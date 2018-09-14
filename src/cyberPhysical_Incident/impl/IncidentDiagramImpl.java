@@ -21,6 +21,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import choco.kernel.model.constraints.automaton.State;
 import cyberPhysical_Incident.Activity;
 import cyberPhysical_Incident.ActivityInitiator;
 import cyberPhysical_Incident.ActivityType;
@@ -82,6 +83,7 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 	protected static final String ACTIVITY_NAME = "abstracted-Activity";
 	protected static Signature signature;
 	protected int maxOuterNameNumber = 10;
+	protected Map<String, Integer> activitiesSequence = null;
 	
 	boolean isDebug = false;
 	
@@ -1851,6 +1853,53 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 		}
 		
 		return activity;
+	}
+	
+	protected void generateActivitySequence() {	
+		
+		if(activitiesSequence != null && !activitiesSequence.isEmpty()) {
+			return;
+		}
+		
+		Activity initialActivity = getInitialActivity();
+		Activity current = initialActivity;
+		boolean isDone = false;
+		activitiesSequence = new HashMap<String, Integer>();
+		int index = 0;
+		
+		do {
+			
+			if(current != null) {
+				activitiesSequence.put(current.getName(), index);
+				index++;
+				current = !current.getNextActivities().isEmpty()?current.getNextActivities().get(0):null;
+			} else {
+				isDone = true;
+			}
+			
+		}  while(!isDone);
+		
+	}
+	
+	public int[] getActivitySequence(String startActivityName, String endActivityName) {
+		
+		generateActivitySequence();
+
+		int startIndex = activitiesSequence.get(startActivityName);
+		int endIndex = activitiesSequence.get(endActivityName);
+		
+		if(startIndex > endIndex) {
+			return null;
+		}
+		
+		int [] sequence = new int[(endIndex-startIndex)+1];
+		
+		for(int i =0; i<sequence.length;i++) {
+			sequence[i] = startIndex;
+			startIndex++;
+		}
+		
+		return sequence;
 	}
 	
 } //IncidentDiagramImpl

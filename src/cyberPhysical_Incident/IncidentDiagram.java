@@ -52,8 +52,8 @@ public interface IncidentDiagram extends EObject {
 	 Map<Activity, List<Activity>> getMergedActivities();
 	 void setMergedRules();
 	 Scene getScene(String sceneName);
-	 public Signature createBigraphSignature();
-	 
+	 Signature createBigraphSignature();
+	 int[] getActivitySequence(String startActivityName, String endActivityName);
 	/**
 	 *Finds possible pairs of activities that can be merged based on containment and connectivity heuristics 
 	 */
