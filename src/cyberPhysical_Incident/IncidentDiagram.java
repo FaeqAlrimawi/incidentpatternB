@@ -2,6 +2,7 @@
  */
 package cyberPhysical_Incident;
 
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
@@ -53,11 +54,11 @@ public interface IncidentDiagram extends EObject {
 	 void setMergedRules();
 	 Scene getScene(String sceneName);
 	 Signature createBigraphSignature();
-	 int[] getActivitySequence(String startActivityName, String endActivityName);
+	 int[] getActivityNumberSequence(String startActivityName, String endActivityName);
 	 
 	 String getActivityName(int index);
 	 Activity getActivity(int index);
-	 EList<Activity> getActivitySequence(int[] indicesSequence);
+	 LinkedList<Activity> getActivitySequence(int[] indicesSequence);
 	 Map<String, Integer> getActivitySequence();
 	 void setActivitySequence(Map<String, Integer> actSequence);
 	 

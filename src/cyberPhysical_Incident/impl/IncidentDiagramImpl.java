@@ -1951,12 +1951,41 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 		return null;
 	}
 	
-	EList<Activity> getActivitySequence(int[] indicesSequence) {
+	public LinkedList<Activity> getActivitySequence(int[] indicesSequence) {
 		
+		if(indicesSequence == null || indicesSequence.length == 0) {
+			return null;
+		}
+		
+	
+		LinkedList<Activity> result = new LinkedList<Activity>();
+		
+		for(int index : indicesSequence) {
+			result.add(getActivity(index));
+		}
+		/*Activity firstAct = getActivity(indicesSequence[0]);
+		Activity lastAct = getActivity(indicesSequence[indicesSequence.length-1]);
+		
+		Activity next = !firstAct.getNextActivities().isEmpty()?firstAct.getNextActivities().get(0):null;
+		
+		result.add(firstAct);
+		
+		if(indicesSequence.length == 1) {
+			return result;
+		}
+		
+		while(next != null && !next.equals(lastAct)) {
+			result.add(next);
+			next = !firstAct.getNextActivities().isEmpty()?firstAct.getNextActivities().get(0):null;
+		}
+		
+		result.add(lastAct);
+		*/
+		return result;
 	}
 	
 	
-	public int[] getActivitySequence(String startActivityName, String endActivityName) {
+	public int[] getActivityNumberSequence(String startActivityName, String endActivityName) {
 		
 		Map<String, Integer> activitiesSequence = getActivitySequence();
 		
