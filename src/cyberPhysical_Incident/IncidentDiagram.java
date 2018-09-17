@@ -54,7 +54,12 @@ public interface IncidentDiagram extends EObject {
 	 Scene getScene(String sceneName);
 	 Signature createBigraphSignature();
 	 int[] getActivitySequence(String startActivityName, String endActivityName);
-	 String getActivity(int index);
+	 
+	 String getActivityName(int index);
+	 Activity getActivity(int index);
+	 EList<Activity> getActivitySequence(int[] indicesSequence);
+	 Map<String, Integer> getActivitySequence();
+	 void setActivitySequence(Map<String, Integer> actSequence);
 	 
 	 /**
 	  * Checks whether the given activity name already exists in the incident model or not

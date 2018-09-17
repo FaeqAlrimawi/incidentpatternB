@@ -1876,13 +1876,18 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 		return activity;
 	}
 	
-	protected Map<String, Integer> getActivitySequence()  {
+	public Map<String, Integer> getActivitySequence()  {
 		
 		if(activitiesSequence == null || activitiesSequence.isEmpty()) {
 			generateActivitySequence();
 		}
 		
 		return activitiesSequence;
+	}
+	
+	public void setActivitySequence(Map<String, Integer> actSequence)  {
+		
+		activitiesSequence = actSequence;
 	}
 	
 	protected void generateActivitySequence() {	
@@ -1907,7 +1912,7 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 		
 	}
 	
-	public String getActivity(int index) {
+	public String getActivityName(int index) {
 	
 		Map<String, Integer> activitiesSequence = getActivitySequence();
 		
@@ -1920,6 +1925,36 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 		}
 		return null;
 	}
+	
+	public Activity getActivity(int index) {
+		
+		Map<String, Integer> activitiesSequence = getActivitySequence();
+		String actName = null;
+		
+		if(activitiesSequence.containsValue(index)) {
+			for(Entry<String, Integer> entry: activitiesSequence.entrySet()) {
+				if(entry.getValue().equals(index)) {
+					actName = entry.getKey();
+					break;
+				}
+			}
+		}
+		
+		if(actName != null) {
+			for(Activity act : getActivity()) {
+				if(act.getName() != null && act.getName().equals(actName)) {
+					return act;
+				}
+			}
+		}
+		
+		return null;
+	}
+	
+	EList<Activity> getActivitySequence(int[] indicesSequence) {
+		
+	}
+	
 	
 	public int[] getActivitySequence(String startActivityName, String endActivityName) {
 		
