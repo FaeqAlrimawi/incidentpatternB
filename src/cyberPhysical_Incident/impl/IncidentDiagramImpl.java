@@ -9,6 +9,7 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -196,6 +197,7 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 	
 	//each entry has the value of the merge rule used to create the new activity (e.g., containment, connectivity)
 	protected List<Integer> mergedRules; 
+	
 	
 	public IncidentDiagram createAbstractIncident(EnvironmentDiagram system) {
 	
@@ -445,6 +447,25 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 		}
 		
 		return null;
+	}
+	
+	public boolean activityNameExists(String activityName) {
+	
+		Map<String, Integer> activitiesSequence = getActivitySequence();
+		
+		if(activitiesSequence != null) {
+			if(activitiesSequence.containsKey(activityName)) {
+				return true;
+			}
+		} else {
+			for(Activity act : getActivity()) {
+				if(act.getName() != null && act.getName().equals(activityName)) {
+					return true;
+				}
+			}
+		}
+		
+		return false;
 	}
 	
 	public Scene getInitialScene() {
@@ -1855,12 +1876,17 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 		return activity;
 	}
 	
-	protected void generateActivitySequence() {	
+	protected Map<String, Integer> getActivitySequence()  {
 		
-		if(activitiesSequence != null && !activitiesSequence.isEmpty()) {
-			return;
+		if(activitiesSequence == null || activitiesSequence.isEmpty()) {
+			generateActivitySequence();
 		}
 		
+		return activitiesSequence;
+	}
+	
+	protected void generateActivitySequence() {	
+			
 		Activity initialActivity = getInitialActivity();
 		Activity current = initialActivity;
 		boolean isDone = false;
@@ -1881,9 +1907,24 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 		
 	}
 	
+	public String getActivity(int index) {
+	
+		Map<String, Integer> activitiesSequence = getActivitySequence();
+		
+		if(activitiesSequence.containsValue(index)) {
+			for(Entry<String, Integer> entry: activitiesSequence.entrySet()) {
+				if(entry.getValue().equals(index)) {
+					return entry.getKey();
+				}
+			}
+		}
+		return null;
+	}
+	
 	public int[] getActivitySequence(String startActivityName, String endActivityName) {
 		
-		generateActivitySequence();
+		Map<String, Integer> activitiesSequence = getActivitySequence();
+		
 
 		int startIndex = activitiesSequence.get(startActivityName);
 		int endIndex = activitiesSequence.get(endActivityName);
