@@ -46,6 +46,11 @@ public interface IncidentDiagram extends EObject {
 //	 IncidentDiagram createAbstractIncident();
 //	 void setSystemModel(EnvironmentDiagram systemModel);
 	 EList<Activity> getActivity();
+	 void setActivity(EList<Activity> activity);
+	 
+	 EList<IncidentEntity> getEntity();
+	 void setEntity(EList<IncidentEntity> entity);
+	 void removeEntity(IncidentEntity entity);
 //	 List<Integer> getMergedRules();
 //	 Map<Activity, List<Activity>> getMergedActivities();
 //	 void setMergedRules();
@@ -58,7 +63,7 @@ public interface IncidentDiagram extends EObject {
 	 LinkedList<Activity> getActivitySequence(int[] indicesSequence);
 	 Map<String, Integer> getActivitySequence();
 	 void setActivitySequence(Map<String, Integer> actSequence);
-	 
+	 boolean isUsedByActivity(IncidentEntity entity);
 	 /**
 	  * Checks whether the given activity name already exists in the incident model or not
 	  * @param activityName name that needs to be checked

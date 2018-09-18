@@ -35,6 +35,7 @@ import cyberPhysical_Incident.Goal;
 import cyberPhysical_Incident.IncidentDiagram;
 import cyberPhysical_Incident.IncidentEntity;
 import cyberPhysical_Incident.Intent;
+import cyberPhysical_Incident.Location;
 import cyberPhysical_Incident.Motive;
 import cyberPhysical_Incident.Path;
 import cyberPhysical_Incident.Resource;
@@ -179,6 +180,7 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 //	protected CyberPhysicalIncidentFactory instance = CyberPhysicalIncidentFactory.eINSTANCE;
 //	protected environment.EnvironmentDiagram systemModel;
 	protected EList<Activity> activity;
+	protected EList<IncidentEntity> incidentEntity;
 	
 	//key is new activity and the list is the list of merged activities from the original incident
 //	protected Map<Activity, List<Activity>> mergedActivities; 
@@ -428,6 +430,87 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 	}
 	*/
 	
+	public boolean isUsedByActivity(IncidentEntity entity) {
+	
+		//see if entity is used in the conditions of activities
+		for(Activity act : getActivity()) {
+			
+			if(act.isEntityUsed(entity)) {
+				return true;
+			}
+		}
+		
+		boolean isUsed = false;
+		
+		if(entity.getParentEntity() != null) {
+			isUsed = isUsedByActivity((IncidentEntity)entity.getParentEntity(), entity);
+			
+			if(isUsed) {
+				return true;
+			}
+		}
+		
+		//see if one of the contained entities by the argument is used in one of the activities
+		for(Location loc: entity.getContainedEntities()) {
+			
+			IncidentEntity ent = (IncidentEntity)loc;
+			
+			if(ent.equals(entity)) {
+				continue;
+			}
+			
+			isUsed = isUsedByActivity(ent, entity);
+			
+			if(isUsed) {
+				return true;
+			}
+			
+			
+		}
+		
+		return false;
+	}
+	
+	public boolean isUsedByActivity(IncidentEntity entity, IncidentEntity caller) {
+		
+		//see if entity is used in the conditions of activities
+		for(Activity act : getActivity()) {
+			
+			if(act.isEntityUsed(entity)) {
+				return true;
+			}
+		}
+		
+		boolean isUsed = false;
+		
+		if(entity.getParentEntity() != null && !entity.getParentEntity().equals(caller)) {
+			isUsed = isUsedByActivity((IncidentEntity)entity.getParentEntity());
+			
+			if(isUsed) {
+				return true;
+			}
+		}
+		
+		//see if one of the contained entities by the argument is used in one of the activities
+		for(Location loc: entity.getContainedEntities()) {
+			
+			IncidentEntity ent = (IncidentEntity)loc;
+			
+			if(ent.equals(caller)) {
+				continue;
+			}
+			
+			isUsed = isUsedByActivity(ent);
+			
+			if(isUsed) {
+				return true;
+			}
+			
+			
+		}
+		
+		return false;
+	}
 	public Activity getInitialActivity() {
 		
 		Scene initialScene = getInitialScene();
@@ -1880,12 +1963,6 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 		return super.eIsSet(featureID);
 	}
 
-//	@Override
-//	public void setSystemModel(EnvironmentDiagram systemModel) {
-//		this.systemModel = systemModel;
-//		
-//	}
-
 	public EList<Activity> getActivity() {
 		
 		if(activity != null) {
@@ -1899,6 +1976,45 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 		}
 		
 		return activity;
+	}
+	
+	 public EList<IncidentEntity> getEntity() {
+		 
+		 if(incidentEntity != null) {
+			 return incidentEntity;
+		 }
+		 
+		 incidentEntity = new BasicEList<IncidentEntity>();
+		 
+		 incidentEntity.addAll(getAsset());
+		 incidentEntity.addAll(getActor());
+		 incidentEntity.addAll(getResource());
+		 
+		 return incidentEntity;
+	 }
+	
+	 public void setEntity(EList<IncidentEntity> entity) {
+	
+		 incidentEntity = entity;
+	 }
+	 
+	 public void removeEntity(IncidentEntity entity) {
+		 
+		 if(Asset.class.isInstance(entity)) {
+			 getAsset().remove(entity);
+		 } else if(Resource.class.isInstance(entity)) {
+			 getResource().remove(entity);
+		 } else if(Actor.class.isInstance(entity)) {
+			 getActor().remove(entity);
+		 }
+		 
+		 setEntity(null);
+		 getEntity();
+	 }
+	 
+	public void setActivity(EList<Activity> activity) {
+		
+		this.activity = activity;
 	}
 	
 	public Map<String, Integer> getActivitySequence()  {

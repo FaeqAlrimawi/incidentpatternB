@@ -746,6 +746,25 @@ public class ActivityImpl extends MinimalEObjectImpl.Container implements Activi
 	}
 	
 
+	public boolean isEntityUsed(IncidentEntity entity) {
+		
+		BigraphExpression expPre = (BigraphExpression)getPrecondition().getExpression();
+		BigraphExpression expPost = (BigraphExpression)getPostcondition().getExpression();
+		
+		boolean isUsed = false;
+		
+		if(expPre != null) {
+			isUsed = expPre.hasEntity(entity.getName());	
+		}
+		
+		if(!isUsed && expPost != null) {
+			isUsed = expPost.hasEntity(entity.getName());	
+		}
+		
+		return isUsed;
+		 
+	}
+	
 	/*protected void print(String msg) {
 		
 		if(!isDebug) {

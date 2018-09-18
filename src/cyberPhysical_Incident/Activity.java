@@ -62,6 +62,7 @@ public interface Activity extends EObject {
 	void replaceEntityName(String oldEntityName, String newEntityName);
 	boolean isInitiatorOffender();
 	boolean isSameInitiator(Activity other);
+	boolean isEntityUsed(IncidentEntity entity);
 	/**
 	 * Returns the entities contained by the initiator both in the pre and post conditions
 	 * @return List of entity names
