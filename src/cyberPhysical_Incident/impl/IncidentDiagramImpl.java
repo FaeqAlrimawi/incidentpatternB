@@ -25,9 +25,12 @@ import cyberPhysical_Incident.ActivityInitiator;
 import cyberPhysical_Incident.ActivityType;
 import cyberPhysical_Incident.Actor;
 import cyberPhysical_Incident.Asset;
+import cyberPhysical_Incident.BigraphExpression;
 import cyberPhysical_Incident.Connection;
 import cyberPhysical_Incident.CrimeScript;
 import cyberPhysical_Incident.CyberPhysicalIncidentPackage;
+import cyberPhysical_Incident.Entity;
+import cyberPhysical_Incident.Expression;
 import cyberPhysical_Incident.Goal;
 import cyberPhysical_Incident.IncidentDiagram;
 import cyberPhysical_Incident.IncidentEntity;
@@ -63,11 +66,12 @@ import it.uniud.mads.jlibbig.core.std.SignatureBuilder;
  */
 public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements IncidentDiagram {
 	
-//	protected static int activityNum = 1;
-//	protected static final int MAX_LENGTH = 1000000;
-//	protected static final String ACTIVITY_NAME = "abstracted-Activity";
 	protected static Signature signature;
-	protected int maxOuterNameNumber = 100;
+	
+	//used for creating a global signature
+	// larger number would slow down the matching
+	protected int maxOuterNameNumber = 5; 
+	
 	protected Map<String, Integer> activitiesSequence = null;
 	
 	boolean isDebug = false;
@@ -625,6 +629,8 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 	
 	public Signature createBigraphSignature() {
 
+		setMaxNumberOfuterNames();
+		
 		SignatureBuilder sigBuilder = new SignatureBuilder();
 		EList<IncidentEntity> entities = new BasicEList<IncidentEntity>();
 		
@@ -646,6 +652,39 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 		return signature;
 
 	}
+	
+	protected void setMaxNumberOfuterNames() {
+	
+		//max number of outernames = max number of connections for an entity
+		
+		int maxNum = 0;
+		
+		for( Activity act : getActivity()) {
+			BigraphExpression expPre = (BigraphExpression) act.getPrecondition().getExpression();
+			BigraphExpression expPost = (BigraphExpression) act.getPostcondition().getExpression();
+			
+			for(Entity ent : expPre.getEntity()) {
+				if(ent.getConnectivity().size() > maxNum) {
+					maxNum = ent.getConnectivity().size();
+				}
+			}
+			
+			for(Entity ent : expPost.getEntity()) {
+				if(ent.getConnectivity().size() > maxNum) {
+					maxNum = ent.getConnectivity().size();
+				}
+			}
+		}
+		
+		if(maxNum == 0) {
+			maxOuterNameNumber = 5; //default	
+		} else {
+			maxOuterNameNumber=  maxNum;
+		}
+		
+		
+	}
+	
 	
 	/*protected void addChildren(BigraphNode parent, EList<Entity> entities, Map<String, BigraphNode> nodes,
 			SignatureBuilder sigBuilder, boolean isGround) {
