@@ -3,14 +3,11 @@
 package cyberPhysical_Incident;
 
 import java.util.LinkedList;
-import java.util.List;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
-import environment.EnvironmentDiagram;
 import it.uniud.mads.jlibbig.core.std.Signature;
 
 /**
@@ -41,17 +38,17 @@ import it.uniud.mads.jlibbig.core.std.Signature;
 public interface IncidentDiagram extends EObject {
 	
 	
-	static final int CONTAINMENT_MERGE_RULE = 0;
-	static final int CONNECTIVITY_MERGE_RULE = 1;
-	static final int COLLECTDATA_MERGE_RULE = 2;
+//	static final int CONTAINMENT_MERGE_RULE = 0;
+//	static final int CONNECTIVITY_MERGE_RULE = 1;
+//	static final int COLLECTDATA_MERGE_RULE = 2;
 	
-	 IncidentDiagram createAbstractIncident(EnvironmentDiagram systemModel);
-	 IncidentDiagram createAbstractIncident();
-	 void setSystemModel(EnvironmentDiagram systemModel);
+//	 IncidentDiagram createAbstractIncident(EnvironmentDiagram systemModel);
+//	 IncidentDiagram createAbstractIncident();
+//	 void setSystemModel(EnvironmentDiagram systemModel);
 	 EList<Activity> getActivity();
-	 List<Integer> getMergedRules();
-	 Map<Activity, List<Activity>> getMergedActivities();
-	 void setMergedRules();
+//	 List<Integer> getMergedRules();
+//	 Map<Activity, List<Activity>> getMergedActivities();
+//	 void setMergedRules();
 	 Scene getScene(String sceneName);
 	 Signature createBigraphSignature();
 	 int[] getActivityNumberSequence(String startActivityName, String endActivityName);
@@ -71,13 +68,13 @@ public interface IncidentDiagram extends EObject {
 	/**
 	 *Finds possible pairs of activities that can be merged based on containment and connectivity heuristics 
 	 */
-	 Map<Activity, List<Activity>> abstractActivities();
+//	 Map<Activity, List<Activity>> abstractActivities();
 	
 	/**
 	 * Abstracts assets found in the incident model, which correspod to assets in the system model. 
 	 * If such asset is found then its abstract representation by the system model is returned and replaced in the incident model
 	 */
-	void abstractEntities(EnvironmentDiagram system);
+//	void abstractEntities(EnvironmentDiagram system);
 	
 	/**
 	 * Merges the activity sequence between the given argument activities (them included). 
@@ -86,7 +83,7 @@ public interface IncidentDiagram extends EObject {
 	 * @param endActivity final activity of the sequence
 	 * @return New activity replacing the sequence. Or null if merging is not successful
 	 */
-	Activity mergeActivities(Activity startingActivity, Activity endActivity);
+//	Activity mergeActivities(Activity startingActivity, Activity endActivity);
 
 	/**
 	 * Merges the given activity sequence. Merging is done based on certain set of rules that can be matched against the given sequence.
@@ -95,7 +92,7 @@ public interface IncidentDiagram extends EObject {
 	 * @param activitySequence the sequence of activities to merge
 	 * @return New activity replacing the sequence. Or null if merging is not successful
 	 */
-	Activity mergeActivities(List<Activity> activitySequence);
+//	Activity mergeActivities(List<Activity> activitySequence);
 	
 	
 	/**
@@ -107,7 +104,7 @@ public interface IncidentDiagram extends EObject {
 	 * @param activitySequence The sequence of activities to merge
 	 * @return New activity replacing the first two activities in the sequence. Or null if merging is not successful
 	 */
-	Activity mergeBasedOnContainment(List<Activity> activitySequence);
+//	Activity mergeBasedOnContainment(List<Activity> activitySequence);
 	
 	/**
 	 *  Merges the first two activities of the given sequence. Criteria is:
@@ -117,7 +114,7 @@ public interface IncidentDiagram extends EObject {
 	 * @param activitySequence The sequence of activities to merge
 	 * @return New activity replacing the first two activities in the sequence. Or null if merging is not successful
 	 */
-	Activity mergeBasedOnConnectivity(List<Activity> activitySequence);
+//	Activity mergeBasedOnConnectivity(List<Activity> activitySequence);
 	
 	/**
 	 * Merges the first two activities of the given sequence based on 'collect Data' pattern. 
@@ -143,10 +140,10 @@ public interface IncidentDiagram extends EObject {
 	 * @param activitySequence The sequence of activities to merge
 	 * @return New activity replacing the first two activities in the sequence. Or null if merging is not successful
 	 */
-	Activity mergeBasedOnCollectData(List<Activity> activitySequence);
+//	Activity mergeBasedOnCollectData(List<Activity> activitySequence);
 	
-	Activity mergeBasedOnEstablishRogueLocation(List<Activity> activitySequence);
-	Activity mergeBasedOnByPassCardSystem(List<Activity> activitySequence);
+//	Activity mergeBasedOnEstablishRogueLocation(List<Activity> activitySequence);
+//	Activity mergeBasedOnByPassCardSystem(List<Activity> activitySequence);
 	
 //	Activity mergeBasedOnExploit(List<Activity> activitySequence);
 	
@@ -158,7 +155,7 @@ public interface IncidentDiagram extends EObject {
 	 * @param sequenceLength Number of activities to add to the starting activity. Minimum should be 1
 	 * @return New activity replacing the sequence. Or null if merging is not successful
 	 */
-	Activity mergeActivities(Activity startingActivity, int sequenceLength);
+//	Activity mergeActivities(Activity startingActivity, int sequenceLength);
 	
 	
 	/**

@@ -2,8 +2,6 @@
  */
 package cyberPhysical_Incident.impl;
 
-import java.io.File;
-import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.LinkedList;
@@ -22,36 +20,22 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import choco.kernel.model.constraints.automaton.State;
 import cyberPhysical_Incident.Activity;
 import cyberPhysical_Incident.ActivityInitiator;
 import cyberPhysical_Incident.ActivityType;
 import cyberPhysical_Incident.Actor;
 import cyberPhysical_Incident.Asset;
-import cyberPhysical_Incident.BigraphExpression;
 import cyberPhysical_Incident.Connection;
-import cyberPhysical_Incident.Connectivity;
 import cyberPhysical_Incident.CrimeScript;
-import cyberPhysical_Incident.CyberPhysicalIncidentFactory;
 import cyberPhysical_Incident.CyberPhysicalIncidentPackage;
-import cyberPhysical_Incident.Entity;
 import cyberPhysical_Incident.Goal;
 import cyberPhysical_Incident.IncidentDiagram;
 import cyberPhysical_Incident.IncidentEntity;
 import cyberPhysical_Incident.Intent;
-import cyberPhysical_Incident.Location;
 import cyberPhysical_Incident.Motive;
 import cyberPhysical_Incident.Path;
-import cyberPhysical_Incident.Postcondition;
-import cyberPhysical_Incident.Precondition;
 import cyberPhysical_Incident.Resource;
 import cyberPhysical_Incident.Scene;
-import cyberPhysical_Incident.ScriptCategory;
-import cyberPhysical_Incident.Type;
-import environment.EnvironmentDiagram;
-import externalUtility.BigraphNode;
-import externalUtility.IncidentModelHandler;
-import it.uniud.mads.jlibbig.core.std.Bigraph;
 import it.uniud.mads.jlibbig.core.std.Signature;
 import it.uniud.mads.jlibbig.core.std.SignatureBuilder;
 
@@ -79,11 +63,11 @@ import it.uniud.mads.jlibbig.core.std.SignatureBuilder;
  */
 public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements IncidentDiagram {
 	
-	protected static int activityNum = 1;
-	protected static final int MAX_LENGTH = 1000000;
-	protected static final String ACTIVITY_NAME = "abstracted-Activity";
+//	protected static int activityNum = 1;
+//	protected static final int MAX_LENGTH = 1000000;
+//	protected static final String ACTIVITY_NAME = "abstracted-Activity";
 	protected static Signature signature;
-	protected int maxOuterNameNumber = 10;
+	protected int maxOuterNameNumber = 100;
 	protected Map<String, Integer> activitiesSequence = null;
 	
 	boolean isDebug = false;
@@ -188,18 +172,18 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 	 */
 	protected EList<Path> paths;
 
-	protected CyberPhysicalIncidentFactory instance = CyberPhysicalIncidentFactory.eINSTANCE;
-	protected environment.EnvironmentDiagram systemModel;
+//	protected CyberPhysicalIncidentFactory instance = CyberPhysicalIncidentFactory.eINSTANCE;
+//	protected environment.EnvironmentDiagram systemModel;
 	protected EList<Activity> activity;
 	
 	//key is new activity and the list is the list of merged activities from the original incident
-	protected Map<Activity, List<Activity>> mergedActivities; 
+//	protected Map<Activity, List<Activity>> mergedActivities; 
 	
 	//each entry has the value of the merge rule used to create the new activity (e.g., containment, connectivity)
-	protected List<Integer> mergedRules; 
+//	protected List<Integer> mergedRules; 
 	
 	
-	public IncidentDiagram createAbstractIncident(EnvironmentDiagram system) {
+	/*public IncidentDiagram createAbstractIncident(EnvironmentDiagram system) {
 	
 		setSystemModel(system);
 		return createAbstractIncident();
@@ -249,15 +233,16 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 		 
 		return potentialAbstractIncident;
 	}
+	*/
 	
-	protected void updateMetaData(IncidentDiagram abstractedIncident) {
+	/*protected void updateMetaData(IncidentDiagram abstractedIncident) {
 		
-		/**
+		*//**
 		 * Update some metadata for the abstract
 		 * Currently includes: 
 		 * 1-Category (e.g., track, script, meta-script): For example form INSTANCE to TRACK/SCRIPT
 		 * 2- (future) Higher level script name: which links the abstract to other scripts
-		 */
+		 *//*
 		
 		////update incident category
 		int currentCategoryValue = this.getCrimeScript().getCategory().getValue();
@@ -281,9 +266,9 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 		}
 		
 		
-	}
+	}*/
 	
-	public Map<Activity, List<Activity>> abstractActivities() {
+	/*public Map<Activity, List<Activity>> abstractActivities() {
 		
 		//currently merging is done based on the first two activities in a given sequence
 		//so I test different sequences to see of they can be merged or not. I try to test all
@@ -331,9 +316,9 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 		
 		return mergedActivities;
 
-	}
+	}*/
 	
-	public void abstractEntities(EnvironmentDiagram system) {
+	/*public void abstractEntities(EnvironmentDiagram system) {
 		
 		//1-look for assets that exist in the system model
 		//2-if one found, then use the system model to find an abstraction of this entity based on the system meta-model
@@ -368,9 +353,9 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 			}
 		}
 			
-	}
+	}*/
 	
-	protected IncidentEntity abstractEntity(IncidentEntity entity, environment.Asset systemAsset) {
+	/*protected IncidentEntity abstractEntity(IncidentEntity entity, environment.Asset systemAsset) {
 	
 		if(entity == null || systemAsset == null) {
 			return null;
@@ -387,7 +372,7 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 		//for now all changed are done directly. Need to create a copy later
 		IncidentEntity abstractedEntity = entity;
 		
-		/*//determine the type of the entity to create (i.e. asset, resource, actor)
+		//determine the type of the entity to create (i.e. asset, resource, actor)
 		if(AssetImpl.class.isInstance(entity)) {
 			abstractedEntity = instance.createAsset();
 		} else if(ResourceImpl.class.isInstance(entity)) {
@@ -396,7 +381,7 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 			abstractedEntity = instance.createActor();
 		} else {
 			//create a defualt incident entity object
-		}*/
+		}
 		
 		abstractedEntity.setName(abstractedSystemAsset.getName());
 		//abstractedEntity.get
@@ -437,6 +422,7 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 		
 		return null;
 	}
+	*/
 	
 	public Activity getInitialActivity() {
 		
@@ -491,7 +477,7 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * Tries to merge the activity sequence between the given argument activities (them included). 
 	 * Returns a new activity that replaces the sequence, or null if it cannot be repalced.
-	 */
+	 *//*
 	public Activity mergeActivities(Activity startingActivity, Activity endActivity) {
 		
 		MessagePrinter.printMsg(this, "checking to create a list of acts:" + startingActivity.getName() +", "+endActivity.getName());
@@ -537,11 +523,11 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 	//	return null;
 		
 	}
-
+*/
 	/**
 	 * Tries to merge the activity sequence starting from the given argument activity (it included) until the activity that is located the last in the given number of activities. 
 	 * Returns a new activity that replaces the sequence, or null if it cannot be repalced.
-	 */
+	 *//*
 	public Activity mergeActivities(Activity startingActivity, int sequenceLength) {
 		
 		EList<Activity> activities = new BasicEList<Activity>();
@@ -568,13 +554,13 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 		
 		return mergeActivities(activities);
 		
-	}
+	}*/
 	
-	/**
+/*	*//**
 	 * Tries to merge the given activity sequence. Merging is done based on certain set of rules that can be matched against the given sequence.
 	 * Currently, merging is done based on containment of the initiator between the first and the second activity. Please see {@link #mergeAccordingToContainment(EList)} 
 	 * Returns a new activity that replaces the sequence, or null if it cannot be repalced.
-	 */
+	 *//*
 	public Activity mergeActivities(List<Activity> activitySequence) {
 		
 		MessagePrinter.printMsg(this, "trying to merge act ["+activitySequence.get(0).getName()+"] act ["+activitySequence.get(1).getName()+"]");
@@ -635,7 +621,7 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 		//other rules for merging can be added here in the future\\
 		
 		return mergedActivity;	
-	}
+	}*/
 	
 	public Signature createBigraphSignature() {
 
@@ -785,7 +771,7 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 	 * 1-Activity initiator in the first activity is contained by different entities in the precondition and postcondition
 	 * 2-Container of initiator in the second activity should be different from the contianer in postcondition of the first activity
 	 * 3-A connection between the containers of the postconditions in the first and second activity should exist
-	 */
+	 *//*
 	public Activity mergeBasedOnContainment(List<Activity> activitySequence) {
 		
 		//merge activities from startingActivity to endActivity if certain conditions are met
@@ -851,7 +837,7 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 		}
 		
 		
-		/**create a new activity to replace the sequence (first two activities currently) **/
+		*//**create a new activity to replace the sequence (first two activities currently) **//*
 		EList<Activity> newSequence = new BasicEList<Activity>();
 		newSequence.add(activitySequence.get(0));
 		newSequence.add(activitySequence.get(1));
@@ -859,7 +845,7 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 		Activity mergedActivity = createMergedActivity(newSequence);
 	
 		return mergedActivity;
-	}
+	}*/
 	
 	/**
 	 *  Merges the first two activities of the given sequence. Criteria is:
@@ -869,7 +855,7 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 	 * 4-a new connection to the second activity target asset is created from the initiator's entity
 	 * @param activitySequence The sequence of activities to merge
 	 * @return New activity replacing the first two activities in the sequence. Or null if merging is not successful
-	 */
+	 *//*
 	public Activity mergeBasedOnConnectivity(List<Activity> activitySequence) {
 		
 		Activity mergedActivity = null;
@@ -909,7 +895,7 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 			return null;
 		}
 		
-		/**at this point 2nd condition is met (i.e. The target asset of first activity should have a connection to the target asset of the second activity)**/
+		*//**at this point 2nd condition is met (i.e. The target asset of first activity should have a connection to the target asset of the second activity)**//*
 		
 		List<String> initiatorsContainedEntities = firstActivity.getInitiatorContainedEntities();
 		
@@ -926,7 +912,7 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 			return null;
 		}
 
-		/**at this point 3rd condition is met (i.e. Activity initiator in the first activity contains an entity that has connections that increases from pre to post. These connections should be assoicated with the target asset)**/
+		*//**at this point 3rd condition is met (i.e. Activity initiator in the first activity contains an entity that has connections that increases from pre to post. These connections should be assoicated with the target asset)**//*
 
 		String initiatorEntity = null;
 		
@@ -945,9 +931,9 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 			return null;
 		}
 
-		/** at this point 4th condition is met (i.e. a new connection to the second activity target asset is created from the initiator's entity) **/
+		*//** at this point 4th condition is met (i.e. a new connection to the second activity target asset is created from the initiator's entity) **//*
 		
-		/** conditions for merging based on connectivity is satisfied. Next create merged activity**/
+		*//** conditions for merging based on connectivity is satisfied. Next create merged activity**//*
 		EList<Activity> newSequence = new BasicEList<Activity>();
 		newSequence.add(activitySequence.get(0));
 		newSequence.add(activitySequence.get(1));
@@ -962,7 +948,7 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 		
 		Activity mergedActivity = null;
 		
-		/** [basic conditions for merging does not apply to this mainly the need for having the same action in both activities]
+		*//** [basic conditions for merging does not apply to this mainly the need for having the same action in both activities]
 		 * Criteria for matching:
 		 * Collect data pattern is defined as:
 		 * Collect [Data (sensitive), which can be used to undermine the security of the target] 
@@ -991,9 +977,9 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 		 * -Identify (as action): currently used as "Analyse"
 		 * 
 		 * generated activity can be labelled as "suspicious"
-		 */
+		 *//*
 		
-		/**
+		*//**
 		 * Criteria checked:
 		 * In first activity:
 		 * 1-Action should be "connect" and the Target Asset should be a Network (IP or Bus)
@@ -1004,7 +990,7 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 		 * In second activity:
 		 * 5-Device contains data from the Common Resource
 		 * 6-Device contains sensitive data
-		 */
+		 *//*
 		
 		Activity firstActivity = activitySequence.get(0);
 		Activity secondActivity = activitySequence.get(1);
@@ -1166,12 +1152,12 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 		mergedActivity = createMergedActivity(newSequence);
 		
 		return mergedActivity;
-	}
+	}*/
 	
-	public Activity mergeBasedOnEstablishRogueLocation(List<Activity> activitySequence) {
+/*	public Activity mergeBasedOnEstablishRogueLocation(List<Activity> activitySequence) {
 		
 		//to be implemented
-		/**
+		*//**
 		 * "Establish rogue location" pattern
 		 * In this pattern [Offender] (sets up) a malicious version of an [Asset] in a some [Location]
 		 * then Offender waits till a [Vicitm] (accesses) it
@@ -1193,7 +1179,7 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 		 *  precondition: Victim in Location
 		 *  postcondition: Vicitm (accessed) Resource
 		 *  
-		 */
+		 *//*
 		
 		Activity firstActivity = activitySequence.get(0);
 		Activity secondActivity = activitySequence.get(1);
@@ -1252,14 +1238,14 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 		//need to check the 2nd activity
 		
 		return null;
-	}
+	}*/
 	
-	public Activity mergeBasedOnByPassCardSystem(List<Activity> activitySequence) {
+	/*public Activity mergeBasedOnByPassCardSystem(List<Activity> activitySequence) {
 		
 		//to be implemented
 		
 		return null;
-	}
+	}*/
 	
 	/**
 	 * Checks whether the two given entities have a connection
@@ -1292,7 +1278,7 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 	 * Creates a new activity out of the given activity sequence
 	 * @param activitySequence The sequence from which a new activity is created
 	 * @return New <em>Activity</em> that replaces the sequence in the <em>Incident Diagram</em> 
-	 */
+	 *//*
 	protected Activity createMergedActivity(EList<Activity> activitySequence) {
 		
 		if(activitySequence == null || activitySequence.size() == 0) {
@@ -1348,12 +1334,12 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 		
 		// add merged activity to the sequence of activities at the position
 		// where the starting activity in the sequence is located
-		/*for (int i = 0; i < this.getActivity().size(); i++) {
+		for (int i = 0; i < this.getActivity().size(); i++) {
 			if (this.getActivity().get(i).equals(initialActivity)) {
 				this.getActivity().add(i, mergedActivity);
 				break;
 			}
-		}*/
+		}
 		addNewActivityToSequence(mergedActivity, initialActivity);
 
 			
@@ -1364,14 +1350,14 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 //		this.getActivity().removeAll(activitySequence);
 
 		return mergedActivity;
-	}
+	}*/
 
 	/**
 	 * Adds the new merged activity to the original sequence of activities. It is added in place of the
 	 * given second argument 
 	 * @param mergedActivity new merged activity
 	 * @param originalActivity the activity in aequence where the new activity will be placed before
-	 */
+	 *//*
 	protected void addNewActivityToSequence(Activity mergedActivity, Activity originalActivity){
 		
 		for(Scene scene:  getScene()) {
@@ -1383,9 +1369,9 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 				}
 			}
 		}
-	}
+	}*/
 	
-	protected void removeMergedActivitiesFromSequence(EList<Activity> activitySequence) {
+/*	protected void removeMergedActivitiesFromSequence(EList<Activity> activitySequence) {
 		
 //		List<Activity> activitiesToRemove = new LinkedList<Activity>();
 		
@@ -1394,17 +1380,17 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 			for (int i = 0; i < sceneActivities.size(); i++) {
 				if (sceneActivities.get(i).equals(activitySequence.get(0))) {
 					sceneActivities.removeAll(activitySequence);
-					/*for(int j=i;j<sceneActivities.size();j++) {
+					for(int j=i;j<sceneActivities.size();j++) {
 						
-					}*/
+					}
 //					sceneActivities.add(i, mergedActivity);
 					break;
 				}
 			}
 		}
-	}
+	}*/
 	
-	protected void replaceNextActivities(Activity sourceActivity, Activity  targetActivity) {
+	/*protected void replaceNextActivities(Activity sourceActivity, Activity  targetActivity) {
 		
 		//set next activities, which is the next activity in the source activity
 		if (sourceActivity.getNextActivities().size() > 0) {
@@ -1417,9 +1403,9 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 				nextAct.getPreviousActivities().add(targetActivity);
 			}
 		}
-	}
+	}*/
 	
-	protected void replacePreviousActivities(Activity sourceActivity,Activity  targetActivity) {
+	/*protected void replacePreviousActivities(Activity sourceActivity,Activity  targetActivity) {
 		
 		if(sourceActivity.getPreviousActivities().size() >0) {
 			for(Activity prevActivity : sourceActivity.getPreviousActivities()) {
@@ -1430,21 +1416,21 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 				prevActivity.getNextActivities().add(targetActivity);
 			}
 		}
-	}
+	}*/
 	
-	public Map<Activity, List<Activity>> getMergedActivities() {
+	/*public Map<Activity, List<Activity>> getMergedActivities() {
 		return mergedActivities;
-	}
+	}*/
 	
-	public List<Integer> getMergedRules() {
+	/*public List<Integer> getMergedRules() {
 		return mergedRules;
-	}
+	}*/
 	
-	//can be used to clean data saved in an abstract incident so that it cannot be accessed via it
+	/*//can be used to clean data saved in an abstract incident so that it cannot be accessed via it
 	public void setMergedRules() {
 		mergedRules.clear();
 	}
-	
+	*/
 	public Scene getScene(String sceneName) {
 	
 		 for(Scene scene : getScene()) {
@@ -1855,11 +1841,11 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 		return super.eIsSet(featureID);
 	}
 
-	@Override
-	public void setSystemModel(EnvironmentDiagram systemModel) {
-		this.systemModel = systemModel;
-		
-	}
+//	@Override
+//	public void setSystemModel(EnvironmentDiagram systemModel) {
+//		this.systemModel = systemModel;
+//		
+//	}
 
 	public EList<Activity> getActivity() {
 		
