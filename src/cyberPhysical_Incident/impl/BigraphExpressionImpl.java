@@ -19,7 +19,6 @@ import cyberPhysical_Incident.BigraphExpression;
 import cyberPhysical_Incident.Connectivity;
 import cyberPhysical_Incident.CyberPhysicalIncidentPackage;
 import cyberPhysical_Incident.Entity;
-import cyberPhysical_Incident.IncidentDiagram;
 import cyberPhysical_Incident.InnerName;
 import externalUtility.BigraphNode;
 import it.uniud.mads.jlibbig.core.std.Bigraph;
@@ -29,7 +28,6 @@ import it.uniud.mads.jlibbig.core.std.Node;
 import it.uniud.mads.jlibbig.core.std.OuterName;
 import it.uniud.mads.jlibbig.core.std.Root;
 import it.uniud.mads.jlibbig.core.std.Signature;
-import it.uniud.mads.jlibbig.core.std.SignatureBuilder;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model object '<em><b>Bigraph
@@ -72,17 +70,17 @@ public class BigraphExpressionImpl extends ExpressionImpl implements BigraphExpr
 	protected BigraphExpressionImpl() {
 		super();
 	}
-	
+
 	protected BigraphExpressionImpl(BigraphExpression expression) {
 		super();
-		
-		//copy entities
-		for(Entity entity : expression.getEntity()) {
+
+		// copy entities
+		for (Entity entity : expression.getEntity()) {
 			getEntity().add(new EntityImpl(entity));
 		}
-		
-		//copy innernames
-		for(InnerName innerName : expression.getInnername()) {
+
+		// copy innernames
+		for (InnerName innerName : expression.getInnername()) {
 			getInnername().add(new InnerNameImpl(innerName));
 		}
 	}
@@ -175,28 +173,29 @@ public class BigraphExpressionImpl extends ExpressionImpl implements BigraphExpr
 	}
 
 	public boolean hasEntity(String entityName) {
-	
-		if(entityName == null || entityName.isEmpty()) {
+
+		if (entityName == null || entityName.isEmpty()) {
 			return false;
 		}
-		
+
 		Entity result = getEntity(entityName);
-		
-		if(result != null) {
+
+		if (result != null) {
 			return true;
 		}
-		
+
 		return false;
 	}
-	
+
 	public Entity getEntity(String entityName) {
 
 		Entity result = null;
-
+		// System.out.println("checking..."+entityName);
 		// finds first occurance of entityName
 		for (Entity entity : getEntity()) {
 
 			if (entity.getName().equals(entityName)) {
+				// System.out.println("found in first level..."+entityName);
 				result = entity;
 				break;
 			}
@@ -205,6 +204,7 @@ public class BigraphExpressionImpl extends ExpressionImpl implements BigraphExpr
 			}
 
 			if (result != null) {
+				// System.out.println("found in other levels..."+entityName);
 				break;
 			}
 		}
@@ -224,7 +224,85 @@ public class BigraphExpressionImpl extends ExpressionImpl implements BigraphExpr
 			if (!entity.getEntity().isEmpty()) {
 				result = getEntity(entityName, entity.getEntity());
 			}
+			
+			if (result != null) {
+				break;
+			}
+			
 		}
+		return result;
+	}
+
+	public boolean hasConnection(String connectionName) {
+
+		if (connectionName == null || connectionName.isEmpty()) {
+			return false;
+		}
+
+		Connectivity result = getConnection(connectionName);
+
+		if (result != null) {
+			return true;
+		}
+
+		return false;
+	}
+
+	public Connectivity getConnection(String connectionName) {
+
+		Connectivity result = null;
+
+		// finds first occurance of entityName
+		outer_loop:
+		for (Entity entity : getEntity()) {
+
+			for (Connectivity con : entity.getConnectivity()) {
+
+				if (con.getName().equals(connectionName)) {
+	
+					// System.out.println("found in first level..."+entityName);
+					result = con;
+					break outer_loop;
+				}
+			}
+
+			if (!entity.getEntity().isEmpty()) {
+				result = getConnection(connectionName, entity.getEntity());
+			}
+
+			if (result != null) {
+				// System.out.println("found in other levels..."+entityName);
+				break;
+			}
+		}
+
+		return result;
+	}
+
+	protected Connectivity getConnection(String connectionName, List<Entity> list) {
+
+		Connectivity result = null;
+
+		outer_loop:
+		for (Entity entity : list) {
+
+			for (Connectivity con : entity.getConnectivity()) {
+				
+				if (con.getName().equals(connectionName)) {
+					result = con;
+					break outer_loop;
+				}
+			}
+			
+			if (!entity.getEntity().isEmpty()) {
+				result = getConnection(connectionName, entity.getEntity());
+			}
+			
+			if (result != null) {
+				break;
+			}
+		}
+		
 		return result;
 	}
 
@@ -275,19 +353,19 @@ public class BigraphExpressionImpl extends ExpressionImpl implements BigraphExpr
 	}
 
 	public boolean isEmpty() {
-		
-		if(getEntity().isEmpty()) {
+
+		if (getEntity().isEmpty()) {
 			return true;
 		}
-		
+
 		return false;
 	}
-	
+
 	public Bigraph createBigraph(boolean isGround) {
 
 		BigraphNode node;
 		Map<String, externalUtility.BigraphNode> nodes = new HashMap<String, externalUtility.BigraphNode>();
-		//SignatureBuilder sigBuilder = new SignatureBuilder();
+		// SignatureBuilder sigBuilder = new SignatureBuilder();
 
 		int numOfRoots = 0;
 
@@ -297,8 +375,9 @@ public class BigraphExpressionImpl extends ExpressionImpl implements BigraphExpr
 
 			node.setId(ent.getName());
 
-			/*// add site
-			node.setSite(ent.getSite() != null ? true : false);*/
+			/*
+			 * // add site node.setSite(ent.getSite() != null ? true : false);
+			 */
 
 			// add parent
 			node.setParentRoot(numOfRoots);
@@ -316,54 +395,50 @@ public class BigraphExpressionImpl extends ExpressionImpl implements BigraphExpr
 
 			// create a bigraph signature out of each entity and max arity
 			// number
-			//sigBuilder.add(ent.getName(), true, maxOuterNameNumber);
+			// sigBuilder.add(ent.getName(), true, maxOuterNameNumber);
 
 			addChildren(node, ent.getEntity(), nodes, isGround);
 		}
 
-		//Signature signature = sigBuilder.makeSignature();
+		// Signature signature = sigBuilder.makeSignature();
 
 		return BuildBigraph(nodes, IncidentDiagramImpl.signature);
 
 	}
-	
-	/*public Bigraph createBigraph(Signature signature) {
 
-		BigraphNode node;
-		Map<String, externalUtility.BigraphNode> nodes = new HashMap<String, externalUtility.BigraphNode>();
-
-		int numOfRoots = 0;
-
-		for (Entity ent : getEntity()) {
-
-			node = new BigraphNode();
-
-			node.setId(ent.getName());
-
-			// add site
-			node.setSite(ent.getSite() != null ? true : false);
-
-			// add parent
-			node.setParentRoot(numOfRoots);
-			numOfRoots++;
-
-			// add control (currently same as the name of the entity)
-			node.setControl(ent.getName());
-
-			// add connectivity (outernames)
-			for (Connectivity con : ent.getConnectivity()) {
-				node.addOuterName(con.getName(), con.isIsClosed());
-			}
-
-			nodes.put(node.getId(), node);
-
-			addChildren(node, ent.getEntity(), nodes, false);
-		}
-
-		return BuildBigraph(nodes, signature);
-
-	}
-*/
+	/*
+	 * public Bigraph createBigraph(Signature signature) {
+	 * 
+	 * BigraphNode node; Map<String, externalUtility.BigraphNode> nodes = new
+	 * HashMap<String, externalUtility.BigraphNode>();
+	 * 
+	 * int numOfRoots = 0;
+	 * 
+	 * for (Entity ent : getEntity()) {
+	 * 
+	 * node = new BigraphNode();
+	 * 
+	 * node.setId(ent.getName());
+	 * 
+	 * // add site node.setSite(ent.getSite() != null ? true : false);
+	 * 
+	 * // add parent node.setParentRoot(numOfRoots); numOfRoots++;
+	 * 
+	 * // add control (currently same as the name of the entity)
+	 * node.setControl(ent.getName());
+	 * 
+	 * // add connectivity (outernames) for (Connectivity con :
+	 * ent.getConnectivity()) { node.addOuterName(con.getName(),
+	 * con.isIsClosed()); }
+	 * 
+	 * nodes.put(node.getId(), node);
+	 * 
+	 * addChildren(node, ent.getEntity(), nodes, false); }
+	 * 
+	 * return BuildBigraph(nodes, signature);
+	 * 
+	 * }
+	 */
 	protected Bigraph BuildBigraph(Map<String, BigraphNode> nodes, Signature signature) {
 
 		LinkedList<BigraphNode.OuterName> outerNames = new LinkedList<BigraphNode.OuterName>();
@@ -372,7 +447,7 @@ public class BigraphExpressionImpl extends ExpressionImpl implements BigraphExpr
 		HashMap<String, it.uniud.mads.jlibbig.core.std.InnerName> libBigInnerNames = new HashMap<String, it.uniud.mads.jlibbig.core.std.InnerName>();
 		HashMap<String, Node> libBigNodes = new HashMap<String, Node>();
 		LinkedList<Root> libBigRoots = new LinkedList<Root>();
-		
+
 		// create bigraph
 		BigraphBuilder biBuilder = new BigraphBuilder(signature);
 
@@ -559,11 +634,11 @@ public class BigraphExpressionImpl extends ExpressionImpl implements BigraphExpr
 
 			node.setId(entity.getName());
 
-			if(!isGround) {
+			if (!isGround) {
 				// add site
-				node.setSite(entity.getSite() != null ? true : false);	
+				node.setSite(entity.getSite() != null ? true : false);
 			}
-			
+
 			// add parent
 			node.setParent(parent);
 
@@ -576,7 +651,7 @@ public class BigraphExpressionImpl extends ExpressionImpl implements BigraphExpr
 			}
 
 			nodes.put(node.getId(), node);
-			
+
 			addChildren(node, entity.getEntity(), nodes, isGround);
 		}
 	}
@@ -584,7 +659,7 @@ public class BigraphExpressionImpl extends ExpressionImpl implements BigraphExpr
 	public BigraphExpression clone() {
 		return new BigraphExpressionImpl(this);
 	}
-	
+
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated

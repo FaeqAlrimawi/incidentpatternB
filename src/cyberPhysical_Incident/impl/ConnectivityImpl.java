@@ -5,8 +5,6 @@ package cyberPhysical_Incident.impl;
 import cyberPhysical_Incident.Connectivity;
 
 import cyberPhysical_Incident.CyberPhysicalIncidentPackage;
-
-import org.eclipse.core.runtime.preferences.IScope;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;

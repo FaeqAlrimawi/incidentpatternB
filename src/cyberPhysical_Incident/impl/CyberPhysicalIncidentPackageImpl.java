@@ -1097,6 +1097,33 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getConnection_Bidirectional() {
+		return (EAttribute)connectionEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getConnection_Properties() {
+		return (EReference)connectionEClass.getEStructuralFeatures().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getConnection_Vulnerabilities() {
+		return (EReference)connectionEClass.getEStructuralFeatures().get(8);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getLocation() {
 		return locationEClass;
 	}
@@ -2113,6 +2140,9 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 		createEReference(connectionEClass, CONNECTION__ENTITY2);
 		createEAttribute(connectionEClass, CONNECTION__CONNECTION_PROBABILITY);
 		createEReference(connectionEClass, CONNECTION__TYPE);
+		createEAttribute(connectionEClass, CONNECTION__BIDIRECTIONAL);
+		createEReference(connectionEClass, CONNECTION__PROPERTIES);
+		createEReference(connectionEClass, CONNECTION__VULNERABILITIES);
 
 		locationEClass = createEClass(LOCATION);
 		createEReference(locationEClass, LOCATION__CONNECTIONS);
@@ -2378,6 +2408,9 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 		initEReference(getConnection_Entity2(), this.getLocation(), null, "entity2", null, 0, 1, Connection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getConnection_ConnectionProbability(), ecorePackage.getEDouble(), "connectionProbability", null, 0, 1, Connection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getConnection_Type(), this.getType(), null, "type", null, 0, 1, Connection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getConnection_Bidirectional(), ecorePackage.getEBoolean(), "bidirectional", null, 0, 1, Connection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getConnection_Properties(), this.getProperty(), null, "properties", null, 0, -1, Connection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getConnection_Vulnerabilities(), this.getVulnerability(), null, "vulnerabilities", null, 0, -1, Connection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(locationEClass, Location.class, "Location", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getLocation_Connections(), this.getConnection(), null, "connections", null, 0, -1, Location.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

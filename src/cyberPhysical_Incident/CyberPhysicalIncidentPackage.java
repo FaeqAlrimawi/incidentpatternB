@@ -1004,13 +1004,40 @@ public interface CyberPhysicalIncidentPackage extends EPackage {
 	int CONNECTION__TYPE = 5;
 
 	/**
+	 * The feature id for the '<em><b>Bidirectional</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONNECTION__BIDIRECTIONAL = 6;
+
+	/**
+	 * The feature id for the '<em><b>Properties</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONNECTION__PROPERTIES = 7;
+
+	/**
+	 * The feature id for the '<em><b>Vulnerabilities</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONNECTION__VULNERABILITIES = 8;
+
+	/**
 	 * The number of structural features of the '<em>Connection</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTION_FEATURE_COUNT = 6;
+	int CONNECTION_FEATURE_COUNT = 9;
 
 	/**
 	 * The number of operations of the '<em>Connection</em>' class.
@@ -3658,6 +3685,39 @@ public interface CyberPhysicalIncidentPackage extends EPackage {
 	EReference getConnection_Type();
 
 	/**
+	 * Returns the meta object for the attribute '{@link cyberPhysical_Incident.Connection#isBidirectional <em>Bidirectional</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Bidirectional</em>'.
+	 * @see cyberPhysical_Incident.Connection#isBidirectional()
+	 * @see #getConnection()
+	 * @generated
+	 */
+	EAttribute getConnection_Bidirectional();
+
+	/**
+	 * Returns the meta object for the reference list '{@link cyberPhysical_Incident.Connection#getProperties <em>Properties</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Properties</em>'.
+	 * @see cyberPhysical_Incident.Connection#getProperties()
+	 * @see #getConnection()
+	 * @generated
+	 */
+	EReference getConnection_Properties();
+
+	/**
+	 * Returns the meta object for the reference list '{@link cyberPhysical_Incident.Connection#getVulnerabilities <em>Vulnerabilities</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Vulnerabilities</em>'.
+	 * @see cyberPhysical_Incident.Connection#getVulnerabilities()
+	 * @see #getConnection()
+	 * @generated
+	 */
+	EReference getConnection_Vulnerabilities();
+
+	/**
 	 * Returns the meta object for class '{@link cyberPhysical_Incident.Location <em>Location</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5319,6 +5379,30 @@ public interface CyberPhysicalIncidentPackage extends EPackage {
 		 * @generated
 		 */
 		EReference CONNECTION__TYPE = eINSTANCE.getConnection_Type();
+
+		/**
+		 * The meta object literal for the '<em><b>Bidirectional</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CONNECTION__BIDIRECTIONAL = eINSTANCE.getConnection_Bidirectional();
+
+		/**
+		 * The meta object literal for the '<em><b>Properties</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONNECTION__PROPERTIES = eINSTANCE.getConnection_Properties();
+
+		/**
+		 * The meta object literal for the '<em><b>Vulnerabilities</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONNECTION__VULNERABILITIES = eINSTANCE.getConnection_Vulnerabilities();
 
 		/**
 		 * The meta object literal for the '{@link cyberPhysical_Incident.Location <em>Location</em>}' class.

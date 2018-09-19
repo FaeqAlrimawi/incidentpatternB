@@ -746,7 +746,7 @@ public class ActivityImpl extends MinimalEObjectImpl.Container implements Activi
 	}
 	
 
-	public boolean isEntityUsed(IncidentEntity entity) {
+	public boolean isEntityUsed(String entityName) {
 		
 		BigraphExpression expPre = (BigraphExpression)getPrecondition().getExpression();
 		BigraphExpression expPost = (BigraphExpression)getPostcondition().getExpression();
@@ -754,11 +754,30 @@ public class ActivityImpl extends MinimalEObjectImpl.Container implements Activi
 		boolean isUsed = false;
 		
 		if(expPre != null) {
-			isUsed = expPre.hasEntity(entity.getName());	
+			isUsed = expPre.hasEntity(entityName);	
 		}
 		
 		if(!isUsed && expPost != null) {
-			isUsed = expPost.hasEntity(entity.getName());	
+			isUsed = expPost.hasEntity(entityName);	
+		}
+		
+		return isUsed;
+		 
+	}
+	
+	public boolean isConnectionUsed(String connectionName) {
+		
+		BigraphExpression expPre = (BigraphExpression)getPrecondition().getExpression();
+		BigraphExpression expPost = (BigraphExpression)getPostcondition().getExpression();
+		
+		boolean isUsed = false;
+		
+		if(expPre != null) {
+			isUsed = expPre.hasConnection(connectionName);	
+		}
+		
+		if(!isUsed && expPost != null) {
+			isUsed = expPost.hasConnection(connectionName);	
 		}
 		
 		return isUsed;

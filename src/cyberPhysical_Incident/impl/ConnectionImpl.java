@@ -5,8 +5,10 @@ package cyberPhysical_Incident.impl;
 import cyberPhysical_Incident.CyberPhysicalIncidentPackage;
 import cyberPhysical_Incident.Connection;
 import cyberPhysical_Incident.Location;
+import cyberPhysical_Incident.Property;
 import cyberPhysical_Incident.Type;
 
+import cyberPhysical_Incident.Vulnerability;
 import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -19,6 +21,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -34,6 +37,9 @@ import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
  *   <li>{@link cyberPhysical_Incident.impl.ConnectionImpl#getEntity2 <em>Entity2</em>}</li>
  *   <li>{@link cyberPhysical_Incident.impl.ConnectionImpl#getConnectionProbability <em>Connection Probability</em>}</li>
  *   <li>{@link cyberPhysical_Incident.impl.ConnectionImpl#getType <em>Type</em>}</li>
+ *   <li>{@link cyberPhysical_Incident.impl.ConnectionImpl#isBidirectional <em>Bidirectional</em>}</li>
+ *   <li>{@link cyberPhysical_Incident.impl.ConnectionImpl#getProperties <em>Properties</em>}</li>
+ *   <li>{@link cyberPhysical_Incident.impl.ConnectionImpl#getVulnerabilities <em>Vulnerabilities</em>}</li>
  * </ul>
  *
  * @generated
@@ -118,6 +124,46 @@ public class ConnectionImpl extends MinimalEObjectImpl.Container implements Conn
 	 * @ordered
 	 */
 	protected Type type;
+
+	/**
+	 * The default value of the '{@link #isBidirectional() <em>Bidirectional</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isBidirectional()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean BIDIRECTIONAL_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isBidirectional() <em>Bidirectional</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isBidirectional()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean bidirectional = BIDIRECTIONAL_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getProperties() <em>Properties</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProperties()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Property> properties;
+
+	/**
+	 * The cached value of the '{@link #getVulnerabilities() <em>Vulnerabilities</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getVulnerabilities()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Vulnerability> vulnerabilities;
 
 	protected static int connectionNumber = 1;
 	protected static final long CONNECTION_NUMBER_LIMIT = Long.MAX_VALUE;
@@ -332,6 +378,33 @@ public class ConnectionImpl extends MinimalEObjectImpl.Container implements Conn
 	
 	}
 
+	@Override
+	public boolean equals(Object obj) {
+		
+	    if (obj == null) {
+	        return false;
+	    }
+	    if (!Connection.class.isAssignableFrom(obj.getClass())) {
+	        return false;
+	    }
+	    
+	    final Connection other = (Connection) obj;
+	    
+	    if(this == obj) {
+	    	return true;
+	    }
+	    
+	    if(this.getName() == null) {
+	    	return false;
+	    }
+	    
+	    if(this.getName().equals(other.getName())) {
+	    	return true;
+	    }
+	    
+	    return false;
+	}
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -401,6 +474,55 @@ public class ConnectionImpl extends MinimalEObjectImpl.Container implements Conn
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean isBidirectional() {
+		return bidirectional;
+	}
+
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setBidirectional(boolean newBidirectional) {
+		boolean oldBidirectional = bidirectional;
+		bidirectional = newBidirectional;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysicalIncidentPackage.CONNECTION__BIDIRECTIONAL, oldBidirectional, bidirectional));
+	}
+
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Property> getProperties() {
+		if (properties == null) {
+			properties = new EObjectResolvingEList<Property>(Property.class, this, CyberPhysicalIncidentPackage.CONNECTION__PROPERTIES);
+		}
+		return properties;
+	}
+
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Vulnerability> getVulnerabilities() {
+		if (vulnerabilities == null) {
+			vulnerabilities = new EObjectResolvingEList<Vulnerability>(Vulnerability.class, this, CyberPhysicalIncidentPackage.CONNECTION__VULNERABILITIES);
+		}
+		return vulnerabilities;
+	}
+
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -432,6 +554,12 @@ public class ConnectionImpl extends MinimalEObjectImpl.Container implements Conn
 				return getConnectionProbability();
 			case CyberPhysicalIncidentPackage.CONNECTION__TYPE:
 				return getType();
+			case CyberPhysicalIncidentPackage.CONNECTION__BIDIRECTIONAL:
+				return isBidirectional();
+			case CyberPhysicalIncidentPackage.CONNECTION__PROPERTIES:
+				return getProperties();
+			case CyberPhysicalIncidentPackage.CONNECTION__VULNERABILITIES:
+				return getVulnerabilities();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -464,6 +592,17 @@ public class ConnectionImpl extends MinimalEObjectImpl.Container implements Conn
 			case CyberPhysicalIncidentPackage.CONNECTION__TYPE:
 				setType((Type)newValue);
 				return;
+			case CyberPhysicalIncidentPackage.CONNECTION__BIDIRECTIONAL:
+				setBidirectional((Boolean)newValue);
+				return;
+			case CyberPhysicalIncidentPackage.CONNECTION__PROPERTIES:
+				getProperties().clear();
+				getProperties().addAll((Collection<? extends Property>)newValue);
+				return;
+			case CyberPhysicalIncidentPackage.CONNECTION__VULNERABILITIES:
+				getVulnerabilities().clear();
+				getVulnerabilities().addAll((Collection<? extends Vulnerability>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -494,6 +633,15 @@ public class ConnectionImpl extends MinimalEObjectImpl.Container implements Conn
 			case CyberPhysicalIncidentPackage.CONNECTION__TYPE:
 				setType((Type)null);
 				return;
+			case CyberPhysicalIncidentPackage.CONNECTION__BIDIRECTIONAL:
+				setBidirectional(BIDIRECTIONAL_EDEFAULT);
+				return;
+			case CyberPhysicalIncidentPackage.CONNECTION__PROPERTIES:
+				getProperties().clear();
+				return;
+			case CyberPhysicalIncidentPackage.CONNECTION__VULNERABILITIES:
+				getVulnerabilities().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -518,6 +666,12 @@ public class ConnectionImpl extends MinimalEObjectImpl.Container implements Conn
 				return connectionProbability != CONNECTION_PROBABILITY_EDEFAULT;
 			case CyberPhysicalIncidentPackage.CONNECTION__TYPE:
 				return type != null;
+			case CyberPhysicalIncidentPackage.CONNECTION__BIDIRECTIONAL:
+				return bidirectional != BIDIRECTIONAL_EDEFAULT;
+			case CyberPhysicalIncidentPackage.CONNECTION__PROPERTIES:
+				return properties != null && !properties.isEmpty();
+			case CyberPhysicalIncidentPackage.CONNECTION__VULNERABILITIES:
+				return vulnerabilities != null && !vulnerabilities.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -538,6 +692,8 @@ public class ConnectionImpl extends MinimalEObjectImpl.Container implements Conn
 		result.append(constraints);
 		result.append(", connectionProbability: ");
 		result.append(connectionProbability);
+		result.append(", bidirectional: ");
+		result.append(bidirectional);
 		result.append(')');
 		return result.toString();
 	}

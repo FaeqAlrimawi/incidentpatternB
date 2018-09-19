@@ -21,6 +21,9 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link cyberPhysical_Incident.Connection#getEntity2 <em>Entity2</em>}</li>
  *   <li>{@link cyberPhysical_Incident.Connection#getConnectionProbability <em>Connection Probability</em>}</li>
  *   <li>{@link cyberPhysical_Incident.Connection#getType <em>Type</em>}</li>
+ *   <li>{@link cyberPhysical_Incident.Connection#isBidirectional <em>Bidirectional</em>}</li>
+ *   <li>{@link cyberPhysical_Incident.Connection#getProperties <em>Properties</em>}</li>
+ *   <li>{@link cyberPhysical_Incident.Connection#getVulnerabilities <em>Vulnerabilities</em>}</li>
  * </ul>
  *
  * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getConnection()
@@ -180,5 +183,63 @@ public interface Connection extends EObject {
 	 * @generated
 	 */
 	void setType(Type value);
+
+	/**
+	 * Returns the value of the '<em><b>Bidirectional</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Bidirectional</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Bidirectional</em>' attribute.
+	 * @see #setBidirectional(boolean)
+	 * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getConnection_Bidirectional()
+	 * @model
+	 * @generated
+	 */
+	boolean isBidirectional();
+
+	/**
+	 * Sets the value of the '{@link cyberPhysical_Incident.Connection#isBidirectional <em>Bidirectional</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Bidirectional</em>' attribute.
+	 * @see #isBidirectional()
+	 * @generated
+	 */
+	void setBidirectional(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Properties</b></em>' reference list.
+	 * The list contents are of type {@link cyberPhysical_Incident.Property}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Properties</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Properties</em>' reference list.
+	 * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getConnection_Properties()
+	 * @model
+	 * @generated
+	 */
+	EList<Property> getProperties();
+
+	/**
+	 * Returns the value of the '<em><b>Vulnerabilities</b></em>' reference list.
+	 * The list contents are of type {@link cyberPhysical_Incident.Vulnerability}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Vulnerabilities</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Vulnerabilities</em>' reference list.
+	 * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getConnection_Vulnerabilities()
+	 * @model
+	 * @generated
+	 */
+	EList<Vulnerability> getVulnerabilities();
 
 } // Connection

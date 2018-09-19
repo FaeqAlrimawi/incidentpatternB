@@ -63,7 +63,8 @@ public interface IncidentDiagram extends EObject {
 	 LinkedList<Activity> getActivitySequence(int[] indicesSequence);
 	 Map<String, Integer> getActivitySequence();
 	 void setActivitySequence(Map<String, Integer> actSequence);
-	 boolean isUsedByActivity(IncidentEntity entity);
+	 boolean isUsed(IncidentEntity entity);
+	 void removeUnusedEntities();
 	 /**
 	  * Checks whether the given activity name already exists in the incident model or not
 	  * @param activityName name that needs to be checked

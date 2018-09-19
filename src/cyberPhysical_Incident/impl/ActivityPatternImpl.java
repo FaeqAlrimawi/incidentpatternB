@@ -10,7 +10,6 @@ import java.util.Map;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -21,29 +20,12 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import cyberPhysical_Incident.Activity;
-import cyberPhysical_Incident.ActivityInitiator;
 import cyberPhysical_Incident.ActivityPattern;
 import cyberPhysical_Incident.ActivityPatternSeverity;
-import cyberPhysical_Incident.ActivityType;
-import cyberPhysical_Incident.Actor;
-import cyberPhysical_Incident.ActorLevel;
-import cyberPhysical_Incident.ActorRole;
-import cyberPhysical_Incident.Asset;
-import cyberPhysical_Incident.Behaviour;
-import cyberPhysical_Incident.BigraphExpression;
 import cyberPhysical_Incident.Connection;
 import cyberPhysical_Incident.CyberPhysicalIncidentPackage;
-import cyberPhysical_Incident.Entity;
 import cyberPhysical_Incident.IncidentEntity;
-import cyberPhysical_Incident.Knowledge;
-import cyberPhysical_Incident.Location;
-import cyberPhysical_Incident.Postcondition;
-import cyberPhysical_Incident.Precondition;
-import cyberPhysical_Incident.Resource;
 import cyberPhysical_Incident.Skill_Level;
-import cyberPhysical_Incident.Vulnerability;
-import it.uniud.mads.jlibbig.core.std.Bigraph;
-import it.uniud.mads.jlibbig.core.std.Matcher;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model object

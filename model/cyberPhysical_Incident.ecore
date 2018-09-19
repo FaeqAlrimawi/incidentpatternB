@@ -135,6 +135,11 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="connectionProbability"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//Type" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="bidirectional" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="properties" upperBound="-1"
+        eType="#//Property"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="vulnerabilities" upperBound="-1"
+        eType="#//Vulnerability"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Location" abstract="true" interface="true">
     <eStructuralFeatures xsi:type="ecore:EReference" name="connections" upperBound="-1"

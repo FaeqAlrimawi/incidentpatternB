@@ -7,7 +7,6 @@ import java.util.List;
 import org.eclipse.emf.common.util.EList;
 
 import it.uniud.mads.jlibbig.core.std.Bigraph;
-import it.uniud.mads.jlibbig.core.std.Signature;
 
 /**
  * <!-- begin-user-doc -->
@@ -42,6 +41,8 @@ public interface BigraphExpression extends Expression {
 	 boolean isEmpty();
 	 boolean hasEntity(String entityName);
 	 BigraphExpression clone();
+	 boolean hasConnection(String connectionName);
+	 Connectivity getConnection(String connectionName);
 	/**
 	 * Returns the value of the '<em><b>Entity</b></em>' containment reference list.
 	 * The list contents are of type {@link cyberPhysical_Incident.Entity}.
