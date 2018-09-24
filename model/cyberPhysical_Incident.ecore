@@ -87,7 +87,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         iD="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isPrimary" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="primary" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
         defaultValueLiteral="True"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Goal">
@@ -316,9 +316,9 @@
     <eLiterals name="ORGANISATION" value="2"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="ActivityPatternSeverity">
-    <eLiterals name="LOW"/>
-    <eLiterals name="MEDIUM" value="1"/>
-    <eLiterals name="HIGH" value="2"/>
+    <eLiterals name="LOW" value="1"/>
+    <eLiterals name="MEDIUM" value="2"/>
+    <eLiterals name="HIGH" value="3"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="Skill_Level">
     <eLiterals name="LOW"/>

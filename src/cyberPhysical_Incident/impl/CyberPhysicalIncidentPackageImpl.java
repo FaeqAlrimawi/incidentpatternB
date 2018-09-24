@@ -917,7 +917,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getMotive_IsPrimary() {
+	public EAttribute getMotive_Primary() {
 		return (EAttribute)motiveEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -2116,7 +2116,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 		motiveEClass = createEClass(MOTIVE);
 		createEAttribute(motiveEClass, MOTIVE__NAME);
 		createEAttribute(motiveEClass, MOTIVE__DESCRIPTION);
-		createEAttribute(motiveEClass, MOTIVE__IS_PRIMARY);
+		createEAttribute(motiveEClass, MOTIVE__PRIMARY);
 
 		goalEClass = createEClass(GOAL);
 		createEAttribute(goalEClass, GOAL__NAME);
@@ -2384,7 +2384,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 		initEClass(motiveEClass, Motive.class, "Motive", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getMotive_Name(), ecorePackage.getEString(), "name", null, 0, 1, Motive.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMotive_Description(), ecorePackage.getEString(), "description", null, 0, 1, Motive.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getMotive_IsPrimary(), ecorePackage.getEBoolean(), "isPrimary", "True", 0, 1, Motive.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMotive_Primary(), ecorePackage.getEBoolean(), "primary", "True", 0, 1, Motive.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(goalEClass, Goal.class, "Goal", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getGoal_Name(), ecorePackage.getEString(), "name", null, 0, 1, Goal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

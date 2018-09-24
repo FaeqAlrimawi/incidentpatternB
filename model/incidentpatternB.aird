@@ -2790,9 +2790,9 @@
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
       </ownedElements>
-      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_GVAVw6O_EeiMT4uHEbbEeA" name="isPrimary : EBoolean = True" tooltipText="">
-        <target xmi:type="ecore:EAttribute" href="cyberPhysical_Incident.ecore#//Motive/isPrimary"/>
-        <semanticElements xmi:type="ecore:EAttribute" href="cyberPhysical_Incident.ecore#//Motive/isPrimary"/>
+      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_GVAVw6O_EeiMT4uHEbbEeA" name="primary : EBoolean = True" tooltipText="">
+        <target xmi:type="ecore:EAttribute" href="cyberPhysical_Incident.ecore#//Motive/primary"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="cyberPhysical_Incident.ecore#//Motive/primary"/>
         <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_GVA80KO_EeiMT4uHEbbEeA" labelAlignment="LEFT">
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
         </ownedStyle>

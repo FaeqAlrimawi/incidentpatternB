@@ -22,7 +22,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <ul>
  *   <li>{@link cyberPhysical_Incident.impl.MotiveImpl#getName <em>Name</em>}</li>
  *   <li>{@link cyberPhysical_Incident.impl.MotiveImpl#getDescription <em>Description</em>}</li>
- *   <li>{@link cyberPhysical_Incident.impl.MotiveImpl#isIsPrimary <em>Is Primary</em>}</li>
+ *   <li>{@link cyberPhysical_Incident.impl.MotiveImpl#isPrimary <em>Primary</em>}</li>
  * </ul>
  *
  * @generated
@@ -69,24 +69,24 @@ public class MotiveImpl extends MinimalEObjectImpl.Container implements Motive {
 	protected String description = DESCRIPTION_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #isIsPrimary() <em>Is Primary</em>}' attribute.
+	 * The default value of the '{@link #isPrimary() <em>Primary</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isIsPrimary()
+	 * @see #isPrimary()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final boolean IS_PRIMARY_EDEFAULT = true;
+	protected static final boolean PRIMARY_EDEFAULT = true;
 
 	/**
-	 * The cached value of the '{@link #isIsPrimary() <em>Is Primary</em>}' attribute.
+	 * The cached value of the '{@link #isPrimary() <em>Primary</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isIsPrimary()
+	 * @see #isPrimary()
 	 * @generated
 	 * @ordered
 	 */
-	protected boolean isPrimary = IS_PRIMARY_EDEFAULT;
+	protected boolean primary = PRIMARY_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -154,8 +154,8 @@ public class MotiveImpl extends MinimalEObjectImpl.Container implements Motive {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isIsPrimary() {
-		return isPrimary;
+	public boolean isPrimary() {
+		return primary;
 	}
 
 	/**
@@ -163,11 +163,11 @@ public class MotiveImpl extends MinimalEObjectImpl.Container implements Motive {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setIsPrimary(boolean newIsPrimary) {
-		boolean oldIsPrimary = isPrimary;
-		isPrimary = newIsPrimary;
+	public void setPrimary(boolean newPrimary) {
+		boolean oldPrimary = primary;
+		primary = newPrimary;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysicalIncidentPackage.MOTIVE__IS_PRIMARY, oldIsPrimary, isPrimary));
+			eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysicalIncidentPackage.MOTIVE__PRIMARY, oldPrimary, primary));
 	}
 
 	/**
@@ -182,8 +182,8 @@ public class MotiveImpl extends MinimalEObjectImpl.Container implements Motive {
 				return getName();
 			case CyberPhysicalIncidentPackage.MOTIVE__DESCRIPTION:
 				return getDescription();
-			case CyberPhysicalIncidentPackage.MOTIVE__IS_PRIMARY:
-				return isIsPrimary();
+			case CyberPhysicalIncidentPackage.MOTIVE__PRIMARY:
+				return isPrimary();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -202,8 +202,8 @@ public class MotiveImpl extends MinimalEObjectImpl.Container implements Motive {
 			case CyberPhysicalIncidentPackage.MOTIVE__DESCRIPTION:
 				setDescription((String)newValue);
 				return;
-			case CyberPhysicalIncidentPackage.MOTIVE__IS_PRIMARY:
-				setIsPrimary((Boolean)newValue);
+			case CyberPhysicalIncidentPackage.MOTIVE__PRIMARY:
+				setPrimary((Boolean)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -223,8 +223,8 @@ public class MotiveImpl extends MinimalEObjectImpl.Container implements Motive {
 			case CyberPhysicalIncidentPackage.MOTIVE__DESCRIPTION:
 				setDescription(DESCRIPTION_EDEFAULT);
 				return;
-			case CyberPhysicalIncidentPackage.MOTIVE__IS_PRIMARY:
-				setIsPrimary(IS_PRIMARY_EDEFAULT);
+			case CyberPhysicalIncidentPackage.MOTIVE__PRIMARY:
+				setPrimary(PRIMARY_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -242,8 +242,8 @@ public class MotiveImpl extends MinimalEObjectImpl.Container implements Motive {
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case CyberPhysicalIncidentPackage.MOTIVE__DESCRIPTION:
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
-			case CyberPhysicalIncidentPackage.MOTIVE__IS_PRIMARY:
-				return isPrimary != IS_PRIMARY_EDEFAULT;
+			case CyberPhysicalIncidentPackage.MOTIVE__PRIMARY:
+				return primary != PRIMARY_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -262,8 +262,8 @@ public class MotiveImpl extends MinimalEObjectImpl.Container implements Motive {
 		result.append(name);
 		result.append(", description: ");
 		result.append(description);
-		result.append(", isPrimary: ");
-		result.append(isPrimary);
+		result.append(", primary: ");
+		result.append(primary);
 		result.append(')');
 		return result.toString();
 	}

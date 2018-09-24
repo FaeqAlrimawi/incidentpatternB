@@ -26,7 +26,7 @@ public enum ActivityPatternSeverity implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	LOW(0, "LOW", "LOW"),
+	LOW(1, "LOW", "LOW"),
 
 	/**
 	 * The '<em><b>MEDIUM</b></em>' literal object.
@@ -36,7 +36,7 @@ public enum ActivityPatternSeverity implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	MEDIUM(1, "MEDIUM", "MEDIUM"),
+	MEDIUM(2, "MEDIUM", "MEDIUM"),
 
 	/**
 	 * The '<em><b>HIGH</b></em>' literal object.
@@ -46,7 +46,7 @@ public enum ActivityPatternSeverity implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	HIGH(2, "HIGH", "HIGH");
+	HIGH(3, "HIGH", "HIGH");
 
 	/**
 	 * The '<em><b>LOW</b></em>' literal value.
@@ -61,7 +61,7 @@ public enum ActivityPatternSeverity implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int LOW_VALUE = 0;
+	public static final int LOW_VALUE = 1;
 
 	/**
 	 * The '<em><b>MEDIUM</b></em>' literal value.
@@ -76,7 +76,7 @@ public enum ActivityPatternSeverity implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MEDIUM_VALUE = 1;
+	public static final int MEDIUM_VALUE = 2;
 
 	/**
 	 * The '<em><b>HIGH</b></em>' literal value.
@@ -91,7 +91,7 @@ public enum ActivityPatternSeverity implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int HIGH_VALUE = 2;
+	public static final int HIGH_VALUE = 3;
 
 	/**
 	 * An array of all the '<em><b>Activity Pattern Severity</b></em>' enumerators.

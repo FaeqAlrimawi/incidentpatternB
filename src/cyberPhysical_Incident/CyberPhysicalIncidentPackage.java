@@ -548,13 +548,13 @@ public interface CyberPhysicalIncidentPackage extends EPackage {
 	int MOTIVE__DESCRIPTION = 1;
 
 	/**
-	 * The feature id for the '<em><b>Is Primary</b></em>' attribute.
+	 * The feature id for the '<em><b>Primary</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MOTIVE__IS_PRIMARY = 2;
+	int MOTIVE__PRIMARY = 2;
 
 	/**
 	 * The number of structural features of the '<em>Motive</em>' class.
@@ -3469,15 +3469,15 @@ public interface CyberPhysicalIncidentPackage extends EPackage {
 	EAttribute getMotive_Description();
 
 	/**
-	 * Returns the meta object for the attribute '{@link cyberPhysical_Incident.Motive#isIsPrimary <em>Is Primary</em>}'.
+	 * Returns the meta object for the attribute '{@link cyberPhysical_Incident.Motive#isPrimary <em>Primary</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Is Primary</em>'.
-	 * @see cyberPhysical_Incident.Motive#isIsPrimary()
+	 * @return the meta object for the attribute '<em>Primary</em>'.
+	 * @see cyberPhysical_Incident.Motive#isPrimary()
 	 * @see #getMotive()
 	 * @generated
 	 */
-	EAttribute getMotive_IsPrimary();
+	EAttribute getMotive_Primary();
 
 	/**
 	 * Returns the meta object for class '{@link cyberPhysical_Incident.Goal <em>Goal</em>}'.
@@ -5213,12 +5213,12 @@ public interface CyberPhysicalIncidentPackage extends EPackage {
 		EAttribute MOTIVE__DESCRIPTION = eINSTANCE.getMotive_Description();
 
 		/**
-		 * The meta object literal for the '<em><b>Is Primary</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Primary</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute MOTIVE__IS_PRIMARY = eINSTANCE.getMotive_IsPrimary();
+		EAttribute MOTIVE__PRIMARY = eINSTANCE.getMotive_Primary();
 
 		/**
 		 * The meta object literal for the '{@link cyberPhysical_Incident.impl.GoalImpl <em>Goal</em>}' class.

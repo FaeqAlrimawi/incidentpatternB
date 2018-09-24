@@ -19,7 +19,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link cyberPhysical_Incident.Motive#getName <em>Name</em>}</li>
  *   <li>{@link cyberPhysical_Incident.Motive#getDescription <em>Description</em>}</li>
- *   <li>{@link cyberPhysical_Incident.Motive#isIsPrimary <em>Is Primary</em>}</li>
+ *   <li>{@link cyberPhysical_Incident.Motive#isPrimary <em>Primary</em>}</li>
  * </ul>
  *
  * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getMotive()
@@ -80,30 +80,30 @@ public interface Motive extends EObject {
 	void setDescription(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Is Primary</b></em>' attribute.
+	 * Returns the value of the '<em><b>Primary</b></em>' attribute.
 	 * The default value is <code>"True"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Is Primary</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Primary</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Is Primary</em>' attribute.
-	 * @see #setIsPrimary(boolean)
-	 * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getMotive_IsPrimary()
+	 * @return the value of the '<em>Primary</em>' attribute.
+	 * @see #setPrimary(boolean)
+	 * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getMotive_Primary()
 	 * @model default="True"
 	 * @generated
 	 */
-	boolean isIsPrimary();
+	boolean isPrimary();
 
 	/**
-	 * Sets the value of the '{@link cyberPhysical_Incident.Motive#isIsPrimary <em>Is Primary</em>}' attribute.
+	 * Sets the value of the '{@link cyberPhysical_Incident.Motive#isPrimary <em>Primary</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Is Primary</em>' attribute.
-	 * @see #isIsPrimary()
+	 * @param value the new value of the '<em>Primary</em>' attribute.
+	 * @see #isPrimary()
 	 * @generated
 	 */
-	void setIsPrimary(boolean value);
+	void setPrimary(boolean value);
 
 } // Motive
