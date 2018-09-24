@@ -87,14 +87,39 @@ public interface IncidentDiagram extends EObject {
 	 * relation (e.g., contained in or connected to) with other entities that is
 	 * stated in a pre/post condition
 	 * 
-	 * @param entity The incident entity to check if it is used
+	 * @param entity
+	 *            The incident entity to check if it is used
 	 * @return True if it is used in the incident. Fales otherwise
 	 */
 	boolean isUsed(IncidentEntity entity);
 
+	/**
+	 * Removes all incident entities (actor, asset, resource) that have not been
+	 * used in activities or has no relations with other entities that have been
+	 * used in activities
+	 * 
+	 * @return The list of entities that are removed. Empty list if none removed
+	 */
 	LinkedList<IncidentEntity> removeUnusedEntities();
+
+	/**
+	 * Returns all incident entities (actor, asset, resource) that have not been
+	 * used in activities or has no relations with other entities that have been
+	 * used in activities
+	 * 
+	 * @return The list of entities that are removed. Empty list if none removed
+	 */
 	LinkedList<IncidentEntity> getUnusedEntities();
+
+	/**
+	 * Checks whether there is at least one incident entity (actor, asset, resource) that has not been
+	 * used in activities or has no relations with other entities that have been
+	 * used in activities
+	 * 
+	 * @return The list of entities that are removed. Empty list if none removed
+	 */
 	boolean hasUnusedEntities();
+
 	/**
 	 * Checks whether the given activity name already exists in the incident
 	 * model or not
