@@ -279,10 +279,9 @@
     <eLiterals name="UNKNOWN" value="2"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="ScriptCategory">
-    <eLiterals name="TRACK"/>
-    <eLiterals name="SCRIPT" value="1"/>
-    <eLiterals name="PROTOSCRIPT" value="2"/>
-    <eLiterals name="METASCRIPT" value="3"/>
+    <eLiterals name="PATTERN" value="1"/>
+    <eLiterals name="PROTOPATTERN" value="2"/>
+    <eLiterals name="METAPATTERN" value="3"/>
     <eLiterals name="INSTANCE" value="4"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="IncidentEntity" eSuperTypes="#//ActivityInitiator #//Location">

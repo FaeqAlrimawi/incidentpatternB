@@ -2564,10 +2564,9 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 		addEEnumLiteral(knowledgeEEnum, Knowledge.UNKNOWN);
 
 		initEEnum(scriptCategoryEEnum, ScriptCategory.class, "ScriptCategory");
-		addEEnumLiteral(scriptCategoryEEnum, ScriptCategory.TRACK);
-		addEEnumLiteral(scriptCategoryEEnum, ScriptCategory.SCRIPT);
-		addEEnumLiteral(scriptCategoryEEnum, ScriptCategory.PROTOSCRIPT);
-		addEEnumLiteral(scriptCategoryEEnum, ScriptCategory.METASCRIPT);
+		addEEnumLiteral(scriptCategoryEEnum, ScriptCategory.PATTERN);
+		addEEnumLiteral(scriptCategoryEEnum, ScriptCategory.PROTOPATTERN);
+		addEEnumLiteral(scriptCategoryEEnum, ScriptCategory.METAPATTERN);
 		addEEnumLiteral(scriptCategoryEEnum, ScriptCategory.INSTANCE);
 
 		initEEnum(actorRoleEEnum, ActorRole.class, "ActorRole");

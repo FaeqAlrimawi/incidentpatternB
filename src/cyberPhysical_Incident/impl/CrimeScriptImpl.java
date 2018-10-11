@@ -126,7 +126,7 @@ public class CrimeScriptImpl extends MinimalEObjectImpl.Container implements Cri
 	 * @generated
 	 * @ordered
 	 */
-	protected static final ScriptCategory CATEGORY_EDEFAULT = ScriptCategory.TRACK;
+	protected static final ScriptCategory CATEGORY_EDEFAULT = ScriptCategory.PATTERN;
 
 	/**
 	 * The cached value of the '{@link #getCategory() <em>Category</em>}' attribute.

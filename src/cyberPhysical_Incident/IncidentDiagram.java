@@ -18,25 +18,16 @@ import it.uniud.mads.jlibbig.core.std.Signature;
  * The following features are supported:
  * </p>
  * <ul>
- * <li>{@link cyberPhysical_Incident.IncidentDiagram#getCrimeScript <em>Crime
- * Script</em>}</li>
- * <li>{@link cyberPhysical_Incident.IncidentDiagram#getScene
- * <em>Scene</em>}</li>
- * <li>{@link cyberPhysical_Incident.IncidentDiagram#getIntent
- * <em>Intent</em>}</li>
- * <li>{@link cyberPhysical_Incident.IncidentDiagram#getGoal <em>Goal</em>}</li>
- * <li>{@link cyberPhysical_Incident.IncidentDiagram#getMotive
- * <em>Motive</em>}</li>
- * <li>{@link cyberPhysical_Incident.IncidentDiagram#getAsset
- * <em>Asset</em>}</li>
- * <li>{@link cyberPhysical_Incident.IncidentDiagram#getResource
- * <em>Resource</em>}</li>
- * <li>{@link cyberPhysical_Incident.IncidentDiagram#getActor
- * <em>Actor</em>}</li>
- * <li>{@link cyberPhysical_Incident.IncidentDiagram#getConnection
- * <em>Connection</em>}</li>
- * <li>{@link cyberPhysical_Incident.IncidentDiagram#getPaths
- * <em>Paths</em>}</li>
+ *   <li>{@link cyberPhysical_Incident.IncidentDiagram#getCrimeScript <em>Crime Script</em>}</li>
+ *   <li>{@link cyberPhysical_Incident.IncidentDiagram#getScene <em>Scene</em>}</li>
+ *   <li>{@link cyberPhysical_Incident.IncidentDiagram#getIntent <em>Intent</em>}</li>
+ *   <li>{@link cyberPhysical_Incident.IncidentDiagram#getGoal <em>Goal</em>}</li>
+ *   <li>{@link cyberPhysical_Incident.IncidentDiagram#getMotive <em>Motive</em>}</li>
+ *   <li>{@link cyberPhysical_Incident.IncidentDiagram#getAsset <em>Asset</em>}</li>
+ *   <li>{@link cyberPhysical_Incident.IncidentDiagram#getResource <em>Resource</em>}</li>
+ *   <li>{@link cyberPhysical_Incident.IncidentDiagram#getActor <em>Actor</em>}</li>
+ *   <li>{@link cyberPhysical_Incident.IncidentDiagram#getConnection <em>Connection</em>}</li>
+ *   <li>{@link cyberPhysical_Incident.IncidentDiagram#getPaths <em>Paths</em>}</li>
  * </ul>
  *
  * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getIncidentDiagram()
@@ -277,14 +268,13 @@ public interface IncidentDiagram extends EObject {
 	Scene getInitialScene();
 
 	/**
-	 * Returns the value of the '<em><b>Crime Script</b></em>' containment
-	 * reference. <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Crime Script</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Crime Script</em>' containment reference list
 	 * isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the value of the '<em>Crime Script</em>' containment reference.
 	 * @see #setCrimeScript(CrimeScript)
 	 * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getIncidentDiagram_CrimeScript()
@@ -294,29 +284,24 @@ public interface IncidentDiagram extends EObject {
 	CrimeScript getCrimeScript();
 
 	/**
-	 * Sets the value of the
-	 * '{@link cyberPhysical_Incident.IncidentDiagram#getCrimeScript <em>Crime
-	 * Script</em>}' containment reference. <!-- begin-user-doc --> <!--
+	 * Sets the value of the '{@link cyberPhysical_Incident.IncidentDiagram#getCrimeScript <em>Crime Script</em>}' containment reference.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
-	 * @param value
-	 *            the new value of the '<em>Crime Script</em>' containment
-	 *            reference.
+	 * @param value the new value of the '<em>Crime Script</em>' containment reference.
 	 * @see #getCrimeScript()
 	 * @generated
 	 */
 	void setCrimeScript(CrimeScript value);
 
 	/**
-	 * Returns the value of the '<em><b>Scene</b></em>' containment reference
-	 * list. The list contents are of type {@link cyberPhysical_Incident.Scene}.
+	 * Returns the value of the '<em><b>Scene</b></em>' containment reference list.
+	 * The list contents are of type {@link cyberPhysical_Incident.Scene}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Scene</em>' containment reference list isn't
 	 * clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the value of the '<em>Scene</em>' containment reference list.
 	 * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getIncidentDiagram_Scene()
 	 * @model containment="true"
@@ -332,7 +317,6 @@ public interface IncidentDiagram extends EObject {
 	 * clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the value of the '<em>Intent</em>' containment reference.
 	 * @see #setIntent(Intent)
 	 * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getIncidentDiagram_Intent()
@@ -342,28 +326,24 @@ public interface IncidentDiagram extends EObject {
 	Intent getIntent();
 
 	/**
-	 * Sets the value of the
-	 * '{@link cyberPhysical_Incident.IncidentDiagram#getIntent
-	 * <em>Intent</em>}' containment reference. <!-- begin-user-doc --> <!--
+	 * Sets the value of the '{@link cyberPhysical_Incident.IncidentDiagram#getIntent <em>Intent</em>}' containment reference.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
-	 * @param value
-	 *            the new value of the '<em>Intent</em>' containment reference.
+	 * @param value the new value of the '<em>Intent</em>' containment reference.
 	 * @see #getIntent()
 	 * @generated
 	 */
 	void setIntent(Intent value);
 
 	/**
-	 * Returns the value of the '<em><b>Goal</b></em>' containment reference
-	 * list. The list contents are of type {@link cyberPhysical_Incident.Goal}.
+	 * Returns the value of the '<em><b>Goal</b></em>' containment reference list.
+	 * The list contents are of type {@link cyberPhysical_Incident.Goal}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Goal</em>' containment reference list isn't
 	 * clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the value of the '<em>Goal</em>' containment reference list.
 	 * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getIncidentDiagram_Goal()
 	 * @model containment="true"
@@ -372,15 +352,14 @@ public interface IncidentDiagram extends EObject {
 	EList<Goal> getGoal();
 
 	/**
-	 * Returns the value of the '<em><b>Motive</b></em>' containment reference
-	 * list. The list contents are of type
-	 * {@link cyberPhysical_Incident.Motive}. <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Motive</b></em>' containment reference list.
+	 * The list contents are of type {@link cyberPhysical_Incident.Motive}.
+	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Motive</em>' containment reference list isn't
 	 * clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the value of the '<em>Motive</em>' containment reference list.
 	 * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getIncidentDiagram_Motive()
 	 * @model containment="true"
@@ -389,15 +368,14 @@ public interface IncidentDiagram extends EObject {
 	EList<Motive> getMotive();
 
 	/**
-	 * Returns the value of the '<em><b>Asset</b></em>' containment reference
-	 * list. The list contents are of type {@link cyberPhysical_Incident.Asset}.
+	 * Returns the value of the '<em><b>Asset</b></em>' containment reference list.
+	 * The list contents are of type {@link cyberPhysical_Incident.Asset}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Asset</em>' containment reference list isn't
 	 * clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the value of the '<em>Asset</em>' containment reference list.
 	 * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getIncidentDiagram_Asset()
 	 * @model containment="true"
@@ -406,15 +384,14 @@ public interface IncidentDiagram extends EObject {
 	EList<Asset> getAsset();
 
 	/**
-	 * Returns the value of the '<em><b>Resource</b></em>' containment reference
-	 * list. The list contents are of type
-	 * {@link cyberPhysical_Incident.Resource}. <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Resource</b></em>' containment reference list.
+	 * The list contents are of type {@link cyberPhysical_Incident.Resource}.
+	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Resource</em>' containment reference list
 	 * isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the value of the '<em>Resource</em>' containment reference list.
 	 * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getIncidentDiagram_Resource()
 	 * @model containment="true"
@@ -423,15 +400,14 @@ public interface IncidentDiagram extends EObject {
 	EList<Resource> getResource();
 
 	/**
-	 * Returns the value of the '<em><b>Actor</b></em>' containment reference
-	 * list. The list contents are of type {@link cyberPhysical_Incident.Actor}.
+	 * Returns the value of the '<em><b>Actor</b></em>' containment reference list.
+	 * The list contents are of type {@link cyberPhysical_Incident.Actor}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Actor</em>' containment reference list isn't
 	 * clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the value of the '<em>Actor</em>' containment reference list.
 	 * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getIncidentDiagram_Actor()
 	 * @model containment="true"
@@ -440,17 +416,15 @@ public interface IncidentDiagram extends EObject {
 	EList<Actor> getActor();
 
 	/**
-	 * Returns the value of the '<em><b>Connection</b></em>' containment
-	 * reference list. The list contents are of type
-	 * {@link cyberPhysical_Incident.Connection}. <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Connection</b></em>' containment reference list.
+	 * The list contents are of type {@link cyberPhysical_Incident.Connection}.
+	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Connection</em>' containment reference list
 	 * isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
-	 * @return the value of the '<em>Connection</em>' containment reference
-	 *         list.
+	 * @return the value of the '<em>Connection</em>' containment reference list.
 	 * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getIncidentDiagram_Connection()
 	 * @model containment="true"
 	 * @generated
@@ -458,15 +432,14 @@ public interface IncidentDiagram extends EObject {
 	EList<Connection> getConnection();
 
 	/**
-	 * Returns the value of the '<em><b>Paths</b></em>' containment reference
-	 * list. The list contents are of type {@link cyberPhysical_Incident.Path}.
+	 * Returns the value of the '<em><b>Paths</b></em>' containment reference list.
+	 * The list contents are of type {@link cyberPhysical_Incident.Path}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Paths</em>' containment reference list isn't
 	 * clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the value of the '<em>Paths</em>' containment reference list.
 	 * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getIncidentDiagram_Paths()
 	 * @model containment="true"

@@ -665,10 +665,6 @@
         <children xmi:type="notation:Node" xmi:id="_GWoGZKO_EeiMT4uHEbbEeA" type="2003" element="_GUJaIKO_EeiMT4uHEbbEeA">
           <children xmi:type="notation:Node" xmi:id="_GWoGZ6O_EeiMT4uHEbbEeA" type="5007"/>
           <children xmi:type="notation:Node" xmi:id="_GWotcKO_EeiMT4uHEbbEeA" type="7004">
-            <children xmi:type="notation:Node" xmi:id="_GW5MJqO_EeiMT4uHEbbEeA" type="3010" element="_GVOYMaO_EeiMT4uHEbbEeA">
-              <styles xmi:type="notation:FontStyle" xmi:id="_GW5MJ6O_EeiMT4uHEbbEeA" fontName="Segoe UI" fontHeight="8"/>
-              <layoutConstraint xmi:type="notation:Location" xmi:id="_GW5MKKO_EeiMT4uHEbbEeA"/>
-            </children>
             <children xmi:type="notation:Node" xmi:id="_GW5MKaO_EeiMT4uHEbbEeA" type="3010" element="_GVOYM6O_EeiMT4uHEbbEeA">
               <styles xmi:type="notation:FontStyle" xmi:id="_GW5MKqO_EeiMT4uHEbbEeA" fontName="Segoe UI" fontHeight="8"/>
               <layoutConstraint xmi:type="notation:Location" xmi:id="_GW5MK6O_EeiMT4uHEbbEeA"/>
@@ -2499,7 +2495,7 @@
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
       </ownedElements>
-      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_GU4Z8KO_EeiMT4uHEbbEeA" name="category : ScriptCategory = TRACK" tooltipText="">
+      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_GU4Z8KO_EeiMT4uHEbbEeA" name="category : ScriptCategory = PATTERN" tooltipText="">
         <target xmi:type="ecore:EAttribute" href="cyberPhysical_Incident.ecore#//CrimeScript/category"/>
         <semanticElements xmi:type="ecore:EAttribute" href="cyberPhysical_Incident.ecore#//CrimeScript/category"/>
         <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_GU4Z8aO_EeiMT4uHEbbEeA" labelAlignment="LEFT">
@@ -2944,33 +2940,25 @@
         <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']"/>
-      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_GVOYMaO_EeiMT4uHEbbEeA" name="TRACK" tooltipText="">
-        <target xmi:type="ecore:EEnumLiteral" href="cyberPhysical_Incident.ecore#//ScriptCategory/TRACK"/>
-        <semanticElements xmi:type="ecore:EEnumLiteral" href="cyberPhysical_Incident.ecore#//ScriptCategory/TRACK"/>
-        <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_GVOYMqO_EeiMT4uHEbbEeA" labelAlignment="LEFT">
-          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@subNodeMappings[name='EC%20EEnumLiteral']/@style"/>
-        </ownedStyle>
-        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@subNodeMappings[name='EC%20EEnumLiteral']"/>
-      </ownedElements>
-      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_GVOYM6O_EeiMT4uHEbbEeA" name="SCRIPT" tooltipText="">
-        <target xmi:type="ecore:EEnumLiteral" href="cyberPhysical_Incident.ecore#//ScriptCategory/SCRIPT"/>
-        <semanticElements xmi:type="ecore:EEnumLiteral" href="cyberPhysical_Incident.ecore#//ScriptCategory/SCRIPT"/>
+      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_GVOYM6O_EeiMT4uHEbbEeA" name="PATTERN" tooltipText="">
+        <target xmi:type="ecore:EEnumLiteral" href="cyberPhysical_Incident.ecore#//ScriptCategory/PATTERN"/>
+        <semanticElements xmi:type="ecore:EEnumLiteral" href="cyberPhysical_Incident.ecore#//ScriptCategory/PATTERN"/>
         <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_GVO_QKO_EeiMT4uHEbbEeA" labelAlignment="LEFT">
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@subNodeMappings[name='EC%20EEnumLiteral']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@subNodeMappings[name='EC%20EEnumLiteral']"/>
       </ownedElements>
-      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_GVO_QaO_EeiMT4uHEbbEeA" name="PROTOSCRIPT" tooltipText="">
-        <target xmi:type="ecore:EEnumLiteral" href="cyberPhysical_Incident.ecore#//ScriptCategory/PROTOSCRIPT"/>
-        <semanticElements xmi:type="ecore:EEnumLiteral" href="cyberPhysical_Incident.ecore#//ScriptCategory/PROTOSCRIPT"/>
+      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_GVO_QaO_EeiMT4uHEbbEeA" name="PROTOPATTERN" tooltipText="">
+        <target xmi:type="ecore:EEnumLiteral" href="cyberPhysical_Incident.ecore#//ScriptCategory/PROTOPATTERN"/>
+        <semanticElements xmi:type="ecore:EEnumLiteral" href="cyberPhysical_Incident.ecore#//ScriptCategory/PROTOPATTERN"/>
         <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_GVO_QqO_EeiMT4uHEbbEeA" labelAlignment="LEFT">
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@subNodeMappings[name='EC%20EEnumLiteral']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@subNodeMappings[name='EC%20EEnumLiteral']"/>
       </ownedElements>
-      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_GVO_Q6O_EeiMT4uHEbbEeA" name="METASCRIPT" tooltipText="">
-        <target xmi:type="ecore:EEnumLiteral" href="cyberPhysical_Incident.ecore#//ScriptCategory/METASCRIPT"/>
-        <semanticElements xmi:type="ecore:EEnumLiteral" href="cyberPhysical_Incident.ecore#//ScriptCategory/METASCRIPT"/>
+      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_GVO_Q6O_EeiMT4uHEbbEeA" name="METAPATTERN" tooltipText="">
+        <target xmi:type="ecore:EEnumLiteral" href="cyberPhysical_Incident.ecore#//ScriptCategory/METAPATTERN"/>
+        <semanticElements xmi:type="ecore:EEnumLiteral" href="cyberPhysical_Incident.ecore#//ScriptCategory/METAPATTERN"/>
         <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_GVPmUKO_EeiMT4uHEbbEeA" labelAlignment="LEFT">
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@subNodeMappings[name='EC%20EEnumLiteral']/@style"/>
         </ownedStyle>

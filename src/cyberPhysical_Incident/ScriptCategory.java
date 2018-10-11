@@ -19,46 +19,30 @@ import org.eclipse.emf.common.util.Enumerator;
  */
 public enum ScriptCategory implements Enumerator {
 	/**
-	 * The '<em><b>TRACK</b></em>' literal object.
+	 * The '<em><b>PATTERN</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #TRACK_VALUE
+	 * @see #PATTERN_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	TRACK(0, "TRACK", "TRACK"),
-
-	/**
-	 * The '<em><b>SCRIPT</b></em>' literal object.
+	PATTERN(1, "PATTERN", "PATTERN"), /**
+	 * The '<em><b>PROTOPATTERN</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #SCRIPT_VALUE
+	 * @see #PROTOPATTERN_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	SCRIPT(1, "SCRIPT", "SCRIPT"),
-
-	/**
-	 * The '<em><b>PROTOSCRIPT</b></em>' literal object.
+	PROTOPATTERN(2, "PROTOPATTERN", "PROTOPATTERN"), /**
+	 * The '<em><b>METAPATTERN</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #PROTOSCRIPT_VALUE
+	 * @see #METAPATTERN_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	PROTOSCRIPT(2, "PROTOSCRIPT", "PROTOSCRIPT"),
-
-	/**
-	 * The '<em><b>METASCRIPT</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #METASCRIPT_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	METASCRIPT(3, "METASCRIPT", "METASCRIPT"),
-
-	/**
+	METAPATTERN(3, "METAPATTERN", "METAPATTERN"), /**
 	 * The '<em><b>INSTANCE</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -69,64 +53,49 @@ public enum ScriptCategory implements Enumerator {
 	INSTANCE(4, "INSTANCE", "INSTANCE");
 
 	/**
-	 * The '<em><b>TRACK</b></em>' literal value.
+	 * The '<em><b>PATTERN</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>TRACK</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>PATTERN</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #TRACK
+	 * @see #PATTERN
 	 * @model
 	 * @generated
 	 * @ordered
 	 */
-	public static final int TRACK_VALUE = 0;
+	public static final int PATTERN_VALUE = 1;
 
 	/**
-	 * The '<em><b>SCRIPT</b></em>' literal value.
+	 * The '<em><b>PROTOPATTERN</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>SCRIPT</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>PROTOPATTERN</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #SCRIPT
+	 * @see #PROTOPATTERN
 	 * @model
 	 * @generated
 	 * @ordered
 	 */
-	public static final int SCRIPT_VALUE = 1;
+	public static final int PROTOPATTERN_VALUE = 2;
 
 	/**
-	 * The '<em><b>PROTOSCRIPT</b></em>' literal value.
+	 * The '<em><b>METAPATTERN</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>PROTOSCRIPT</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>METAPATTERN</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #PROTOSCRIPT
+	 * @see #METAPATTERN
 	 * @model
 	 * @generated
 	 * @ordered
 	 */
-	public static final int PROTOSCRIPT_VALUE = 2;
-
-	/**
-	 * The '<em><b>METASCRIPT</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>METASCRIPT</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @see #METASCRIPT
-	 * @model
-	 * @generated
-	 * @ordered
-	 */
-	public static final int METASCRIPT_VALUE = 3;
+	public static final int METAPATTERN_VALUE = 3;
 
 	/**
 	 * The '<em><b>INSTANCE</b></em>' literal value.
@@ -151,10 +120,9 @@ public enum ScriptCategory implements Enumerator {
 	 */
 	private static final ScriptCategory[] VALUES_ARRAY =
 		new ScriptCategory[] {
-			TRACK,
-			SCRIPT,
-			PROTOSCRIPT,
-			METASCRIPT,
+			PATTERN,
+			PROTOPATTERN,
+			METAPATTERN,
 			INSTANCE,
 		};
 
@@ -212,10 +180,9 @@ public enum ScriptCategory implements Enumerator {
 	 */
 	public static ScriptCategory get(int value) {
 		switch (value) {
-			case TRACK_VALUE: return TRACK;
-			case SCRIPT_VALUE: return SCRIPT;
-			case PROTOSCRIPT_VALUE: return PROTOSCRIPT;
-			case METASCRIPT_VALUE: return METASCRIPT;
+			case PATTERN_VALUE: return PATTERN;
+			case PROTOPATTERN_VALUE: return PROTOPATTERN;
+			case METAPATTERN_VALUE: return METAPATTERN;
 			case INSTANCE_VALUE: return INSTANCE;
 		}
 		return null;
