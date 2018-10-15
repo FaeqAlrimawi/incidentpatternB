@@ -795,13 +795,22 @@ public interface CyberPhysicalIncidentPackage extends EPackage {
 	int INCIDENT_ENTITY__TYPE = ACTIVITY_INITIATOR_FEATURE_COUNT + 7;
 
 	/**
+	 * The feature id for the '<em><b>Mobility</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INCIDENT_ENTITY__MOBILITY = ACTIVITY_INITIATOR_FEATURE_COUNT + 8;
+
+	/**
 	 * The number of structural features of the '<em>Incident Entity</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INCIDENT_ENTITY_FEATURE_COUNT = ACTIVITY_INITIATOR_FEATURE_COUNT + 8;
+	int INCIDENT_ENTITY_FEATURE_COUNT = ACTIVITY_INITIATOR_FEATURE_COUNT + 9;
 
 	/**
 	 * The number of operations of the '<em>Incident Entity</em>' class.
@@ -893,6 +902,15 @@ public interface CyberPhysicalIncidentPackage extends EPackage {
 	 * @ordered
 	 */
 	int ASSET__TYPE = INCIDENT_ENTITY__TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Mobility</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSET__MOBILITY = INCIDENT_ENTITY__MOBILITY;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -1204,6 +1222,15 @@ public interface CyberPhysicalIncidentPackage extends EPackage {
 	int RESOURCE__TYPE = INCIDENT_ENTITY__TYPE;
 
 	/**
+	 * The feature id for the '<em><b>Mobility</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE__MOBILITY = INCIDENT_ENTITY__MOBILITY;
+
+	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1357,6 +1384,15 @@ public interface CyberPhysicalIncidentPackage extends EPackage {
 	 * @ordered
 	 */
 	int ACTOR__TYPE = INCIDENT_ENTITY__TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Mobility</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTOR__MOBILITY = INCIDENT_ENTITY__MOBILITY;
 
 	/**
 	 * The feature id for the '<em><b>Role</b></em>' attribute.
@@ -2945,6 +2981,16 @@ public interface CyberPhysicalIncidentPackage extends EPackage {
 	int SKILL_LEVEL = 49;
 
 	/**
+	 * The meta object id for the '{@link cyberPhysical_Incident.Mobility <em>Mobility</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see cyberPhysical_Incident.Mobility
+	 * @see cyberPhysical_Incident.impl.CyberPhysicalIncidentPackageImpl#getMobility()
+	 * @generated
+	 */
+	int MOBILITY = 50;
+
+	/**
 	 * Returns the meta object for class '{@link cyberPhysical_Incident.Activity <em>Activity</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4503,6 +4549,17 @@ public interface CyberPhysicalIncidentPackage extends EPackage {
 	EReference getIncidentEntity_Type();
 
 	/**
+	 * Returns the meta object for the attribute '{@link cyberPhysical_Incident.IncidentEntity#getMobility <em>Mobility</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Mobility</em>'.
+	 * @see cyberPhysical_Incident.IncidentEntity#getMobility()
+	 * @see #getIncidentEntity()
+	 * @generated
+	 */
+	EAttribute getIncidentEntity_Mobility();
+
+	/**
 	 * Returns the meta object for class '{@link cyberPhysical_Incident.Connectivity <em>Connectivity</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4796,6 +4853,16 @@ public interface CyberPhysicalIncidentPackage extends EPackage {
 	 * @generated
 	 */
 	EEnum getSkill_Level();
+
+	/**
+	 * Returns the meta object for enum '{@link cyberPhysical_Incident.Mobility <em>Mobility</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Mobility</em>'.
+	 * @see cyberPhysical_Incident.Mobility
+	 * @generated
+	 */
+	EEnum getMobility();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -6055,6 +6122,14 @@ public interface CyberPhysicalIncidentPackage extends EPackage {
 		EReference INCIDENT_ENTITY__TYPE = eINSTANCE.getIncidentEntity_Type();
 
 		/**
+		 * The meta object literal for the '<em><b>Mobility</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute INCIDENT_ENTITY__MOBILITY = eINSTANCE.getIncidentEntity_Mobility();
+
+		/**
 		 * The meta object literal for the '{@link cyberPhysical_Incident.impl.ConnectivityImpl <em>Connectivity</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -6303,6 +6378,16 @@ public interface CyberPhysicalIncidentPackage extends EPackage {
 		 * @generated
 		 */
 		EEnum SKILL_LEVEL = eINSTANCE.getSkill_Level();
+
+		/**
+		 * The meta object literal for the '{@link cyberPhysical_Incident.Mobility <em>Mobility</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see cyberPhysical_Incident.Mobility
+		 * @see cyberPhysical_Incident.impl.CyberPhysicalIncidentPackageImpl#getMobility()
+		 * @generated
+		 */
+		EEnum MOBILITY = eINSTANCE.getMobility();
 
 	}
 

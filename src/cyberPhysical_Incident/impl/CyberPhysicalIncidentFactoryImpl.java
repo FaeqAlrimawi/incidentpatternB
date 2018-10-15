@@ -113,6 +113,8 @@ public class CyberPhysicalIncidentFactoryImpl extends EFactoryImpl implements Cy
 				return createActivityPatternSeverityFromString(eDataType, initialValue);
 			case CyberPhysicalIncidentPackage.SKILL_LEVEL:
 				return createSkill_LevelFromString(eDataType, initialValue);
+			case CyberPhysicalIncidentPackage.MOBILITY:
+				return createMobilityFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -144,6 +146,8 @@ public class CyberPhysicalIncidentFactoryImpl extends EFactoryImpl implements Cy
 				return convertActivityPatternSeverityToString(eDataType, instanceValue);
 			case CyberPhysicalIncidentPackage.SKILL_LEVEL:
 				return convertSkill_LevelToString(eDataType, instanceValue);
+			case CyberPhysicalIncidentPackage.MOBILITY:
+				return convertMobilityToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -576,6 +580,26 @@ public class CyberPhysicalIncidentFactoryImpl extends EFactoryImpl implements Cy
 	 * @generated
 	 */
 	public String convertSkill_LevelToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Mobility createMobilityFromString(EDataType eDataType, String initialValue) {
+		Mobility result = Mobility.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertMobilityToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

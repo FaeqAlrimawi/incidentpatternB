@@ -16,6 +16,7 @@ import cyberPhysical_Incident.CyberPhysicalIncidentPackage;
 import cyberPhysical_Incident.IncidentEntity;
 import cyberPhysical_Incident.Knowledge;
 import cyberPhysical_Incident.Location;
+import cyberPhysical_Incident.Mobility;
 import cyberPhysical_Incident.Property;
 import cyberPhysical_Incident.Type;
 
@@ -35,6 +36,7 @@ import cyberPhysical_Incident.Type;
  *   <li>{@link cyberPhysical_Incident.impl.IncidentEntityImpl#getName <em>Name</em>}</li>
  *   <li>{@link cyberPhysical_Incident.impl.IncidentEntityImpl#getProperties <em>Properties</em>}</li>
  *   <li>{@link cyberPhysical_Incident.impl.IncidentEntityImpl#getType <em>Type</em>}</li>
+ *   <li>{@link cyberPhysical_Incident.impl.IncidentEntityImpl#getMobility <em>Mobility</em>}</li>
  * </ul>
  *
  * @generated
@@ -151,6 +153,26 @@ public class IncidentEntityImpl extends MinimalEObjectImpl.Container implements 
 	 * @ordered
 	 */
 	protected Type type;
+
+	/**
+	 * The default value of the '{@link #getMobility() <em>Mobility</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMobility()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final Mobility MOBILITY_EDEFAULT = Mobility.MOVABLE;
+
+	/**
+	 * The cached value of the '{@link #getMobility() <em>Mobility</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMobility()
+	 * @generated
+	 * @ordered
+	 */
+	protected Mobility mobility = MOBILITY_EDEFAULT;
 
 	protected static int entityNumber = 1;
 	protected static final long ENTITY_NUMBER_LIMIT = Long.MAX_VALUE;
@@ -460,6 +482,27 @@ public class IncidentEntityImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Mobility getMobility() {
+		return mobility;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMobility(Mobility newMobility) {
+		Mobility oldMobility = mobility;
+		mobility = newMobility == null ? MOBILITY_EDEFAULT : newMobility;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysicalIncidentPackage.INCIDENT_ENTITY__MOBILITY, oldMobility, mobility));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -502,6 +545,8 @@ public class IncidentEntityImpl extends MinimalEObjectImpl.Container implements 
 				return getProperties();
 			case CyberPhysicalIncidentPackage.INCIDENT_ENTITY__TYPE:
 				return getType();
+			case CyberPhysicalIncidentPackage.INCIDENT_ENTITY__MOBILITY:
+				return getMobility();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -542,6 +587,9 @@ public class IncidentEntityImpl extends MinimalEObjectImpl.Container implements 
 			case CyberPhysicalIncidentPackage.INCIDENT_ENTITY__TYPE:
 				setType((Type)newValue);
 				return;
+			case CyberPhysicalIncidentPackage.INCIDENT_ENTITY__MOBILITY:
+				setMobility((Mobility)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -578,6 +626,9 @@ public class IncidentEntityImpl extends MinimalEObjectImpl.Container implements 
 			case CyberPhysicalIncidentPackage.INCIDENT_ENTITY__TYPE:
 				setType((Type)null);
 				return;
+			case CyberPhysicalIncidentPackage.INCIDENT_ENTITY__MOBILITY:
+				setMobility(MOBILITY_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -606,6 +657,8 @@ public class IncidentEntityImpl extends MinimalEObjectImpl.Container implements 
 				return properties != null && !properties.isEmpty();
 			case CyberPhysicalIncidentPackage.INCIDENT_ENTITY__TYPE:
 				return type != null;
+			case CyberPhysicalIncidentPackage.INCIDENT_ENTITY__MOBILITY:
+				return mobility != MOBILITY_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -666,6 +719,8 @@ public class IncidentEntityImpl extends MinimalEObjectImpl.Container implements 
 		result.append(containedAssetsKnowledge);
 		result.append(", name: ");
 		result.append(name);
+		result.append(", mobility: ");
+		result.append(mobility);
 		result.append(')');
 		return result.toString();
 	}

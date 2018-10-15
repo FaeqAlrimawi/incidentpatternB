@@ -36,6 +36,7 @@ import cyberPhysical_Incident.Intent;
 import cyberPhysical_Incident.Knowledge;
 import cyberPhysical_Incident.Level;
 import cyberPhysical_Incident.Location;
+import cyberPhysical_Incident.Mobility;
 import cyberPhysical_Incident.Motive;
 import cyberPhysical_Incident.Near;
 import cyberPhysical_Incident.Not;
@@ -418,6 +419,13 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * @generated
 	 */
 	private EEnum skill_LevelEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum mobilityEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -1790,6 +1798,15 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getIncidentEntity_Mobility() {
+		return (EAttribute)incidentEntityEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getConnectivity() {
 		return connectivityEClass;
 	}
@@ -2042,6 +2059,15 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EEnum getMobility() {
+		return mobilityEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public CyberPhysicalIncidentFactory getCyberPhysicalIncidentFactory() {
 		return (CyberPhysicalIncidentFactory)getEFactoryInstance();
 	}
@@ -2246,6 +2272,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 		createEAttribute(incidentEntityEClass, INCIDENT_ENTITY__NAME);
 		createEReference(incidentEntityEClass, INCIDENT_ENTITY__PROPERTIES);
 		createEReference(incidentEntityEClass, INCIDENT_ENTITY__TYPE);
+		createEAttribute(incidentEntityEClass, INCIDENT_ENTITY__MOBILITY);
 
 		connectivityEClass = createEClass(CONNECTIVITY);
 		createEAttribute(connectivityEClass, CONNECTIVITY__NAME);
@@ -2280,6 +2307,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 		actorLevelEEnum = createEEnum(ACTOR_LEVEL);
 		activityPatternSeverityEEnum = createEEnum(ACTIVITY_PATTERN_SEVERITY);
 		skill_LevelEEnum = createEEnum(SKILL_LEVEL);
+		mobilityEEnum = createEEnum(MOBILITY);
 	}
 
 	/**
@@ -2514,6 +2542,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 		initEAttribute(getIncidentEntity_Name(), ecorePackage.getEString(), "name", null, 0, 1, IncidentEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getIncidentEntity_Properties(), this.getProperty(), null, "properties", null, 0, -1, IncidentEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getIncidentEntity_Type(), this.getType(), null, "type", null, 0, 1, IncidentEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getIncidentEntity_Mobility(), this.getMobility(), "mobility", null, 0, 1, IncidentEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(connectivityEClass, Connectivity.class, "Connectivity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getConnectivity_Name(), ecorePackage.getEString(), "name", null, 1, 1, Connectivity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2588,6 +2617,11 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 		addEEnumLiteral(skill_LevelEEnum, Skill_Level.LOW);
 		addEEnumLiteral(skill_LevelEEnum, Skill_Level.MEDIUM);
 		addEEnumLiteral(skill_LevelEEnum, Skill_Level.HIGH);
+
+		initEEnum(mobilityEEnum, Mobility.class, "Mobility");
+		addEEnumLiteral(mobilityEEnum, Mobility.MOVABLE);
+		addEEnumLiteral(mobilityEEnum, Mobility.FIXED);
+		addEEnumLiteral(mobilityEEnum, Mobility.UNKNOWN);
 
 		// Create resource
 		createResource(eNS_URI);

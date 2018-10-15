@@ -290,6 +290,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="properties" upperBound="-1"
         eType="#//Property"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//Type" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="mobility" eType="#//Mobility"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Connectivity">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -337,5 +338,10 @@
         eType="#//IncidentEntity" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="connection" upperBound="-1"
         eType="#//Connection" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Mobility">
+    <eLiterals name="MOVABLE"/>
+    <eLiterals name="FIXED" value="1"/>
+    <eLiterals name="UNKNOWN" value="2"/>
   </eClassifiers>
 </ecore:EPackage>

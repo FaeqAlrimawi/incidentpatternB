@@ -16,6 +16,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link cyberPhysical_Incident.IncidentEntity#getName <em>Name</em>}</li>
  *   <li>{@link cyberPhysical_Incident.IncidentEntity#getProperties <em>Properties</em>}</li>
  *   <li>{@link cyberPhysical_Incident.IncidentEntity#getType <em>Type</em>}</li>
+ *   <li>{@link cyberPhysical_Incident.IncidentEntity#getMobility <em>Mobility</em>}</li>
  * </ul>
  *
  * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getIncidentEntity()
@@ -94,5 +95,32 @@ public interface IncidentEntity extends ActivityInitiator, Location {
 	 * @generated
 	 */
 	void setType(Type value);
+	/**
+	 * Returns the value of the '<em><b>Mobility</b></em>' attribute.
+	 * The literals are from the enumeration {@link cyberPhysical_Incident.Mobility}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Mobility</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Mobility</em>' attribute.
+	 * @see cyberPhysical_Incident.Mobility
+	 * @see #setMobility(Mobility)
+	 * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getIncidentEntity_Mobility()
+	 * @model
+	 * @generated
+	 */
+	Mobility getMobility();
+	/**
+	 * Sets the value of the '{@link cyberPhysical_Incident.IncidentEntity#getMobility <em>Mobility</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Mobility</em>' attribute.
+	 * @see cyberPhysical_Incident.Mobility
+	 * @see #getMobility()
+	 * @generated
+	 */
+	void setMobility(Mobility value);
 
 } // IncidentEntity
