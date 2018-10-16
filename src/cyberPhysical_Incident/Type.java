@@ -2,8 +2,6 @@
  */
 package cyberPhysical_Incident;
 
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -16,8 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link cyberPhysical_Incident.Type#getName <em>Name</em>}</li>
- *   <li>{@link cyberPhysical_Incident.Type#isHasSuperType <em>Has Super Type</em>}</li>
- *   <li>{@link cyberPhysical_Incident.Type#getSuperType <em>Super Type</em>}</li>
+ *   <li>{@link cyberPhysical_Incident.Type#getAbstractionLevel <em>Abstraction Level</em>}</li>
  * </ul>
  *
  * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getType()
@@ -52,45 +49,32 @@ public interface Type extends EObject {
 	void setName(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Has Super Type</b></em>' attribute.
+	 * Returns the value of the '<em><b>Abstraction Level</b></em>' attribute.
+	 * The literals are from the enumeration {@link cyberPhysical_Incident.AbstractionLevel}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Has Super Type</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Abstraction Level</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Has Super Type</em>' attribute.
-	 * @see #setHasSuperType(boolean)
-	 * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getType_HasSuperType()
+	 * @return the value of the '<em>Abstraction Level</em>' attribute.
+	 * @see cyberPhysical_Incident.AbstractionLevel
+	 * @see #setAbstractionLevel(AbstractionLevel)
+	 * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getType_AbstractionLevel()
 	 * @model
 	 * @generated
 	 */
-	boolean isHasSuperType();
+	AbstractionLevel getAbstractionLevel();
 
 	/**
-	 * Sets the value of the '{@link cyberPhysical_Incident.Type#isHasSuperType <em>Has Super Type</em>}' attribute.
+	 * Sets the value of the '{@link cyberPhysical_Incident.Type#getAbstractionLevel <em>Abstraction Level</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Has Super Type</em>' attribute.
-	 * @see #isHasSuperType()
+	 * @param value the new value of the '<em>Abstraction Level</em>' attribute.
+	 * @see cyberPhysical_Incident.AbstractionLevel
+	 * @see #getAbstractionLevel()
 	 * @generated
 	 */
-	void setHasSuperType(boolean value);
-
-	/**
-	 * Returns the value of the '<em><b>Super Type</b></em>' containment reference list.
-	 * The list contents are of type {@link cyberPhysical_Incident.Type}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Super Type</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Super Type</em>' containment reference list.
-	 * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getType_SuperType()
-	 * @model containment="true"
-	 * @generated
-	 */
-	EList<Type> getSuperType();
+	void setAbstractionLevel(AbstractionLevel value);
 
 } // Type

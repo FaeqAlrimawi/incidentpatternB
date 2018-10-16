@@ -2,6 +2,7 @@
  */
 package cyberPhysical_Incident.impl;
 
+import cyberPhysical_Incident.AbstractionLevel;
 import cyberPhysical_Incident.Activity;
 import cyberPhysical_Incident.ActivityInitiator;
 import cyberPhysical_Incident.ActivityPattern;
@@ -426,6 +427,13 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * @generated
 	 */
 	private EEnum mobilityEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum abstractionLevelEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -1456,17 +1464,8 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getType_HasSuperType() {
+	public EAttribute getType_AbstractionLevel() {
 		return (EAttribute)typeEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getType_SuperType() {
-		return (EReference)typeEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -2068,6 +2067,15 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EEnum getAbstractionLevel() {
+		return abstractionLevelEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public CyberPhysicalIncidentFactory getCyberPhysicalIncidentFactory() {
 		return (CyberPhysicalIncidentFactory)getEFactoryInstance();
 	}
@@ -2214,8 +2222,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 
 		typeEClass = createEClass(TYPE);
 		createEAttribute(typeEClass, TYPE__NAME);
-		createEAttribute(typeEClass, TYPE__HAS_SUPER_TYPE);
-		createEReference(typeEClass, TYPE__SUPER_TYPE);
+		createEAttribute(typeEClass, TYPE__ABSTRACTION_LEVEL);
 
 		expressionEClass = createEClass(EXPRESSION);
 
@@ -2308,6 +2315,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 		activityPatternSeverityEEnum = createEEnum(ACTIVITY_PATTERN_SEVERITY);
 		skill_LevelEEnum = createEEnum(SKILL_LEVEL);
 		mobilityEEnum = createEEnum(MOBILITY);
+		abstractionLevelEEnum = createEEnum(ABSTRACTION_LEVEL);
 	}
 
 	/**
@@ -2484,8 +2492,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 
 		initEClass(typeEClass, Type.class, "Type", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getType_Name(), ecorePackage.getEString(), "name", null, 0, 1, Type.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getType_HasSuperType(), ecorePackage.getEBoolean(), "hasSuperType", null, 0, 1, Type.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getType_SuperType(), this.getType(), null, "superType", null, 0, -1, Type.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getType_AbstractionLevel(), this.getAbstractionLevel(), "abstractionLevel", null, 0, 1, Type.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(expressionEClass, Expression.class, "Expression", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -2622,6 +2629,13 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 		addEEnumLiteral(mobilityEEnum, Mobility.MOVABLE);
 		addEEnumLiteral(mobilityEEnum, Mobility.FIXED);
 		addEEnumLiteral(mobilityEEnum, Mobility.UNKNOWN);
+
+		initEEnum(abstractionLevelEEnum, AbstractionLevel.class, "AbstractionLevel");
+		addEEnumLiteral(abstractionLevelEEnum, AbstractionLevel.SAME_OR_SUBCLASS);
+		addEEnumLiteral(abstractionLevelEEnum, AbstractionLevel.SAME);
+		addEEnumLiteral(abstractionLevelEEnum, AbstractionLevel.SAME_OR_SUPERCLASS);
+		addEEnumLiteral(abstractionLevelEEnum, AbstractionLevel.ANYDIGITAL);
+		addEEnumLiteral(abstractionLevelEEnum, AbstractionLevel.ANYPHYSICAL);
 
 		// Create resource
 		createResource(eNS_URI);

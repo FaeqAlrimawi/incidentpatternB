@@ -1678,22 +1678,13 @@ public interface CyberPhysicalIncidentPackage extends EPackage {
 	int TYPE__NAME = 0;
 
 	/**
-	 * The feature id for the '<em><b>Has Super Type</b></em>' attribute.
+	 * The feature id for the '<em><b>Abstraction Level</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TYPE__HAS_SUPER_TYPE = 1;
-
-	/**
-	 * The feature id for the '<em><b>Super Type</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TYPE__SUPER_TYPE = 2;
+	int TYPE__ABSTRACTION_LEVEL = 1;
 
 	/**
 	 * The number of structural features of the '<em>Type</em>' class.
@@ -1702,7 +1693,7 @@ public interface CyberPhysicalIncidentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TYPE_FEATURE_COUNT = 3;
+	int TYPE_FEATURE_COUNT = 2;
 
 	/**
 	 * The number of operations of the '<em>Type</em>' class.
@@ -2991,6 +2982,16 @@ public interface CyberPhysicalIncidentPackage extends EPackage {
 	int MOBILITY = 50;
 
 	/**
+	 * The meta object id for the '{@link cyberPhysical_Incident.AbstractionLevel <em>Abstraction Level</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see cyberPhysical_Incident.AbstractionLevel
+	 * @see cyberPhysical_Incident.impl.CyberPhysicalIncidentPackageImpl#getAbstractionLevel()
+	 * @generated
+	 */
+	int ABSTRACTION_LEVEL = 51;
+
+	/**
 	 * Returns the meta object for class '{@link cyberPhysical_Incident.Activity <em>Activity</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4151,26 +4152,15 @@ public interface CyberPhysicalIncidentPackage extends EPackage {
 	EAttribute getType_Name();
 
 	/**
-	 * Returns the meta object for the attribute '{@link cyberPhysical_Incident.Type#isHasSuperType <em>Has Super Type</em>}'.
+	 * Returns the meta object for the attribute '{@link cyberPhysical_Incident.Type#getAbstractionLevel <em>Abstraction Level</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Has Super Type</em>'.
-	 * @see cyberPhysical_Incident.Type#isHasSuperType()
+	 * @return the meta object for the attribute '<em>Abstraction Level</em>'.
+	 * @see cyberPhysical_Incident.Type#getAbstractionLevel()
 	 * @see #getType()
 	 * @generated
 	 */
-	EAttribute getType_HasSuperType();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link cyberPhysical_Incident.Type#getSuperType <em>Super Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Super Type</em>'.
-	 * @see cyberPhysical_Incident.Type#getSuperType()
-	 * @see #getType()
-	 * @generated
-	 */
-	EReference getType_SuperType();
+	EAttribute getType_AbstractionLevel();
 
 	/**
 	 * Returns the meta object for class '{@link cyberPhysical_Incident.Expression <em>Expression</em>}'.
@@ -4863,6 +4853,16 @@ public interface CyberPhysicalIncidentPackage extends EPackage {
 	 * @generated
 	 */
 	EEnum getMobility();
+
+	/**
+	 * Returns the meta object for enum '{@link cyberPhysical_Incident.AbstractionLevel <em>Abstraction Level</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Abstraction Level</em>'.
+	 * @see cyberPhysical_Incident.AbstractionLevel
+	 * @generated
+	 */
+	EEnum getAbstractionLevel();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -5778,20 +5778,12 @@ public interface CyberPhysicalIncidentPackage extends EPackage {
 		EAttribute TYPE__NAME = eINSTANCE.getType_Name();
 
 		/**
-		 * The meta object literal for the '<em><b>Has Super Type</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Abstraction Level</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute TYPE__HAS_SUPER_TYPE = eINSTANCE.getType_HasSuperType();
-
-		/**
-		 * The meta object literal for the '<em><b>Super Type</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference TYPE__SUPER_TYPE = eINSTANCE.getType_SuperType();
+		EAttribute TYPE__ABSTRACTION_LEVEL = eINSTANCE.getType_AbstractionLevel();
 
 		/**
 		 * The meta object literal for the '{@link cyberPhysical_Incident.impl.ExpressionImpl <em>Expression</em>}' class.
@@ -6388,6 +6380,16 @@ public interface CyberPhysicalIncidentPackage extends EPackage {
 		 * @generated
 		 */
 		EEnum MOBILITY = eINSTANCE.getMobility();
+
+		/**
+		 * The meta object literal for the '{@link cyberPhysical_Incident.AbstractionLevel <em>Abstraction Level</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see cyberPhysical_Incident.AbstractionLevel
+		 * @see cyberPhysical_Incident.impl.CyberPhysicalIncidentPackageImpl#getAbstractionLevel()
+		 * @generated
+		 */
+		EEnum ABSTRACTION_LEVEL = eINSTANCE.getAbstractionLevel();
 
 	}
 

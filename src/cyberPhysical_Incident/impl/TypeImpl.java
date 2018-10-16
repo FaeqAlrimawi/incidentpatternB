@@ -2,24 +2,13 @@
  */
 package cyberPhysical_Incident.impl;
 
+import cyberPhysical_Incident.AbstractionLevel;
 import cyberPhysical_Incident.CyberPhysicalIncidentPackage;
 import cyberPhysical_Incident.Type;
-
-import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -30,8 +19,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link cyberPhysical_Incident.impl.TypeImpl#getName <em>Name</em>}</li>
- *   <li>{@link cyberPhysical_Incident.impl.TypeImpl#isHasSuperType <em>Has Super Type</em>}</li>
- *   <li>{@link cyberPhysical_Incident.impl.TypeImpl#getSuperType <em>Super Type</em>}</li>
+ *   <li>{@link cyberPhysical_Incident.impl.TypeImpl#getAbstractionLevel <em>Abstraction Level</em>}</li>
  * </ul>
  *
  * @generated
@@ -58,34 +46,24 @@ public class TypeImpl extends MinimalEObjectImpl.Container implements Type {
 	protected String name = NAME_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #isHasSuperType() <em>Has Super Type</em>}' attribute.
+	 * The default value of the '{@link #getAbstractionLevel() <em>Abstraction Level</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isHasSuperType()
+	 * @see #getAbstractionLevel()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final boolean HAS_SUPER_TYPE_EDEFAULT = false;
+	protected static final AbstractionLevel ABSTRACTION_LEVEL_EDEFAULT = AbstractionLevel.SAME_OR_SUBCLASS;
 
 	/**
-	 * The cached value of the '{@link #isHasSuperType() <em>Has Super Type</em>}' attribute.
+	 * The cached value of the '{@link #getAbstractionLevel() <em>Abstraction Level</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isHasSuperType()
+	 * @see #getAbstractionLevel()
 	 * @generated
 	 * @ordered
 	 */
-	protected boolean hasSuperType = HAS_SUPER_TYPE_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getSuperType() <em>Super Type</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSuperType()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Type> superType;
+	protected AbstractionLevel abstractionLevel = ABSTRACTION_LEVEL_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -132,8 +110,8 @@ public class TypeImpl extends MinimalEObjectImpl.Container implements Type {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isHasSuperType() {
-		return hasSuperType;
+	public AbstractionLevel getAbstractionLevel() {
+		return abstractionLevel;
 	}
 
 	/**
@@ -141,37 +119,11 @@ public class TypeImpl extends MinimalEObjectImpl.Container implements Type {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setHasSuperType(boolean newHasSuperType) {
-		boolean oldHasSuperType = hasSuperType;
-		hasSuperType = newHasSuperType;
+	public void setAbstractionLevel(AbstractionLevel newAbstractionLevel) {
+		AbstractionLevel oldAbstractionLevel = abstractionLevel;
+		abstractionLevel = newAbstractionLevel == null ? ABSTRACTION_LEVEL_EDEFAULT : newAbstractionLevel;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysicalIncidentPackage.TYPE__HAS_SUPER_TYPE, oldHasSuperType, hasSuperType));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<Type> getSuperType() {
-		if (superType == null) {
-			superType = new EObjectContainmentEList<Type>(Type.class, this, CyberPhysicalIncidentPackage.TYPE__SUPER_TYPE);
-		}
-		return superType;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case CyberPhysicalIncidentPackage.TYPE__SUPER_TYPE:
-				return ((InternalEList<?>)getSuperType()).basicRemove(otherEnd, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
+			eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysicalIncidentPackage.TYPE__ABSTRACTION_LEVEL, oldAbstractionLevel, abstractionLevel));
 	}
 
 	/**
@@ -184,10 +136,8 @@ public class TypeImpl extends MinimalEObjectImpl.Container implements Type {
 		switch (featureID) {
 			case CyberPhysicalIncidentPackage.TYPE__NAME:
 				return getName();
-			case CyberPhysicalIncidentPackage.TYPE__HAS_SUPER_TYPE:
-				return isHasSuperType();
-			case CyberPhysicalIncidentPackage.TYPE__SUPER_TYPE:
-				return getSuperType();
+			case CyberPhysicalIncidentPackage.TYPE__ABSTRACTION_LEVEL:
+				return getAbstractionLevel();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -204,12 +154,8 @@ public class TypeImpl extends MinimalEObjectImpl.Container implements Type {
 			case CyberPhysicalIncidentPackage.TYPE__NAME:
 				setName((String)newValue);
 				return;
-			case CyberPhysicalIncidentPackage.TYPE__HAS_SUPER_TYPE:
-				setHasSuperType((Boolean)newValue);
-				return;
-			case CyberPhysicalIncidentPackage.TYPE__SUPER_TYPE:
-				getSuperType().clear();
-				getSuperType().addAll((Collection<? extends Type>)newValue);
+			case CyberPhysicalIncidentPackage.TYPE__ABSTRACTION_LEVEL:
+				setAbstractionLevel((AbstractionLevel)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -226,11 +172,8 @@ public class TypeImpl extends MinimalEObjectImpl.Container implements Type {
 			case CyberPhysicalIncidentPackage.TYPE__NAME:
 				setName(NAME_EDEFAULT);
 				return;
-			case CyberPhysicalIncidentPackage.TYPE__HAS_SUPER_TYPE:
-				setHasSuperType(HAS_SUPER_TYPE_EDEFAULT);
-				return;
-			case CyberPhysicalIncidentPackage.TYPE__SUPER_TYPE:
-				getSuperType().clear();
+			case CyberPhysicalIncidentPackage.TYPE__ABSTRACTION_LEVEL:
+				setAbstractionLevel(ABSTRACTION_LEVEL_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -246,10 +189,8 @@ public class TypeImpl extends MinimalEObjectImpl.Container implements Type {
 		switch (featureID) {
 			case CyberPhysicalIncidentPackage.TYPE__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case CyberPhysicalIncidentPackage.TYPE__HAS_SUPER_TYPE:
-				return hasSuperType != HAS_SUPER_TYPE_EDEFAULT;
-			case CyberPhysicalIncidentPackage.TYPE__SUPER_TYPE:
-				return superType != null && !superType.isEmpty();
+			case CyberPhysicalIncidentPackage.TYPE__ABSTRACTION_LEVEL:
+				return abstractionLevel != ABSTRACTION_LEVEL_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -266,8 +207,8 @@ public class TypeImpl extends MinimalEObjectImpl.Container implements Type {
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (name: ");
 		result.append(name);
-		result.append(", hasSuperType: ");
-		result.append(hasSuperType);
+		result.append(", abstractionLevel: ");
+		result.append(abstractionLevel);
 		result.append(')');
 		return result.toString();
 	}

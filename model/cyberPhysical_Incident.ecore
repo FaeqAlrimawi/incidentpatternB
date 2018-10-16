@@ -215,9 +215,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Type">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hasSuperType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="superType" upperBound="-1"
-        eType="#//Type" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="abstractionLevel" eType="#//AbstractionLevel"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Expression" abstract="true"/>
   <eClassifiers xsi:type="ecore:EClass" name="UnaryExpression" abstract="true" eSuperTypes="#//Expression">
@@ -343,5 +341,12 @@
     <eLiterals name="MOVABLE"/>
     <eLiterals name="FIXED" value="1"/>
     <eLiterals name="UNKNOWN" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="AbstractionLevel">
+    <eLiterals name="SAME_OR_SUBCLASS"/>
+    <eLiterals name="SAME" value="1"/>
+    <eLiterals name="SAME_OR_SUPERCLASS" value="2"/>
+    <eLiterals name="ANYDIGITAL" value="3"/>
+    <eLiterals name="ANYPHYSICAL" value="4"/>
   </eClassifiers>
 </ecore:EPackage>
