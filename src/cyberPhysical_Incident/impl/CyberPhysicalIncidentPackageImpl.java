@@ -2631,11 +2631,8 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 		addEEnumLiteral(mobilityEEnum, Mobility.UNKNOWN);
 
 		initEEnum(abstractionLevelEEnum, AbstractionLevel.class, "AbstractionLevel");
-		addEEnumLiteral(abstractionLevelEEnum, AbstractionLevel.SAME_OR_SUBCLASS);
-		addEEnumLiteral(abstractionLevelEEnum, AbstractionLevel.SAME);
-		addEEnumLiteral(abstractionLevelEEnum, AbstractionLevel.SAME_OR_SUPERCLASS);
-		addEEnumLiteral(abstractionLevelEEnum, AbstractionLevel.ANYDIGITAL);
-		addEEnumLiteral(abstractionLevelEEnum, AbstractionLevel.ANYPHYSICAL);
+		addEEnumLiteral(abstractionLevelEEnum, AbstractionLevel.ANYSUBCLASS);
+		addEEnumLiteral(abstractionLevelEEnum, AbstractionLevel.EXACT);
 
 		// Create resource
 		createResource(eNS_URI);

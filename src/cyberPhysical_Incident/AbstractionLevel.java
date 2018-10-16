@@ -19,129 +19,52 @@ import org.eclipse.emf.common.util.Enumerator;
  */
 public enum AbstractionLevel implements Enumerator {
 	/**
-	 * The '<em><b>SAME OR SUBCLASS</b></em>' literal object.
+	 * The '<em><b>ANYSUBCLASS</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #SAME_OR_SUBCLASS_VALUE
+	 * @see #ANYSUBCLASS_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	SAME_OR_SUBCLASS(0, "SAME_OR_SUBCLASS", "SAME_OR_SUBCLASS"),
-
-	/**
-	 * The '<em><b>SAME</b></em>' literal object.
+	ANYSUBCLASS(0, "ANYSUBCLASS", "ANYSUBCLASS"), /**
+	 * The '<em><b>EXACT</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #SAME_VALUE
+	 * @see #EXACT_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	SAME(1, "SAME", "SAME"),
+	EXACT(4, "EXACT", "EXACT");
 
 	/**
-	 * The '<em><b>SAME OR SUPERCLASS</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #SAME_OR_SUPERCLASS_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	SAME_OR_SUPERCLASS(2, "SAME_OR_SUPERCLASS", "SAME_OR_SUPERCLASS"),
-
-	/**
-	 * The '<em><b>ANYDIGITAL</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #ANYDIGITAL_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	ANYDIGITAL(3, "ANYDIGITAL", "ANYDIGITAL"),
-
-	/**
-	 * The '<em><b>ANYPHYSICAL</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #ANYPHYSICAL_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	ANYPHYSICAL(4, "ANYPHYSICAL", "ANYPHYSICAL");
-
-	/**
-	 * The '<em><b>SAME OR SUBCLASS</b></em>' literal value.
+	 * The '<em><b>ANYSUBCLASS</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>SAME OR SUBCLASS</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>ANYSUBCLASS</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #SAME_OR_SUBCLASS
+	 * @see #ANYSUBCLASS
 	 * @model
 	 * @generated
 	 * @ordered
 	 */
-	public static final int SAME_OR_SUBCLASS_VALUE = 0;
+	public static final int ANYSUBCLASS_VALUE = 0;
 
 	/**
-	 * The '<em><b>SAME</b></em>' literal value.
+	 * The '<em><b>EXACT</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>SAME</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>EXACT</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #SAME
+	 * @see #EXACT
 	 * @model
 	 * @generated
 	 * @ordered
 	 */
-	public static final int SAME_VALUE = 1;
-
-	/**
-	 * The '<em><b>SAME OR SUPERCLASS</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>SAME OR SUPERCLASS</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @see #SAME_OR_SUPERCLASS
-	 * @model
-	 * @generated
-	 * @ordered
-	 */
-	public static final int SAME_OR_SUPERCLASS_VALUE = 2;
-
-	/**
-	 * The '<em><b>ANYDIGITAL</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>ANYDIGITAL</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @see #ANYDIGITAL
-	 * @model
-	 * @generated
-	 * @ordered
-	 */
-	public static final int ANYDIGITAL_VALUE = 3;
-
-	/**
-	 * The '<em><b>ANYPHYSICAL</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>ANYPHYSICAL</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @see #ANYPHYSICAL
-	 * @model
-	 * @generated
-	 * @ordered
-	 */
-	public static final int ANYPHYSICAL_VALUE = 4;
+	public static final int EXACT_VALUE = 4;
 
 	/**
 	 * An array of all the '<em><b>Abstraction Level</b></em>' enumerators.
@@ -151,11 +74,8 @@ public enum AbstractionLevel implements Enumerator {
 	 */
 	private static final AbstractionLevel[] VALUES_ARRAY =
 		new AbstractionLevel[] {
-			SAME_OR_SUBCLASS,
-			SAME,
-			SAME_OR_SUPERCLASS,
-			ANYDIGITAL,
-			ANYPHYSICAL,
+			ANYSUBCLASS,
+			EXACT,
 		};
 
 	/**
@@ -212,11 +132,8 @@ public enum AbstractionLevel implements Enumerator {
 	 */
 	public static AbstractionLevel get(int value) {
 		switch (value) {
-			case SAME_OR_SUBCLASS_VALUE: return SAME_OR_SUBCLASS;
-			case SAME_VALUE: return SAME;
-			case SAME_OR_SUPERCLASS_VALUE: return SAME_OR_SUPERCLASS;
-			case ANYDIGITAL_VALUE: return ANYDIGITAL;
-			case ANYPHYSICAL_VALUE: return ANYPHYSICAL;
+			case ANYSUBCLASS_VALUE: return ANYSUBCLASS;
+			case EXACT_VALUE: return EXACT;
 		}
 		return null;
 	}

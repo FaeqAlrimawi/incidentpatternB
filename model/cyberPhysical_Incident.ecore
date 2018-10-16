@@ -343,10 +343,7 @@
     <eLiterals name="UNKNOWN" value="2"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="AbstractionLevel">
-    <eLiterals name="SAME_OR_SUBCLASS"/>
-    <eLiterals name="SAME" value="1"/>
-    <eLiterals name="SAME_OR_SUPERCLASS" value="2"/>
-    <eLiterals name="ANYDIGITAL" value="3"/>
-    <eLiterals name="ANYPHYSICAL" value="4"/>
+    <eLiterals name="ANYSUBCLASS"/>
+    <eLiterals name="EXACT" value="4"/>
   </eClassifiers>
 </ecore:EPackage>

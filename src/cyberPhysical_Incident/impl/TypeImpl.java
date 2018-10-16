@@ -53,7 +53,7 @@ public class TypeImpl extends MinimalEObjectImpl.Container implements Type {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final AbstractionLevel ABSTRACTION_LEVEL_EDEFAULT = AbstractionLevel.SAME_OR_SUBCLASS;
+	protected static final AbstractionLevel ABSTRACTION_LEVEL_EDEFAULT = AbstractionLevel.ANYSUBCLASS;
 
 	/**
 	 * The cached value of the '{@link #getAbstractionLevel() <em>Abstraction Level</em>}' attribute.
