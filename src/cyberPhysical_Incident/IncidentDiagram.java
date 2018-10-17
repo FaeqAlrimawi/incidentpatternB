@@ -48,7 +48,7 @@ public interface IncidentDiagram extends EObject {
 	void setActivity(EList<Activity> activity);
 
 	EList<IncidentEntity> getEntity();
-
+	IncidentEntity getEntity(String entityName);
 	void setEntity(EList<IncidentEntity> entity);
 
 	void removeEntity(IncidentEntity entity);

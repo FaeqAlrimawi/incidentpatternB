@@ -167,6 +167,7 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 	protected List<IncidentEntity> isEntityUsedList = new LinkedList<IncidentEntity>();
 	protected List<Connection> isConnectionUsedList = new LinkedList<Connection>();
 	
+	protected Map<String, IncidentEntity> entityMap = null;
 	
 	public boolean isUsed(IncidentEntity entity) {
 
@@ -895,6 +896,29 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 		return incidentEntity;
 	}
 
+	public IncidentEntity getEntity(String entityName) {
+	
+		if(entityName == null || entityName.isEmpty()) {
+			return null;
+		}
+		
+		if(entityMap == null || entityMap.isEmpty()) {
+			updateEntityMap();
+		}
+		
+		return entityMap.get(entityName);
+	}
+	
+	protected void updateEntityMap() {
+	
+		entityMap = new HashMap<String, IncidentEntity>();
+		
+		for(IncidentEntity entity: getEntity()) {
+			entityMap.put(entity.getName(), entity);
+		}
+		
+	}
+	
 	public void setEntity(EList<IncidentEntity> entity) {
 
 		incidentEntity = entity;
