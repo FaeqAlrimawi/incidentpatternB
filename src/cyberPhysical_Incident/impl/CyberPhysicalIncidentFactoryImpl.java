@@ -117,6 +117,8 @@ public class CyberPhysicalIncidentFactoryImpl extends EFactoryImpl implements Cy
 				return createMobilityFromString(eDataType, initialValue);
 			case CyberPhysicalIncidentPackage.ABSTRACTION_LEVEL:
 				return createAbstractionLevelFromString(eDataType, initialValue);
+			case CyberPhysicalIncidentPackage.CONNECTION_STATE:
+				return createConnectionStateFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -152,6 +154,8 @@ public class CyberPhysicalIncidentFactoryImpl extends EFactoryImpl implements Cy
 				return convertMobilityToString(eDataType, instanceValue);
 			case CyberPhysicalIncidentPackage.ABSTRACTION_LEVEL:
 				return convertAbstractionLevelToString(eDataType, instanceValue);
+			case CyberPhysicalIncidentPackage.CONNECTION_STATE:
+				return convertConnectionStateToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -624,6 +628,26 @@ public class CyberPhysicalIncidentFactoryImpl extends EFactoryImpl implements Cy
 	 * @generated
 	 */
 	public String convertAbstractionLevelToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ConnectionState createConnectionStateFromString(EDataType eDataType, String initialValue) {
+		ConnectionState result = ConnectionState.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertConnectionStateToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

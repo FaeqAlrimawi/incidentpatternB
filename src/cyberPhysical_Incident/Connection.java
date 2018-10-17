@@ -24,6 +24,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link cyberPhysical_Incident.Connection#isBidirectional <em>Bidirectional</em>}</li>
  *   <li>{@link cyberPhysical_Incident.Connection#getProperties <em>Properties</em>}</li>
  *   <li>{@link cyberPhysical_Incident.Connection#getVulnerabilities <em>Vulnerabilities</em>}</li>
+ *   <li>{@link cyberPhysical_Incident.Connection#getState <em>State</em>}</li>
  * </ul>
  *
  * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getConnection()
@@ -241,5 +242,34 @@ public interface Connection extends EObject {
 	 * @generated
 	 */
 	EList<Vulnerability> getVulnerabilities();
+
+	/**
+	 * Returns the value of the '<em><b>State</b></em>' attribute.
+	 * The literals are from the enumeration {@link cyberPhysical_Incident.ConnectionState}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>State</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>State</em>' attribute.
+	 * @see cyberPhysical_Incident.ConnectionState
+	 * @see #setState(ConnectionState)
+	 * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getConnection_State()
+	 * @model
+	 * @generated
+	 */
+	ConnectionState getState();
+
+	/**
+	 * Sets the value of the '{@link cyberPhysical_Incident.Connection#getState <em>State</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>State</em>' attribute.
+	 * @see cyberPhysical_Incident.ConnectionState
+	 * @see #getState()
+	 * @generated
+	 */
+	void setState(ConnectionState value);
 
 } // Connection

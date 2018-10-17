@@ -4,6 +4,7 @@ package cyberPhysical_Incident.impl;
 
 import cyberPhysical_Incident.CyberPhysicalIncidentPackage;
 import cyberPhysical_Incident.Connection;
+import cyberPhysical_Incident.ConnectionState;
 import cyberPhysical_Incident.Location;
 import cyberPhysical_Incident.Property;
 import cyberPhysical_Incident.Type;
@@ -40,6 +41,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  *   <li>{@link cyberPhysical_Incident.impl.ConnectionImpl#isBidirectional <em>Bidirectional</em>}</li>
  *   <li>{@link cyberPhysical_Incident.impl.ConnectionImpl#getProperties <em>Properties</em>}</li>
  *   <li>{@link cyberPhysical_Incident.impl.ConnectionImpl#getVulnerabilities <em>Vulnerabilities</em>}</li>
+ *   <li>{@link cyberPhysical_Incident.impl.ConnectionImpl#getState <em>State</em>}</li>
  * </ul>
  *
  * @generated
@@ -164,6 +166,26 @@ public class ConnectionImpl extends MinimalEObjectImpl.Container implements Conn
 	 * @ordered
 	 */
 	protected EList<Vulnerability> vulnerabilities;
+
+	/**
+	 * The default value of the '{@link #getState() <em>State</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getState()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final ConnectionState STATE_EDEFAULT = ConnectionState.TEMPORARY;
+
+	/**
+	 * The cached value of the '{@link #getState() <em>State</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getState()
+	 * @generated
+	 * @ordered
+	 */
+	protected ConnectionState state = STATE_EDEFAULT;
 
 	protected static int connectionNumber = 1;
 	protected static final long CONNECTION_NUMBER_LIMIT = Long.MAX_VALUE;
@@ -523,6 +545,29 @@ public class ConnectionImpl extends MinimalEObjectImpl.Container implements Conn
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public ConnectionState getState() {
+		return state;
+	}
+
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setState(ConnectionState newState) {
+		ConnectionState oldState = state;
+		state = newState == null ? STATE_EDEFAULT : newState;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysicalIncidentPackage.CONNECTION__STATE, oldState, state));
+	}
+
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -560,6 +605,8 @@ public class ConnectionImpl extends MinimalEObjectImpl.Container implements Conn
 				return getProperties();
 			case CyberPhysicalIncidentPackage.CONNECTION__VULNERABILITIES:
 				return getVulnerabilities();
+			case CyberPhysicalIncidentPackage.CONNECTION__STATE:
+				return getState();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -603,6 +650,9 @@ public class ConnectionImpl extends MinimalEObjectImpl.Container implements Conn
 				getVulnerabilities().clear();
 				getVulnerabilities().addAll((Collection<? extends Vulnerability>)newValue);
 				return;
+			case CyberPhysicalIncidentPackage.CONNECTION__STATE:
+				setState((ConnectionState)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -642,6 +692,9 @@ public class ConnectionImpl extends MinimalEObjectImpl.Container implements Conn
 			case CyberPhysicalIncidentPackage.CONNECTION__VULNERABILITIES:
 				getVulnerabilities().clear();
 				return;
+			case CyberPhysicalIncidentPackage.CONNECTION__STATE:
+				setState(STATE_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -672,6 +725,8 @@ public class ConnectionImpl extends MinimalEObjectImpl.Container implements Conn
 				return properties != null && !properties.isEmpty();
 			case CyberPhysicalIncidentPackage.CONNECTION__VULNERABILITIES:
 				return vulnerabilities != null && !vulnerabilities.isEmpty();
+			case CyberPhysicalIncidentPackage.CONNECTION__STATE:
+				return state != STATE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -694,6 +749,8 @@ public class ConnectionImpl extends MinimalEObjectImpl.Container implements Conn
 		result.append(connectionProbability);
 		result.append(", bidirectional: ");
 		result.append(bidirectional);
+		result.append(", state: ");
+		result.append(state);
 		result.append(')');
 		return result.toString();
 	}

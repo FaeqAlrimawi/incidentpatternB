@@ -1049,13 +1049,22 @@ public interface CyberPhysicalIncidentPackage extends EPackage {
 	int CONNECTION__VULNERABILITIES = 8;
 
 	/**
+	 * The feature id for the '<em><b>State</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONNECTION__STATE = 9;
+
+	/**
 	 * The number of structural features of the '<em>Connection</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTION_FEATURE_COUNT = 9;
+	int CONNECTION_FEATURE_COUNT = 10;
 
 	/**
 	 * The number of operations of the '<em>Connection</em>' class.
@@ -2992,6 +3001,16 @@ public interface CyberPhysicalIncidentPackage extends EPackage {
 	int ABSTRACTION_LEVEL = 51;
 
 	/**
+	 * The meta object id for the '{@link cyberPhysical_Incident.ConnectionState <em>Connection State</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see cyberPhysical_Incident.ConnectionState
+	 * @see cyberPhysical_Incident.impl.CyberPhysicalIncidentPackageImpl#getConnectionState()
+	 * @generated
+	 */
+	int CONNECTION_STATE = 52;
+
+	/**
 	 * Returns the meta object for class '{@link cyberPhysical_Incident.Activity <em>Activity</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3763,6 +3782,17 @@ public interface CyberPhysicalIncidentPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getConnection_Vulnerabilities();
+
+	/**
+	 * Returns the meta object for the attribute '{@link cyberPhysical_Incident.Connection#getState <em>State</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>State</em>'.
+	 * @see cyberPhysical_Incident.Connection#getState()
+	 * @see #getConnection()
+	 * @generated
+	 */
+	EAttribute getConnection_State();
 
 	/**
 	 * Returns the meta object for class '{@link cyberPhysical_Incident.Location <em>Location</em>}'.
@@ -4865,6 +4895,16 @@ public interface CyberPhysicalIncidentPackage extends EPackage {
 	EEnum getAbstractionLevel();
 
 	/**
+	 * Returns the meta object for enum '{@link cyberPhysical_Incident.ConnectionState <em>Connection State</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Connection State</em>'.
+	 * @see cyberPhysical_Incident.ConnectionState
+	 * @generated
+	 */
+	EEnum getConnectionState();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5470,6 +5510,14 @@ public interface CyberPhysicalIncidentPackage extends EPackage {
 		 * @generated
 		 */
 		EReference CONNECTION__VULNERABILITIES = eINSTANCE.getConnection_Vulnerabilities();
+
+		/**
+		 * The meta object literal for the '<em><b>State</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CONNECTION__STATE = eINSTANCE.getConnection_State();
 
 		/**
 		 * The meta object literal for the '{@link cyberPhysical_Incident.Location <em>Location</em>}' class.
@@ -6390,6 +6438,16 @@ public interface CyberPhysicalIncidentPackage extends EPackage {
 		 * @generated
 		 */
 		EEnum ABSTRACTION_LEVEL = eINSTANCE.getAbstractionLevel();
+
+		/**
+		 * The meta object literal for the '{@link cyberPhysical_Incident.ConnectionState <em>Connection State</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see cyberPhysical_Incident.ConnectionState
+		 * @see cyberPhysical_Incident.impl.CyberPhysicalIncidentPackageImpl#getConnectionState()
+		 * @generated
+		 */
+		EEnum CONNECTION_STATE = eINSTANCE.getConnectionState();
 
 	}
 

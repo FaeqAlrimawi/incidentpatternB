@@ -19,6 +19,7 @@ import cyberPhysical_Incident.BinaryExpression;
 import cyberPhysical_Incident.Condition;
 import cyberPhysical_Incident.ConnectedTo;
 import cyberPhysical_Incident.Connection;
+import cyberPhysical_Incident.ConnectionState;
 import cyberPhysical_Incident.Connectivity;
 import cyberPhysical_Incident.Contains;
 import cyberPhysical_Incident.CrimeScript;
@@ -434,6 +435,13 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * @generated
 	 */
 	private EEnum abstractionLevelEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum connectionStateEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -1133,6 +1141,15 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 */
 	public EReference getConnection_Vulnerabilities() {
 		return (EReference)connectionEClass.getEStructuralFeatures().get(8);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getConnection_State() {
+		return (EAttribute)connectionEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -2076,6 +2093,15 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EEnum getConnectionState() {
+		return connectionStateEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public CyberPhysicalIncidentFactory getCyberPhysicalIncidentFactory() {
 		return (CyberPhysicalIncidentFactory)getEFactoryInstance();
 	}
@@ -2177,6 +2203,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 		createEAttribute(connectionEClass, CONNECTION__BIDIRECTIONAL);
 		createEReference(connectionEClass, CONNECTION__PROPERTIES);
 		createEReference(connectionEClass, CONNECTION__VULNERABILITIES);
+		createEAttribute(connectionEClass, CONNECTION__STATE);
 
 		locationEClass = createEClass(LOCATION);
 		createEReference(locationEClass, LOCATION__CONNECTIONS);
@@ -2316,6 +2343,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 		skill_LevelEEnum = createEEnum(SKILL_LEVEL);
 		mobilityEEnum = createEEnum(MOBILITY);
 		abstractionLevelEEnum = createEEnum(ABSTRACTION_LEVEL);
+		connectionStateEEnum = createEEnum(CONNECTION_STATE);
 	}
 
 	/**
@@ -2447,6 +2475,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 		initEAttribute(getConnection_Bidirectional(), ecorePackage.getEBoolean(), "bidirectional", null, 0, 1, Connection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getConnection_Properties(), this.getProperty(), null, "properties", null, 0, -1, Connection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getConnection_Vulnerabilities(), this.getVulnerability(), null, "vulnerabilities", null, 0, -1, Connection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getConnection_State(), this.getConnectionState(), "state", null, 0, 1, Connection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(locationEClass, Location.class, "Location", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getLocation_Connections(), this.getConnection(), null, "connections", null, 0, -1, Location.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2633,6 +2662,11 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 		initEEnum(abstractionLevelEEnum, AbstractionLevel.class, "AbstractionLevel");
 		addEEnumLiteral(abstractionLevelEEnum, AbstractionLevel.ANYSUBCLASS);
 		addEEnumLiteral(abstractionLevelEEnum, AbstractionLevel.EXACT);
+
+		initEEnum(connectionStateEEnum, ConnectionState.class, "ConnectionState");
+		addEEnumLiteral(connectionStateEEnum, ConnectionState.TEMPORARY);
+		addEEnumLiteral(connectionStateEEnum, ConnectionState.PERMANENT);
+		addEEnumLiteral(connectionStateEEnum, ConnectionState.UNKNOWN);
 
 		// Create resource
 		createResource(eNS_URI);
