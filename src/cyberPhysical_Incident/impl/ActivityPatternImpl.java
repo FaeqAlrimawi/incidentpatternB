@@ -21,11 +21,10 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 import cyberPhysical_Incident.Activity;
 import cyberPhysical_Incident.ActivityPattern;
-import cyberPhysical_Incident.ActivityPatternSeverity;
 import cyberPhysical_Incident.Connection;
 import cyberPhysical_Incident.CyberPhysicalIncidentPackage;
 import cyberPhysical_Incident.IncidentEntity;
-import cyberPhysical_Incident.Skill_Level;
+import cyberPhysical_Incident.Level;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model object
@@ -42,6 +41,7 @@ import cyberPhysical_Incident.Skill_Level;
  *   <li>{@link cyberPhysical_Incident.impl.ActivityPatternImpl#getAbstractActivity <em>Abstract Activity</em>}</li>
  *   <li>{@link cyberPhysical_Incident.impl.ActivityPatternImpl#getIncidententity <em>Incidententity</em>}</li>
  *   <li>{@link cyberPhysical_Incident.impl.ActivityPatternImpl#getConnection <em>Connection</em>}</li>
+ *   <li>{@link cyberPhysical_Incident.impl.ActivityPatternImpl#getLikelihood <em>Likelihood</em>}</li>
  * </ul>
  *
  * @generated
@@ -72,7 +72,7 @@ public class ActivityPatternImpl extends MinimalEObjectImpl.Container implements
 	 * @generated
 	 * @ordered
 	 */
-	protected static final ActivityPatternSeverity SEVERITY_EDEFAULT = ActivityPatternSeverity.LOW;
+	protected static final Level SEVERITY_EDEFAULT = Level.LOW;
 
 	/**
 	 * The cached value of the '{@link #getSeverity() <em>Severity</em>}' attribute.
@@ -81,7 +81,7 @@ public class ActivityPatternImpl extends MinimalEObjectImpl.Container implements
 	 * @generated
 	 * @ordered
 	 */
-	protected ActivityPatternSeverity severity = SEVERITY_EDEFAULT;
+	protected Level severity = SEVERITY_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
@@ -108,7 +108,7 @@ public class ActivityPatternImpl extends MinimalEObjectImpl.Container implements
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Skill_Level SKILLS_REQUIRED_EDEFAULT = Skill_Level.LOW;
+	protected static final Level SKILLS_REQUIRED_EDEFAULT = Level.LOW;
 
 	/**
 	 * The cached value of the '{@link #getSkillsRequired() <em>Skills Required</em>}' attribute.
@@ -117,7 +117,7 @@ public class ActivityPatternImpl extends MinimalEObjectImpl.Container implements
 	 * @generated
 	 * @ordered
 	 */
-	protected Skill_Level skillsRequired = SKILLS_REQUIRED_EDEFAULT;
+	protected Level skillsRequired = SKILLS_REQUIRED_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getPatternsFollow() <em>Patterns
@@ -158,6 +158,26 @@ public class ActivityPatternImpl extends MinimalEObjectImpl.Container implements
 	 * @ordered
 	 */
 	protected EList<Connection> connection;
+
+	/**
+	 * The default value of the '{@link #getLikelihood() <em>Likelihood</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLikelihood()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final Level LIKELIHOOD_EDEFAULT = Level.LOW;
+
+	/**
+	 * The cached value of the '{@link #getLikelihood() <em>Likelihood</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLikelihood()
+	 * @generated
+	 * @ordered
+	 */
+	protected Level likelihood = LIKELIHOOD_EDEFAULT;
 
 	protected Map<String, String> entityMap = new HashMap<String, String>();
 
@@ -972,16 +992,17 @@ public class ActivityPatternImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ActivityPatternSeverity getSeverity() {
+	public Level getSeverity() {
 		return severity;
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setSeverity(ActivityPatternSeverity newSeverity) {
-		ActivityPatternSeverity oldSeverity = severity;
+	public void setSeverity(Level newSeverity) {
+		Level oldSeverity = severity;
 		severity = newSeverity == null ? SEVERITY_EDEFAULT : newSeverity;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysicalIncidentPackage.ACTIVITY_PATTERN__SEVERITY, oldSeverity, severity));
@@ -1010,16 +1031,17 @@ public class ActivityPatternImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Skill_Level getSkillsRequired() {
+	public Level getSkillsRequired() {
 		return skillsRequired;
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setSkillsRequired(Skill_Level newSkillsRequired) {
-		Skill_Level oldSkillsRequired = skillsRequired;
+	public void setSkillsRequired(Level newSkillsRequired) {
+		Level oldSkillsRequired = skillsRequired;
 		skillsRequired = newSkillsRequired == null ? SKILLS_REQUIRED_EDEFAULT : newSkillsRequired;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysicalIncidentPackage.ACTIVITY_PATTERN__SKILLS_REQUIRED, oldSkillsRequired, skillsRequired));
@@ -1070,6 +1092,27 @@ public class ActivityPatternImpl extends MinimalEObjectImpl.Container implements
 	}
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Level getLikelihood() {
+		return likelihood;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setLikelihood(Level newLikelihood) {
+		Level oldLikelihood = likelihood;
+		likelihood = newLikelihood == null ? LIKELIHOOD_EDEFAULT : newLikelihood;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysicalIncidentPackage.ACTIVITY_PATTERN__LIKELIHOOD, oldLikelihood, likelihood));
+	}
+
+	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -1109,6 +1152,8 @@ public class ActivityPatternImpl extends MinimalEObjectImpl.Container implements
 				return getIncidententity();
 			case CyberPhysicalIncidentPackage.ACTIVITY_PATTERN__CONNECTION:
 				return getConnection();
+			case CyberPhysicalIncidentPackage.ACTIVITY_PATTERN__LIKELIHOOD:
+				return getLikelihood();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -1125,13 +1170,13 @@ public class ActivityPatternImpl extends MinimalEObjectImpl.Container implements
 				setName((String)newValue);
 				return;
 			case CyberPhysicalIncidentPackage.ACTIVITY_PATTERN__SEVERITY:
-				setSeverity((ActivityPatternSeverity)newValue);
+				setSeverity((Level)newValue);
 				return;
 			case CyberPhysicalIncidentPackage.ACTIVITY_PATTERN__DESCRIPTION:
 				setDescription((String)newValue);
 				return;
 			case CyberPhysicalIncidentPackage.ACTIVITY_PATTERN__SKILLS_REQUIRED:
-				setSkillsRequired((Skill_Level)newValue);
+				setSkillsRequired((Level)newValue);
 				return;
 			case CyberPhysicalIncidentPackage.ACTIVITY_PATTERN__PATTERNS_FOLLOW:
 				getPatternsFollow().clear();
@@ -1148,6 +1193,9 @@ public class ActivityPatternImpl extends MinimalEObjectImpl.Container implements
 			case CyberPhysicalIncidentPackage.ACTIVITY_PATTERN__CONNECTION:
 				getConnection().clear();
 				getConnection().addAll((Collection<? extends Connection>)newValue);
+				return;
+			case CyberPhysicalIncidentPackage.ACTIVITY_PATTERN__LIKELIHOOD:
+				setLikelihood((Level)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -1184,6 +1232,9 @@ public class ActivityPatternImpl extends MinimalEObjectImpl.Container implements
 			case CyberPhysicalIncidentPackage.ACTIVITY_PATTERN__CONNECTION:
 				getConnection().clear();
 				return;
+			case CyberPhysicalIncidentPackage.ACTIVITY_PATTERN__LIKELIHOOD:
+				setLikelihood(LIKELIHOOD_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -1211,6 +1262,8 @@ public class ActivityPatternImpl extends MinimalEObjectImpl.Container implements
 				return incidententity != null && !incidententity.isEmpty();
 			case CyberPhysicalIncidentPackage.ACTIVITY_PATTERN__CONNECTION:
 				return connection != null && !connection.isEmpty();
+			case CyberPhysicalIncidentPackage.ACTIVITY_PATTERN__LIKELIHOOD:
+				return likelihood != LIKELIHOOD_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -1232,6 +1285,8 @@ public class ActivityPatternImpl extends MinimalEObjectImpl.Container implements
 		result.append(description);
 		result.append(", skillsRequired: ");
 		result.append(skillsRequired);
+		result.append(", likelihood: ");
+		result.append(likelihood);
 		result.append(')');
 		return result.toString();
 	}

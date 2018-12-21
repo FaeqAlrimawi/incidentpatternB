@@ -2871,13 +2871,22 @@ public interface CyberPhysicalIncidentPackage extends EPackage {
 	int ACTIVITY_PATTERN__CONNECTION = 7;
 
 	/**
+	 * The feature id for the '<em><b>Likelihood</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTIVITY_PATTERN__LIKELIHOOD = 8;
+
+	/**
 	 * The number of structural features of the '<em>Activity Pattern</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ACTIVITY_PATTERN_FEATURE_COUNT = 8;
+	int ACTIVITY_PATTERN_FEATURE_COUNT = 9;
 
 	/**
 	 * The number of operations of the '<em>Activity Pattern</em>' class.
@@ -2961,26 +2970,6 @@ public interface CyberPhysicalIncidentPackage extends EPackage {
 
 
 	/**
-	 * The meta object id for the '{@link cyberPhysical_Incident.ActivityPatternSeverity <em>Activity Pattern Severity</em>}' enum.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see cyberPhysical_Incident.ActivityPatternSeverity
-	 * @see cyberPhysical_Incident.impl.CyberPhysicalIncidentPackageImpl#getActivityPatternSeverity()
-	 * @generated
-	 */
-	int ACTIVITY_PATTERN_SEVERITY = 48;
-
-	/**
-	 * The meta object id for the '{@link cyberPhysical_Incident.Skill_Level <em>Skill Level</em>}' enum.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see cyberPhysical_Incident.Skill_Level
-	 * @see cyberPhysical_Incident.impl.CyberPhysicalIncidentPackageImpl#getSkill_Level()
-	 * @generated
-	 */
-	int SKILL_LEVEL = 49;
-
-	/**
 	 * The meta object id for the '{@link cyberPhysical_Incident.Mobility <em>Mobility</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2988,7 +2977,7 @@ public interface CyberPhysicalIncidentPackage extends EPackage {
 	 * @see cyberPhysical_Incident.impl.CyberPhysicalIncidentPackageImpl#getMobility()
 	 * @generated
 	 */
-	int MOBILITY = 50;
+	int MOBILITY = 48;
 
 	/**
 	 * The meta object id for the '{@link cyberPhysical_Incident.AbstractionLevel <em>Abstraction Level</em>}' enum.
@@ -2998,7 +2987,7 @@ public interface CyberPhysicalIncidentPackage extends EPackage {
 	 * @see cyberPhysical_Incident.impl.CyberPhysicalIncidentPackageImpl#getAbstractionLevel()
 	 * @generated
 	 */
-	int ABSTRACTION_LEVEL = 51;
+	int ABSTRACTION_LEVEL = 49;
 
 	/**
 	 * The meta object id for the '{@link cyberPhysical_Incident.ConnectionState <em>Connection State</em>}' enum.
@@ -3008,7 +2997,7 @@ public interface CyberPhysicalIncidentPackage extends EPackage {
 	 * @see cyberPhysical_Incident.impl.CyberPhysicalIncidentPackageImpl#getConnectionState()
 	 * @generated
 	 */
-	int CONNECTION_STATE = 52;
+	int CONNECTION_STATE = 50;
 
 	/**
 	 * Returns the meta object for class '{@link cyberPhysical_Incident.Activity <em>Activity</em>}'.
@@ -4752,6 +4741,17 @@ public interface CyberPhysicalIncidentPackage extends EPackage {
 	EReference getActivityPattern_Connection();
 
 	/**
+	 * Returns the meta object for the attribute '{@link cyberPhysical_Incident.ActivityPattern#getLikelihood <em>Likelihood</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Likelihood</em>'.
+	 * @see cyberPhysical_Incident.ActivityPattern#getLikelihood()
+	 * @see #getActivityPattern()
+	 * @generated
+	 */
+	EAttribute getActivityPattern_Likelihood();
+
+	/**
 	 * Returns the meta object for the reference list '{@link cyberPhysical_Incident.ActivityPattern#getPatternsFollow <em>Patterns Follow</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4853,26 +4853,6 @@ public interface CyberPhysicalIncidentPackage extends EPackage {
 	 * @generated
 	 */
 	EEnum getActorLevel();
-
-	/**
-	 * Returns the meta object for enum '{@link cyberPhysical_Incident.ActivityPatternSeverity <em>Activity Pattern Severity</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for enum '<em>Activity Pattern Severity</em>'.
-	 * @see cyberPhysical_Incident.ActivityPatternSeverity
-	 * @generated
-	 */
-	EEnum getActivityPatternSeverity();
-
-	/**
-	 * Returns the meta object for enum '{@link cyberPhysical_Incident.Skill_Level <em>Skill Level</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for enum '<em>Skill Level</em>'.
-	 * @see cyberPhysical_Incident.Skill_Level
-	 * @generated
-	 */
-	EEnum getSkill_Level();
 
 	/**
 	 * Returns the meta object for enum '{@link cyberPhysical_Incident.Mobility <em>Mobility</em>}'.
@@ -6306,6 +6286,14 @@ public interface CyberPhysicalIncidentPackage extends EPackage {
 		EReference ACTIVITY_PATTERN__CONNECTION = eINSTANCE.getActivityPattern_Connection();
 
 		/**
+		 * The meta object literal for the '<em><b>Likelihood</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ACTIVITY_PATTERN__LIKELIHOOD = eINSTANCE.getActivityPattern_Likelihood();
+
+		/**
 		 * The meta object literal for the '<em><b>Patterns Follow</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -6398,26 +6386,6 @@ public interface CyberPhysicalIncidentPackage extends EPackage {
 		 * @generated
 		 */
 		EEnum ACTOR_LEVEL = eINSTANCE.getActorLevel();
-
-		/**
-		 * The meta object literal for the '{@link cyberPhysical_Incident.ActivityPatternSeverity <em>Activity Pattern Severity</em>}' enum.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see cyberPhysical_Incident.ActivityPatternSeverity
-		 * @see cyberPhysical_Incident.impl.CyberPhysicalIncidentPackageImpl#getActivityPatternSeverity()
-		 * @generated
-		 */
-		EEnum ACTIVITY_PATTERN_SEVERITY = eINSTANCE.getActivityPatternSeverity();
-
-		/**
-		 * The meta object literal for the '{@link cyberPhysical_Incident.Skill_Level <em>Skill Level</em>}' enum.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see cyberPhysical_Incident.Skill_Level
-		 * @see cyberPhysical_Incident.impl.CyberPhysicalIncidentPackageImpl#getSkill_Level()
-		 * @generated
-		 */
-		EEnum SKILL_LEVEL = eINSTANCE.getSkill_Level();
 
 		/**
 		 * The meta object literal for the '{@link cyberPhysical_Incident.Mobility <em>Mobility</em>}' enum.

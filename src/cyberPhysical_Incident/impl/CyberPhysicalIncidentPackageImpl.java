@@ -6,7 +6,6 @@ import cyberPhysical_Incident.AbstractionLevel;
 import cyberPhysical_Incident.Activity;
 import cyberPhysical_Incident.ActivityInitiator;
 import cyberPhysical_Incident.ActivityPattern;
-import cyberPhysical_Incident.ActivityPatternSeverity;
 import cyberPhysical_Incident.ActivityType;
 import cyberPhysical_Incident.Actor;
 import cyberPhysical_Incident.ActorLevel;
@@ -52,7 +51,6 @@ import cyberPhysical_Incident.Resource;
 import cyberPhysical_Incident.Scene;
 import cyberPhysical_Incident.ScriptCategory;
 import cyberPhysical_Incident.Site;
-import cyberPhysical_Incident.Skill_Level;
 import cyberPhysical_Incident.TopologicalRelation;
 import cyberPhysical_Incident.Type;
 import cyberPhysical_Incident.UnaryExpression;
@@ -407,20 +405,6 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * @generated
 	 */
 	private EEnum actorLevelEEnum = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EEnum activityPatternSeverityEEnum = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EEnum skill_LevelEEnum = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -1967,6 +1951,15 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getActivityPattern_Likelihood() {
+		return (EAttribute)activityPatternEClass.getEStructuralFeatures().get(8);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EReference getActivityPattern_PatternsFollow() {
 		return (EReference)activityPatternEClass.getEStructuralFeatures().get(4);
 	}
@@ -2050,24 +2043,6 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 */
 	public EEnum getActorLevel() {
 		return actorLevelEEnum;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EEnum getActivityPatternSeverity() {
-		return activityPatternSeverityEEnum;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EEnum getSkill_Level() {
-		return skill_LevelEEnum;
 	}
 
 	/**
@@ -2330,6 +2305,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 		createEReference(activityPatternEClass, ACTIVITY_PATTERN__ABSTRACT_ACTIVITY);
 		createEReference(activityPatternEClass, ACTIVITY_PATTERN__INCIDENTENTITY);
 		createEReference(activityPatternEClass, ACTIVITY_PATTERN__CONNECTION);
+		createEAttribute(activityPatternEClass, ACTIVITY_PATTERN__LIKELIHOOD);
 
 		// Create enums
 		levelEEnum = createEEnum(LEVEL);
@@ -2339,8 +2315,6 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 		scriptCategoryEEnum = createEEnum(SCRIPT_CATEGORY);
 		actorRoleEEnum = createEEnum(ACTOR_ROLE);
 		actorLevelEEnum = createEEnum(ACTOR_LEVEL);
-		activityPatternSeverityEEnum = createEEnum(ACTIVITY_PATTERN_SEVERITY);
-		skill_LevelEEnum = createEEnum(SKILL_LEVEL);
 		mobilityEEnum = createEEnum(MOBILITY);
 		abstractionLevelEEnum = createEEnum(ABSTRACTION_LEVEL);
 		connectionStateEEnum = createEEnum(CONNECTION_STATE);
@@ -2595,19 +2569,21 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 
 		initEClass(activityPatternEClass, ActivityPattern.class, "ActivityPattern", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getActivityPattern_Name(), ecorePackage.getEString(), "name", null, 0, 1, ActivityPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getActivityPattern_Severity(), this.getActivityPatternSeverity(), "Severity", null, 0, 1, ActivityPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getActivityPattern_Severity(), this.getLevel(), "Severity", null, 0, 1, ActivityPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getActivityPattern_Description(), ecorePackage.getEString(), "description", null, 0, 1, ActivityPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getActivityPattern_SkillsRequired(), this.getSkill_Level(), "skillsRequired", null, 0, 1, ActivityPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getActivityPattern_SkillsRequired(), this.getLevel(), "skillsRequired", null, 0, 1, ActivityPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getActivityPattern_PatternsFollow(), this.getActivityPattern(), null, "patternsFollow", null, 0, -1, ActivityPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getActivityPattern_AbstractActivity(), this.getActivity(), null, "abstractActivity", null, 0, -1, ActivityPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getActivityPattern_Incidententity(), this.getIncidentEntity(), null, "incidententity", null, 0, -1, ActivityPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getActivityPattern_Connection(), this.getConnection(), null, "connection", null, 0, -1, ActivityPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getActivityPattern_Likelihood(), this.getLevel(), "likelihood", null, 0, 1, ActivityPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(levelEEnum, Level.class, "Level");
-		addEEnumLiteral(levelEEnum, Level.HIGH);
-		addEEnumLiteral(levelEEnum, Level.MEDIUM);
 		addEEnumLiteral(levelEEnum, Level.LOW);
+		addEEnumLiteral(levelEEnum, Level.MEDIUM);
+		addEEnumLiteral(levelEEnum, Level.HIGH);
+		addEEnumLiteral(levelEEnum, Level.VERY_HIGH);
 		addEEnumLiteral(levelEEnum, Level.UNKNOWN);
 
 		initEEnum(activityTypeEEnum, ActivityType.class, "ActivityType");
@@ -2643,16 +2619,6 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 		addEEnumLiteral(actorLevelEEnum, ActorLevel.INDIVIDUAL);
 		addEEnumLiteral(actorLevelEEnum, ActorLevel.GROUP);
 		addEEnumLiteral(actorLevelEEnum, ActorLevel.ORGANISATION);
-
-		initEEnum(activityPatternSeverityEEnum, ActivityPatternSeverity.class, "ActivityPatternSeverity");
-		addEEnumLiteral(activityPatternSeverityEEnum, ActivityPatternSeverity.LOW);
-		addEEnumLiteral(activityPatternSeverityEEnum, ActivityPatternSeverity.MEDIUM);
-		addEEnumLiteral(activityPatternSeverityEEnum, ActivityPatternSeverity.HIGH);
-
-		initEEnum(skill_LevelEEnum, Skill_Level.class, "Skill_Level");
-		addEEnumLiteral(skill_LevelEEnum, Skill_Level.LOW);
-		addEEnumLiteral(skill_LevelEEnum, Skill_Level.MEDIUM);
-		addEEnumLiteral(skill_LevelEEnum, Skill_Level.HIGH);
 
 		initEEnum(mobilityEEnum, Mobility.class, "Mobility");
 		addEEnumLiteral(mobilityEEnum, Mobility.MOVABLE);

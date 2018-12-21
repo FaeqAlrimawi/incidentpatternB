@@ -23,6 +23,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link cyberPhysical_Incident.ActivityPattern#getAbstractActivity <em>Abstract Activity</em>}</li>
  *   <li>{@link cyberPhysical_Incident.ActivityPattern#getIncidententity <em>Incidententity</em>}</li>
  *   <li>{@link cyberPhysical_Incident.ActivityPattern#getConnection <em>Connection</em>}</li>
+ *   <li>{@link cyberPhysical_Incident.ActivityPattern#getLikelihood <em>Likelihood</em>}</li>
  * </ul>
  *
  * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getActivityPattern()
@@ -70,7 +71,7 @@ public interface ActivityPattern extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Severity</b></em>' attribute.
-	 * The literals are from the enumeration {@link cyberPhysical_Incident.ActivityPatternSeverity}.
+	 * The literals are from the enumeration {@link cyberPhysical_Incident.Level}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Severity</em>' attribute isn't clear,
@@ -78,24 +79,24 @@ public interface ActivityPattern extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Severity</em>' attribute.
-	 * @see cyberPhysical_Incident.ActivityPatternSeverity
-	 * @see #setSeverity(ActivityPatternSeverity)
+	 * @see cyberPhysical_Incident.Level
+	 * @see #setSeverity(Level)
 	 * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getActivityPattern_Severity()
 	 * @model
 	 * @generated
 	 */
-	ActivityPatternSeverity getSeverity();
+	Level getSeverity();
 
 	/**
 	 * Sets the value of the '{@link cyberPhysical_Incident.ActivityPattern#getSeverity <em>Severity</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Severity</em>' attribute.
-	 * @see cyberPhysical_Incident.ActivityPatternSeverity
+	 * @see cyberPhysical_Incident.Level
 	 * @see #getSeverity()
 	 * @generated
 	 */
-	void setSeverity(ActivityPatternSeverity value);
+	void setSeverity(Level value);
 
 	/**
 	 * Returns the value of the '<em><b>Description</b></em>' attribute.
@@ -125,7 +126,7 @@ public interface ActivityPattern extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Skills Required</b></em>' attribute.
-	 * The literals are from the enumeration {@link cyberPhysical_Incident.Skill_Level}.
+	 * The literals are from the enumeration {@link cyberPhysical_Incident.Level}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Skills Required</em>' attribute isn't clear,
@@ -133,24 +134,24 @@ public interface ActivityPattern extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Skills Required</em>' attribute.
-	 * @see cyberPhysical_Incident.Skill_Level
-	 * @see #setSkillsRequired(Skill_Level)
+	 * @see cyberPhysical_Incident.Level
+	 * @see #setSkillsRequired(Level)
 	 * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getActivityPattern_SkillsRequired()
 	 * @model
 	 * @generated
 	 */
-	Skill_Level getSkillsRequired();
+	Level getSkillsRequired();
 
 	/**
 	 * Sets the value of the '{@link cyberPhysical_Incident.ActivityPattern#getSkillsRequired <em>Skills Required</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Skills Required</em>' attribute.
-	 * @see cyberPhysical_Incident.Skill_Level
+	 * @see cyberPhysical_Incident.Level
 	 * @see #getSkillsRequired()
 	 * @generated
 	 */
-	void setSkillsRequired(Skill_Level value);
+	void setSkillsRequired(Level value);
 
 	/**
 	 * Returns the value of the '<em><b>Patterns Follow</b></em>' reference list.
@@ -215,5 +216,34 @@ public interface ActivityPattern extends EObject {
 	 * @generated
 	 */
 	EList<Connection> getConnection();
+
+	/**
+	 * Returns the value of the '<em><b>Likelihood</b></em>' attribute.
+	 * The literals are from the enumeration {@link cyberPhysical_Incident.Level}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Likelihood</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Likelihood</em>' attribute.
+	 * @see cyberPhysical_Incident.Level
+	 * @see #setLikelihood(Level)
+	 * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getActivityPattern_Likelihood()
+	 * @model
+	 * @generated
+	 */
+	Level getLikelihood();
+
+	/**
+	 * Sets the value of the '{@link cyberPhysical_Incident.ActivityPattern#getLikelihood <em>Likelihood</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Likelihood</em>' attribute.
+	 * @see cyberPhysical_Incident.Level
+	 * @see #getLikelihood()
+	 * @generated
+	 */
+	void setLikelihood(Level value);
 
 } // ActivityPattern

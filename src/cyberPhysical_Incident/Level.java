@@ -19,26 +19,6 @@ import org.eclipse.emf.common.util.Enumerator;
  */
 public enum Level implements Enumerator {
 	/**
-	 * The '<em><b>HIGH</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #HIGH_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	HIGH(0, "HIGH", "HIGH"),
-
-	/**
-	 * The '<em><b>MEDIUM</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #MEDIUM_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	MEDIUM(1, "MEDIUM", "MEDIUM"),
-
-	/**
 	 * The '<em><b>LOW</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -46,7 +26,31 @@ public enum Level implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	LOW(2, "LOW", "LOW"),
+	LOW(0, "LOW", "LOW"), /**
+	 * The '<em><b>MEDIUM</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #MEDIUM_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	MEDIUM(1, "MEDIUM", "MEDIUM"), /**
+	 * The '<em><b>HIGH</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #HIGH_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	HIGH(2, "HIGH", "HIGH"), /**
+	 * The '<em><b>VERY HIGH</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #VERY_HIGH_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	VERY_HIGH(3, "VERY_HIGH", "VERY_HIGH"),
 
 	/**
 	 * The '<em><b>UNKNOWN</b></em>' literal object.
@@ -56,22 +60,22 @@ public enum Level implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	UNKNOWN(3, "UNKNOWN", "UNKNOWN");
+	UNKNOWN(4, "UNKNOWN", "UNKNOWN");
 
 	/**
-	 * The '<em><b>HIGH</b></em>' literal value.
+	 * The '<em><b>LOW</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>HIGH</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>LOW</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #HIGH
+	 * @see #LOW
 	 * @model
 	 * @generated
 	 * @ordered
 	 */
-	public static final int HIGH_VALUE = 0;
+	public static final int LOW_VALUE = 0;
 
 	/**
 	 * The '<em><b>MEDIUM</b></em>' literal value.
@@ -89,19 +93,34 @@ public enum Level implements Enumerator {
 	public static final int MEDIUM_VALUE = 1;
 
 	/**
-	 * The '<em><b>LOW</b></em>' literal value.
+	 * The '<em><b>HIGH</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>LOW</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>HIGH</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #LOW
+	 * @see #HIGH
 	 * @model
 	 * @generated
 	 * @ordered
 	 */
-	public static final int LOW_VALUE = 2;
+	public static final int HIGH_VALUE = 2;
+
+	/**
+	 * The '<em><b>VERY HIGH</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>VERY HIGH</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #VERY_HIGH
+	 * @model
+	 * @generated
+	 * @ordered
+	 */
+	public static final int VERY_HIGH_VALUE = 3;
 
 	/**
 	 * The '<em><b>UNKNOWN</b></em>' literal value.
@@ -116,7 +135,7 @@ public enum Level implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int UNKNOWN_VALUE = 3;
+	public static final int UNKNOWN_VALUE = 4;
 
 	/**
 	 * An array of all the '<em><b>Level</b></em>' enumerators.
@@ -126,9 +145,10 @@ public enum Level implements Enumerator {
 	 */
 	private static final Level[] VALUES_ARRAY =
 		new Level[] {
-			HIGH,
-			MEDIUM,
 			LOW,
+			MEDIUM,
+			HIGH,
+			VERY_HIGH,
 			UNKNOWN,
 		};
 
@@ -186,9 +206,10 @@ public enum Level implements Enumerator {
 	 */
 	public static Level get(int value) {
 		switch (value) {
-			case HIGH_VALUE: return HIGH;
-			case MEDIUM_VALUE: return MEDIUM;
 			case LOW_VALUE: return LOW;
+			case MEDIUM_VALUE: return MEDIUM;
+			case HIGH_VALUE: return HIGH;
+			case VERY_HIGH_VALUE: return VERY_HIGH;
 			case UNKNOWN_VALUE: return UNKNOWN;
 		}
 		return null;

@@ -109,10 +109,6 @@ public class CyberPhysicalIncidentFactoryImpl extends EFactoryImpl implements Cy
 				return createActorRoleFromString(eDataType, initialValue);
 			case CyberPhysicalIncidentPackage.ACTOR_LEVEL:
 				return createActorLevelFromString(eDataType, initialValue);
-			case CyberPhysicalIncidentPackage.ACTIVITY_PATTERN_SEVERITY:
-				return createActivityPatternSeverityFromString(eDataType, initialValue);
-			case CyberPhysicalIncidentPackage.SKILL_LEVEL:
-				return createSkill_LevelFromString(eDataType, initialValue);
 			case CyberPhysicalIncidentPackage.MOBILITY:
 				return createMobilityFromString(eDataType, initialValue);
 			case CyberPhysicalIncidentPackage.ABSTRACTION_LEVEL:
@@ -146,10 +142,6 @@ public class CyberPhysicalIncidentFactoryImpl extends EFactoryImpl implements Cy
 				return convertActorRoleToString(eDataType, instanceValue);
 			case CyberPhysicalIncidentPackage.ACTOR_LEVEL:
 				return convertActorLevelToString(eDataType, instanceValue);
-			case CyberPhysicalIncidentPackage.ACTIVITY_PATTERN_SEVERITY:
-				return convertActivityPatternSeverityToString(eDataType, instanceValue);
-			case CyberPhysicalIncidentPackage.SKILL_LEVEL:
-				return convertSkill_LevelToString(eDataType, instanceValue);
 			case CyberPhysicalIncidentPackage.MOBILITY:
 				return convertMobilityToString(eDataType, instanceValue);
 			case CyberPhysicalIncidentPackage.ABSTRACTION_LEVEL:
@@ -548,46 +540,6 @@ public class CyberPhysicalIncidentFactoryImpl extends EFactoryImpl implements Cy
 	 * @generated
 	 */
 	public String convertActorLevelToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ActivityPatternSeverity createActivityPatternSeverityFromString(EDataType eDataType, String initialValue) {
-		ActivityPatternSeverity result = ActivityPatternSeverity.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-		return result;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String convertActivityPatternSeverityToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Skill_Level createSkill_LevelFromString(EDataType eDataType, String initialValue) {
-		Skill_Level result = Skill_Level.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-		return result;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String convertSkill_LevelToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

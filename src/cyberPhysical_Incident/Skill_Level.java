@@ -46,7 +46,23 @@ public enum Skill_Level implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	HIGH(2, "HIGH", "HIGH");
+	HIGH(2, "HIGH", "HIGH"), /**
+	 * The '<em><b>VERY HIGH</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #VERY_HIGH_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	VERY_HIGH(3, "VERY_HIGH", "VERY_HIGH"), /**
+	 * The '<em><b>UNKNOWN</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #UNKNOWN_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	UNKNOWN(4, "UNKNOWN", "UNKNOWN");
 
 	/**
 	 * The '<em><b>LOW</b></em>' literal value.
@@ -94,6 +110,36 @@ public enum Skill_Level implements Enumerator {
 	public static final int HIGH_VALUE = 2;
 
 	/**
+	 * The '<em><b>VERY HIGH</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>VERY HIGH</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #VERY_HIGH
+	 * @model
+	 * @generated
+	 * @ordered
+	 */
+	public static final int VERY_HIGH_VALUE = 3;
+
+	/**
+	 * The '<em><b>UNKNOWN</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>UNKNOWN</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #UNKNOWN
+	 * @model
+	 * @generated
+	 * @ordered
+	 */
+	public static final int UNKNOWN_VALUE = 4;
+
+	/**
 	 * An array of all the '<em><b>Skill Level</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -104,6 +150,8 @@ public enum Skill_Level implements Enumerator {
 			LOW,
 			MEDIUM,
 			HIGH,
+			VERY_HIGH,
+			UNKNOWN,
 		};
 
 	/**
@@ -163,6 +211,8 @@ public enum Skill_Level implements Enumerator {
 			case LOW_VALUE: return LOW;
 			case MEDIUM_VALUE: return MEDIUM;
 			case HIGH_VALUE: return HIGH;
+			case VERY_HIGH_VALUE: return VERY_HIGH;
+			case UNKNOWN_VALUE: return UNKNOWN;
 		}
 		return null;
 	}
