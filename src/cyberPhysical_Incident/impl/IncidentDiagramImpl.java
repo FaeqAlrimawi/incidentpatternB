@@ -37,6 +37,7 @@ import cyberPhysical_Incident.Motive;
 import cyberPhysical_Incident.Path;
 import cyberPhysical_Incident.Resource;
 import cyberPhysical_Incident.Scene;
+import cyberPhysical_Incident.ScriptCategory;
 import it.uniud.mads.jlibbig.core.std.Signature;
 import it.uniud.mads.jlibbig.core.std.SignatureBuilder;
 
@@ -57,6 +58,7 @@ import it.uniud.mads.jlibbig.core.std.SignatureBuilder;
  *   <li>{@link cyberPhysical_Incident.impl.IncidentDiagramImpl#getActor <em>Actor</em>}</li>
  *   <li>{@link cyberPhysical_Incident.impl.IncidentDiagramImpl#getConnection <em>Connection</em>}</li>
  *   <li>{@link cyberPhysical_Incident.impl.IncidentDiagramImpl#getPaths <em>Paths</em>}</li>
+ *   <li>{@link cyberPhysical_Incident.impl.IncidentDiagramImpl#getIncidentEntity <em>Incident Entity</em>}</li>
  * </ul>
  *
  * @generated
@@ -499,10 +501,16 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
+	 * 
 	 */
 	protected IncidentDiagramImpl() {
 		super();
+		
+		if(getCrimeScript() == null) {
+			//create new crime script
+			setCrimeScript(new CrimeScriptImpl());
+			getCrimeScript().setCategory(ScriptCategory.INSTANCE);
+		}
 	}
 
 	/**
@@ -683,6 +691,18 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 	}
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<IncidentEntity> getIncidentEntity() {
+		if (incidentEntity == null) {
+			incidentEntity = new EObjectContainmentEList<IncidentEntity>(IncidentEntity.class, this, CyberPhysicalIncidentPackage.INCIDENT_DIAGRAM__INCIDENT_ENTITY);
+		}
+		return incidentEntity;
+	}
+
+	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -709,6 +729,8 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 				return ((InternalEList<?>)getConnection()).basicRemove(otherEnd, msgs);
 			case CyberPhysicalIncidentPackage.INCIDENT_DIAGRAM__PATHS:
 				return ((InternalEList<?>)getPaths()).basicRemove(otherEnd, msgs);
+			case CyberPhysicalIncidentPackage.INCIDENT_DIAGRAM__INCIDENT_ENTITY:
+				return ((InternalEList<?>)getIncidentEntity()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -740,6 +762,8 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 				return getConnection();
 			case CyberPhysicalIncidentPackage.INCIDENT_DIAGRAM__PATHS:
 				return getPaths();
+			case CyberPhysicalIncidentPackage.INCIDENT_DIAGRAM__INCIDENT_ENTITY:
+				return getIncidentEntity();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -790,6 +814,10 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 				getPaths().clear();
 				getPaths().addAll((Collection<? extends Path>)newValue);
 				return;
+			case CyberPhysicalIncidentPackage.INCIDENT_DIAGRAM__INCIDENT_ENTITY:
+				getIncidentEntity().clear();
+				getIncidentEntity().addAll((Collection<? extends IncidentEntity>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -831,6 +859,9 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 			case CyberPhysicalIncidentPackage.INCIDENT_DIAGRAM__PATHS:
 				getPaths().clear();
 				return;
+			case CyberPhysicalIncidentPackage.INCIDENT_DIAGRAM__INCIDENT_ENTITY:
+				getIncidentEntity().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -862,6 +893,8 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 				return connection != null && !connection.isEmpty();
 			case CyberPhysicalIncidentPackage.INCIDENT_DIAGRAM__PATHS:
 				return paths != null && !paths.isEmpty();
+			case CyberPhysicalIncidentPackage.INCIDENT_DIAGRAM__INCIDENT_ENTITY:
+				return incidentEntity != null && !incidentEntity.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

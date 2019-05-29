@@ -777,7 +777,7 @@ public interface CyberPhysicalIncidentPackage extends EPackage {
 	int INCIDENT_ENTITY__NAME = ACTIVITY_INITIATOR_FEATURE_COUNT + 5;
 
 	/**
-	 * The feature id for the '<em><b>Properties</b></em>' reference list.
+	 * The feature id for the '<em><b>Properties</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -886,7 +886,7 @@ public interface CyberPhysicalIncidentPackage extends EPackage {
 	int ASSET__NAME = INCIDENT_ENTITY__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Properties</b></em>' reference list.
+	 * The feature id for the '<em><b>Properties</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1213,7 +1213,7 @@ public interface CyberPhysicalIncidentPackage extends EPackage {
 	int RESOURCE__NAME = INCIDENT_ENTITY__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Properties</b></em>' reference list.
+	 * The feature id for the '<em><b>Properties</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1377,7 +1377,7 @@ public interface CyberPhysicalIncidentPackage extends EPackage {
 	int ACTOR__NAME = INCIDENT_ENTITY__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Properties</b></em>' reference list.
+	 * The feature id for the '<em><b>Properties</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1540,13 +1540,22 @@ public interface CyberPhysicalIncidentPackage extends EPackage {
 	int INCIDENT_DIAGRAM__PATHS = 9;
 
 	/**
+	 * The feature id for the '<em><b>Incident Entity</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INCIDENT_DIAGRAM__INCIDENT_ENTITY = 10;
+
+	/**
 	 * The number of structural features of the '<em>Incident Diagram</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INCIDENT_DIAGRAM_FEATURE_COUNT = 10;
+	int INCIDENT_DIAGRAM_FEATURE_COUNT = 11;
 
 	/**
 	 * The number of operations of the '<em>Incident Diagram</em>' class.
@@ -2046,13 +2055,22 @@ public interface CyberPhysicalIncidentPackage extends EPackage {
 	int ENTITY__SITE = 3;
 
 	/**
+	 * The feature id for the '<em><b>Has Site</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY__HAS_SITE = 4;
+
+	/**
 	 * The number of structural features of the '<em>Entity</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_FEATURE_COUNT = 4;
+	int ENTITY_FEATURE_COUNT = 5;
 
 	/**
 	 * The number of operations of the '<em>Entity</em>' class.
@@ -4064,6 +4082,17 @@ public interface CyberPhysicalIncidentPackage extends EPackage {
 	EReference getIncidentDiagram_Paths();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link cyberPhysical_Incident.IncidentDiagram#getIncidentEntity <em>Incident Entity</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Incident Entity</em>'.
+	 * @see cyberPhysical_Incident.IncidentDiagram#getIncidentEntity()
+	 * @see #getIncidentDiagram()
+	 * @generated
+	 */
+	EReference getIncidentDiagram_IncidentEntity();
+
+	/**
 	 * Returns the meta object for class '{@link cyberPhysical_Incident.Property <em>Property</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4329,6 +4358,17 @@ public interface CyberPhysicalIncidentPackage extends EPackage {
 	EReference getEntity_Site();
 
 	/**
+	 * Returns the meta object for the attribute '{@link cyberPhysical_Incident.Entity#isHasSite <em>Has Site</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Has Site</em>'.
+	 * @see cyberPhysical_Incident.Entity#isHasSite()
+	 * @see #getEntity()
+	 * @generated
+	 */
+	EAttribute getEntity_HasSite();
+
+	/**
 	 * Returns the meta object for class '{@link cyberPhysical_Incident.Precondition <em>Precondition</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4536,10 +4576,10 @@ public interface CyberPhysicalIncidentPackage extends EPackage {
 	EAttribute getIncidentEntity_Name();
 
 	/**
-	 * Returns the meta object for the reference list '{@link cyberPhysical_Incident.IncidentEntity#getProperties <em>Properties</em>}'.
+	 * Returns the meta object for the containment reference list '{@link cyberPhysical_Incident.IncidentEntity#getProperties <em>Properties</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Properties</em>'.
+	 * @return the meta object for the containment reference list '<em>Properties</em>'.
 	 * @see cyberPhysical_Incident.IncidentEntity#getProperties()
 	 * @see #getIncidentEntity()
 	 * @generated
@@ -5720,6 +5760,14 @@ public interface CyberPhysicalIncidentPackage extends EPackage {
 		EReference INCIDENT_DIAGRAM__PATHS = eINSTANCE.getIncidentDiagram_Paths();
 
 		/**
+		 * The meta object literal for the '<em><b>Incident Entity</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference INCIDENT_DIAGRAM__INCIDENT_ENTITY = eINSTANCE.getIncidentDiagram_IncidentEntity();
+
+		/**
 		 * The meta object literal for the '{@link cyberPhysical_Incident.impl.PropertyImpl <em>Property</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -5940,6 +5988,14 @@ public interface CyberPhysicalIncidentPackage extends EPackage {
 		EReference ENTITY__SITE = eINSTANCE.getEntity_Site();
 
 		/**
+		 * The meta object literal for the '<em><b>Has Site</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ENTITY__HAS_SITE = eINSTANCE.getEntity_HasSite();
+
+		/**
 		 * The meta object literal for the '{@link cyberPhysical_Incident.impl.PreconditionImpl <em>Precondition</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -6126,7 +6182,7 @@ public interface CyberPhysicalIncidentPackage extends EPackage {
 		EAttribute INCIDENT_ENTITY__NAME = eINSTANCE.getIncidentEntity_Name();
 
 		/**
-		 * The meta object literal for the '<em><b>Properties</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Properties</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

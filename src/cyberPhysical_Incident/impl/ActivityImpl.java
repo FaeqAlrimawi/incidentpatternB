@@ -420,11 +420,7 @@ public class ActivityImpl extends MinimalEObjectImpl.Container implements Activi
 			setName(name);	
 		}
 		
-		//create conditions by default
-		if(getPrecondition() == null) {
-			setPrecondition(new PreconditionImpl());
-		}
-		
+		//create postconditions by default (required). PRecondition is not requried
 		if(getPostcondition() == null) {
 			setPostcondition(new PostconditionImpl());
 		}

@@ -10,7 +10,9 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 import cyberPhysical_Incident.Connection;
 import cyberPhysical_Incident.CyberPhysicalIncidentPackage;
 import cyberPhysical_Incident.IncidentEntity;
@@ -135,7 +137,7 @@ public class IncidentEntityImpl extends MinimalEObjectImpl.Container implements 
 
 	
 	/**
-	 * The cached value of the '{@link #getProperties() <em>Properties</em>}' reference list.
+	 * The cached value of the '{@link #getProperties() <em>Properties</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getProperties()
@@ -191,6 +193,11 @@ public class IncidentEntityImpl extends MinimalEObjectImpl.Container implements 
 		
 		//give default name to the entity if there's no name
 		String currentName = getName();
+		
+		//create an empty type
+		Type typeLocal = new TypeImpl();
+		
+		setType(typeLocal);
 		
 		if(currentName == null || currentName.isEmpty()) {
 				String name = cName+ entityNumber++;
@@ -429,7 +436,7 @@ public class IncidentEntityImpl extends MinimalEObjectImpl.Container implements 
 	 */
 	public EList<Property> getProperties() {
 		if (properties == null) {
-			properties = new EObjectResolvingEList<Property>(Property.class, this, CyberPhysicalIncidentPackage.INCIDENT_ENTITY__PROPERTIES);
+			properties = new EObjectContainmentEList<Property>(Property.class, this, CyberPhysicalIncidentPackage.INCIDENT_ENTITY__PROPERTIES);
 		}
 		return properties;
 	}
@@ -506,6 +513,8 @@ public class IncidentEntityImpl extends MinimalEObjectImpl.Container implements 
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+			case CyberPhysicalIncidentPackage.INCIDENT_ENTITY__PROPERTIES:
+				return ((InternalEList<?>)getProperties()).basicRemove(otherEnd, msgs);
 			case CyberPhysicalIncidentPackage.INCIDENT_ENTITY__TYPE:
 				return basicSetType(null, msgs);
 		}

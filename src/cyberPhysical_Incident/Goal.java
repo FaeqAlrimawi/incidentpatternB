@@ -41,7 +41,7 @@ public interface Goal extends EObject {
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getGoal_Name()
-	 * @model id="true"
+	 * @model
 	 * @generated
 	 */
 	String getName();

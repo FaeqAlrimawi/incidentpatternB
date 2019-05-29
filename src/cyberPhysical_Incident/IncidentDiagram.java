@@ -28,6 +28,7 @@ import it.uniud.mads.jlibbig.core.std.Signature;
  *   <li>{@link cyberPhysical_Incident.IncidentDiagram#getActor <em>Actor</em>}</li>
  *   <li>{@link cyberPhysical_Incident.IncidentDiagram#getConnection <em>Connection</em>}</li>
  *   <li>{@link cyberPhysical_Incident.IncidentDiagram#getPaths <em>Paths</em>}</li>
+ *   <li>{@link cyberPhysical_Incident.IncidentDiagram#getIncidentEntity <em>Incident Entity</em>}</li>
  * </ul>
  *
  * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getIncidentDiagram()
@@ -446,5 +447,21 @@ public interface IncidentDiagram extends EObject {
 	 * @generated
 	 */
 	EList<Path> getPaths();
+
+	/**
+	 * Returns the value of the '<em><b>Incident Entity</b></em>' containment reference list.
+	 * The list contents are of type {@link cyberPhysical_Incident.IncidentEntity}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Incident Entity</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Incident Entity</em>' containment reference list.
+	 * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getIncidentDiagram_IncidentEntity()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<IncidentEntity> getIncidentEntity();
 
 } // IncidentDiagram

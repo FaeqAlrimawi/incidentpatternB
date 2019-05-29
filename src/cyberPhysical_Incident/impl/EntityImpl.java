@@ -6,20 +6,16 @@ import cyberPhysical_Incident.Connectivity;
 import cyberPhysical_Incident.CyberPhysicalIncidentPackage;
 import cyberPhysical_Incident.Entity;
 import cyberPhysical_Incident.Site;
-
 import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -35,6 +31,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link cyberPhysical_Incident.impl.EntityImpl#getEntity <em>Entity</em>}</li>
  *   <li>{@link cyberPhysical_Incident.impl.EntityImpl#getConnectivity <em>Connectivity</em>}</li>
  *   <li>{@link cyberPhysical_Incident.impl.EntityImpl#getSite <em>Site</em>}</li>
+ *   <li>{@link cyberPhysical_Incident.impl.EntityImpl#isHasSite <em>Has Site</em>}</li>
  * </ul>
  *
  * @generated
@@ -90,7 +87,27 @@ public class EntityImpl extends MinimalEObjectImpl.Container implements Entity {
 	 */
 	protected Site site;
 	
-//	protected static int siteNumber = 1;
+/**
+	 * The default value of the '{@link #isHasSite() <em>Has Site</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isHasSite()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean HAS_SITE_EDEFAULT = true;
+
+	/**
+	 * The cached value of the '{@link #isHasSite() <em>Has Site</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isHasSite()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean hasSite = HAS_SITE_EDEFAULT;
+
+	//	protected static int siteNumber = 1;
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -231,6 +248,38 @@ public class EntityImpl extends MinimalEObjectImpl.Container implements Entity {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean isHasSite() {
+		return hasSite;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 */
+	public void setHasSite(boolean newHasSite) {
+		boolean oldHasSite = hasSite;
+		hasSite = newHasSite;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CyberPhysicalIncidentPackage.ENTITY__HAS_SITE, oldHasSite, hasSite));
+		
+		//if there's change in hasSite e.g., from true to false
+		if(!((oldHasSite && newHasSite) ||(!oldHasSite && !newHasSite))){
+			
+			//if set to true create a new site
+			if(newHasSite) {
+				setSite(new SiteImpl());
+			} else {
+				setSite(null);
+			}
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -260,6 +309,8 @@ public class EntityImpl extends MinimalEObjectImpl.Container implements Entity {
 				return getConnectivity();
 			case CyberPhysicalIncidentPackage.ENTITY__SITE:
 				return getSite();
+			case CyberPhysicalIncidentPackage.ENTITY__HAS_SITE:
+				return isHasSite();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -287,6 +338,9 @@ public class EntityImpl extends MinimalEObjectImpl.Container implements Entity {
 			case CyberPhysicalIncidentPackage.ENTITY__SITE:
 				setSite((Site)newValue);
 				return;
+			case CyberPhysicalIncidentPackage.ENTITY__HAS_SITE:
+				setHasSite((Boolean)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -311,6 +365,9 @@ public class EntityImpl extends MinimalEObjectImpl.Container implements Entity {
 			case CyberPhysicalIncidentPackage.ENTITY__SITE:
 				setSite((Site)null);
 				return;
+			case CyberPhysicalIncidentPackage.ENTITY__HAS_SITE:
+				setHasSite(HAS_SITE_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -331,6 +388,8 @@ public class EntityImpl extends MinimalEObjectImpl.Container implements Entity {
 				return connectivity != null && !connectivity.isEmpty();
 			case CyberPhysicalIncidentPackage.ENTITY__SITE:
 				return site != null;
+			case CyberPhysicalIncidentPackage.ENTITY__HAS_SITE:
+				return hasSite != HAS_SITE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -347,6 +406,8 @@ public class EntityImpl extends MinimalEObjectImpl.Container implements Entity {
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (name: ");
 		result.append(name);
+		result.append(", hasSite: ");
+		result.append(hasSite);
 		result.append(')');
 		return result.toString();
 	}

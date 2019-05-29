@@ -115,7 +115,7 @@ public abstract class ConditionImpl extends MinimalEObjectImpl.Container impleme
 			if(PreconditionImpl.class.isInstance(this)) {
 				name = "pre_"+condNum++;
 			} else if(PostconditionImpl.class.isInstance(this)) {
-				name = "postcondition_"+condNum++;
+				name = "post_"+condNum++;
 			} else {
 				name = "condition_"+condNum++;
 			}

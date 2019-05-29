@@ -46,7 +46,15 @@ public enum ActorRole implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	VICTIM(2, "VICTIM", "VICTIM");
+	VICTIM(2, "VICTIM", "VICTIM"), /**
+	 * The '<em><b>UNKNOWN</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #UNKNOWN_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	UNKNOWN(3, "UNKNOWN", "UNKNOWN");
 
 	/**
 	 * The '<em><b>OFFENDER</b></em>' literal value.
@@ -94,6 +102,21 @@ public enum ActorRole implements Enumerator {
 	public static final int VICTIM_VALUE = 2;
 
 	/**
+	 * The '<em><b>UNKNOWN</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>Unknown</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #UNKNOWN
+	 * @model
+	 * @generated
+	 * @ordered
+	 */
+	public static final int UNKNOWN_VALUE = 3;
+
+	/**
 	 * An array of all the '<em><b>Actor Role</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -104,6 +127,7 @@ public enum ActorRole implements Enumerator {
 			OFFENDER,
 			ACCOMPLICE,
 			VICTIM,
+			UNKNOWN,
 		};
 
 	/**
@@ -163,6 +187,7 @@ public enum ActorRole implements Enumerator {
 			case OFFENDER_VALUE: return OFFENDER;
 			case ACCOMPLICE_VALUE: return ACCOMPLICE;
 			case VICTIM_VALUE: return VICTIM;
+			case UNKNOWN_VALUE: return UNKNOWN;
 		}
 		return null;
 	}

@@ -94,8 +94,7 @@
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="This class defines the objectives of a crime"/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        iD="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="activities" upperBound="-1"
         eType="#//Activity"/>
@@ -127,8 +126,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="status" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Connection">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        iD="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="constraints" upperBound="-1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="entity1" eType="#//Location"/>
@@ -188,6 +186,8 @@
         eType="#//Connection" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="paths" upperBound="-1"
         eType="#//Path" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="incidentEntity" upperBound="-1"
+        eType="#//IncidentEntity" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Property">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
@@ -246,6 +246,8 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="connectivity" upperBound="-1"
         eType="#//Connectivity" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="site" eType="#//Site" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hasSite" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Precondition" eSuperTypes="#//Condition"/>
   <eClassifiers xsi:type="ecore:EClass" name="TopologicalRelation" abstract="true"
@@ -280,15 +282,14 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="ScriptCategory">
     <eLiterals name="PATTERN" value="1"/>
-    <eLiterals name="PROTOPATTERN" value="2"/>
-    <eLiterals name="METAPATTERN" value="3"/>
-    <eLiterals name="INSTANCE" value="4"/>
+    <eLiterals name="INSTANCE" value="2" literal="INSTANCE"/>
+    <eLiterals name="META_PATTERN" value="3" literal="META_PATTERN"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="IncidentEntity" eSuperTypes="#//ActivityInitiator #//Location">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         iD="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="properties" upperBound="-1"
-        eType="#//Property"/>
+        eType="#//Property" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//Type" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="mobility" eType="#//Mobility"/>
   </eClassifiers>
@@ -309,6 +310,7 @@
     <eLiterals name="OFFENDER"/>
     <eLiterals name="ACCOMPLICE" value="1"/>
     <eLiterals name="VICTIM" value="2"/>
+    <eLiterals name="UNKNOWN" value="3"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="ActorLevel">
     <eLiterals name="INDIVIDUAL"/>

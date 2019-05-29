@@ -50,7 +50,7 @@ public interface Connection extends EObject {
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getConnection_Name()
-	 * @model id="true"
+	 * @model
 	 * @generated
 	 */
 	String getName();

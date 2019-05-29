@@ -27,22 +27,6 @@ public enum ScriptCategory implements Enumerator {
 	 * @ordered
 	 */
 	PATTERN(1, "PATTERN", "PATTERN"), /**
-	 * The '<em><b>PROTOPATTERN</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #PROTOPATTERN_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	PROTOPATTERN(2, "PROTOPATTERN", "PROTOPATTERN"), /**
-	 * The '<em><b>METAPATTERN</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #METAPATTERN_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	METAPATTERN(3, "METAPATTERN", "METAPATTERN"), /**
 	 * The '<em><b>INSTANCE</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -50,7 +34,15 @@ public enum ScriptCategory implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	INSTANCE(4, "INSTANCE", "INSTANCE");
+	INSTANCE(2, "INSTANCE", "INSTANCE"), /**
+	 * The '<em><b>META PATTERN</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #META_PATTERN_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	META_PATTERN(3, "META_PATTERN", "META_PATTERN");
 
 	/**
 	 * The '<em><b>PATTERN</b></em>' literal value.
@@ -68,36 +60,6 @@ public enum ScriptCategory implements Enumerator {
 	public static final int PATTERN_VALUE = 1;
 
 	/**
-	 * The '<em><b>PROTOPATTERN</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>PROTOPATTERN</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @see #PROTOPATTERN
-	 * @model
-	 * @generated
-	 * @ordered
-	 */
-	public static final int PROTOPATTERN_VALUE = 2;
-
-	/**
-	 * The '<em><b>METAPATTERN</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>METAPATTERN</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @see #METAPATTERN
-	 * @model
-	 * @generated
-	 * @ordered
-	 */
-	public static final int METAPATTERN_VALUE = 3;
-
-	/**
 	 * The '<em><b>INSTANCE</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -110,7 +72,22 @@ public enum ScriptCategory implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int INSTANCE_VALUE = 4;
+	public static final int INSTANCE_VALUE = 2;
+
+	/**
+	 * The '<em><b>META PATTERN</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>META PATTERN</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #META_PATTERN
+	 * @model
+	 * @generated
+	 * @ordered
+	 */
+	public static final int META_PATTERN_VALUE = 3;
 
 	/**
 	 * An array of all the '<em><b>Script Category</b></em>' enumerators.
@@ -121,9 +98,8 @@ public enum ScriptCategory implements Enumerator {
 	private static final ScriptCategory[] VALUES_ARRAY =
 		new ScriptCategory[] {
 			PATTERN,
-			PROTOPATTERN,
-			METAPATTERN,
 			INSTANCE,
+			META_PATTERN,
 		};
 
 	/**
@@ -181,9 +157,8 @@ public enum ScriptCategory implements Enumerator {
 	public static ScriptCategory get(int value) {
 		switch (value) {
 			case PATTERN_VALUE: return PATTERN;
-			case PROTOPATTERN_VALUE: return PROTOPATTERN;
-			case METAPATTERN_VALUE: return METAPATTERN;
 			case INSTANCE_VALUE: return INSTANCE;
+			case META_PATTERN_VALUE: return META_PATTERN;
 		}
 		return null;
 	}

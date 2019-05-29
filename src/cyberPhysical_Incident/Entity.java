@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link cyberPhysical_Incident.Entity#getEntity <em>Entity</em>}</li>
  *   <li>{@link cyberPhysical_Incident.Entity#getConnectivity <em>Connectivity</em>}</li>
  *   <li>{@link cyberPhysical_Incident.Entity#getSite <em>Site</em>}</li>
+ *   <li>{@link cyberPhysical_Incident.Entity#isHasSite <em>Has Site</em>}</li>
  * </ul>
  *
  * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getEntity()
@@ -110,5 +111,32 @@ public interface Entity extends EObject {
 	 * @generated
 	 */
 	void setSite(Site value);
+
+	/**
+	 * Returns the value of the '<em><b>Has Site</b></em>' attribute.
+	 * The default value is <code>"true"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Has Site</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Has Site</em>' attribute.
+	 * @see #setHasSite(boolean)
+	 * @see cyberPhysical_Incident.CyberPhysicalIncidentPackage#getEntity_HasSite()
+	 * @model default="true" required="true"
+	 * @generated
+	 */
+	boolean isHasSite();
+
+	/**
+	 * Sets the value of the '{@link cyberPhysical_Incident.Entity#isHasSite <em>Has Site</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Has Site</em>' attribute.
+	 * @see #isHasSite()
+	 * @generated
+	 */
+	void setHasSite(boolean value);
 
 } // Entity

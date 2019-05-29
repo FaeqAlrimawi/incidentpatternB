@@ -1375,6 +1375,15 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getIncidentDiagram_IncidentEntity() {
+		return (EReference)incidentDiagramEClass.getEStructuralFeatures().get(10);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getProperty() {
 		return propertyEClass;
 	}
@@ -1593,6 +1602,15 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 */
 	public EReference getEntity_Site() {
 		return (EReference)entityEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getEntity_HasSite() {
+		return (EAttribute)entityEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -2211,6 +2229,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 		createEReference(incidentDiagramEClass, INCIDENT_DIAGRAM__ACTOR);
 		createEReference(incidentDiagramEClass, INCIDENT_DIAGRAM__CONNECTION);
 		createEReference(incidentDiagramEClass, INCIDENT_DIAGRAM__PATHS);
+		createEReference(incidentDiagramEClass, INCIDENT_DIAGRAM__INCIDENT_ENTITY);
 
 		propertyEClass = createEClass(PROPERTY);
 		createEAttribute(propertyEClass, PROPERTY__NAME);
@@ -2246,6 +2265,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 		createEReference(entityEClass, ENTITY__ENTITY);
 		createEReference(entityEClass, ENTITY__CONNECTIVITY);
 		createEReference(entityEClass, ENTITY__SITE);
+		createEAttribute(entityEClass, ENTITY__HAS_SITE);
 
 		preconditionEClass = createEClass(PRECONDITION);
 
@@ -2425,7 +2445,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 		initEAttribute(getMotive_Primary(), ecorePackage.getEBoolean(), "primary", "True", 0, 1, Motive.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(goalEClass, Goal.class, "Goal", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getGoal_Name(), ecorePackage.getEString(), "name", null, 0, 1, Goal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getGoal_Name(), ecorePackage.getEString(), "name", null, 0, 1, Goal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getGoal_Description(), ecorePackage.getEString(), "description", null, 0, 1, Goal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getGoal_Activities(), this.getActivity(), null, "activities", null, 0, -1, Goal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getGoal_State(), this.getExpression(), null, "state", null, 0, -1, Goal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2440,7 +2460,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 		initEAttribute(getAsset_Status(), ecorePackage.getEString(), "status", null, 0, 1, Asset.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(connectionEClass, Connection.class, "Connection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getConnection_Name(), ecorePackage.getEString(), "name", null, 0, 1, Connection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getConnection_Name(), ecorePackage.getEString(), "name", null, 0, 1, Connection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getConnection_Constraints(), ecorePackage.getEString(), "constraints", null, 0, -1, Connection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getConnection_Entity1(), this.getLocation(), null, "entity1", null, 0, 1, Connection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getConnection_Entity2(), this.getLocation(), null, "entity2", null, 0, 1, Connection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2482,6 +2502,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 		initEReference(getIncidentDiagram_Actor(), this.getActor(), null, "actor", null, 0, -1, IncidentDiagram.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getIncidentDiagram_Connection(), this.getConnection(), null, "connection", null, 0, -1, IncidentDiagram.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getIncidentDiagram_Paths(), this.getPath(), null, "paths", null, 0, -1, IncidentDiagram.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getIncidentDiagram_IncidentEntity(), this.getIncidentEntity(), null, "incidentEntity", null, 0, -1, IncidentDiagram.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(propertyEClass, Property.class, "Property", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getProperty_Name(), ecorePackage.getEString(), "name", null, 0, 1, Property.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2517,6 +2538,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 		initEReference(getEntity_Entity(), this.getEntity(), null, "entity", null, 0, -1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEntity_Connectivity(), this.getConnectivity(), null, "connectivity", null, 0, -1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEntity_Site(), this.getSite(), null, "site", null, 0, 1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEntity_HasSite(), ecorePackage.getEBoolean(), "hasSite", "true", 1, 1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(preconditionEClass, Precondition.class, "Precondition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -2550,7 +2572,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 
 		initEClass(incidentEntityEClass, IncidentEntity.class, "IncidentEntity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getIncidentEntity_Name(), ecorePackage.getEString(), "name", null, 0, 1, IncidentEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getIncidentEntity_Properties(), this.getProperty(), null, "properties", null, 0, -1, IncidentEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getIncidentEntity_Properties(), this.getProperty(), null, "properties", null, 0, -1, IncidentEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getIncidentEntity_Type(), this.getType(), null, "type", null, 0, 1, IncidentEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getIncidentEntity_Mobility(), this.getMobility(), "mobility", null, 0, 1, IncidentEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -2606,14 +2628,14 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 
 		initEEnum(scriptCategoryEEnum, ScriptCategory.class, "ScriptCategory");
 		addEEnumLiteral(scriptCategoryEEnum, ScriptCategory.PATTERN);
-		addEEnumLiteral(scriptCategoryEEnum, ScriptCategory.PROTOPATTERN);
-		addEEnumLiteral(scriptCategoryEEnum, ScriptCategory.METAPATTERN);
 		addEEnumLiteral(scriptCategoryEEnum, ScriptCategory.INSTANCE);
+		addEEnumLiteral(scriptCategoryEEnum, ScriptCategory.META_PATTERN);
 
 		initEEnum(actorRoleEEnum, ActorRole.class, "ActorRole");
 		addEEnumLiteral(actorRoleEEnum, ActorRole.OFFENDER);
 		addEEnumLiteral(actorRoleEEnum, ActorRole.ACCOMPLICE);
 		addEEnumLiteral(actorRoleEEnum, ActorRole.VICTIM);
+		addEEnumLiteral(actorRoleEEnum, ActorRole.UNKNOWN);
 
 		initEEnum(actorLevelEEnum, ActorLevel.class, "ActorLevel");
 		addEEnumLiteral(actorLevelEEnum, ActorLevel.INDIVIDUAL);

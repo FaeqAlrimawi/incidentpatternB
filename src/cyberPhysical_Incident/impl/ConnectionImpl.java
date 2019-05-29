@@ -211,6 +211,12 @@ public class ConnectionImpl extends MinimalEObjectImpl.Container implements Conn
 				name = new String(c);
 				setName(name);
 		}
+		
+		//create empty type
+		Type tp = new TypeImpl();
+		
+		setType(tp);
+		
 	}
 
 
