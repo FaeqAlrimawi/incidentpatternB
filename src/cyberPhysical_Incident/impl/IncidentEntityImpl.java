@@ -253,6 +253,7 @@ public class IncidentEntityImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Connection> getConnections() {
 		if (connections == null) {
 			connections = new EObjectResolvingEList<Connection>(Connection.class, this, CyberPhysicalIncidentPackage.INCIDENT_ENTITY__CONNECTIONS);
@@ -265,6 +266,7 @@ public class IncidentEntityImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Location getParentEntity() {
 		if (parentEntity != null && parentEntity.eIsProxy()) {
 			InternalEObject oldParentEntity = (InternalEObject)parentEntity;
@@ -371,6 +373,7 @@ public class IncidentEntityImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Knowledge getConnectionsKnowledge() {
 		return connectionsKnowledge;
 	}
@@ -380,6 +383,7 @@ public class IncidentEntityImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setConnectionsKnowledge(Knowledge newConnectionsKnowledge) {
 		Knowledge oldConnectionsKnowledge = connectionsKnowledge;
 		connectionsKnowledge = newConnectionsKnowledge == null ? CONNECTIONS_KNOWLEDGE_EDEFAULT : newConnectionsKnowledge;
@@ -392,6 +396,7 @@ public class IncidentEntityImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Knowledge getContainedAssetsKnowledge() {
 		return containedAssetsKnowledge;
 	}
@@ -401,6 +406,7 @@ public class IncidentEntityImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setContainedAssetsKnowledge(Knowledge newContainedAssetsKnowledge) {
 		Knowledge oldContainedAssetsKnowledge = containedAssetsKnowledge;
 		containedAssetsKnowledge = newContainedAssetsKnowledge == null ? CONTAINED_ASSETS_KNOWLEDGE_EDEFAULT : newContainedAssetsKnowledge;
@@ -413,6 +419,7 @@ public class IncidentEntityImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -422,6 +429,7 @@ public class IncidentEntityImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
@@ -434,6 +442,7 @@ public class IncidentEntityImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Property> getProperties() {
 		if (properties == null) {
 			properties = new EObjectContainmentEList<Property>(Property.class, this, CyberPhysicalIncidentPackage.INCIDENT_ENTITY__PROPERTIES);
@@ -446,6 +455,7 @@ public class IncidentEntityImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Type getType() {
 		return type;
 	}
@@ -470,6 +480,7 @@ public class IncidentEntityImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setType(Type newType) {
 		if (newType != type) {
 			NotificationChain msgs = null;
@@ -489,6 +500,7 @@ public class IncidentEntityImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Mobility getMobility() {
 		return mobility;
 	}
@@ -498,6 +510,7 @@ public class IncidentEntityImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setMobility(Mobility newMobility) {
 		Mobility oldMobility = mobility;
 		mobility = newMobility == null ? MOBILITY_EDEFAULT : newMobility;
@@ -721,7 +734,7 @@ public class IncidentEntityImpl extends MinimalEObjectImpl.Container implements 
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (connectionsKnowledge: ");
 		result.append(connectionsKnowledge);
 		result.append(", containedAssetsKnowledge: ");

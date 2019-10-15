@@ -44,6 +44,11 @@ import it.uniud.mads.jlibbig.core.std.Signature;
  */
 public class BigraphExpressionImpl extends ExpressionImpl implements BigraphExpression {
 	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 7413339607730118731L;
+
+	/**
 	 * The cached value of the '{@link #getEntity() <em>Entity</em>}' containment reference list.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getEntity()
@@ -362,6 +367,11 @@ public class BigraphExpressionImpl extends ExpressionImpl implements BigraphExpr
 	}
 
 	public Bigraph createBigraph(boolean isGround) {
+		
+		return createBigraph(isGround, IncidentDiagramImpl.signature);
+	}
+	
+	public Bigraph createBigraph(boolean isGround , Signature sig) {
 
 		BigraphNode node;
 		Map<String, externalUtility.BigraphNode> nodes = new HashMap<String, externalUtility.BigraphNode>();
@@ -391,6 +401,11 @@ public class BigraphExpressionImpl extends ExpressionImpl implements BigraphExpr
 				node.addOuterName(con.getName(), con.isIsClosed());
 			}
 
+			//add site
+			if(ent.isHasSite()) {
+				node.setSite(true);	
+			}
+			
 			nodes.put(node.getId(), node);
 
 			// create a bigraph signature out of each entity and max arity
@@ -402,7 +417,7 @@ public class BigraphExpressionImpl extends ExpressionImpl implements BigraphExpr
 
 		// Signature signature = sigBuilder.makeSignature();
 
-		return BuildBigraph(nodes, IncidentDiagramImpl.signature);
+		return BuildBigraph(nodes, sig);
 
 	}
 
@@ -616,6 +631,7 @@ public class BigraphExpressionImpl extends ExpressionImpl implements BigraphExpr
 		// the names variable
 		// if the number of outernames defined are less than in the signature,
 		// then the rest of outernames will be defined as links (i.e. XX:e)
+		System.out.println(node.getControl());
 		Node n = biBuilder.addNode(node.getControl(),
 				createNode(node.getParent(), biBuilder, libBigRoots, outerNames, nodes), names);
 
@@ -673,6 +689,7 @@ public class BigraphExpressionImpl extends ExpressionImpl implements BigraphExpr
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Entity> getEntity() {
 		if (entity == null) {
 			entity = new EObjectContainmentEList<Entity>(Entity.class, this, CyberPhysicalIncidentPackage.BIGRAPH_EXPRESSION__ENTITY);
@@ -684,6 +701,7 @@ public class BigraphExpressionImpl extends ExpressionImpl implements BigraphExpr
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<InnerName> getInnername() {
 		if (innername == null) {
 			innername = new EObjectContainmentEList<InnerName>(InnerName.class, this, CyberPhysicalIncidentPackage.BIGRAPH_EXPRESSION__INNERNAME);

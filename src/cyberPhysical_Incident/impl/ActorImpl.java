@@ -91,6 +91,7 @@ public class ActorImpl extends IncidentEntityImpl implements Actor {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ActorRole getRole() {
 		return role;
 	}
@@ -100,6 +101,7 @@ public class ActorImpl extends IncidentEntityImpl implements Actor {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setRole(ActorRole newRole) {
 		ActorRole oldRole = role;
 		role = newRole == null ? ROLE_EDEFAULT : newRole;
@@ -112,6 +114,7 @@ public class ActorImpl extends IncidentEntityImpl implements Actor {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ActorLevel getLevel() {
 		return level;
 	}
@@ -121,6 +124,7 @@ public class ActorImpl extends IncidentEntityImpl implements Actor {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setLevel(ActorLevel newLevel) {
 		ActorLevel oldLevel = level;
 		level = newLevel == null ? LEVEL_EDEFAULT : newLevel;
@@ -206,7 +210,7 @@ public class ActorImpl extends IncidentEntityImpl implements Actor {
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (role: ");
 		result.append(role);
 		result.append(", level: ");

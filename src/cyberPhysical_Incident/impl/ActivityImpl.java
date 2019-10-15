@@ -804,6 +804,7 @@ public class ActivityImpl extends MinimalEObjectImpl.Container implements Activi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -813,6 +814,7 @@ public class ActivityImpl extends MinimalEObjectImpl.Container implements Activi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
@@ -825,6 +827,7 @@ public class ActivityImpl extends MinimalEObjectImpl.Container implements Activi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<String> getFacilitatingConditions() {
 		if (facilitatingConditions == null) {
 			facilitatingConditions = new EDataTypeUniqueEList<String>(String.class, this, CyberPhysicalIncidentPackage.ACTIVITY__FACILITATING_CONDITIONS);
@@ -837,6 +840,7 @@ public class ActivityImpl extends MinimalEObjectImpl.Container implements Activi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public double getCertainty() {
 		return certainty;
 	}
@@ -846,6 +850,7 @@ public class ActivityImpl extends MinimalEObjectImpl.Container implements Activi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setCertainty(double newCertainty) {
 		double oldCertainty = certainty;
 		certainty = newCertainty;
@@ -858,6 +863,7 @@ public class ActivityImpl extends MinimalEObjectImpl.Container implements Activi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public int getDuration() {
 		return duration;
 	}
@@ -867,6 +873,7 @@ public class ActivityImpl extends MinimalEObjectImpl.Container implements Activi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setDuration(int newDuration) {
 		int oldDuration = duration;
 		duration = newDuration;
@@ -879,6 +886,7 @@ public class ActivityImpl extends MinimalEObjectImpl.Container implements Activi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Date getStartTime() {
 		return startTime;
 	}
@@ -888,6 +896,7 @@ public class ActivityImpl extends MinimalEObjectImpl.Container implements Activi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setStartTime(Date newStartTime) {
 		Date oldStartTime = startTime;
 		startTime = newStartTime;
@@ -900,6 +909,7 @@ public class ActivityImpl extends MinimalEObjectImpl.Container implements Activi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Activity> getNextActivities() {
 		if (nextActivities == null) {
 			nextActivities = new EObjectResolvingEList<Activity>(Activity.class, this, CyberPhysicalIncidentPackage.ACTIVITY__NEXT_ACTIVITIES);
@@ -912,6 +922,7 @@ public class ActivityImpl extends MinimalEObjectImpl.Container implements Activi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Activity> getPreviousActivities() {
 		if (previousActivities == null) {
 			previousActivities = new EObjectResolvingEList<Activity>(Activity.class, this, CyberPhysicalIncidentPackage.ACTIVITY__PREVIOUS_ACTIVITIES);
@@ -924,6 +935,7 @@ public class ActivityImpl extends MinimalEObjectImpl.Container implements Activi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Path> getPaths() {
 		if (paths == null) {
 			paths = new EObjectResolvingEList<Path>(Path.class, this, CyberPhysicalIncidentPackage.ACTIVITY__PATHS);
@@ -936,6 +948,7 @@ public class ActivityImpl extends MinimalEObjectImpl.Container implements Activi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Goal> getGoals() {
 		if (goals == null) {
 			goals = new EObjectResolvingEList<Goal>(Goal.class, this, CyberPhysicalIncidentPackage.ACTIVITY__GOALS);
@@ -948,6 +961,7 @@ public class ActivityImpl extends MinimalEObjectImpl.Container implements Activi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ActivityInitiator getInitiator() {
 		if (initiator != null && initiator.eIsProxy()) {
 			InternalEObject oldInitiator = (InternalEObject)initiator;
@@ -974,6 +988,7 @@ public class ActivityImpl extends MinimalEObjectImpl.Container implements Activi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setInitiator(ActivityInitiator newInitiator) {
 		ActivityInitiator oldInitiator = initiator;
 		initiator = newInitiator;
@@ -986,6 +1001,7 @@ public class ActivityImpl extends MinimalEObjectImpl.Container implements Activi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Actor> getAccomplices() {
 		if (accomplices == null) {
 			accomplices = new EObjectResolvingEList<Actor>(Actor.class, this, CyberPhysicalIncidentPackage.ACTIVITY__ACCOMPLICES);
@@ -998,6 +1014,7 @@ public class ActivityImpl extends MinimalEObjectImpl.Container implements Activi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Actor> getVictims() {
 		if (victims == null) {
 			victims = new EObjectResolvingEList<Actor>(Actor.class, this, CyberPhysicalIncidentPackage.ACTIVITY__VICTIMS);
@@ -1010,6 +1027,7 @@ public class ActivityImpl extends MinimalEObjectImpl.Container implements Activi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Asset> getTargetedAssets() {
 		if (targetedAssets == null) {
 			targetedAssets = new EObjectResolvingEList<Asset>(Asset.class, this, CyberPhysicalIncidentPackage.ACTIVITY__TARGETED_ASSETS);
@@ -1022,6 +1040,7 @@ public class ActivityImpl extends MinimalEObjectImpl.Container implements Activi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Date getEndTime() {
 		return endTime;
 	}
@@ -1031,6 +1050,7 @@ public class ActivityImpl extends MinimalEObjectImpl.Container implements Activi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setEndTime(Date newEndTime) {
 		Date oldEndTime = endTime;
 		endTime = newEndTime;
@@ -1043,6 +1063,7 @@ public class ActivityImpl extends MinimalEObjectImpl.Container implements Activi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Resource> getResources() {
 		if (resources == null) {
 			resources = new EObjectResolvingEList<Resource>(Resource.class, this, CyberPhysicalIncidentPackage.ACTIVITY__RESOURCES);
@@ -1055,6 +1076,7 @@ public class ActivityImpl extends MinimalEObjectImpl.Container implements Activi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Asset> getExploitedAssets() {
 		if (exploitedAssets == null) {
 			exploitedAssets = new EObjectResolvingEList<Asset>(Asset.class, this, CyberPhysicalIncidentPackage.ACTIVITY__EXPLOITED_ASSETS);
@@ -1067,6 +1089,7 @@ public class ActivityImpl extends MinimalEObjectImpl.Container implements Activi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ActivityType getType() {
 		return type;
 	}
@@ -1076,6 +1099,7 @@ public class ActivityImpl extends MinimalEObjectImpl.Container implements Activi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setType(ActivityType newType) {
 		ActivityType oldType = type;
 		type = newType == null ? TYPE_EDEFAULT : newType;
@@ -1088,6 +1112,7 @@ public class ActivityImpl extends MinimalEObjectImpl.Container implements Activi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Behaviour getBehaviourType() {
 		return behaviourType;
 	}
@@ -1097,6 +1122,7 @@ public class ActivityImpl extends MinimalEObjectImpl.Container implements Activi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setBehaviourType(Behaviour newBehaviourType) {
 		Behaviour oldBehaviourType = behaviourType;
 		behaviourType = newBehaviourType == null ? BEHAVIOUR_TYPE_EDEFAULT : newBehaviourType;
@@ -1109,6 +1135,7 @@ public class ActivityImpl extends MinimalEObjectImpl.Container implements Activi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Precondition getPrecondition() {
 		return precondition;
 	}
@@ -1133,6 +1160,7 @@ public class ActivityImpl extends MinimalEObjectImpl.Container implements Activi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setPrecondition(Precondition newPrecondition) {
 		if (newPrecondition != precondition) {
 			NotificationChain msgs = null;
@@ -1152,6 +1180,7 @@ public class ActivityImpl extends MinimalEObjectImpl.Container implements Activi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Location getLocation() {
 		if (location != null && location.eIsProxy()) {
 			InternalEObject oldLocation = (InternalEObject)location;
@@ -1178,6 +1207,7 @@ public class ActivityImpl extends MinimalEObjectImpl.Container implements Activi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setLocation(Location newLocation) {
 		Location oldLocation = location;
 		location = newLocation;
@@ -1190,6 +1220,7 @@ public class ActivityImpl extends MinimalEObjectImpl.Container implements Activi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getDescription() {
 		return description;
 	}
@@ -1199,6 +1230,7 @@ public class ActivityImpl extends MinimalEObjectImpl.Container implements Activi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setDescription(String newDescription) {
 		String oldDescription = description;
 		description = newDescription;
@@ -1211,6 +1243,7 @@ public class ActivityImpl extends MinimalEObjectImpl.Container implements Activi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getSystemAction() {
 		return systemAction;
 	}
@@ -1220,6 +1253,7 @@ public class ActivityImpl extends MinimalEObjectImpl.Container implements Activi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setSystemAction(String newSystemAction) {
 		String oldSystemAction = systemAction;
 		systemAction = newSystemAction;
@@ -1232,6 +1266,7 @@ public class ActivityImpl extends MinimalEObjectImpl.Container implements Activi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Postcondition getPostcondition() {
 		return postcondition;
 	}
@@ -1256,6 +1291,7 @@ public class ActivityImpl extends MinimalEObjectImpl.Container implements Activi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setPostcondition(Postcondition newPostcondition) {
 		if (newPostcondition != postcondition) {
 			NotificationChain msgs = null;
@@ -1600,7 +1636,7 @@ public class ActivityImpl extends MinimalEObjectImpl.Container implements Activi
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");
 		result.append(name);
 		result.append(", facilitatingConditions: ");

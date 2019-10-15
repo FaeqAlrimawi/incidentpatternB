@@ -91,6 +91,7 @@ public class IntentImpl extends MinimalEObjectImpl.Container implements Intent {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getDescription() {
 		return description;
 	}
@@ -100,6 +101,7 @@ public class IntentImpl extends MinimalEObjectImpl.Container implements Intent {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setDescription(String newDescription) {
 		String oldDescription = description;
 		description = newDescription;
@@ -112,6 +114,7 @@ public class IntentImpl extends MinimalEObjectImpl.Container implements Intent {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -121,6 +124,7 @@ public class IntentImpl extends MinimalEObjectImpl.Container implements Intent {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
@@ -205,7 +209,7 @@ public class IntentImpl extends MinimalEObjectImpl.Container implements Intent {
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (description: ");
 		result.append(description);
 		result.append(", name: ");

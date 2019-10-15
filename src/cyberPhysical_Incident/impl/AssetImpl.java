@@ -108,6 +108,7 @@ public class AssetImpl extends IncidentEntityImpl implements Asset {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getDescription() {
 		return description;
 	}
@@ -117,6 +118,7 @@ public class AssetImpl extends IncidentEntityImpl implements Asset {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setDescription(String newDescription) {
 		String oldDescription = description;
 		description = newDescription;
@@ -129,6 +131,7 @@ public class AssetImpl extends IncidentEntityImpl implements Asset {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Vulnerability> getVulnerability() {
 		if (vulnerability == null) {
 			vulnerability = new EObjectContainmentEList<Vulnerability>(Vulnerability.class, this, CyberPhysicalIncidentPackage.ASSET__VULNERABILITY);
@@ -141,6 +144,7 @@ public class AssetImpl extends IncidentEntityImpl implements Asset {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getStatus() {
 		return status;
 	}
@@ -150,6 +154,7 @@ public class AssetImpl extends IncidentEntityImpl implements Asset {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setStatus(String newStatus) {
 		String oldStatus = status;
 		status = newStatus;
@@ -260,7 +265,7 @@ public class AssetImpl extends IncidentEntityImpl implements Asset {
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (description: ");
 		result.append(description);
 		result.append(", status: ");

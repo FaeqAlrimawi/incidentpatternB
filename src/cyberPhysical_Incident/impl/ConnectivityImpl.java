@@ -28,6 +28,11 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  */
 public class ConnectivityImpl extends MinimalEObjectImpl.Container implements Connectivity {
 	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -7258921880140335336L;
+
+	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -98,6 +103,7 @@ public class ConnectivityImpl extends MinimalEObjectImpl.Container implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -107,6 +113,7 @@ public class ConnectivityImpl extends MinimalEObjectImpl.Container implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
@@ -119,6 +126,7 @@ public class ConnectivityImpl extends MinimalEObjectImpl.Container implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isIsClosed() {
 		return isClosed;
 	}
@@ -128,6 +136,7 @@ public class ConnectivityImpl extends MinimalEObjectImpl.Container implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setIsClosed(boolean newIsClosed) {
 		boolean oldIsClosed = isClosed;
 		isClosed = newIsClosed;
@@ -212,7 +221,7 @@ public class ConnectivityImpl extends MinimalEObjectImpl.Container implements Co
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");
 		result.append(name);
 		result.append(", isClosed: ");

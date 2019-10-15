@@ -125,6 +125,7 @@ public class GoalImpl extends MinimalEObjectImpl.Container implements Goal {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -134,6 +135,7 @@ public class GoalImpl extends MinimalEObjectImpl.Container implements Goal {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
@@ -146,6 +148,7 @@ public class GoalImpl extends MinimalEObjectImpl.Container implements Goal {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getDescription() {
 		return description;
 	}
@@ -155,6 +158,7 @@ public class GoalImpl extends MinimalEObjectImpl.Container implements Goal {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setDescription(String newDescription) {
 		String oldDescription = description;
 		description = newDescription;
@@ -167,6 +171,7 @@ public class GoalImpl extends MinimalEObjectImpl.Container implements Goal {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Activity> getActivities() {
 		if (activities == null) {
 			activities = new EObjectResolvingEList<Activity>(Activity.class, this, CyberPhysicalIncidentPackage.GOAL__ACTIVITIES);
@@ -179,6 +184,7 @@ public class GoalImpl extends MinimalEObjectImpl.Container implements Goal {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Expression> getState() {
 		if (state == null) {
 			state = new EObjectContainmentEList<Expression>(Expression.class, this, CyberPhysicalIncidentPackage.GOAL__STATE);
@@ -300,7 +306,7 @@ public class GoalImpl extends MinimalEObjectImpl.Container implements Goal {
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");
 		result.append(name);
 		result.append(", description: ");

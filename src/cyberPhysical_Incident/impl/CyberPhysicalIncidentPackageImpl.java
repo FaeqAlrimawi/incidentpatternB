@@ -455,7 +455,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
-	 * 
+	 *
 	 * <p>This method is used to initialize {@link CyberPhysicalIncidentPackage#eINSTANCE} when that field is accessed.
 	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
 	 * <!-- begin-user-doc -->
@@ -469,7 +469,8 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 		if (isInited) return (CyberPhysicalIncidentPackage)EPackage.Registry.INSTANCE.getEPackage(CyberPhysicalIncidentPackage.eNS_URI);
 
 		// Obtain or create and register package
-		CyberPhysicalIncidentPackageImpl theCyberPhysicalIncidentPackage = (CyberPhysicalIncidentPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof CyberPhysicalIncidentPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new CyberPhysicalIncidentPackageImpl());
+		Object registeredCyberPhysicalIncidentPackage = EPackage.Registry.INSTANCE.get(eNS_URI);
+		CyberPhysicalIncidentPackageImpl theCyberPhysicalIncidentPackage = registeredCyberPhysicalIncidentPackage instanceof CyberPhysicalIncidentPackageImpl ? (CyberPhysicalIncidentPackageImpl)registeredCyberPhysicalIncidentPackage : new CyberPhysicalIncidentPackageImpl();
 
 		isInited = true;
 
@@ -482,7 +483,6 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 		// Mark meta-data to indicate it can't be changed
 		theCyberPhysicalIncidentPackage.freeze();
 
-  
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(CyberPhysicalIncidentPackage.eNS_URI, theCyberPhysicalIncidentPackage);
 		return theCyberPhysicalIncidentPackage;
@@ -493,6 +493,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getActivity() {
 		return activityEClass;
 	}
@@ -502,6 +503,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getActivity_Name() {
 		return (EAttribute)activityEClass.getEStructuralFeatures().get(0);
 	}
@@ -511,6 +513,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getActivity_FacilitatingConditions() {
 		return (EAttribute)activityEClass.getEStructuralFeatures().get(1);
 	}
@@ -520,6 +523,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getActivity_Certainty() {
 		return (EAttribute)activityEClass.getEStructuralFeatures().get(2);
 	}
@@ -529,6 +533,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getActivity_Duration() {
 		return (EAttribute)activityEClass.getEStructuralFeatures().get(3);
 	}
@@ -538,6 +543,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getActivity_StartTime() {
 		return (EAttribute)activityEClass.getEStructuralFeatures().get(4);
 	}
@@ -547,6 +553,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getActivity_NextActivities() {
 		return (EReference)activityEClass.getEStructuralFeatures().get(5);
 	}
@@ -556,6 +563,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getActivity_PreviousActivities() {
 		return (EReference)activityEClass.getEStructuralFeatures().get(6);
 	}
@@ -565,6 +573,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getActivity_Paths() {
 		return (EReference)activityEClass.getEStructuralFeatures().get(7);
 	}
@@ -574,6 +583,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getActivity_Goals() {
 		return (EReference)activityEClass.getEStructuralFeatures().get(8);
 	}
@@ -583,6 +593,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getActivity_Initiator() {
 		return (EReference)activityEClass.getEStructuralFeatures().get(9);
 	}
@@ -592,6 +603,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getActivity_Accomplices() {
 		return (EReference)activityEClass.getEStructuralFeatures().get(10);
 	}
@@ -601,6 +613,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getActivity_Victims() {
 		return (EReference)activityEClass.getEStructuralFeatures().get(11);
 	}
@@ -610,6 +623,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getActivity_TargetedAssets() {
 		return (EReference)activityEClass.getEStructuralFeatures().get(12);
 	}
@@ -619,6 +633,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getActivity_EndTime() {
 		return (EAttribute)activityEClass.getEStructuralFeatures().get(13);
 	}
@@ -628,6 +643,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getActivity_Resources() {
 		return (EReference)activityEClass.getEStructuralFeatures().get(14);
 	}
@@ -637,6 +653,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getActivity_ExploitedAssets() {
 		return (EReference)activityEClass.getEStructuralFeatures().get(15);
 	}
@@ -646,6 +663,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getActivity_Type() {
 		return (EAttribute)activityEClass.getEStructuralFeatures().get(16);
 	}
@@ -655,6 +673,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getActivity_BehaviourType() {
 		return (EAttribute)activityEClass.getEStructuralFeatures().get(17);
 	}
@@ -664,6 +683,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getActivity_Precondition() {
 		return (EReference)activityEClass.getEStructuralFeatures().get(18);
 	}
@@ -673,6 +693,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getActivity_Location() {
 		return (EReference)activityEClass.getEStructuralFeatures().get(19);
 	}
@@ -682,6 +703,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getActivity_Description() {
 		return (EAttribute)activityEClass.getEStructuralFeatures().get(20);
 	}
@@ -691,6 +713,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getActivity_SystemAction() {
 		return (EAttribute)activityEClass.getEStructuralFeatures().get(21);
 	}
@@ -700,6 +723,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getActivity_Postcondition() {
 		return (EReference)activityEClass.getEStructuralFeatures().get(22);
 	}
@@ -709,6 +733,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getCrimeScript() {
 		return crimeScriptEClass;
 	}
@@ -718,6 +743,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getCrimeScript_Id() {
 		return (EAttribute)crimeScriptEClass.getEStructuralFeatures().get(0);
 	}
@@ -727,6 +753,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getCrimeScript_Name() {
 		return (EAttribute)crimeScriptEClass.getEStructuralFeatures().get(1);
 	}
@@ -736,6 +763,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getCrimeScript_Description() {
 		return (EAttribute)crimeScriptEClass.getEStructuralFeatures().get(2);
 	}
@@ -745,6 +773,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getCrimeScript_Category() {
 		return (EAttribute)crimeScriptEClass.getEStructuralFeatures().get(3);
 	}
@@ -754,6 +783,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getCrimeScript_Scenes() {
 		return (EReference)crimeScriptEClass.getEStructuralFeatures().get(4);
 	}
@@ -763,6 +793,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getCrimeScript_Intent() {
 		return (EReference)crimeScriptEClass.getEStructuralFeatures().get(12);
 	}
@@ -772,6 +803,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getCrimeScript_Motive() {
 		return (EReference)crimeScriptEClass.getEStructuralFeatures().get(13);
 	}
@@ -781,6 +813,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getCrimeScript_Goals() {
 		return (EReference)crimeScriptEClass.getEStructuralFeatures().get(5);
 	}
@@ -790,6 +823,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getCrimeScript_TargetedAssets() {
 		return (EReference)crimeScriptEClass.getEStructuralFeatures().get(6);
 	}
@@ -799,6 +833,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getCrimeScript_Resources() {
 		return (EReference)crimeScriptEClass.getEStructuralFeatures().get(7);
 	}
@@ -808,6 +843,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getCrimeScript_MainLocation() {
 		return (EReference)crimeScriptEClass.getEStructuralFeatures().get(8);
 	}
@@ -817,6 +853,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getCrimeScript_Victims() {
 		return (EReference)crimeScriptEClass.getEStructuralFeatures().get(9);
 	}
@@ -826,6 +863,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getCrimeScript_Offenders() {
 		return (EReference)crimeScriptEClass.getEStructuralFeatures().get(10);
 	}
@@ -835,6 +873,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getCrimeScript_HigherLevelScriptName() {
 		return (EAttribute)crimeScriptEClass.getEStructuralFeatures().get(11);
 	}
@@ -844,6 +883,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getScene() {
 		return sceneEClass;
 	}
@@ -853,6 +893,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getScene_Name() {
 		return (EAttribute)sceneEClass.getEStructuralFeatures().get(0);
 	}
@@ -862,6 +903,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getScene_NextScenes() {
 		return (EReference)sceneEClass.getEStructuralFeatures().get(1);
 	}
@@ -871,6 +913,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getScene_PreviousScenes() {
 		return (EReference)sceneEClass.getEStructuralFeatures().get(2);
 	}
@@ -880,6 +923,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getScene_Description() {
 		return (EAttribute)sceneEClass.getEStructuralFeatures().get(3);
 	}
@@ -889,6 +933,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getScene_Activity() {
 		return (EReference)sceneEClass.getEStructuralFeatures().get(4);
 	}
@@ -898,6 +943,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getMotive() {
 		return motiveEClass;
 	}
@@ -907,6 +953,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getMotive_Name() {
 		return (EAttribute)motiveEClass.getEStructuralFeatures().get(0);
 	}
@@ -916,6 +963,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getMotive_Description() {
 		return (EAttribute)motiveEClass.getEStructuralFeatures().get(1);
 	}
@@ -925,6 +973,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getMotive_Primary() {
 		return (EAttribute)motiveEClass.getEStructuralFeatures().get(2);
 	}
@@ -934,6 +983,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getGoal() {
 		return goalEClass;
 	}
@@ -943,6 +993,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getGoal_Name() {
 		return (EAttribute)goalEClass.getEStructuralFeatures().get(0);
 	}
@@ -952,6 +1003,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getGoal_Description() {
 		return (EAttribute)goalEClass.getEStructuralFeatures().get(1);
 	}
@@ -961,6 +1013,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getGoal_Activities() {
 		return (EReference)goalEClass.getEStructuralFeatures().get(2);
 	}
@@ -970,6 +1023,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getGoal_State() {
 		return (EReference)goalEClass.getEStructuralFeatures().get(3);
 	}
@@ -979,6 +1033,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getIntent() {
 		return intentEClass;
 	}
@@ -988,6 +1043,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getIntent_Description() {
 		return (EAttribute)intentEClass.getEStructuralFeatures().get(0);
 	}
@@ -997,6 +1053,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getIntent_Name() {
 		return (EAttribute)intentEClass.getEStructuralFeatures().get(1);
 	}
@@ -1006,6 +1063,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getAsset() {
 		return assetEClass;
 	}
@@ -1015,6 +1073,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getAsset_Description() {
 		return (EAttribute)assetEClass.getEStructuralFeatures().get(0);
 	}
@@ -1024,6 +1083,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getAsset_Vulnerability() {
 		return (EReference)assetEClass.getEStructuralFeatures().get(1);
 	}
@@ -1033,6 +1093,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getAsset_Status() {
 		return (EAttribute)assetEClass.getEStructuralFeatures().get(2);
 	}
@@ -1042,6 +1103,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getConnection() {
 		return connectionEClass;
 	}
@@ -1051,6 +1113,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getConnection_Name() {
 		return (EAttribute)connectionEClass.getEStructuralFeatures().get(0);
 	}
@@ -1060,6 +1123,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getConnection_Constraints() {
 		return (EAttribute)connectionEClass.getEStructuralFeatures().get(1);
 	}
@@ -1069,6 +1133,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getConnection_Entity1() {
 		return (EReference)connectionEClass.getEStructuralFeatures().get(2);
 	}
@@ -1078,6 +1143,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getConnection_Entity2() {
 		return (EReference)connectionEClass.getEStructuralFeatures().get(3);
 	}
@@ -1087,6 +1153,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getConnection_ConnectionProbability() {
 		return (EAttribute)connectionEClass.getEStructuralFeatures().get(4);
 	}
@@ -1096,6 +1163,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getConnection_Type() {
 		return (EReference)connectionEClass.getEStructuralFeatures().get(5);
 	}
@@ -1105,6 +1173,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getConnection_Bidirectional() {
 		return (EAttribute)connectionEClass.getEStructuralFeatures().get(6);
 	}
@@ -1114,6 +1183,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getConnection_Properties() {
 		return (EReference)connectionEClass.getEStructuralFeatures().get(7);
 	}
@@ -1123,6 +1193,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getConnection_Vulnerabilities() {
 		return (EReference)connectionEClass.getEStructuralFeatures().get(8);
 	}
@@ -1132,6 +1203,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getConnection_State() {
 		return (EAttribute)connectionEClass.getEStructuralFeatures().get(9);
 	}
@@ -1141,6 +1213,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getLocation() {
 		return locationEClass;
 	}
@@ -1150,6 +1223,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getLocation_Connections() {
 		return (EReference)locationEClass.getEStructuralFeatures().get(0);
 	}
@@ -1159,6 +1233,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getLocation_ParentEntity() {
 		return (EReference)locationEClass.getEStructuralFeatures().get(1);
 	}
@@ -1168,6 +1243,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getLocation_ContainedEntities() {
 		return (EReference)locationEClass.getEStructuralFeatures().get(2);
 	}
@@ -1177,6 +1253,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getLocation_ConnectionsKnowledge() {
 		return (EAttribute)locationEClass.getEStructuralFeatures().get(3);
 	}
@@ -1186,6 +1263,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getLocation_ContainedAssetsKnowledge() {
 		return (EAttribute)locationEClass.getEStructuralFeatures().get(4);
 	}
@@ -1195,6 +1273,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getResource() {
 		return resourceEClass;
 	}
@@ -1204,6 +1283,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getResource_Description() {
 		return (EAttribute)resourceEClass.getEStructuralFeatures().get(0);
 	}
@@ -1213,6 +1293,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getPath() {
 		return pathEClass;
 	}
@@ -1222,6 +1303,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getPath_Name() {
 		return (EAttribute)pathEClass.getEStructuralFeatures().get(0);
 	}
@@ -1231,6 +1313,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getPath_Activities() {
 		return (EReference)pathEClass.getEStructuralFeatures().get(1);
 	}
@@ -1240,6 +1323,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getActivityInitiator() {
 		return activityInitiatorEClass;
 	}
@@ -1249,6 +1333,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getActor() {
 		return actorEClass;
 	}
@@ -1258,6 +1343,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getActor_Role() {
 		return (EAttribute)actorEClass.getEStructuralFeatures().get(0);
 	}
@@ -1267,6 +1353,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getActor_Level() {
 		return (EAttribute)actorEClass.getEStructuralFeatures().get(1);
 	}
@@ -1276,6 +1363,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getIncidentDiagram() {
 		return incidentDiagramEClass;
 	}
@@ -1285,6 +1373,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getIncidentDiagram_CrimeScript() {
 		return (EReference)incidentDiagramEClass.getEStructuralFeatures().get(0);
 	}
@@ -1294,6 +1383,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getIncidentDiagram_Scene() {
 		return (EReference)incidentDiagramEClass.getEStructuralFeatures().get(1);
 	}
@@ -1303,6 +1393,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getIncidentDiagram_Intent() {
 		return (EReference)incidentDiagramEClass.getEStructuralFeatures().get(2);
 	}
@@ -1312,6 +1403,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getIncidentDiagram_Goal() {
 		return (EReference)incidentDiagramEClass.getEStructuralFeatures().get(3);
 	}
@@ -1321,6 +1413,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getIncidentDiagram_Motive() {
 		return (EReference)incidentDiagramEClass.getEStructuralFeatures().get(4);
 	}
@@ -1330,6 +1423,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getIncidentDiagram_Asset() {
 		return (EReference)incidentDiagramEClass.getEStructuralFeatures().get(5);
 	}
@@ -1339,6 +1433,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getIncidentDiagram_Resource() {
 		return (EReference)incidentDiagramEClass.getEStructuralFeatures().get(6);
 	}
@@ -1348,6 +1443,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getIncidentDiagram_Actor() {
 		return (EReference)incidentDiagramEClass.getEStructuralFeatures().get(7);
 	}
@@ -1357,6 +1453,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getIncidentDiagram_Connection() {
 		return (EReference)incidentDiagramEClass.getEStructuralFeatures().get(8);
 	}
@@ -1366,6 +1463,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getIncidentDiagram_Paths() {
 		return (EReference)incidentDiagramEClass.getEStructuralFeatures().get(9);
 	}
@@ -1375,6 +1473,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getIncidentDiagram_IncidentEntity() {
 		return (EReference)incidentDiagramEClass.getEStructuralFeatures().get(10);
 	}
@@ -1384,6 +1483,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getProperty() {
 		return propertyEClass;
 	}
@@ -1393,6 +1493,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getProperty_Name() {
 		return (EAttribute)propertyEClass.getEStructuralFeatures().get(0);
 	}
@@ -1402,6 +1503,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getProperty_Value() {
 		return (EAttribute)propertyEClass.getEStructuralFeatures().get(1);
 	}
@@ -1411,6 +1513,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getVulnerability() {
 		return vulnerabilityEClass;
 	}
@@ -1420,6 +1523,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getVulnerability_Name() {
 		return (EAttribute)vulnerabilityEClass.getEStructuralFeatures().get(0);
 	}
@@ -1429,6 +1533,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getVulnerability_URL() {
 		return (EAttribute)vulnerabilityEClass.getEStructuralFeatures().get(1);
 	}
@@ -1438,6 +1543,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getVulnerability_Description() {
 		return (EAttribute)vulnerabilityEClass.getEStructuralFeatures().get(2);
 	}
@@ -1447,6 +1553,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getVulnerability_Severity() {
 		return (EAttribute)vulnerabilityEClass.getEStructuralFeatures().get(3);
 	}
@@ -1456,6 +1563,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getType() {
 		return typeEClass;
 	}
@@ -1465,6 +1573,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getType_Name() {
 		return (EAttribute)typeEClass.getEStructuralFeatures().get(0);
 	}
@@ -1474,6 +1583,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getType_AbstractionLevel() {
 		return (EAttribute)typeEClass.getEStructuralFeatures().get(1);
 	}
@@ -1483,6 +1593,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getExpression() {
 		return expressionEClass;
 	}
@@ -1492,6 +1603,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getUnaryExpression() {
 		return unaryExpressionEClass;
 	}
@@ -1501,6 +1613,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getUnaryExpression_Operand() {
 		return (EReference)unaryExpressionEClass.getEStructuralFeatures().get(0);
 	}
@@ -1510,6 +1623,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getBinaryExpression() {
 		return binaryExpressionEClass;
 	}
@@ -1519,6 +1633,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getBinaryExpression_Left() {
 		return (EReference)binaryExpressionEClass.getEStructuralFeatures().get(0);
 	}
@@ -1528,6 +1643,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getBinaryExpression_Right() {
 		return (EReference)binaryExpressionEClass.getEStructuralFeatures().get(1);
 	}
@@ -1537,6 +1653,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getContains() {
 		return containsEClass;
 	}
@@ -1546,6 +1663,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getConnectedTo() {
 		return connectedToEClass;
 	}
@@ -1555,6 +1673,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getNot() {
 		return notEClass;
 	}
@@ -1564,6 +1683,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getEntity() {
 		return entityEClass;
 	}
@@ -1573,6 +1693,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getEntity_Name() {
 		return (EAttribute)entityEClass.getEStructuralFeatures().get(0);
 	}
@@ -1582,6 +1703,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getEntity_Entity() {
 		return (EReference)entityEClass.getEStructuralFeatures().get(1);
 	}
@@ -1591,6 +1713,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getEntity_Connectivity() {
 		return (EReference)entityEClass.getEStructuralFeatures().get(2);
 	}
@@ -1600,6 +1723,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getEntity_Site() {
 		return (EReference)entityEClass.getEStructuralFeatures().get(3);
 	}
@@ -1609,6 +1733,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getEntity_HasSite() {
 		return (EAttribute)entityEClass.getEStructuralFeatures().get(4);
 	}
@@ -1618,6 +1743,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getPrecondition() {
 		return preconditionEClass;
 	}
@@ -1627,6 +1753,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getTopologicalRelation() {
 		return topologicalRelationEClass;
 	}
@@ -1636,6 +1763,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getEqual() {
 		return equalEClass;
 	}
@@ -1645,6 +1773,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getGreater() {
 		return greaterEClass;
 	}
@@ -1654,6 +1783,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getAnd() {
 		return andEClass;
 	}
@@ -1663,6 +1793,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getBigraphExpression() {
 		return bigraphExpressionEClass;
 	}
@@ -1672,6 +1803,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getBigraphExpression_Entity() {
 		return (EReference)bigraphExpressionEClass.getEStructuralFeatures().get(0);
 	}
@@ -1681,6 +1813,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getBigraphExpression_Innername() {
 		return (EReference)bigraphExpressionEClass.getEStructuralFeatures().get(1);
 	}
@@ -1690,6 +1823,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getOr() {
 		return orEClass;
 	}
@@ -1699,6 +1833,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getReachableFrom() {
 		return reachableFromEClass;
 	}
@@ -1708,6 +1843,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getNear() {
 		return nearEClass;
 	}
@@ -1717,6 +1853,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getCondition() {
 		return conditionEClass;
 	}
@@ -1726,6 +1863,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getCondition_Name() {
 		return (EAttribute)conditionEClass.getEStructuralFeatures().get(0);
 	}
@@ -1735,6 +1873,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getCondition_Expression() {
 		return (EReference)conditionEClass.getEStructuralFeatures().get(1);
 	}
@@ -1744,6 +1883,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getCondition_AssoicatedConditions() {
 		return (EReference)conditionEClass.getEStructuralFeatures().get(2);
 	}
@@ -1753,6 +1893,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getCondition_Description() {
 		return (EAttribute)conditionEClass.getEStructuralFeatures().get(3);
 	}
@@ -1762,6 +1903,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getPostcondition() {
 		return postconditionEClass;
 	}
@@ -1771,6 +1913,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getFacilitatingCondition() {
 		return facilitatingConditionEClass;
 	}
@@ -1780,6 +1923,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getIncidentEntity() {
 		return incidentEntityEClass;
 	}
@@ -1789,6 +1933,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getIncidentEntity_Name() {
 		return (EAttribute)incidentEntityEClass.getEStructuralFeatures().get(0);
 	}
@@ -1798,6 +1943,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getIncidentEntity_Properties() {
 		return (EReference)incidentEntityEClass.getEStructuralFeatures().get(1);
 	}
@@ -1807,6 +1953,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getIncidentEntity_Type() {
 		return (EReference)incidentEntityEClass.getEStructuralFeatures().get(2);
 	}
@@ -1816,6 +1963,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getIncidentEntity_Mobility() {
 		return (EAttribute)incidentEntityEClass.getEStructuralFeatures().get(3);
 	}
@@ -1825,6 +1973,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getConnectivity() {
 		return connectivityEClass;
 	}
@@ -1834,6 +1983,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getConnectivity_Name() {
 		return (EAttribute)connectivityEClass.getEStructuralFeatures().get(0);
 	}
@@ -1843,6 +1993,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getConnectivity_IsClosed() {
 		return (EAttribute)connectivityEClass.getEStructuralFeatures().get(1);
 	}
@@ -1852,6 +2003,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getInnerName() {
 		return innerNameEClass;
 	}
@@ -1861,6 +2013,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getInnerName_Name() {
 		return (EAttribute)innerNameEClass.getEStructuralFeatures().get(0);
 	}
@@ -1870,6 +2023,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getInnerName_IsClosed() {
 		return (EAttribute)innerNameEClass.getEStructuralFeatures().get(1);
 	}
@@ -1879,6 +2033,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getInnerName_Outername() {
 		return (EReference)innerNameEClass.getEStructuralFeatures().get(2);
 	}
@@ -1888,6 +2043,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSite() {
 		return siteEClass;
 	}
@@ -1897,6 +2053,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSite_Name() {
 		return (EAttribute)siteEClass.getEStructuralFeatures().get(0);
 	}
@@ -1906,6 +2063,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSite_IsClosed() {
 		return (EAttribute)siteEClass.getEStructuralFeatures().get(1);
 	}
@@ -1915,6 +2073,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getActivityPattern() {
 		return activityPatternEClass;
 	}
@@ -1924,6 +2083,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getActivityPattern_Name() {
 		return (EAttribute)activityPatternEClass.getEStructuralFeatures().get(0);
 	}
@@ -1933,6 +2093,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getActivityPattern_Severity() {
 		return (EAttribute)activityPatternEClass.getEStructuralFeatures().get(1);
 	}
@@ -1942,6 +2103,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getActivityPattern_Description() {
 		return (EAttribute)activityPatternEClass.getEStructuralFeatures().get(2);
 	}
@@ -1951,6 +2113,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getActivityPattern_Incidententity() {
 		return (EReference)activityPatternEClass.getEStructuralFeatures().get(6);
 	}
@@ -1960,6 +2123,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getActivityPattern_Connection() {
 		return (EReference)activityPatternEClass.getEStructuralFeatures().get(7);
 	}
@@ -1969,6 +2133,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getActivityPattern_Likelihood() {
 		return (EAttribute)activityPatternEClass.getEStructuralFeatures().get(8);
 	}
@@ -1978,6 +2143,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getActivityPattern_PatternsFollow() {
 		return (EReference)activityPatternEClass.getEStructuralFeatures().get(4);
 	}
@@ -1987,6 +2153,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getActivityPattern_SkillsRequired() {
 		return (EAttribute)activityPatternEClass.getEStructuralFeatures().get(3);
 	}
@@ -1996,6 +2163,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getActivityPattern_AbstractActivity() {
 		return (EReference)activityPatternEClass.getEStructuralFeatures().get(5);
 	}
@@ -2005,6 +2173,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EEnum getLevel() {
 		return levelEEnum;
 	}
@@ -2014,6 +2183,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EEnum getActivityType() {
 		return activityTypeEEnum;
 	}
@@ -2023,6 +2193,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EEnum getBehaviour() {
 		return behaviourEEnum;
 	}
@@ -2032,6 +2203,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EEnum getKnowledge() {
 		return knowledgeEEnum;
 	}
@@ -2041,6 +2213,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EEnum getScriptCategory() {
 		return scriptCategoryEEnum;
 	}
@@ -2050,6 +2223,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EEnum getActorRole() {
 		return actorRoleEEnum;
 	}
@@ -2059,6 +2233,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EEnum getActorLevel() {
 		return actorLevelEEnum;
 	}
@@ -2068,6 +2243,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EEnum getMobility() {
 		return mobilityEEnum;
 	}
@@ -2077,6 +2253,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EEnum getAbstractionLevel() {
 		return abstractionLevelEEnum;
 	}
@@ -2086,6 +2263,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EEnum getConnectionState() {
 		return connectionStateEEnum;
 	}
@@ -2095,6 +2273,7 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public CyberPhysicalIncidentFactory getCyberPhysicalIncidentFactory() {
 		return (CyberPhysicalIncidentFactory)getEFactoryInstance();
 	}
@@ -2671,14 +2850,14 @@ public class CyberPhysicalIncidentPackageImpl extends EPackageImpl implements Cy
 	 * @generated
 	 */
 	protected void createExtendedMetaDataAnnotations() {
-		String source = "http:///org/eclipse/emf/ecore/util/ExtendedMetaData";	
+		String source = "http:///org/eclipse/emf/ecore/util/ExtendedMetaData";
 		addAnnotation
-		  (getEntity_Name(), 
-		   source, 
+		  (getEntity_Name(),
+		   source,
 		   new String[] {
-			 "namespace", "",
-			 "group", "#newAttribute",
-			 "processing", "strict"
+			   "namespace", "",
+			   "group", "#newAttribute",
+			   "processing", "strict"
 		   });
 	}
 

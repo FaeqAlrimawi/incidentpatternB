@@ -204,6 +204,7 @@ public class SceneImpl extends MinimalEObjectImpl.Container implements Scene {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -213,6 +214,7 @@ public class SceneImpl extends MinimalEObjectImpl.Container implements Scene {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
@@ -225,6 +227,7 @@ public class SceneImpl extends MinimalEObjectImpl.Container implements Scene {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Scene> getNextScenes() {
 		if (nextScenes == null) {
 			nextScenes = new EObjectResolvingEList<Scene>(Scene.class, this, CyberPhysicalIncidentPackage.SCENE__NEXT_SCENES);
@@ -237,6 +240,7 @@ public class SceneImpl extends MinimalEObjectImpl.Container implements Scene {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Scene> getPreviousScenes() {
 		if (previousScenes == null) {
 			previousScenes = new EObjectResolvingEList<Scene>(Scene.class, this, CyberPhysicalIncidentPackage.SCENE__PREVIOUS_SCENES);
@@ -249,6 +253,7 @@ public class SceneImpl extends MinimalEObjectImpl.Container implements Scene {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getDescription() {
 		return description;
 	}
@@ -258,6 +263,7 @@ public class SceneImpl extends MinimalEObjectImpl.Container implements Scene {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setDescription(String newDescription) {
 		String oldDescription = description;
 		description = newDescription;
@@ -270,6 +276,7 @@ public class SceneImpl extends MinimalEObjectImpl.Container implements Scene {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Activity> getActivity() {
 		if (activity == null) {
 			activity = new EObjectContainmentEList<Activity>(Activity.class, this, CyberPhysicalIncidentPackage.SCENE__ACTIVITY);
@@ -402,7 +409,7 @@ public class SceneImpl extends MinimalEObjectImpl.Container implements Scene {
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");
 		result.append(name);
 		result.append(", description: ");

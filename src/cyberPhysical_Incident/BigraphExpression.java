@@ -7,6 +7,7 @@ import java.util.List;
 import org.eclipse.emf.common.util.EList;
 
 import it.uniud.mads.jlibbig.core.std.Bigraph;
+import it.uniud.mads.jlibbig.core.std.Signature;
 
 /**
  * <!-- begin-user-doc -->
@@ -37,6 +38,7 @@ public interface BigraphExpression extends Expression {
 	void replaceEntityName(String oldeEntityName, String newEntityName);
 //	 boolean matches(BigraphExpression other);
 	 Bigraph createBigraph(boolean isGround);
+	 Bigraph createBigraph(boolean isGround , Signature sig);
 //	 Bigraph createBigraph(Signature signature);
 	 boolean isEmpty();
 	 boolean hasEntity(String entityName);

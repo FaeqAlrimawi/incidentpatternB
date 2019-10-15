@@ -526,6 +526,7 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public CrimeScript getCrimeScript() {
 		return crimeScript;
 	}
@@ -548,6 +549,7 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setCrimeScript(CrimeScript newCrimeScript) {
 		if (newCrimeScript != crimeScript) {
 			NotificationChain msgs = null;
@@ -566,6 +568,7 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Scene> getScene() {
 		if (scene == null) {
 			scene = new EObjectContainmentEList<Scene>(Scene.class, this, CyberPhysicalIncidentPackage.INCIDENT_DIAGRAM__SCENE);
@@ -577,6 +580,7 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Intent getIntent() {
 		return intent;
 	}
@@ -599,6 +603,7 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setIntent(Intent newIntent) {
 		if (newIntent != intent) {
 			NotificationChain msgs = null;
@@ -617,6 +622,7 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Goal> getGoal() {
 		if (goal == null) {
 			goal = new EObjectContainmentEList<Goal>(Goal.class, this, CyberPhysicalIncidentPackage.INCIDENT_DIAGRAM__GOAL);
@@ -628,6 +634,7 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Motive> getMotive() {
 		if (motive == null) {
 			motive = new EObjectContainmentEList<Motive>(Motive.class, this, CyberPhysicalIncidentPackage.INCIDENT_DIAGRAM__MOTIVE);
@@ -639,6 +646,7 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Asset> getAsset() {
 		if (asset == null) {
 			asset = new EObjectContainmentEList<Asset>(Asset.class, this, CyberPhysicalIncidentPackage.INCIDENT_DIAGRAM__ASSET);
@@ -650,6 +658,7 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Resource> getResource() {
 		if (resource == null) {
 			resource = new EObjectContainmentEList<Resource>(Resource.class, this, CyberPhysicalIncidentPackage.INCIDENT_DIAGRAM__RESOURCE);
@@ -661,6 +670,7 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Actor> getActor() {
 		if (actor == null) {
 			actor = new EObjectContainmentEList<Actor>(Actor.class, this, CyberPhysicalIncidentPackage.INCIDENT_DIAGRAM__ACTOR);
@@ -672,6 +682,7 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Connection> getConnection() {
 		if (connection == null) {
 			connection = new EObjectContainmentEList<Connection>(Connection.class, this, CyberPhysicalIncidentPackage.INCIDENT_DIAGRAM__CONNECTION);
@@ -683,6 +694,7 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Path> getPaths() {
 		if (paths == null) {
 			paths = new EObjectContainmentEList<Path>(Path.class, this, CyberPhysicalIncidentPackage.INCIDENT_DIAGRAM__PATHS);
@@ -695,6 +707,7 @@ public class IncidentDiagramImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<IncidentEntity> getIncidentEntity() {
 		if (incidentEntity == null) {
 			incidentEntity = new EObjectContainmentEList<IncidentEntity>(IncidentEntity.class, this, CyberPhysicalIncidentPackage.INCIDENT_DIAGRAM__INCIDENT_ENTITY);

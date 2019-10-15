@@ -272,6 +272,7 @@ public class CrimeScriptImpl extends MinimalEObjectImpl.Container implements Cri
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public int getId() {
 		return id;
 	}
@@ -281,6 +282,7 @@ public class CrimeScriptImpl extends MinimalEObjectImpl.Container implements Cri
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setId(int newId) {
 		int oldId = id;
 		id = newId;
@@ -293,6 +295,7 @@ public class CrimeScriptImpl extends MinimalEObjectImpl.Container implements Cri
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -302,6 +305,7 @@ public class CrimeScriptImpl extends MinimalEObjectImpl.Container implements Cri
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
@@ -314,6 +318,7 @@ public class CrimeScriptImpl extends MinimalEObjectImpl.Container implements Cri
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getDescription() {
 		return description;
 	}
@@ -323,6 +328,7 @@ public class CrimeScriptImpl extends MinimalEObjectImpl.Container implements Cri
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setDescription(String newDescription) {
 		String oldDescription = description;
 		description = newDescription;
@@ -335,6 +341,7 @@ public class CrimeScriptImpl extends MinimalEObjectImpl.Container implements Cri
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ScriptCategory getCategory() {
 		return category;
 	}
@@ -344,6 +351,7 @@ public class CrimeScriptImpl extends MinimalEObjectImpl.Container implements Cri
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setCategory(ScriptCategory newCategory) {
 		ScriptCategory oldCategory = category;
 		category = newCategory == null ? CATEGORY_EDEFAULT : newCategory;
@@ -356,6 +364,7 @@ public class CrimeScriptImpl extends MinimalEObjectImpl.Container implements Cri
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Scene> getScenes() {
 		if (scenes == null) {
 			scenes = new EObjectResolvingEList<Scene>(Scene.class, this, CyberPhysicalIncidentPackage.CRIME_SCRIPT__SCENES);
@@ -368,6 +377,7 @@ public class CrimeScriptImpl extends MinimalEObjectImpl.Container implements Cri
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Intent getIntent() {
 		return intent;
 	}
@@ -392,6 +402,7 @@ public class CrimeScriptImpl extends MinimalEObjectImpl.Container implements Cri
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setIntent(Intent newIntent) {
 		if (newIntent != intent) {
 			NotificationChain msgs = null;
@@ -411,6 +422,7 @@ public class CrimeScriptImpl extends MinimalEObjectImpl.Container implements Cri
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Motive> getMotive() {
 		if (motive == null) {
 			motive = new EObjectContainmentEList<Motive>(Motive.class, this, CyberPhysicalIncidentPackage.CRIME_SCRIPT__MOTIVE);
@@ -439,6 +451,7 @@ public class CrimeScriptImpl extends MinimalEObjectImpl.Container implements Cri
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Goal> getGoals() {
 		if (goals == null) {
 			goals = new EObjectResolvingEList<Goal>(Goal.class, this, CyberPhysicalIncidentPackage.CRIME_SCRIPT__GOALS);
@@ -451,6 +464,7 @@ public class CrimeScriptImpl extends MinimalEObjectImpl.Container implements Cri
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Asset> getTargetedAssets() {
 		if (targetedAssets == null) {
 			targetedAssets = new EObjectResolvingEList<Asset>(Asset.class, this, CyberPhysicalIncidentPackage.CRIME_SCRIPT__TARGETED_ASSETS);
@@ -463,6 +477,7 @@ public class CrimeScriptImpl extends MinimalEObjectImpl.Container implements Cri
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Resource> getResources() {
 		if (resources == null) {
 			resources = new EObjectResolvingEList<Resource>(Resource.class, this, CyberPhysicalIncidentPackage.CRIME_SCRIPT__RESOURCES);
@@ -475,6 +490,7 @@ public class CrimeScriptImpl extends MinimalEObjectImpl.Container implements Cri
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Location getMainLocation() {
 		if (mainLocation != null && mainLocation.eIsProxy()) {
 			InternalEObject oldMainLocation = (InternalEObject)mainLocation;
@@ -501,6 +517,7 @@ public class CrimeScriptImpl extends MinimalEObjectImpl.Container implements Cri
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setMainLocation(Location newMainLocation) {
 		Location oldMainLocation = mainLocation;
 		mainLocation = newMainLocation;
@@ -513,6 +530,7 @@ public class CrimeScriptImpl extends MinimalEObjectImpl.Container implements Cri
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Actor> getVictims() {
 		if (victims == null) {
 			victims = new EObjectResolvingEList<Actor>(Actor.class, this, CyberPhysicalIncidentPackage.CRIME_SCRIPT__VICTIMS);
@@ -525,6 +543,7 @@ public class CrimeScriptImpl extends MinimalEObjectImpl.Container implements Cri
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Actor> getOffenders() {
 		if (offenders == null) {
 			offenders = new EObjectResolvingEList<Actor>(Actor.class, this, CyberPhysicalIncidentPackage.CRIME_SCRIPT__OFFENDERS);
@@ -537,6 +556,7 @@ public class CrimeScriptImpl extends MinimalEObjectImpl.Container implements Cri
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getHigherLevelScriptName() {
 		return higherLevelScriptName;
 	}
@@ -546,6 +566,7 @@ public class CrimeScriptImpl extends MinimalEObjectImpl.Container implements Cri
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setHigherLevelScriptName(String newHigherLevelScriptName) {
 		String oldHigherLevelScriptName = higherLevelScriptName;
 		higherLevelScriptName = newHigherLevelScriptName;
@@ -759,7 +780,7 @@ public class CrimeScriptImpl extends MinimalEObjectImpl.Container implements Cri
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (id: ");
 		result.append(id);
 		result.append(", name: ");

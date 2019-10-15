@@ -4,7 +4,6 @@ package cyberPhysical_Incident.impl;
 
 import cyberPhysical_Incident.CyberPhysicalIncidentPackage;
 import cyberPhysical_Incident.Site;
-
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
@@ -27,6 +26,11 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * @generated
  */
 public class SiteImpl extends MinimalEObjectImpl.Container implements Site {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 756355834232439450L;
+
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -98,6 +102,7 @@ public class SiteImpl extends MinimalEObjectImpl.Container implements Site {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -107,6 +112,7 @@ public class SiteImpl extends MinimalEObjectImpl.Container implements Site {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
@@ -119,6 +125,7 @@ public class SiteImpl extends MinimalEObjectImpl.Container implements Site {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isIsClosed() {
 		return isClosed;
 	}
@@ -128,6 +135,7 @@ public class SiteImpl extends MinimalEObjectImpl.Container implements Site {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setIsClosed(boolean newIsClosed) {
 		boolean oldIsClosed = isClosed;
 		isClosed = newIsClosed;
@@ -212,7 +220,7 @@ public class SiteImpl extends MinimalEObjectImpl.Container implements Site {
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");
 		result.append(name);
 		result.append(", isClosed: ");

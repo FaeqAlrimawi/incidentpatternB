@@ -112,6 +112,7 @@ public class MotiveImpl extends MinimalEObjectImpl.Container implements Motive {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -121,6 +122,7 @@ public class MotiveImpl extends MinimalEObjectImpl.Container implements Motive {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
@@ -133,6 +135,7 @@ public class MotiveImpl extends MinimalEObjectImpl.Container implements Motive {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getDescription() {
 		return description;
 	}
@@ -142,6 +145,7 @@ public class MotiveImpl extends MinimalEObjectImpl.Container implements Motive {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setDescription(String newDescription) {
 		String oldDescription = description;
 		description = newDescription;
@@ -154,6 +158,7 @@ public class MotiveImpl extends MinimalEObjectImpl.Container implements Motive {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isPrimary() {
 		return primary;
 	}
@@ -163,6 +168,7 @@ public class MotiveImpl extends MinimalEObjectImpl.Container implements Motive {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setPrimary(boolean newPrimary) {
 		boolean oldPrimary = primary;
 		primary = newPrimary;
@@ -257,7 +263,7 @@ public class MotiveImpl extends MinimalEObjectImpl.Container implements Motive {
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");
 		result.append(name);
 		result.append(", description: ");

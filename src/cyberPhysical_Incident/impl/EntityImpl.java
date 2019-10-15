@@ -38,6 +38,11 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class EntityImpl extends MinimalEObjectImpl.Container implements Entity {
 	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 5796938139213985252L;
+
+	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -160,6 +165,7 @@ public class EntityImpl extends MinimalEObjectImpl.Container implements Entity {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -169,6 +175,7 @@ public class EntityImpl extends MinimalEObjectImpl.Container implements Entity {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
@@ -181,6 +188,7 @@ public class EntityImpl extends MinimalEObjectImpl.Container implements Entity {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Entity> getEntity() {
 		if (entity == null) {
 			entity = new EObjectContainmentEList<Entity>(Entity.class, this, CyberPhysicalIncidentPackage.ENTITY__ENTITY);
@@ -193,6 +201,7 @@ public class EntityImpl extends MinimalEObjectImpl.Container implements Entity {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Connectivity> getConnectivity() {
 		if (connectivity == null) {
 			connectivity = new EObjectContainmentEList<Connectivity>(Connectivity.class, this, CyberPhysicalIncidentPackage.ENTITY__CONNECTIVITY);
@@ -205,6 +214,7 @@ public class EntityImpl extends MinimalEObjectImpl.Container implements Entity {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Site getSite() {
 		return site;
 	}
@@ -229,6 +239,7 @@ public class EntityImpl extends MinimalEObjectImpl.Container implements Entity {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setSite(Site newSite) {
 		if (newSite != site) {
 			NotificationChain msgs = null;
@@ -248,6 +259,7 @@ public class EntityImpl extends MinimalEObjectImpl.Container implements Entity {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isHasSite() {
 		return hasSite;
 	}
@@ -403,7 +415,7 @@ public class EntityImpl extends MinimalEObjectImpl.Container implements Entity {
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");
 		result.append(name);
 		result.append(", hasSite: ");

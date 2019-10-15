@@ -110,6 +110,7 @@ public class InnerNameImpl extends MinimalEObjectImpl.Container implements Inner
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -119,6 +120,7 @@ public class InnerNameImpl extends MinimalEObjectImpl.Container implements Inner
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
@@ -131,6 +133,7 @@ public class InnerNameImpl extends MinimalEObjectImpl.Container implements Inner
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isIsClosed() {
 		return isClosed;
 	}
@@ -140,6 +143,7 @@ public class InnerNameImpl extends MinimalEObjectImpl.Container implements Inner
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setIsClosed(boolean newIsClosed) {
 		boolean oldIsClosed = isClosed;
 		isClosed = newIsClosed;
@@ -152,6 +156,7 @@ public class InnerNameImpl extends MinimalEObjectImpl.Container implements Inner
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Connectivity getOutername() {
 		if (outername != null && outername.eIsProxy()) {
 			InternalEObject oldOutername = (InternalEObject)outername;
@@ -178,6 +183,7 @@ public class InnerNameImpl extends MinimalEObjectImpl.Container implements Inner
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setOutername(Connectivity newOutername) {
 		Connectivity oldOutername = outername;
 		outername = newOutername;
@@ -273,7 +279,7 @@ public class InnerNameImpl extends MinimalEObjectImpl.Container implements Inner
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");
 		result.append(name);
 		result.append(", isClosed: ");

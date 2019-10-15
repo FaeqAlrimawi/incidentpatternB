@@ -235,6 +235,7 @@ public class ConnectionImpl extends MinimalEObjectImpl.Container implements Conn
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -244,6 +245,7 @@ public class ConnectionImpl extends MinimalEObjectImpl.Container implements Conn
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
@@ -256,6 +258,7 @@ public class ConnectionImpl extends MinimalEObjectImpl.Container implements Conn
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<String> getConstraints() {
 		if (constraints == null) {
 			constraints = new EDataTypeUniqueEList<String>(String.class, this, CyberPhysicalIncidentPackage.CONNECTION__CONSTRAINTS);
@@ -268,6 +271,7 @@ public class ConnectionImpl extends MinimalEObjectImpl.Container implements Conn
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Location getEntity1() {
 		if (entity1 != null && entity1.eIsProxy()) {
 			InternalEObject oldEntity1 = (InternalEObject)entity1;
@@ -356,6 +360,7 @@ public class ConnectionImpl extends MinimalEObjectImpl.Container implements Conn
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Location getEntity2() {
 		if (entity2 != null && entity2.eIsProxy()) {
 			InternalEObject oldEntity2 = (InternalEObject)entity2;
@@ -438,6 +443,7 @@ public class ConnectionImpl extends MinimalEObjectImpl.Container implements Conn
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public double getConnectionProbability() {
 		return connectionProbability;
 	}
@@ -447,6 +453,7 @@ public class ConnectionImpl extends MinimalEObjectImpl.Container implements Conn
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setConnectionProbability(double newConnectionProbability) {
 		double oldConnectionProbability = connectionProbability;
 		connectionProbability = newConnectionProbability;
@@ -459,6 +466,7 @@ public class ConnectionImpl extends MinimalEObjectImpl.Container implements Conn
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Type getType() {
 		return type;
 	}
@@ -483,6 +491,7 @@ public class ConnectionImpl extends MinimalEObjectImpl.Container implements Conn
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setType(Type newType) {
 		if (newType != type) {
 			NotificationChain msgs = null;
@@ -502,6 +511,7 @@ public class ConnectionImpl extends MinimalEObjectImpl.Container implements Conn
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isBidirectional() {
 		return bidirectional;
 	}
@@ -512,6 +522,7 @@ public class ConnectionImpl extends MinimalEObjectImpl.Container implements Conn
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setBidirectional(boolean newBidirectional) {
 		boolean oldBidirectional = bidirectional;
 		bidirectional = newBidirectional;
@@ -525,6 +536,7 @@ public class ConnectionImpl extends MinimalEObjectImpl.Container implements Conn
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Property> getProperties() {
 		if (properties == null) {
 			properties = new EObjectResolvingEList<Property>(Property.class, this, CyberPhysicalIncidentPackage.CONNECTION__PROPERTIES);
@@ -538,6 +550,7 @@ public class ConnectionImpl extends MinimalEObjectImpl.Container implements Conn
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Vulnerability> getVulnerabilities() {
 		if (vulnerabilities == null) {
 			vulnerabilities = new EObjectResolvingEList<Vulnerability>(Vulnerability.class, this, CyberPhysicalIncidentPackage.CONNECTION__VULNERABILITIES);
@@ -551,6 +564,7 @@ public class ConnectionImpl extends MinimalEObjectImpl.Container implements Conn
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ConnectionState getState() {
 		return state;
 	}
@@ -561,6 +575,7 @@ public class ConnectionImpl extends MinimalEObjectImpl.Container implements Conn
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setState(ConnectionState newState) {
 		ConnectionState oldState = state;
 		state = newState == null ? STATE_EDEFAULT : newState;
@@ -746,7 +761,7 @@ public class ConnectionImpl extends MinimalEObjectImpl.Container implements Conn
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");
 		result.append(name);
 		result.append(", constraints: ");

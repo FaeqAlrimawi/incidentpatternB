@@ -973,6 +973,7 @@ public class ActivityPatternImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -981,6 +982,7 @@ public class ActivityPatternImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
@@ -992,6 +994,7 @@ public class ActivityPatternImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Level getSeverity() {
 		return severity;
 	}
@@ -1001,6 +1004,7 @@ public class ActivityPatternImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setSeverity(Level newSeverity) {
 		Level oldSeverity = severity;
 		severity = newSeverity == null ? SEVERITY_EDEFAULT : newSeverity;
@@ -1012,6 +1016,7 @@ public class ActivityPatternImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getDescription() {
 		return description;
 	}
@@ -1020,6 +1025,7 @@ public class ActivityPatternImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setDescription(String newDescription) {
 		String oldDescription = description;
 		description = newDescription;
@@ -1031,6 +1037,7 @@ public class ActivityPatternImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Level getSkillsRequired() {
 		return skillsRequired;
 	}
@@ -1040,6 +1047,7 @@ public class ActivityPatternImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setSkillsRequired(Level newSkillsRequired) {
 		Level oldSkillsRequired = skillsRequired;
 		skillsRequired = newSkillsRequired == null ? SKILLS_REQUIRED_EDEFAULT : newSkillsRequired;
@@ -1051,6 +1059,7 @@ public class ActivityPatternImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<ActivityPattern> getPatternsFollow() {
 		if (patternsFollow == null) {
 			patternsFollow = new EObjectResolvingEList<ActivityPattern>(ActivityPattern.class, this, CyberPhysicalIncidentPackage.ACTIVITY_PATTERN__PATTERNS_FOLLOW);
@@ -1062,6 +1071,7 @@ public class ActivityPatternImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Activity> getAbstractActivity() {
 		if (abstractActivity == null) {
 			abstractActivity = new EObjectContainmentEList<Activity>(Activity.class, this, CyberPhysicalIncidentPackage.ACTIVITY_PATTERN__ABSTRACT_ACTIVITY);
@@ -1073,6 +1083,7 @@ public class ActivityPatternImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<IncidentEntity> getIncidententity() {
 		if (incidententity == null) {
 			incidententity = new EObjectContainmentEList<IncidentEntity>(IncidentEntity.class, this, CyberPhysicalIncidentPackage.ACTIVITY_PATTERN__INCIDENTENTITY);
@@ -1084,6 +1095,7 @@ public class ActivityPatternImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Connection> getConnection() {
 		if (connection == null) {
 			connection = new EObjectContainmentEList<Connection>(Connection.class, this, CyberPhysicalIncidentPackage.ACTIVITY_PATTERN__CONNECTION);
@@ -1096,6 +1108,7 @@ public class ActivityPatternImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Level getLikelihood() {
 		return likelihood;
 	}
@@ -1105,6 +1118,7 @@ public class ActivityPatternImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setLikelihood(Level newLikelihood) {
 		Level oldLikelihood = likelihood;
 		likelihood = newLikelihood == null ? LIKELIHOOD_EDEFAULT : newLikelihood;
@@ -1276,7 +1290,7 @@ public class ActivityPatternImpl extends MinimalEObjectImpl.Container implements
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");
 		result.append(name);
 		result.append(", Severity: ");
